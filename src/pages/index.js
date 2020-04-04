@@ -1,20 +1,31 @@
 import React from "react"
-import { Link } from "gatsby"
+import Layout from "../components/layout/layout"
+import SEO from "../components/layout/seo"
+import styled from "styled-components"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-
+// example of using styled components ( writing CSS-in-JS )
+const Center = styled.div`
+margin : auto;
+height : fit-content;
+width : fit-content;
+`
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Center>
+      <img src={require('../images/gdg_algiers.png')} alt=""/>
+    </Center>
+    
+    {
+    // TODO : ADD LANDING 
+    // TODO : ADD ABOUT SECTION with id : #about
+    // TODO : ADD EVENTS SECTION with id : #events
+    // TODO : ADD PARTNERS SECTION with id : #partners
+    // TODO : ADD SPONSORS  SECTION with id : #sponsors
+    // TODO : ADD LOCATION (using iframe google maps) 
+    // TODO : ADD CONTACT US SECTION with id : #contact
+    // TODO : ADD NEWSLETTER 
+  }
   </Layout>
 )
 
