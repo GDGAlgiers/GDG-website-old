@@ -4,18 +4,10 @@ import SEO from "../components/layout/seo"
 import styled from "styled-components"
 
 // example of using styled components ( writing CSS-in-JS )
-const Center = styled.div`
-margin : auto;
-height : fit-content;
-width : fit-content;
-`
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Center>
-      <img src={require('../images/gdg_algiers.png')} alt=""/>
-    </Center>
-    
     {
     // TODO : ADD LANDING 
     // TODO : ADD ABOUT SECTION with id : #about
