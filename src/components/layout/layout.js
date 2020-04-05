@@ -10,25 +10,23 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import Footer from './footer'
+import Footer from "./footer"
 import "../../styles/layout.css"
+import "../../styles/main.css"
 
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
 
 `
 
-
 const Layout = ({ children }) => {
   return (
     <>
-      <Header/>
+      <Header />
       <div>
-        <main style ={{
-        }}>{children}</main>
-        <Footer>
-        </Footer>
+        <main style={{}}>{children}</main>
+        <Footer></Footer>
       </div>
     </>
   )

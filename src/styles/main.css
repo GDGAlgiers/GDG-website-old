@@ -1,0 +1,28 @@
+:root {
+  --blue: #4285f4;
+  --blue-light: #8cd5ff;
+  --green: #0d9d58;
+  --green-light: #7de9d0;
+  --red: #ea4334;
+  --red-light: #ffaa9c;
+  --yellow: #fcbc05;
+  --yellow-light: #f2e877;
+  --grey: #e0e0e0;
+  --grey-dark: #212121;
+}
+
+.flex {
+  display: flex;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.alignCenter {
+  align-items: center;
+}
