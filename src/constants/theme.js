@@ -1,4 +1,4 @@
-export const colors = {
+export let colors = {
   blue: "#4285f4",
   blue_light: "#8cd5ff",
   green: "#0d9d58",

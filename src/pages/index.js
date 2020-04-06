@@ -3,6 +3,7 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import styled from "styled-components"
 import { colors } from "../constants/theme"
+import GDGBtn from "../components/common/button/GDGButton"
 
 // example of using styled components ( writing CSS-in-JS )
 const Center = styled.div`
@@ -10,16 +11,19 @@ const Center = styled.div`
   height: fit-content;
   width: fit-content;
 `
+
 const RedH1 = styled.h1`
-  background: var(--blue);
+  background: var(--blue-light);
   color: ${colors.red_light};
 `
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Center>
       <img src={require("../images/gdg_algiers.png")} alt="" />
       <RedH1 className="flex justifyCenter">test</RedH1>
+      <GDGBtn title="Upcoming events"></GDGBtn>
     </Center>
 
     {
