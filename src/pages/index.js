@@ -23,7 +23,7 @@ const IndexPage = () => (
     <Center>
       <img src={require("../images/gdg_algiers.png")} alt="" />
       <RedH1 className="flex justifyCenter">test</RedH1>
-      <GDGBtn title="Upcoming events"></GDGBtn>
+      <GDGBtn title="Upcoming events" outlined></GDGBtn>
     </Center>
 
     {

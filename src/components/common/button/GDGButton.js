@@ -14,7 +14,7 @@ const GDGBtn = styled.button`
   background-image: ${props =>
     props.outlined
       ? "url(" +
-        `"data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='7' ry='7' stroke='%230d9d58ff' stroke-width='5' stroke-dasharray='10%2c 20' stroke-dashoffset='50' stroke-linecap='square'/%3e%3c/svg%3e"` +
+        `"data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='7' ry='7' stroke='%230d9d58ff' stroke-width='3' stroke-dasharray='10%2c 20' stroke-dashoffset='50' stroke-linecap='square'/%3e%3c/svg%3e"` +
         ")"
       : "none"};
 
@@ -28,7 +28,7 @@ const GDGBtn = styled.button`
   &:hover {
     background-image: ${props =>
       props.outlined
-        ? `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='7' ry='7' stroke='%230d9d58ff' stroke-width='5' stroke-dasharray='0' stroke-dashoffset='50' stroke-linecap='square'/%3e%3c/svg%3e")`
+        ? `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='7' ry='7' stroke='%230d9d58ff' stroke-width='3' stroke-dasharray='0' stroke-dashoffset='50' stroke-linecap='square'/%3e%3c/svg%3e")`
         : "none"};
     transition: background-image 0.2s ease-in-out;
   }
