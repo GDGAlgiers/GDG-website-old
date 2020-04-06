@@ -26,6 +26,8 @@ const Layout = ({ children }) => {
       <Header/>
       <div>
         <main style ={{
+          paddingTop:"10vh",
+          minHeight : "100vh"
         }}>{children}</main>
         <Footer>
         </Footer>

@@ -1,15 +1,16 @@
 import React from "react"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
-import styled from "styled-components"
+import Landing from '../components/landing/landing';
 
 // example of using styled components ( writing CSS-in-JS )
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <Landing></Landing>
     {
-    // TODO : ADD LANDING 
+    
     // TODO : ADD ABOUT SECTION with id : #about
     // TODO : ADD EVENTS SECTION with id : #events
     // TODO : ADD PARTNERS SECTION with id : #partners

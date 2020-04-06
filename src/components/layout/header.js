@@ -12,10 +12,73 @@ const links = [
   <Link to="/#contact"> Contact </Link>,
 ]
 
+const Header = ({ siteTitle }) => {
+  const [isNavVisible, setNavVisible] = useState(false)
+  const toggleNav = () => {
+    setNavVisible(!isNavVisible)
+  }
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width : 768px)")
+    mediaQuery.addListener(handleMediaQueryChange)
+    handleMediaQueryChange(mediaQuery)
+
+    return () => {
+      mediaQuery.removeListener(handleMediaQueryChange)
+    }
+  }, [])
+
+  const handleMediaQueryChange = mediaQuery => {
+    if (mediaQuery.matches) {
+      setIsSmallScreen(true)
+    } else {
+      setIsSmallScreen(false)
+    }
+  }
+
+  return (
+    <StyledHeader isNavVisible={isNavVisible}>
+      <Link to="/#" style={{
+        margin :"auto 0"
+      }}>
+      <Brand
+        src={
+          isSmallScreen
+            ? require("../../images/icons/phonelogo.png")
+            : require("../../images/gdg_algiers.png")
+        }
+        width={isSmallScreen ? "100px" : "400px"}
+      ></Brand>
+      </Link>
+     
+     
+      <CSSTransition
+        in={!isSmallScreen || isNavVisible}
+        timeout={200}
+        classNames="NavAnimation"
+        unmountOnExit
+      >
+        <StyledNav>{links}</StyledNav>
+      </CSSTransition>
+      <Menu onClick={toggleNav}>
+        <img
+          src={
+            !isNavVisible
+              ? require("../../images/icons/menu.svg")
+              : require("../../images/icons/close.svg")
+          }
+        ></img>
+      </Menu>
+    </StyledHeader>
+  )
+}
+
+
 const StyledHeader = styled.header`
   position: fixed;
   top: 0; /* Stick it to the top */
-  min-height : 10vh;
+ min-height : 10vh;
   width: 100vw;
   display: grid;
   background-color :  white;
@@ -26,7 +89,7 @@ const StyledHeader = styled.header`
   -moz-box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
   box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
   transition: height 1s ease-in , border-radius 0.5s linear;
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 768px) {
     grid-template-areas: "logo burger" "nav nav";
     border-bottom-left-radius: ${props =>
       props.isNavVisible ? "50px" : "0px"};
@@ -40,7 +103,7 @@ const StyledHeader = styled.header`
   .NavAnimation-enter-active {
     opacity : 1 ;
     transform : translateY(0) scaleY(1);
-    transition : opacity 350ms , transform 350ms;
+    transition : opacity 500ms , transform 500ms;
   } 
   .NavAnimation-exit {
     opacity : 1;
@@ -49,7 +112,7 @@ const StyledHeader = styled.header`
   .NavAnimation-exit-active{
     opacity : 0 ;
     transform : translateY(-100%) scaleY(0);
-    transition : opacity 350ms , transform 350ms;
+    transition : opacity 500ms , transform 500ms;
   }
 `
 
@@ -71,74 +134,18 @@ const StyledNav = styled.nav`
       color: #212121;
     }
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 768px) {
     grid-template-rows: repeat(${links.length}, auto);
     grid-template-columns: none;
     grid-row-gap: 20px;
     padding-bottom: 10%;
   }
 `
-const Header = ({ siteTitle }) => {
-  const [isNavVisible, setNavVisible] = useState(false)
-  const toggleNav = () => {
-    setNavVisible(!isNavVisible)
-  }
-  const [isSmallScreen, setIsSmallScreen] = useState(false)
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width : 700px)")
-    mediaQuery.addListener(handleMediaQueryChange)
-    handleMediaQueryChange(mediaQuery)
-
-    return () => {
-      mediaQuery.removeListener(handleMediaQueryChange)
-    }
-  }, [])
-
-  const handleMediaQueryChange = mediaQuery => {
-    if (mediaQuery.matches) {
-      setIsSmallScreen(true)
-    } else {
-      setIsSmallScreen(false)
-    }
-  }
-
-  return (
-    <StyledHeader isNavVisible={isNavVisible}>
-      <Brand
-        src={
-          isSmallScreen
-            ? require("../../images/icons/phonelogo.png")
-            : require("../../images/gdg_algiers.png")
-        }
-        width={isSmallScreen ? "100px" : "400px"}
-      ></Brand>
-     
-      <CSSTransition
-        in={!isSmallScreen || isNavVisible}
-        timeout={400}
-        classNames="NavAnimation"
-        unmountOnExit
-      >
-        <StyledNav>{links}</StyledNav>
-      </CSSTransition>
-      <Menu onClick={toggleNav}>
-        <img
-          src={
-            !isNavVisible
-              ? require("../../images/icons/menu.svg")
-              : require("../../images/icons/close.svg")
-          }
-        ></img>
-      </Menu>
-    </StyledHeader>
-  )
-}
-
 const Brand = styled.img`
   grid-area: logo;
   width: ${({ width }) => width};
   margin: auto 0 auto 3%;
+  cursor : pointer;
 `
 
 const Menu = styled.button`
@@ -165,7 +172,7 @@ const Menu = styled.button`
     margin: 0;
     width: 100%;
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 768px) {
     display: block;
   }
 `
