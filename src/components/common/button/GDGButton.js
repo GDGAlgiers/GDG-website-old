@@ -5,6 +5,7 @@ import Ripple from "../Ripple"
 const GDGBtn = styled.button`
   position: relative;
   overflow: hidden;
+  outline : none ;
   font-family: var(--font);
   font-weight: 600;
   font-size: 16px;
