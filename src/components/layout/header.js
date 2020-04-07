@@ -92,28 +92,25 @@ const StyledHeader = styled.header`
   transition: height 1s ease-in , border-radius 0.5s linear;
   @media screen and (max-width: 768px) {
     grid-template-areas: "logo burger" "nav nav";
-    border-bottom-left-radius: ${props =>
-      props.isNavVisible ? "50px" : "0px"};
-    border-bottom-right-radius: ${props =>
-      props.isNavVisible ? "50px" : "0px"};
   }
   .NavAnimation-enter{
     opacity : 0;
-    transform : translateY(-100%) scaleY(0);
+  
   }
   .NavAnimation-enter-active {
     opacity : 1 ;
-    transform : translateY(0) scaleY(1);
-    transition : opacity 500ms , transform 500ms;
+  
+    transition : opacity 500ms ;
   } 
   .NavAnimation-exit {
     opacity : 1;
+    
 
   }
   .NavAnimation-exit-active{
     opacity : 0 ;
-    transform : translateY(-100%) scaleY(0);
-    transition : opacity 500ms , transform 500ms;
+   
+    transition : opacity 500ms ;
   }
 `
 
