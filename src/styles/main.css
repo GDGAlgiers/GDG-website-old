@@ -11,7 +11,7 @@
   --grey-dark: #212121;
 
   --font-header: "Montserrat", sans-serif;
-  --font-body: Roboto;
+  --font: Roboto;
 }
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
@@ -35,22 +35,13 @@
   bottom: 0 !important;
 }
 .slick-dots li button:before {
-  font-family: "slick";
   font-size: 1.5rem !important;
-  line-height: 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
   content: " " !important;
-  text-align: center;
   opacity: 1 !important;
   color: var(--blue) !important;
   border: 2px solid var(--grey) !important;
   border-radius: 50% !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
 }
 .slick-dots li.slick-active button:before {
   background: var(--blue) !important;

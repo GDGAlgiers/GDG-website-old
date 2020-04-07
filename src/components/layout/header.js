@@ -87,11 +87,11 @@ const StyledHeader = styled.header`
   font-family: var(--font), sans-serif;
   font-weight: 600;
   font-size: 16px;
+  z-index: 1;
   -webkit-box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
   -moz-box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
   box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
   transition: height 1s ease-in, border-radius 0.5s linear;
-  z-index: 1;
   @media screen and (max-width: 768px) {
     grid-template-areas: "logo burger" "nav nav";
     border-bottom-left-radius: ${props =>
