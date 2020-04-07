@@ -83,7 +83,7 @@ const StyledHeader = styled.header`
   display: grid;
   background-color :  white;
   grid-template-areas: "logo nav";
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font), sans-serif;
   font-weight: 600;
   font-size: 16px;
   -webkit-box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
@@ -128,11 +128,12 @@ const StyledNav = styled.nav`
   transition: height 1s ease-in;
 
   a {
-    color: #9e9e9e;
+    color: var(--grey-dark) ;
+    opacity : 0.4;
     text-decoration-line: none;
     transition: 0.5s ease-in-out;
     &:hover {
-      color: #212121;
+      opacity : 1;
     }
   }
   @media screen and (max-width: 768px) {
@@ -156,7 +157,7 @@ const Menu = styled.button`
   margin-left: auto;
   margin-right: 10px;
   background-color: transparent;
-  border: 2px solid #0d9d58;
+  border: 2px solid var(--green);
   padding: 10px;
   border-radius: 10px;
   opacity: 0.7;
