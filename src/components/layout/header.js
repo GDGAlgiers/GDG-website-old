@@ -83,8 +83,9 @@ const StyledHeader = styled.header`
   display: grid;
   background-color :  white;
   grid-template-areas: "logo nav";
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
   -webkit-box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
   -moz-box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
   box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
