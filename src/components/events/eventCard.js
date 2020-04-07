@@ -3,26 +3,51 @@ import styled from "styled-components"
 
 const Card = styled.div`
   height: ${props => props.height};
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   border-radius: 16px;
   border: solid 1px #707070;
   font-family: Roboto;
   overflow: hidden;
   margin: 1rem;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  &:hover .backImg {
+    width: 100%;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.6, 1);
+
+    &:after {
+      opacity: 1;
+    }
+  }
 `
 
 const BackImg = styled.div`
+  position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100%;
-  width: 100%;
+  width: 50%;
   background: ${props => `url("${props.img}")`};
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.6, 1);
+  :after {
+    content: "\A";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+  }
 `
 const Flex = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: 50%;
+  width: 50%;
   padding: 1rem 1rem 0 1rem;
   height: 100%;
   overflow: auto;
@@ -46,12 +71,13 @@ const Details = styled.h4`
     transition: background 0.3s cubic-bezier(0.4, 0, 0.6, 1);
   }
 `
+
 export default class EventCard extends Component {
   render() {
     const event = this.props.event
     return (
       <Card height={this.props.height}>
-        <BackImg img={this.props.event.img}></BackImg>
+        <BackImg className="backImg" img={this.props.event.img}></BackImg>
         <Flex>
           <h2 style={{ margin: "0", fontFamily: "var(--font-header)" }}>
             {this.props.event.title}
