@@ -39,20 +39,22 @@ const Header = ({ siteTitle }) => {
 
   return (
     <StyledHeader isNavVisible={isNavVisible}>
-      <Link to="/#" style={{
-        margin :"auto 0"
-      }}>
-      <Brand
-        src={
-          isSmallScreen
-            ? require("../../images/icons/phonelogo.png")
-            : require("../../images/gdg_algiers.png")
-        }
-        width={isSmallScreen ? "100px" : "400px"}
-      ></Brand>
+      <Link
+        to="/#"
+        style={{
+          margin: "auto 0",
+        }}
+      >
+        <Brand
+          src={
+            isSmallScreen
+              ? require("../../images/icons/phonelogo.png")
+              : require("../../images/gdg_algiers.png")
+          }
+          width={isSmallScreen ? "100px" : "400px"}
+        ></Brand>
       </Link>
-     
-     
+
       <CSSTransition
         in={!isSmallScreen || isNavVisible}
         timeout={200}
@@ -74,14 +76,13 @@ const Header = ({ siteTitle }) => {
   )
 }
 
-
 const StyledHeader = styled.header`
   position: fixed;
   top: 0; /* Stick it to the top */
- min-height : 10vh;
+  min-height: 10vh;
   width: 100vw;
   display: grid;
-  background-color :  white;
+  background-color: white;
   grid-template-areas: "logo nav";
   font-family: var(--font), sans-serif;
   font-weight: 600;
@@ -89,7 +90,8 @@ const StyledHeader = styled.header`
   -webkit-box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
   -moz-box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
   box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
-  transition: height 1s ease-in , border-radius 0.5s linear;
+  transition: height 1s ease-in, border-radius 0.5s linear;
+  z-index: 1;
   @media screen and (max-width: 768px) {
     grid-template-areas: "logo burger" "nav nav";
     border-bottom-left-radius: ${props =>
@@ -97,23 +99,22 @@ const StyledHeader = styled.header`
     border-bottom-right-radius: ${props =>
       props.isNavVisible ? "50px" : "0px"};
   }
-  .NavAnimation-enter{
-    opacity : 0;
-    transform : translateY(-100%) scaleY(0);
+  .NavAnimation-enter {
+    opacity: 0;
+    transform: translateY(-100%) scaleY(0);
   }
   .NavAnimation-enter-active {
-    opacity : 1 ;
-    transform : translateY(0) scaleY(1);
-    transition : opacity 500ms , transform 500ms;
-  } 
-  .NavAnimation-exit {
-    opacity : 1;
-
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+    transition: opacity 500ms, transform 500ms;
   }
-  .NavAnimation-exit-active{
-    opacity : 0 ;
-    transform : translateY(-100%) scaleY(0);
-    transition : opacity 500ms , transform 500ms;
+  .NavAnimation-exit {
+    opacity: 1;
+  }
+  .NavAnimation-exit-active {
+    opacity: 0;
+    transform: translateY(-100%) scaleY(0);
+    transition: opacity 500ms, transform 500ms;
   }
 `
 
@@ -128,12 +129,12 @@ const StyledNav = styled.nav`
   transition: height 1s ease-in;
 
   a {
-    color: var(--grey-dark) ;
-    opacity : 0.4;
+    color: var(--grey-dark);
+    opacity: 0.4;
     text-decoration-line: none;
     transition: 0.5s ease-in-out;
     &:hover {
-      opacity : 1;
+      opacity: 1;
     }
   }
   @media screen and (max-width: 768px) {
@@ -147,7 +148,7 @@ const Brand = styled.img`
   grid-area: logo;
   width: ${({ width }) => width};
   margin: auto 0 auto 3%;
-  cursor : pointer;
+  cursor: pointer;
 `
 
 const Menu = styled.button`

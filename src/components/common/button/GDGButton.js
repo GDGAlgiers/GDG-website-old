@@ -1,12 +1,13 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import Ripple from "../Ripple"
+import Ripples from "react-ripples"
 
 const GDGBtn = styled.button`
+  cursor: pointer;
   position: relative;
   overflow: hidden;
-  outline : none ;
-  font-family: var(--font);
+  outline: none;
+  font-family: var(--font-header);
   font-weight: 600;
   font-size: 16px;
   background: ${props =>
@@ -19,7 +20,6 @@ const GDGBtn = styled.button`
         ")"
       : "none"};
 
-  border-radius: 7px;
   height: 48px;
   min-width: 64px;
   padding: 0 16px;
@@ -34,14 +34,24 @@ const GDGBtn = styled.button`
     transition: background-image 0.2s ease-in-out;
   }
 `
-
+const rippleColor = props =>
+  props.outlined ? "rgba(125, 233, 208, 0.25)" : "rgba(13, 157, 88, 0.25)"
 export class GDGButon extends Component {
   render() {
     return (
-      <GDGBtn outlined={this.props.outlined}>
-        {this.props.title.toUpperCase()}
-        <Ripple />
-      </GDGBtn>
+      <div style={{ borderRadius: "5px", overflow: "hidden" }}>
+        <Ripples
+          color={
+            this.props.outlined
+              ? "rgba(125, 233, 208, 0.25)"
+              : "rgba(13, 157, 88, 0.25)"
+          }
+        >
+          <GDGBtn outlined={this.props.outlined}>
+            {this.props.title.toUpperCase()}
+          </GDGBtn>
+        </Ripples>
+      </div>
     )
   }
 }
