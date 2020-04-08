@@ -11,13 +11,18 @@ const Card = styled.div`
   display: flex;
   position: relative;
   cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.6, 1);
   &:hover .backImg {
     width: 100%;
-    transition: width 0.5s cubic-bezier(0.4, 0, 0.6, 1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.6, 1);
 
     &:after {
       opacity: 1;
     }
+  }
+  &:hover .hoveredText {
+    opacity: 1;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.6, 1);
   }
 `
 
@@ -37,7 +42,7 @@ const BackImg = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), transparent);
     opacity: 0;
     transition: all 1s;
     -webkit-transition: all 1s;
@@ -72,12 +77,60 @@ const Details = styled.h4`
   }
 `
 
+const HoveredText = styled.div`
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  color: white;
+  font-family: var(--font);
+`
+
+const Column = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+`
+
+const pStyle = {
+  marginBottom: "0.5rem",
+  textAlign: "center",
+  fontWeight: "bold",
+  fontSize: "1.5rem",
+}
+const titleStyle = {
+  marginBottom: "0.5rem",
+  fontWeight: "bold",
+  fontSize: "1.5rem",
+  fontFamily: "var(--font-header)",
+}
+const locationStyle = {
+  marginBottom: "0.5rem",
+  fontWeight: "regular",
+  fontSize: "1rem",
+  whiteSpace: "pre",
+}
 export default class EventCard extends Component {
   render() {
     const event = this.props.event
     return (
       <Card height={this.props.height}>
         <BackImg className="backImg" img={this.props.event.img}></BackImg>
+        <HoveredText className="hoveredText">
+          <Column>
+            <p style={pStyle}>{this.props.event.date.days}</p>
+            <p style={pStyle}> {this.props.event.date.month}</p>
+            <p style={pStyle}>{this.props.event.date.year}</p>
+          </Column>
+          <Column>
+            <p style={titleStyle}>{this.props.event.title}</p>
+            <p style={locationStyle}> {this.props.event.location}</p>
+          </Column>
+        </HoveredText>
         <Flex>
           <h2 style={{ margin: "0", fontFamily: "var(--font-header)" }}>
             {this.props.event.title}
@@ -87,7 +140,7 @@ export default class EventCard extends Component {
               fontFamily: "var(--font-header)",
             }}
           >
-            {this.props.event.date}
+            {`${this.props.event.date.days} ${this.props.event.date.month} ${this.props.event.date.year}`}
           </p>
           <p style={{ overflow: "auto", flexGrow: 1 }}>
             {this.props.event.content}

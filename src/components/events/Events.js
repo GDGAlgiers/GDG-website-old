@@ -8,10 +8,39 @@ import GDGBtn from "../common/button/GDGButton"
 const events = [
   {
     title: "GDG School",
-    date: "10-11 January 2020",
+    date: {
+      days: "10-11",
+      month: "January",
+      year: "2020",
+    },
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
     img: "https://gdgalgiers.com/assets/header_1.jpg",
+    location: "Higher School Of Computer Science \n (ESI Algiers)",
+  },
+  {
+    title: "GDG School",
+    date: {
+      days: "10-11",
+      month: "January",
+      year: "2020",
+    },
+    content:
+      "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
+    img: "https://gdgalgiers.com/assets/header_1.jpg",
+    location: "Higher School Of Computer Science \n (ESI Algiers)",
+  },
+  {
+    title: "GDG School",
+    date: {
+      days: "10-11",
+      month: "January",
+      year: "2020",
+    },
+    content:
+      "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
+    img: "https://gdgalgiers.com/assets/header_1.jpg",
+    location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
   {
     title: "GDG School",
@@ -19,27 +48,19 @@ const events = [
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
     img: "https://gdgalgiers.com/assets/header_1.jpg",
+    location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
   {
     title: "GDG School",
-    date: "10-11 January 2020",
+    date: {
+      days: "10-11",
+      month: "January",
+      year: "2020",
+    },
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
     img: "https://gdgalgiers.com/assets/header_1.jpg",
-  },
-  {
-    title: "GDG School",
-    date: "10-11 January 2020",
-    content:
-      "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
-    img: "https://gdgalgiers.com/assets/header_1.jpg",
-  },
-  {
-    title: "GDG School",
-    date: "10-11 January 2020",
-    content:
-      "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
-    img: "https://gdgalgiers.com/assets/header_1.jpg",
+    location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
 ]
 
