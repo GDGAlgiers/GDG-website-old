@@ -71,7 +71,7 @@ const SlideGrid = styled.div`
 `
 
 const renderEvents = events.map(event => (
-  <EventCard height="50vh" event={event} key={event.title}></EventCard>
+  <EventCard height="60vh" event={event} key={event.title}></EventCard>
 ))
 
 const BigTitle = styled.h1`
@@ -80,7 +80,7 @@ const BigTitle = styled.h1`
 `
 const Wrapper = styled.section`
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   background-color: white;
   padding: 0 4rem;
 `

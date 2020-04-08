@@ -112,7 +112,7 @@ const locationStyle = {
   marginBottom: "0.5rem",
   fontWeight: "regular",
   fontSize: "1rem",
-  whiteSpace: "pre",
+  whiteSpace: "pre-line",
 }
 export default class EventCard extends Component {
   render() {
@@ -142,7 +142,14 @@ export default class EventCard extends Component {
           >
             {`${this.props.event.date.days} ${this.props.event.date.month} ${this.props.event.date.year}`}
           </p>
-          <p style={{ overflow: "auto", flexGrow: 1 }}>
+          <p
+            style={{
+              overflow: "auto",
+              flexGrow: 1,
+              fontSize: "0.75rem",
+              whiteSpace: "pre-line",
+            }}
+          >
             {this.props.event.content}
           </p>
           <Seperator></Seperator>
