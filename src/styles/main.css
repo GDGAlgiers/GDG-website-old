@@ -7,7 +7,7 @@
   --red-light: #ffaa9c;
   --yellow: #fcbc05;
   --yellow-light: #f2e877;
-  --grey: #e0e0e0;
+  --grey: #676c72;
   --grey-dark: #212121;
 
   --font-header: "Montserrat", sans-serif;
@@ -32,7 +32,7 @@
 }
 .slick-dots {
   position: relative !important;
-  bottom: 0 !important;
+  bottom: -1rem !important;
 }
 .slick-dots li button:before {
   font-size: 1.5rem !important;
@@ -45,4 +45,8 @@
 }
 .slick-dots li.slick-active button:before {
   background: var(--blue) !important;
+}
+
+p {
+  font-family: Roboto;
 }

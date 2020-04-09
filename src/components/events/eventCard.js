@@ -11,10 +11,10 @@ const Card = styled.div`
   display: flex;
   position: relative;
   cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.6, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
   &:hover .backImg {
     width: 100%;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.6, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
 
     &:after {
       opacity: 1;

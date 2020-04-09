@@ -1,10 +1,13 @@
-import React, { Component } from "react"
+import React, { Component, useState, useEffect } from "react"
 import EventCard from "./eventCard"
+import EventMobileCard from "./eventMobileCard"
 import styled from "styled-components"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import GDGBtn from "../common/button/GDGButton"
+import Header from "../layout/header"
+
 const events = [
   {
     title: "GDG School",
@@ -16,6 +19,8 @@ const events = [
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
     img: "https://gdgalgiers.com/assets/header_1.jpg",
+    logo:
+      "https://cdn.zeplin.io/5e8a80d14af9de22805a072e/assets/a6f00b2b-5c21-45ee-88f0-e443d9354020.png",
     location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
   {
@@ -28,6 +33,8 @@ const events = [
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
     img: "https://gdgalgiers.com/assets/header_1.jpg",
+    logo:
+      "https://cdn.zeplin.io/5e8a80d14af9de22805a072e/assets/a6f00b2b-5c21-45ee-88f0-e443d9354020.png",
     location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
   {
@@ -40,14 +47,8 @@ const events = [
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
     img: "https://gdgalgiers.com/assets/header_1.jpg",
-    location: "Higher School Of Computer Science \n (ESI Algiers)",
-  },
-  {
-    title: "GDG School",
-    date: "10-11 January 2020",
-    content:
-      "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
-    img: "https://gdgalgiers.com/assets/header_1.jpg",
+    logo:
+      "https://cdn.zeplin.io/5e8a80d14af9de22805a072e/assets/a6f00b2b-5c21-45ee-88f0-e443d9354020.png",
     location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
   {
@@ -60,6 +61,8 @@ const events = [
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
     img: "https://gdgalgiers.com/assets/header_1.jpg",
+    logo:
+      "https://cdn.zeplin.io/5e8a80d14af9de22805a072e/assets/a6f00b2b-5c21-45ee-88f0-e443d9354020.png",
     location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
 ]
@@ -74,37 +77,86 @@ const renderEvents = events.map(event => (
   <EventCard height="60vh" event={event} key={event.title}></EventCard>
 ))
 
+const renderMobileEvents = events.map(event => (
+  <EventMobileCard
+    height="60vh"
+    event={event}
+    key={event.title}
+  ></EventMobileCard>
+))
+
 const BigTitle = styled.h1`
   font-family: var(--font-header);
-  font-size: 64px;
+  font-size: 3.5rem;
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+    font-size: 0.5;
+  }
 `
 const Wrapper = styled.section`
   width: 100%;
   height: 100vh;
   background-color: white;
   padding: 0 4rem;
-`
-export default class Events extends Component {
-  render() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 2,
-      slidesToScroll: 2,
-      slide: "SlideGrid",
-      adaptiveHeight: true,
-    }
-    return (
-      <Wrapper>
-        <BigTitle>Upcoming events</BigTitle>
-        <div style={{ padding: "0 2rem 2rem 2rem" }}>
-          <Slider {...settings}>{renderEvents}</Slider>
-        </div>
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <GDGBtn title="Previous Events" outlined></GDGBtn>
-        </div>
-      </Wrapper>
-    )
+  @media screen and (max-width: 768px) {
+    padding: 0;
   }
+`
+const Events = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    slide: "SlideGrid",
+    adaptiveHeight: true,
+  }
+
+  const settingsMobile = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    slide: "SlideGrid",
+    adaptiveHeight: true,
+  }
+
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width : 768px)")
+    mediaQuery.addListener(handleMediaQueryChange)
+    handleMediaQueryChange(mediaQuery)
+
+    return () => {
+      mediaQuery.removeListener(handleMediaQueryChange)
+    }
+  }, [])
+
+  const handleMediaQueryChange = mediaQuery => {
+    if (mediaQuery.matches) {
+      setIsSmallScreen(true)
+    } else {
+      setIsSmallScreen(false)
+    }
+  }
+  return (
+    <Wrapper>
+      <BigTitle>Upcoming events</BigTitle>
+      <div style={{ padding: "0 2rem 2rem 2rem" }}>
+        {!isSmallScreen ? (
+          <Slider {...settings}>{renderEvents}</Slider>
+        ) : (
+          <Slider {...settingsMobile}>{renderMobileEvents}</Slider>
+        )}
+      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <GDGBtn title="Previous Events" outlined></GDGBtn>
+      </div>
+    </Wrapper>
+  )
 }
+
+export default Events
