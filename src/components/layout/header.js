@@ -88,33 +88,31 @@ const StyledHeader = styled.header`
   font-weight: 600;
   font-size: 16px;
   z-index: 1;
-  -webkit-box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
-  -moz-box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
-  box-shadow: -1px 1px 23px 10px rgba(221, 221, 221, 1);
-  transition: height 1s ease-in, border-radius 0.5s linear;
+  -webkit-box-shadow: -1px -3px 23px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: -1px -3px 23px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: -1px -3px 23px 10px rgba(0, 0, 0,0.2);
+  transition: height 1s ease-in;
   @media screen and (max-width: 768px) {
     grid-template-areas: "logo burger" "nav nav";
-    border-bottom-left-radius: ${props =>
-      props.isNavVisible ? "50px" : "0px"};
-    border-bottom-right-radius: ${props =>
-      props.isNavVisible ? "50px" : "0px"};
   }
-  .NavAnimation-enter {
-    opacity: 0;
-    transform: translateY(-100%) scaleY(0);
+  .NavAnimation-enter{
+    opacity : 0;
+  
   }
   .NavAnimation-enter-active {
-    opacity: 1;
-    transform: translateY(0) scaleY(1);
-    transition: opacity 500ms, transform 500ms;
-  }
+    opacity : 1 ;
+  
+    transition : opacity 500ms ;
+  } 
   .NavAnimation-exit {
-    opacity: 1;
+    opacity : 1;
+    
+
   }
-  .NavAnimation-exit-active {
-    opacity: 0;
-    transform: translateY(-100%) scaleY(0);
-    transition: opacity 500ms, transform 500ms;
+  .NavAnimation-exit-active{
+    opacity : 0 ;
+   
+    transition : opacity 500ms ;
   }
 `
 

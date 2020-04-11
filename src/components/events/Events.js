@@ -143,7 +143,7 @@ const Events = () => {
     }
   }
   return (
-    <Wrapper>
+    <Wrapper id="events">
       <BigTitle>Upcoming events</BigTitle>
       <div style={{ padding: "0 2rem 2rem 2rem" }}>
         {!isSmallScreen ? (
