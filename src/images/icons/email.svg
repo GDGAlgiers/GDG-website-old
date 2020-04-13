@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="156.636" height="120.087" viewBox="0 0 156.636 120.087">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#8cd5ff}
+        </style>
+    </defs>
+    <g id="prefix__email" transform="translate(0 -59.733)">
+        <g id="prefix__Group_41" data-name="Group 41" transform="translate(0 59.733)">
+            <g id="prefix__Group_40" data-name="Group 40">
+                <path id="prefix__Path_437" d="M148.8 59.733H7.832A7.832 7.832 0 0 0 0 67.565v104.424a7.832 7.832 0 0 0 7.832 7.832H148.8a7.832 7.832 0 0 0 7.832-7.832V67.565a7.832 7.832 0 0 0-7.832-7.832zm2.611 112.256a2.61 2.61 0 0 1-2.611 2.61H7.832a2.61 2.61 0 0 1-2.61-2.61V67.565a2.61 2.61 0 0 1 2.61-2.61H148.8a2.61 2.61 0 0 1 2.61 2.61v104.424z" class="prefix__cls-1" data-name="Path 437" transform="translate(0 -59.733)"/>
+                <path id="prefix__Path_438" d="M167.5 93.875a2.609 2.609 0 0 0-1.906.6l-60.226 50.595a5.222 5.222 0 0 1-6.72 0L38.422 94.476a2.611 2.611 0 0 0-3.357 4l60.226 50.591a10.429 10.429 0 0 0 13.434 0l60.226-50.59a2.611 2.611 0 0 0-1.451-4.6z" class="prefix__cls-1" data-name="Path 438" transform="translate(-23.691 -83.423)"/>
+                <path id="prefix__Path_439" d="M73.809 272.988a2.611 2.611 0 0 0-2.518.811l-36.548 39.158a2.611 2.611 0 1 0 3.817 3.561l36.548-39.159a2.61 2.61 0 0 0-1.3-4.371z" class="prefix__cls-1" data-name="Path 439" transform="translate(-23.598 -207.703)"/>
+                <path id="prefix__Path_440" d="M345.761 273.8a2.611 2.611 0 1 0-3.817 3.561l36.548 39.159a2.611 2.611 0 0 0 3.817-3.561z" class="prefix__cls-1" data-name="Path 440" transform="translate(-236.818 -207.703)"/>
+            </g>
+        </g>
+    </g>
+</svg>
