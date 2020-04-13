@@ -14,10 +14,16 @@ import Footer from "./footer"
 import "../../styles/layout.css"
 import "../../styles/main.css"
 
-import { createGlobalStyle } from "styled-components"
+import styled,{ createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
 
+`
+const Main = styled.main`
+  padding-top : 10vh;
+  @media screen and (max-width: 768px) {
+    padding-top : 13vh;
+  }
 `
 
 const Layout = ({ children }) => {
@@ -25,10 +31,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <div>
-        <main style ={{
-          paddingTop:"10vh",
-          minHeight : "100vh"
-        }}>{children}</main>
+        <Main>{children}</Main>
         <Footer>
         </Footer>
       </div>
