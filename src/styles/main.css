@@ -12,6 +12,8 @@
 
   --font-header: "Montserrat", sans-serif;
   --font: Roboto;
+
+  --sectionPadding: 1rem 4rem;
 }
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
@@ -49,4 +51,8 @@
 
 p {
   font-family: Roboto;
+}
+
+h1 {
+  font-family: var(--font-header);
 }
