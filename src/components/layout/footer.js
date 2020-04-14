@@ -82,6 +82,15 @@ const StyledFooter = styled.footer`
       color: white;
       font-family: inherit;
     }
+    @media screen and (max-width: 768px) {
+      flex-direction : column;
+      justify-content : center;
+      h2 {
+        text-align  :center;
+        margin-bottom : 20px;
+      }
+      align-items : center;
+    }
   }
   .row2 {
     margin-top: 20px;

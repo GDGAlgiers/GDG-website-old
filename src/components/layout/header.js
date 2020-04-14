@@ -87,7 +87,7 @@ const StyledHeader = styled.header`
   font-family: var(--font), sans-serif;
   font-weight: 600;
   font-size: 16px;
-  z-index: 1;
+  z-index: 10;
   -webkit-box-shadow: -1px -3px 23px 10px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: -1px -3px 23px 10px rgba(0, 0, 0, 0.2);
   box-shadow: -1px -3px 23px 10px rgba(0, 0, 0,0.2);
