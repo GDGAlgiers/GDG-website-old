@@ -51,7 +51,7 @@ const Header = ({ siteTitle }) => {
               ? require("../../images/icons/phonelogo.png")
               : require("../../images/gdg_algiers.png")
           }
-          width={isSmallScreen ? "100px" : "400px"}
+          width={isSmallScreen ? "10vw" : "18vw"}
         ></Brand>
       </Link>
 
@@ -94,8 +94,7 @@ const StyledHeader = styled.header`
   transition: height 1s ease-in;
   @media screen and (max-width: 768px) {
     grid-template-areas: "logo burger" "nav nav";
-  }
-  .NavAnimation-enter{
+    .NavAnimation-enter{
     opacity : 0;
   
   }
@@ -114,6 +113,9 @@ const StyledHeader = styled.header`
    
     transition : opacity 500ms ;
   }
+  }
+
+  
 `
 
 const StyledNav = styled.nav`
@@ -144,6 +146,8 @@ const StyledNav = styled.nav`
 `
 const Brand = styled.img`
   grid-area: logo;
+  min-width :80px;
+  max-width : 300px;
   width: ${({ width }) => width};
   margin: auto 0 auto 3%;
   cursor: pointer;
