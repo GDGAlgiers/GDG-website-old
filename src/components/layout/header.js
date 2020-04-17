@@ -94,8 +94,7 @@ const StyledHeader = styled.header`
   transition: height 1s ease-in;
   @media screen and (max-width: 768px) {
     grid-template-areas: "logo burger" "nav nav";
-  }
-  .NavAnimation-enter{
+    .NavAnimation-enter{
     opacity : 0;
   
   }
@@ -114,6 +113,9 @@ const StyledHeader = styled.header`
    
     transition : opacity 500ms ;
   }
+  }
+
+  
 `
 
 const StyledNav = styled.nav`

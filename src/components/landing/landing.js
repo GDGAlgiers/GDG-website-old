@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Button from '../common/button/GDGButton'
 import {navigate} from 'gatsby'
+import AnimatedBoxes from './AnimatedBoxes'
 const Wrapper = styled.section`
   width: 100%;
   height: 90vh;
@@ -11,13 +12,28 @@ const Wrapper = styled.section`
   background-color: white;
   .landing-title {
     font-size : 5rem;
+   
     .matter:hover {
       border-bottom : 5px solid var(--yellow);
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     padding-left : 0;
+    padding-top :0%;
+    justify-content : flex-end;
+    flex-direction : column-reverse;
+
+  .landing-title {
+    width : 90%;
+    margin : 20px auto;  
+    text-align : center; 
+    font-size : 2rem;
+  }
+  }
+  @media screen and (max-width: 370px) {
+    padding-left : 0;
+    padding-top :4vh;
     justify-content : flex-end;
     flex-direction : column-reverse;
 
@@ -38,7 +54,7 @@ display : flex ;
   visibility : hidden;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   width : 90%;
   margin : auto;
   justify-content : center;
@@ -51,31 +67,33 @@ const Content = styled.div`
   position : relative;
   z-index : 3 ;
   width : 60%;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width : 90%;
     margin :0 auto;
   }
 `
-const AnimatedBoxes =styled.canvas`
+const Canvas =styled.div`
   width : 100vw;
-  height: 100vh;
+  padding-top : 10vh;
   
   z-index : 1;
   position : absolute;
   background : transparent;
-  opacity : 0.1;
-  top : 0px;
-  @media screen and (max-width: 768px) {
+  opacity : 1;
+  top : 10%;
+  @media screen and (max-width: 1024px) {
+    padding-top : 0;
     position : relative;
     width : 100%;
-    height : 60%;
+    top : -3vh;
+    min-height : 60%;
     
   }
 `;
 
 export default function Landing({ id }) {
 
-  const canvas = <AnimatedBoxes></AnimatedBoxes>
+  
 
   return <Wrapper>
    
@@ -89,6 +107,8 @@ export default function Landing({ id }) {
       <Button title="UPCOMING EVENTS" outlined={false} onClick={()=> navigate("#events")}></Button>
     </Buttons>
     </Content>
-    {canvas}
+    <Canvas>
+      <AnimatedBoxes></AnimatedBoxes>
+    </Canvas>
   </Wrapper>
 }
