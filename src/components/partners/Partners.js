@@ -40,6 +40,9 @@ const GreyImg = styled.img`
   &:hover {
     filter: none;
   }
+  @media screen and (max-width: 768px) {
+    max-width: 80vw;
+  }
 `
 
 const renderPartners = partners.map(featuredin => (
