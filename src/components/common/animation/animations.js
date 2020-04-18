@@ -2,7 +2,6 @@ import {css} from  'styled-components';
 import { dropShadow } from '../effects';
 
 const bounce = css`
-animation: bounce 0.5s ease infinite alternate;
 
 @keyframes bounce {
   from {

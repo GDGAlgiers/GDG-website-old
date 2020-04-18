@@ -14,7 +14,6 @@ const NotFoundPage = () => (
       <h2>We could'nt find the page you are looking for <Emoji data="🥺"></Emoji></h2>
       <Button title="TAKE ME BACK" outlined={true} onClick={()=> navigate("/")}></Button>
     </NotFoundWrapper>
-    <AnimatedBoxes></AnimatedBoxes>
   </Layout>
 )
 

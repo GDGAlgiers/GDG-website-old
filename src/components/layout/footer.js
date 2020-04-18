@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import {ExternalLink , Emoji} from '../common/utils';
+import {navigate} from 'gatsby'
 const Footer = () => (
   <StyledFooter>
     <div className="row1">
@@ -36,7 +37,7 @@ const Footer = () => (
     </div>
     <div className="row3">
       <h2>Intrested in sponsoring GDG Algiers ?</h2>
-      <StyledButton>GET IN TOUCH</StyledButton>
+      <StyledButton onClick={e=> navigate("#")}>GET IN TOUCH</StyledButton>
     </div>
   </StyledFooter>
 )
@@ -189,14 +190,24 @@ const StyledButton = styled.button`
   border-radius: 50px;
   font-family: inherit;
   font-weight: bold;
-  background-color: white;
-  color: var(--green);
+
+background: #0D9D58;
+box-shadow:  12px 12px 29px #0b844a, 
+             -12px -12px 29px #0fb666;
+  color: white;
   border: none;
   cursor: pointer;
   outline: none;
-  transition: 1s ease;
   &:hover {
-    transform: scale(1.2);
+    animation: scaler 1s ease alternate 2;
+    @keyframes scaler {
+      from{
+        transform : scale(1)
+      }
+      to{
+        transform: scale(1.2)
+      }
+    }
   }
 `
 

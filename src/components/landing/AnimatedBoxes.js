@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled,{css} from "styled-components"
 import {bounce} from '../common/animation/animations'
 
 export default function AnimatedBoxes() {
@@ -115,8 +115,19 @@ const Box = styled.div`
     z-index: 99;
     cursor: pointer;
     opacity: 1;
+    
+    
 
-    ${props => props.animationOnHover || bounce}
+    ${props => {
+      if(props.animationOnHover) return props.animationOnHover
+      else {
+        let defaultAnim = css`
+        animation: bounce 0.5s ease infinite alternate;
+         ${bounce}
+        `
+        return defaultAnim
+      }
+    }}
   }
 
   background-color: ${props => props.color || "var(--green)"};
