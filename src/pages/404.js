@@ -10,7 +10,7 @@ const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
     <NotFoundWrapper>
-      <h1>404</h1>
+     <img src={require('../images/404.webp')} width="40%"></img>
       <h2>We could'nt find the page you are looking for <Emoji data="🥺"></Emoji></h2>
       <Button title="TAKE ME BACK" outlined={true} onClick={()=> navigate("/")}></Button>
     </NotFoundWrapper>
@@ -20,15 +20,33 @@ const NotFoundPage = () => (
 const NotFoundWrapper = styled.div`
 display : flex;
 flex-direction : column;
-justify-content : flex ;
+justify-content : center ;
 align-items : center;
 height : 100vh;
-h1 {
-  font-size : 20rem;
-}
+animation : enterandbounce 1s  ease forwards;
+    @keyframes enterandbounce {
+      0% {
+        transform : translateY(-100vh)
+      }
+      40%{
+        transform : translateY(0%)
+      }
+      80%{
+        transform : translateY(-3vh)
+      }
+      100%{
+        transform : translateY(0%)
+      }
+    }
 h2 {
   font-size : 2rem;
   color : var(--green)
+}
+@media screen and (max-width: 768px) {
+  width : 100%;
+  h2 {
+    font-size : 1rem;
+  }
 }
 `
 export default NotFoundPage
