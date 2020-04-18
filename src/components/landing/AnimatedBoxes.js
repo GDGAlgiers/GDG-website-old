@@ -1,26 +1,8 @@
 import React from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
+import {bounce} from '../common/animation/animations'
 
-const bounce = css`
-animation: bounce 0.5s ease infinite alternate;
-
-@keyframes bounce {
-  from {
-    transform: scale(1) translateY(0px);
-  }
-  to {
-    transform: scale(1.1) translateY(-15px);
-  }
-}
-`
 export default function AnimatedBoxes() {
-  const randomlyRotate = id => {
-    let box = document.getElementById(id)
-    box.classList.add("rotate-box-randomly")
-    setTimeout(() => {
-      box.classList.remove("rotate-box-randomly")
-    }, 1000)
-  }
   return (
     <Boxes>
       <BoxRow>
@@ -39,13 +21,17 @@ export default function AnimatedBoxes() {
           id="box2"
           className="box"
         
-        ></Box>
+        >
+              <img src={require("../../images/icons/icon2.svg")} alt="" />
+        </Box>
         <Box
           color="#7DE9D0"
           id="box3"
           className="box"
         
-        ></Box>
+        >
+              <img src={require("../../images/icons/icon2.svg")} alt="" />
+        </Box>
       </BoxRow>
       <BoxRow>
         <Box
@@ -53,9 +39,15 @@ export default function AnimatedBoxes() {
           id="box4"
           className="box"
         
-        ></Box>
-        <Box color="#EA4334" id="box5" className="box"></Box>
-        <Box color="#0D9D58" id="box6" className="box"></Box>
+        >
+              <img src={require("../../images/icons/icon2.svg")} alt="" />
+        </Box>
+        <Box color="#EA4334" id="box5" className="box">
+        <img src={require("../../images/icons/icon2.svg")} alt="" />
+        </Box>
+        <Box color="#0D9D58" id="box6" className="box">
+        <img src={require("../../images/icons/icon2.svg")} alt="" />
+        </Box>
       </BoxRow>
       <BoxRow>
         <Box
@@ -68,19 +60,17 @@ export default function AnimatedBoxes() {
         <Box color="#4285F4" id="box8" className="box">
           <img src={require("../../images/icons/icon3.svg")} alt="" />
         </Box>
-        <Box color="#E0E0E0" id="box9" className="box"></Box>
-        <Box color="#FCBC05" id="box10" className="box"></Box>
+        <Box color="#E0E0E0" id="box9" className="box">
+        <img src={require("../../images/icons/icon2.svg")} alt="" />
+        </Box>
+        <Box color="#FCBC05" id="box10" className="box">
+        <img src={require("../../images/icons/icon2.svg")} alt="" />
+        </Box>
       </BoxRow>
     </Boxes>
   )
 }
 
-const getRandomRotationBetween = (low, high) => {
-  let rand = Math.random()
-  rand = rand * high
-  rand = rand + low
-  return rand
-}
 
 
 const Boxes = styled.div`

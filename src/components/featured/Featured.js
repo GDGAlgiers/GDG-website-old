@@ -8,6 +8,7 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-items: center;
   @media screen and (max-width: 768px) {
+    padding : var(--mobileSectionPadding);
   }
 `
 

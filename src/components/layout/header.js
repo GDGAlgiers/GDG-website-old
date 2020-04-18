@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { CSSTransition } from "react-transition-group"
+import { dropShadow } from "../common/effects"
 
 const links = [
   <Link to="/#about"> About </Link>,
@@ -66,6 +67,7 @@ const Header = ({ siteTitle }) => {
       </CSSTransition>
       <Menu onClick={toggleNav}>
         <img
+          alt="menu"
           src={
             !isNavVisible
               ? require("../../images/icons/menu.svg")
@@ -89,34 +91,27 @@ const StyledHeader = styled.header`
   font-weight: 600;
   font-size: 16px;
   z-index: 10;
-  -webkit-box-shadow: -1px -3px 23px 10px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: -1px -3px 23px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: -1px -3px 23px 10px rgba(0, 0, 0,0.2);
+  ${dropShadow}
   transition: height 1s ease-in;
   @media screen and (max-width: 768px) {
     grid-template-areas: "logo burger" "nav nav";
-    .NavAnimation-enter{
-    opacity : 0;
-  
-  }
-  .NavAnimation-enter-active {
-    opacity : 1 ;
-  
-    transition : opacity 500ms ;
-  } 
-  .NavAnimation-exit {
-    opacity : 1;
-    
+    .NavAnimation-enter {
+      opacity: 0;
+    }
+    .NavAnimation-enter-active {
+      opacity: 1;
 
-  }
-  .NavAnimation-exit-active{
-    opacity : 0 ;
-   
-    transition : opacity 500ms ;
-  }
-  }
+      transition: opacity 500ms;
+    }
+    .NavAnimation-exit {
+      opacity: 1;
+    }
+    .NavAnimation-exit-active {
+      opacity: 0;
 
-  
+      transition: opacity 500ms;
+    }
+  }
 `
 
 const StyledNav = styled.nav`
@@ -147,8 +142,8 @@ const StyledNav = styled.nav`
 `
 const Brand = styled.img`
   grid-area: logo;
-  min-width :80px;
-  max-width : 300px;
+  min-width: 80px;
+  max-width: 300px;
   width: ${({ width }) => width};
   margin: auto 0 auto 3%;
   cursor: pointer;

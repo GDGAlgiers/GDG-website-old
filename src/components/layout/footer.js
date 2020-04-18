@@ -88,6 +88,7 @@ const StyledFooter = styled.footer`
   }
   .row1 {
     display: flex;
+    flex-wrap : wrap;
     width: 80%;
     justify-content: space-evenly;
     .content {
@@ -114,7 +115,7 @@ const StyledFooter = styled.footer`
           font-size: 100%;
           font-weight: 550;
           &:visited {
-            color : var(--blue)
+            color : var(--grey) ; 
           }
         }
       }
@@ -152,15 +153,15 @@ const StyledFooter = styled.footer`
 
   @media screen and (max-width: 768px) {
     .row1 {
-      flex-direction: column;
       width: 100%;
       .content {
         margin-bottom: 10%;
         align-items: center;
-        width: 100%;
+        justify-content : start;
+        width: 50%;
         flex-direction: column;
         p {
-          text-align: center;
+          text-align: left;
           margin-bottom: 5%;
           font-size: 100%;
         }
@@ -171,14 +172,13 @@ const StyledFooter = styled.footer`
         }
       }
       .social-media {
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
         justify-content: center;
         align-items: center;
         .sm {
           margin: 0;
           margin-left: 20px;
-          margin-top: 20px;
         }
       }
     }
