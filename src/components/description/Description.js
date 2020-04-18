@@ -65,7 +65,7 @@ const StatsHolder = styled.div`
 
 export default function Description({ id }) {
   return (
-    <Wrapper>
+    <Wrapper id="about">
       <DescDiv>
         <div>
           <BiggerH1>About</BiggerH1>

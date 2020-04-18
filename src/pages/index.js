@@ -17,9 +17,6 @@ const IndexPage = () => (
     <Events></Events>
     <Partners></Partners>
     {
-      // TODO : ADD PARTNERS SECTION with id : #partners
-      // TODO : ADD SPONSORS  SECTION with id : #sponsors
-      // TODO : ADD LOCATION (using iframe google maps)
       // TODO : ADD CONTACT US SECTION with id : #contact
       // TODO : ADD NEWSLETTER
     }

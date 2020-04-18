@@ -46,6 +46,7 @@ const Header = ({ siteTitle }) => {
         }}
       >
         <Brand
+          alt="brand"
           src={
             isSmallScreen
               ? require("../../images/icons/phonelogo.png")

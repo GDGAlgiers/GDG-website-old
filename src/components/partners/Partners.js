@@ -82,7 +82,7 @@ const Line = styled.div`
 const Partners = () => {
   return (
     <div>
-      <Wrapper>
+      <Wrapper id="partners">
         <BigTitle>Our community partners</BigTitle>
         <Flex style={{ marginBottom: "3vh" }}>
           <Line style={{ width: "30%", marginRight: "1vw" }}></Line>
@@ -90,7 +90,7 @@ const Partners = () => {
           <Line style={{ width: "5%" }}></Line>
         </Flex>
         <Flex style={{ justifyContent: "space-evenly" }}>{renderPartners}</Flex>
-        <Flex>
+        <Flex id="sponsors">
           <BigTitle>Our Sponsors</BigTitle>
         </Flex>
 
@@ -99,11 +99,11 @@ const Partners = () => {
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6397.405219325686!2d3.172649597364618!3d36.70568361550312!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e522f19b578df%3A0xd6e74be7191a6758!2sGDG%20Algiers!5e0!3m2!1sen!2sdz!4v1587142697549!5m2!1sen!2sdz"
         width="100%"
-        style={{ height: "50vh" }}
+        style={{ height: "50vh"  }}
         frameborder="0"
         allowfullscreen=""
         aria-hidden="false"
-        tabindex="0"
+        title="gdgmap"
       ></iframe>
     </div>
   )
