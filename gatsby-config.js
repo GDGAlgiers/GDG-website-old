@@ -19,13 +19,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gdg-website-2020`,
-        short_name: `gdg20`,
+        name: `gdg algiers 2020`,
+        short_name: `gdg-algiers20`,
         start_url: `/`,
-        background_color: `#000000`,
+        background_color: `#fafafa`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icons/phonelogo.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

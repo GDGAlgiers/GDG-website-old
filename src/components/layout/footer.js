@@ -1,53 +1,37 @@
 import React from "react"
 import styled from "styled-components"
-
+import {ExternalLink , Emoji} from '../common/utils';
 const Footer = () => (
   <StyledFooter>
     <div className="row1">
       <div className="content">
         <p>About</p>
         <div>
-          <p>WTM Algiers</p>
-          <p>Google Developers Group</p>
-          <p>Women Techmakers Algiers</p>
+          <ExternalLink url="https://www.wtm-algiers.tech/" text ="WTM Algiers"></ExternalLink>
+          <ExternalLink url="https://developers.google.com/community/gdg" text ="Google Developers Group"></ExternalLink>
+          <ExternalLink url="https://www.womentechmakers.com/" text ="Women Techmakers"></ExternalLink>
         </div>
       </div>
       <div className="content">
         <p>Information</p>
         <div>
-          <p>Join Us</p>
-          <p>Sponsorship</p>
-          <p>Submit Talk</p>
-          <p>Code of Conduct</p>
+        <ExternalLink url="#" text ="Join Us"></ExternalLink>
+          <ExternalLink url="#" text ="Sponsorship"></ExternalLink>
+          <ExternalLink url="#" text ="Submit Talk"></ExternalLink>
+          <ExternalLink url="#" text ="Code of Conduct"></ExternalLink>
         </div>
       </div>
       <div className="social-media">
         <p>Follow Us</p>
         <div className="sm">
-          <a>
-            <img
-              src={require("../../images/icons/instagram.svg")}
-              alt="facebook link"
-            />
-          </a>
-          
-          <a>
-            <img
-              src={require("../../images/icons/twitter.svg")}
-              alt="facebook link"
-            />
-          </a>
-          <a>
-            <img
-              src={require("../../images/icons/facebook.svg")}
-              alt="facebook link"
-            />
-          </a>
+          <ExternalLink url="https://www.instagram.com/gdg_algiers/" icon={require("../../images/icons/instagram.svg")} text="instagram"></ExternalLink>
+          <ExternalLink url="https://twitter.com/gdg_algiers"  icon={require("../../images/icons/twitter.svg")} text="twitter"></ExternalLink>
+          <ExternalLink url="https://www.facebook.com/GDGAlgiers/" icon={require("../../images/icons/facebook.svg")} text="facebook"></ExternalLink>
         </div>
       </div>
     </div>
     <div className="row2">
-      <h2>Made with ❤️ and ☕</h2>
+      <h2>Made with <Emoji data="❤️"></Emoji> and <Emoji data="☕"></Emoji></h2>
       <p>©️ GDG ALGIERS 2020</p>
     </div>
     <div className="row3">
@@ -56,6 +40,9 @@ const Footer = () => (
     </div>
   </StyledFooter>
 )
+
+
+
 
 const StyledFooter = styled.footer`
   width: 100vw;
@@ -81,6 +68,15 @@ const StyledFooter = styled.footer`
       margin: 0;
       color: white;
       font-family: inherit;
+    }
+    @media screen and (max-width: 768px) {
+      flex-direction : column;
+      justify-content : center;
+      h2 {
+        text-align  :center;
+        margin-bottom : 20px;
+      }
+      align-items : center;
     }
   }
   .row2 {
@@ -108,12 +104,18 @@ const StyledFooter = styled.footer`
         font-weight: 550;
       }
       div {
-        p {
+        a {
+          display: block;
+          cursor : pointer;
+          text-decoration : none;
           margin-bottom: 10px;
           color: var(--grey-dark);
           font-family: inherit;
           font-size: 100%;
           font-weight: 550;
+          &:visited {
+            color : var(--blue)
+          }
         }
       }
     }
@@ -163,7 +165,7 @@ const StyledFooter = styled.footer`
           font-size: 100%;
         }
         div {
-          p {
+          a {
             text-align: center;
           }
         }
