@@ -1,31 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
 import { bounce } from "../common/animation/animations"
-const LightBlueBox = (
-  <Box
-    color="#8CD5FF"
-    id="box1"
-    className="box"
-    transform={css`
-      transform: translateX(-100vw) translateY(200px) rotateZ(-90deg);
-    `}
-    mountAnimation={css`
-      transform-origin: left bottom;
-      animation: shoot1 1s 4.2s ease-out forwards 1;
-      @keyframes shoot1 {
-        from {
-          transform: translateX(-100vw) translateY(200px) rotateZ(-90deg);
-        }
-        to {
-          transform: translateX(0px) translateY(0) rotateZ(0deg);
-        }
-      }
-    `}
-  >
-    <img src={require("../../images/icons/icon2.svg")} alt="" />
-  </Box>
-)
-
 export default function AnimatedBoxes() {
   return (
     <Boxes>
