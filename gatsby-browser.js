@@ -10,6 +10,11 @@ exports.wrapPageElement = ({ element, props }) => {
 
 exports.onInitialClientRender = () => {
     setTimeout(function() {
-      document.getElementById("___loader").style.display = "none"
-    }, 200)
+      let element = document.getElementById("___loader");
+      element.style.transition ="opacity 0.5s ease"
+      element.style.opacity ="0"
+      setTimeout(()=>{
+        element.style.display = "none"
+      },1000)
+    }, 0);
 }

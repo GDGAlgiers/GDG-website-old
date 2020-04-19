@@ -13,7 +13,7 @@ const links = [
   <Link to="/#contact"> Contact </Link>,
 ]
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const [isNavVisible, setNavVisible] = useState(false)
   const toggleNav = () => {
     setNavVisible(!isNavVisible)
@@ -189,13 +189,5 @@ const Menu = styled.button`
     display: block;
   }
 `
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

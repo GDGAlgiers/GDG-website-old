@@ -25,7 +25,7 @@ export default function HTML(props) {
           id="___loader"
           style={{
             alignItems: "center",
-            backgroundColor: "#fafafa",
+            backgroundColor: "#ffffff",
             display: "flex",
             flexDirection : "column",
             justifyContent: "center",
