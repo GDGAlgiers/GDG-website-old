@@ -35,6 +35,7 @@ const Form = () => (
   </div>
 )
 const StyledForm = styled.form`
+  font-family: var(--font);
   input[type="text"],
   textarea,
   input[type="email"] {
@@ -54,7 +55,7 @@ const StyledForm = styled.form`
 
   .textarea {
     height: 16vw;
-    padding-top: 2vw;
+    padding-top: 6vw;
   }
 
   input:focus,
@@ -79,7 +80,7 @@ const StyledForm = styled.form`
     margin-bottom: 1vw;
   }
 
-  @media (max-width: 650px) {
+  @media (max-width: 768px) {
     input[type="text"],
     input[type="email"] {
       height: 8vw;
@@ -92,11 +93,11 @@ const StyledForm = styled.form`
 
     .textarea {
       height: 35vw;
-      padding-top: 6vw;
+      padding-top: 8vw;
     }
 
     .contact-form {
-      width: 60vw;
+      width: 80vw;
       height: 80vw;
       font-size: 3vw;
     }
@@ -119,7 +120,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   margin-top: 1vw;
   border-radius: 3vw;
-  @media (max-width: 650px) {
+  @media (max-width: 768px) {
     height: 8vw;
     border-radius: 5vw;
   }

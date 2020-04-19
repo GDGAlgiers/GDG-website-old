@@ -3,6 +3,8 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import Landing from "../components/landing/landing"
 import Events from "../components/events/Events"
+import Contact from "../components/contact/contactUs.js"
+import ContactUS from "../components/contact/contactUs.js"
 
 // example of using styled components ( writing CSS-in-JS )
 
@@ -11,6 +13,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Landing></Landing>
     <Events></Events>
+    <Contact></Contact>
     {
       // TODO : ADD ABOUT SECTION with id : #about
       // TODO : ADD EVENTS SECTION with id : #events

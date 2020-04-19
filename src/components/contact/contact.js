@@ -44,13 +44,15 @@ const Contact = () => (
   </StyledDiv>
 )
 const StyledDiv = styled.div`
-  width: 22vw;
-  height: 26vw;
+  font-family: var(--font);
+  max-width: 28vw;
+  height: auto;
+
   background-color: #f8f8f8;
   border-radius: 0.5vw;
   margin-bottom: 14vw;
   padding-top: 2.2vw;
-  margin-left: 20vw;
+
   color: #212121;
 
   .row {
@@ -70,12 +72,12 @@ const StyledDiv = styled.div`
     clear: both;
   }
   .title {
-    font-size: 1.2rem;
-    margin-bottom: 0vw;
+    font-size: 1.6rem;
+    margin-bottom: 0.6vw;
   }
   .info {
-    font-size: 0.6rem;
-    margin-bottom: 0vw;
+    font-size: 0.8rem;
+    margin-bottom: 0.2vw;
   }
   .br {
     display: block;
@@ -100,15 +102,15 @@ const StyledDiv = styled.div`
   .img2 {
     width: 3vw;
   }
-  @media (max-width: 750px) {
-    width: 60vw;
-    height: 70vw;
+  @media (max-width: 768px) {
+    max-width: 60vw;
+    height: auto;
     background-color: #ffff;
     margin-bottom: 14vw;
     padding-top: 7vw;
     padding-left: 4vw;
     margin-left: 20vw;
-
+    font-family: Roboto;
     .row {
       height: 10vw;
     }
@@ -120,11 +122,11 @@ const StyledDiv = styled.div`
       height: 22vw;
     }
     .title {
-      font-size: 6vw;
+      font-size: 1.6rem;
       margin-bottom: 2vw;
     }
     .info {
-      font-size: 3vw;
+      font-size: 0.8rem;
     }
     .br {
       display: block;
