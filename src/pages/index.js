@@ -9,7 +9,7 @@ import Partners from "../components/partners/Partners"
 // example of using styled components ( writing CSS-in-JS )
 
 const IndexPage = () => (
-  <Layout>
+    <>
     <SEO title="Home" />
     <Landing></Landing>
     <Description></Description>
@@ -20,7 +20,7 @@ const IndexPage = () => (
       // TODO : ADD CONTACT US SECTION with id : #contact
       // TODO : ADD NEWSLETTER
     }
-  </Layout>
+ </>
 )
 
 export default IndexPage

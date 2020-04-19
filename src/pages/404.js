@@ -7,14 +7,14 @@ import Button from '../components/common/button/GDGButton'
 import {navigate} from 'gatsby'
 import {Emoji} from "../components/common/utils" 
 const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
+  <>
+    <SEO title="Not found" />
     <NotFoundWrapper>
      <img src={require('../images/404.webp')} width="40%"></img>
       <h2>We could'nt find the page you are looking for <Emoji data="🥺"></Emoji></h2>
       <Button title="TAKE ME BACK" outlined={true} onClick={()=> navigate("/")}></Button>
     </NotFoundWrapper>
-  </Layout>
+  </>
 )
 
 const NotFoundWrapper = styled.div`

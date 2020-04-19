@@ -37,7 +37,6 @@ const Wrapper = styled.section`
     }
     .matter:hover {
       border-bottom: 5px solid var(--yellow);
-     opacity : 0;
     }
   }
 
