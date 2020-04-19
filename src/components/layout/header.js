@@ -33,6 +33,7 @@ const Header = ({ siteTitle }) => {
   const handleMediaQueryChange = mediaQuery => {
     if (mediaQuery.matches) {
       setIsSmallScreen(true)
+      
     } else {
       setIsSmallScreen(false)
     }
@@ -93,6 +94,17 @@ const StyledHeader = styled.header`
   z-index: 10;
   ${dropShadow}
   transition: height 1s ease-in;
+  transform : translateY(-10vh);
+  animation : drop 0.5s ease-in forwards ;
+  @keyframes drop {
+    from{
+      transform : translateY(-10vh);
+    }
+    to{
+      transform : translateY(0)
+    }
+  }
+  
   @media screen and (max-width: 768px) {
     grid-template-areas: "logo burger" "nav nav";
     .NavAnimation-enter {
