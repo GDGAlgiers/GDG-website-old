@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import {ExternalLink , Emoji} from '../common/utils';
+import {ExternalLink } from '../common/utils';
 import {navigate} from 'gatsby'
+import {emojis} from '../common/images';
 const Footer = () => (
   <StyledFooter>
     <div className="row1">
@@ -32,7 +33,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="row2">
-      <h2>Made with <Emoji data="❤️"></Emoji> and <Emoji data="☕"></Emoji></h2>
+      <h2>Made with {emojis.HeartEmoji} and  {emojis.CoffeeEmoji}</h2>
       <p>©️ GDG ALGIERS 2020</p>
     </div>
     <div className="row3">

@@ -1,17 +1,15 @@
 import React from "react"
-
-import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import styled from "styled-components";
 import Button from '../components/common/button/GDGButton'
 import {navigate} from 'gatsby'
-import {Emoji} from "../components/common/utils" 
+import {emojis}from '../components/common/images'
 const NotFoundPage = () => (
   <>
     <SEO title="Not found" />
     <NotFoundWrapper>
      <img src={require('../images/404.webp')} width="40%"></img>
-      <h2>We could'nt find the page you are looking for <Emoji data="🥺"></Emoji></h2>
+<h2>We could'nt find the page you are looking for {emojis.SadFaceEmoji}</h2>
       <Button title="TAKE ME BACK" outlined={true} onClick={()=> navigate("/")}></Button>
     </NotFoundWrapper>
   </>

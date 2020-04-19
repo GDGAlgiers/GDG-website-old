@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { CSSTransition } from "react-transition-group"
 import { dropShadow } from "../common/effects"
-
+import {logos , Menu as m} from '../common/images';
 const links = [
   <Link to="/#about"> About </Link>,
   <Link to="/#events"> Events </Link>,
@@ -32,6 +32,7 @@ const Header = () => {
 
   const handleMediaQueryChange = mediaQuery => {
     if (mediaQuery.matches) {
+      setNavVisible(false)
       setIsSmallScreen(true)
       
     } else {
@@ -51,8 +52,8 @@ const Header = () => {
           alt="brand"
           src={
             isSmallScreen
-              ? require("../../images/icons/phonelogo.png")
-              : require("../../images/gdg_algiers.png")
+              ? logos.PhoneGDGLogo
+              : logos.GDGLogo
           }
           width={isSmallScreen ? "10vw" : "18vw"}
         ></Brand>
@@ -71,8 +72,8 @@ const Header = () => {
           alt="menu"
           src={
             !isNavVisible
-              ? require("../../images/icons/menu.svg")
-              : require("../../images/icons/close.svg")
+              ? m.menu
+              : m.close
           }
         ></img>
       </Menu>

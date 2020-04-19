@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
+import {BoxIcons} from '../common/images'
 import { bounce } from "../common/animation/animations"
 export default function AnimatedBoxes() {
   return (
@@ -7,7 +8,7 @@ export default function AnimatedBoxes() {
       <BoxRow>
         <Box
           color="#8CD5FF"
-          id="box1"
+          id="light-blue"
           className="box"
           transform={css`
             transform: translateX(-100vw) translateY(200px) rotateZ(-90deg);
@@ -25,13 +26,13 @@ export default function AnimatedBoxes() {
             }
           `}
         >
-          <img src={require("../../images/icons/icon2.svg")} alt="" />
+          <img src={BoxIcons.icon2} alt="light-blue" />
         </Box>
       </BoxRow>
       <BoxRow>
         <Box
           color="#FFAA9C"
-          id="box2"
+          id="light-red"
           className="box"
           transform={css`
             transform: translateX(-100vw) translateY(-200px) rotateZ(-90deg);
@@ -49,11 +50,11 @@ export default function AnimatedBoxes() {
             }
           `}
         >
-          <img src={require("../../images/icons/cross.svg")} alt="" />
+          <img src={BoxIcons.cross} alt="light-red" />
         </Box>
         <Box
           color="#0D9D58"
-          id="box3"
+          id="green"
           className="box"
           transform={css`
             transform: translateX(-100vw) translateY(400px) rotateZ(-90deg);
@@ -71,13 +72,13 @@ export default function AnimatedBoxes() {
             }
           `}
         >
-          <img src={require("../../images/icons/losange.svg")} alt="" />
+          <img src={BoxIcons.losange} alt="green" />
         </Box>
       </BoxRow>
       <BoxRow>
         <Box
           color="#212121"
-          id="box4"
+          id="black"
           className="box"
           transform={css`
             transform: translateX(-100vw) translateY(-400px) rotateZ(90deg);
@@ -95,11 +96,11 @@ export default function AnimatedBoxes() {
             }
           `}
         >
-          <img src={require("../../images/icons/arrow.svg")} alt="" />
+          <img src={BoxIcons.arrow} alt="black" />
         </Box>
         <Box
           color="#EA4334"
-          id="box5"
+          id="red"
           className="box"
           transform={css`
             transform: translateX(0px) translateY(-100vh) rotateZ(40deg);
@@ -117,12 +118,12 @@ export default function AnimatedBoxes() {
             }
           `}
         >
-          <img src={require("../../images/icons/triangle.svg")} alt="" />
+          <img src={BoxIcons.triangle} alt="red" />
         </Box>
         <Box
        
           color="#7DE9D0"
-          id="box6"
+          id="light-green"
           className="box"
           transform={css`
             transform: translateX(100vw) translateY(400px) rotateZ(90deg);
@@ -140,13 +141,13 @@ export default function AnimatedBoxes() {
             }
           `}
         >
-          <img src={require("../../images/icons/plus.svg")} alt="" />
+          <img src={BoxIcons.plus} alt="light-green" />
         </Box>
       </BoxRow>
       <BoxRow>
         <Box
           color="#F2E877"
-          id="box7"
+          id="light-yellow"
           className="box"
           transform={css`
             transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
@@ -164,11 +165,11 @@ export default function AnimatedBoxes() {
             }
           `}
         >
-          <img src={require("../../images/icons/icon1.svg")} alt="" />
+          <img src={BoxIcons.icon1} alt="light-yellow" />
         </Box>
         <Box
           color="#4285F4"
-          id="box8"
+          id="blue"
           className="box"
           transform={css`
             transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
@@ -178,11 +179,11 @@ export default function AnimatedBoxes() {
             animation: shoot7 1s 1s ease-out forwards 1;
           `}
         >
-          <img src={require("../../images/icons/icon3.svg")} alt="" />
+          <img src={BoxIcons.icon3} alt="blue" />
         </Box>
         <Box
           color="#E0E0E0"
-          id="box9"
+          id="grey"
           className="box"
           transform={css`
             transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
@@ -192,11 +193,11 @@ export default function AnimatedBoxes() {
             animation: shoot7 1s 0.5s ease-out forwards 1;
           `}
         >
-          <img src={require("../../images/icons/percentage.svg")} alt="" />
+          <img src={BoxIcons.percentage} alt="grey" />
         </Box>
         <Box
           color="#FCBC05"
-          id="box10"
+          id="yellow"
           className="box"
           transform={css`
             transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
@@ -206,7 +207,7 @@ export default function AnimatedBoxes() {
             animation: shoot7 1s ease-out forwards 1;
           `}
         >
-          <img src={require("../../images/icons/dots.svg")} alt="" />
+          <img src={BoxIcons.dots} alt="yellow" />
         </Box>
       </BoxRow>
     </Boxes>

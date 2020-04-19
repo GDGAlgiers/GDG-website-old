@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import Landing from "../components/landing/landing"
 import Events from "../components/events/Events"
