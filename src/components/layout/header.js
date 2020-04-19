@@ -159,6 +159,16 @@ const Brand = styled.img`
   width: ${({ width }) => width};
   margin: auto 0 auto 3%;
   cursor: pointer;
+  opacity : 0;
+  animation : fadeInBrand 0.5s 1s ease forwards ; 
+  @keyframes fadeInBrand {
+    from {
+      opacity : 0
+    }
+    to {
+      opacity : 1;
+    }
+  } 
 `
 
 const Menu = styled.button`

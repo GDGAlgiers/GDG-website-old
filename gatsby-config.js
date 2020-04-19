@@ -3,6 +3,7 @@ module.exports = {
     title: `GDG Algiers`,
     description: `The official website for the GDG Algiers community`,
     author: `@GDG_ALGIERS`,
+    url:"https://www.gdgalgiers.com",
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -22,14 +23,13 @@ module.exports = {
         name: `gdg algiers 2020`,
         short_name: `gdg-algiers20`,
         start_url: `/`,
-        background_color: `#fafafa`,
-        theme_color: `#663399`,
+        background_color: `#ffffff`,
+        theme_color: `#fafafa`,
         display: `minimal-ui`,
         icon: `src/images/icons/phonelogo.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    
+     `gatsby-plugin-offline`,
   ],
 }
