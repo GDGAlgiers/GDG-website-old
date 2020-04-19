@@ -16,11 +16,6 @@ export default function HTML(props) {
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
         <div
-          key={`body`}
-          id="___gatsby"
-          dangerouslySetInnerHTML={{ __html: props.body }}
-        />
-         <div
           key={`loader`}
           id="___loader"
           style={{
@@ -40,6 +35,12 @@ export default function HTML(props) {
           <img width="100px" src ={require('./images/icons/phonelogo.png')} style={{margin : 0}} />
           <img width="100px" src ={require('./images/icons/loading.gif')} />
         </div>
+        <div
+          key={`body`}
+          id="___gatsby"
+          dangerouslySetInnerHTML={{ __html: props.body }}
+        />
+        
         {props.postBodyComponents}
       </body>
     </html>

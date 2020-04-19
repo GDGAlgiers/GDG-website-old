@@ -125,16 +125,8 @@ const Canvas = styled.div`
     top: -3vh;
     min-height: 60%;
   }
-  opacity : 0;
-  animation : fadeIn 1s 2s ease forwards;
-    @keyframes fadeIn {
-      from {
-        opacity : 0;
-      }
-      to{
-        opacity : 1;
-      }
-    }
+  opacity :1;
+ 
 `
 
 export default function Landing({ id }) {
