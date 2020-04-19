@@ -1,7 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
 import { bounce } from "../common/animation/animations"
-
 const LightBlueBox = (
   <Box
     color="#8CD5FF"
@@ -75,10 +74,10 @@ export default function AnimatedBoxes() {
             }
           `}
         >
-          <img src={require("../../images/icons/icon2.svg")} alt="" />
+          <img src={require("../../images/icons/cross.svg")} alt="" />
         </Box>
         <Box
-          color="#7DE9D0"
+          color="#0D9D58"
           id="box3"
           className="box"
           transform={css`
@@ -97,7 +96,7 @@ export default function AnimatedBoxes() {
             }
           `}
         >
-          <img src={require("../../images/icons/icon2.svg")} alt="" />
+          <img src={require("../../images/icons/losange.svg")} alt="" />
         </Box>
       </BoxRow>
       <BoxRow>
@@ -121,7 +120,7 @@ export default function AnimatedBoxes() {
             }
           `}
         >
-          <img src={require("../../images/icons/icon2.svg")} alt="" />
+          <img src={require("../../images/icons/arrow.svg")} alt="" />
         </Box>
         <Box
           color="#EA4334"
@@ -143,10 +142,11 @@ export default function AnimatedBoxes() {
             }
           `}
         >
-          <img src={require("../../images/icons/icon2.svg")} alt="" />
+          <img src={require("../../images/icons/triangle.svg")} alt="" />
         </Box>
         <Box
-          color="#0D9D58"
+       
+          color="#7DE9D0"
           id="box6"
           className="box"
           transform={css`
@@ -165,7 +165,7 @@ export default function AnimatedBoxes() {
             }
           `}
         >
-          <img src={require("../../images/icons/icon2.svg")} alt="" />
+          <img src={require("../../images/icons/plus.svg")} alt="" />
         </Box>
       </BoxRow>
       <BoxRow>
@@ -217,7 +217,7 @@ export default function AnimatedBoxes() {
             animation: shoot7 1s 0.5s ease-out forwards 1;
           `}
         >
-          <img src={require("../../images/icons/icon2.svg")} alt="" />
+          <img src={require("../../images/icons/percentage.svg")} alt="" />
         </Box>
         <Box
           color="#FCBC05"
@@ -231,7 +231,7 @@ export default function AnimatedBoxes() {
             animation: shoot7 1s ease-out forwards 1;
           `}
         >
-          <img src={require("../../images/icons/icon2.svg")} alt="" />
+          <img src={require("../../images/icons/dots.svg")} alt="" />
         </Box>
       </BoxRow>
     </Boxes>
