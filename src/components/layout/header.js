@@ -107,6 +107,15 @@ const StyledHeader = styled.header`
   }
   
   @media screen and (max-width: 768px) {
+    animation : drop 2.5s linear forwards ;
+    @keyframes drop {
+    from{
+      transform : translateY(-100vh);
+    }
+    to{
+      transform : translateY(0)
+    }
+  }
     grid-template-areas: "logo burger" "nav nav";
     .NavAnimation-enter {
       opacity: 0;

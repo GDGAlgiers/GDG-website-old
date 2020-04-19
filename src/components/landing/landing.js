@@ -84,7 +84,7 @@ const Buttons = styled.div`
     }
   }
   transform : translateY(-100vh);
-  animation : enterandbounce 1s 2s ease forwards;
+  animation : enterandbounce 2s 2s ease forwards;
     @keyframes enterandbounce {
       0% {
         transform : translateY(-100vh)
@@ -93,7 +93,7 @@ const Buttons = styled.div`
         transform : translateY(0%)
       }
       80%{
-        transform : translateY(-3vh)
+        transform : translateY(-1vh)
       }
       100%{
         transform : translateY(0%)
