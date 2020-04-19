@@ -25,8 +25,10 @@ export default function HTML(props) {
           id="___loader"
           style={{
             alignItems: "center",
+
             backgroundColor: "#F2F2F2",
             display: "flex",
+            flexDirection : "column",
             justifyContent: "center",
             position: "absolute",
             left: 0,
@@ -36,7 +38,8 @@ export default function HTML(props) {
             zIndex: 1,
           }}
         >
-          <img width="100px" src ={require('./images/icons/phonelogo.png')}/>
+          <img width="100px" src ={require('./images/icons/phonelogo.png')} style={{margin : 0}} />
+          <img width="100px" src ={require('./images/icons/loading.gif')} />
         </div>
         {props.postBodyComponents}
       </body>
