@@ -46,7 +46,7 @@ GDGLogo , PhoneGDGLogo
 const HeartEmoji = <span role="img" >❤️</span>
 const CoffeeEmoji = <span role="img">☕</span>
 const SadFaceEmoji = <span role="img">🥺</span>
-
+const WinkFaceEmoji = <span role="img">😉</span>
 const emojis = {
     HeartEmoji,
     CoffeeEmoji,

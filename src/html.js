@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-
+import {logos} from './components/common/images'
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
@@ -15,6 +15,7 @@ export default function HTML(props) {
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
+
         <div
           key={`loader`}
           id="___loader"
@@ -22,7 +23,7 @@ export default function HTML(props) {
             alignItems: "center",
             backgroundColor: "#ffffff",
             display: "flex",
-            flexDirection : "column",
+            flexDirection: "column",
             justifyContent: "center",
             position: "absolute",
             left: 0,
@@ -32,15 +33,25 @@ export default function HTML(props) {
             zIndex: 1,
           }}
         >
-          <img width="100px" src ={require('./images/icons/phonelogo.png')} style={{margin : 0}} />
-          <img width="100px" src ={require('./images/icons/loading.gif')} />
+          <img
+            width="100px"
+            src={logos.PhoneGDGLogo}
+            style={{ margin: 0 }}
+          />
+         <p style={{
+           fontSize : 18,
+           fontFamily : 'sans-serif',
+           margin : 0,
+           opacity : 0.5
+         }}>Epicness is on the way</p>
         </div>
+
         <div
           key={`body`}
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
-        
+
         {props.postBodyComponents}
       </body>
     </html>

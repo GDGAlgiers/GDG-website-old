@@ -12,13 +12,17 @@ const Wrapper = styled.section`
   background-color: white;
   .landing-title {
     font-size: 5rem;
-    animation : enter 1s ease forwards;
+    animation : enter 0.5s ease forwards;
+    transform : translateX(-50vw);
+    opacity : 0;
     @keyframes enter {
       from {
-        transform : translateX(-100%);
+        opacity : 0;
+        transform : translateX(-50vw);
       }
       to{
-        transform : translateX(0%)
+        opacity : 1;
+        transform : translateX(0%);
       }
     }
     .matter {
