@@ -20,7 +20,7 @@ const BiggerH1 = styled.h1`
 const HeroCard = styled.div`
   width: 100vw;
   height: 40vh;
-  background-image: ${props => `url("${props.img}")`};
+  background-image: ${props => `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("${props.img}");`};
   background-position: center;
   background-size: cover;
   display: grid;

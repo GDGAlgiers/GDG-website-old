@@ -23,10 +23,13 @@ const StyledDiv = styled.div`
   input[type="email"] {
     height: 3vw;
     width: 26vw;
+    outline-color : var(--green);
     border: solid 1px #ea4334;
     color: #9d9c9c;
     padding-left: 1vw;
     vertical-align: middle;
+    border-top-left-radius : 5px;
+    border-bottom-left-radius : 5px;
   }
   .title {
     font-size: 3rem;
@@ -43,6 +46,7 @@ const StyledDiv = styled.div`
     input[type="email"] {
       height: 8vw;
       width: 100%;
+      outline-color : none;
       border: solid 1px #ea4334;
       color: #9d9c9c;
       padding-left: 4vw;
@@ -67,6 +71,10 @@ const StyledButton = styled.button`
   color: #ffff;
   background-color: #ea4334;
   border: none;
+  border-top-right-radius : 5px;
+    border-bottom-right-radius : 5px;
+  cursor : pointer;
+  outline : none;
   vertical-align: middle;
   @media (max-width: 768px) {
     height: 8vw;

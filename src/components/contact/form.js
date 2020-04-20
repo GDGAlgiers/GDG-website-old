@@ -21,6 +21,7 @@ const Form = () => (
           <textarea
             className="textarea"
             name="message"
+            rows="5"
             placeholder="Type something..."
             id="message"
           />
@@ -41,11 +42,16 @@ const StyledForm = styled.form`
   input[type="email"] {
     width: 100%;
     padding-left: 2vw;
+    font-size : 20px;
     border: solid 2px #e0e0e0;
     background-color: #ffffff;
     resize: none;
     color: #9d9c9c;
     border-radius: 0.5vw;
+    transition : border-color 1s ease;
+    &:focus{
+      border-color : var(--green);
+    }
   }
 
   input[type="text"],
@@ -55,7 +61,7 @@ const StyledForm = styled.form`
 
   .textarea {
     height: 16vw;
-    padding-top: 6vw;
+    padding-top: 1vw;
   }
 
   input:focus,
@@ -93,7 +99,7 @@ const StyledForm = styled.form`
 
     .textarea {
       height: 35vw;
-      padding-top: 8vw;
+      padding-top: 1vw;
     }
 
     .contact-form {
@@ -115,6 +121,7 @@ const StyledButton = styled.button`
   border: none;
   background-color: #0d9d58;
   font-family: Montserrat;
+  font-size : 20px;
   text-align: center;
   color: #ffffff;
   cursor: pointer;

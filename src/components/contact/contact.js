@@ -5,7 +5,7 @@ const Contact = () => (
     <div className="row">
       <div className="img-container">
         <img
-          className="img2"
+          className="img2 animated-wigle"
           src={require("../../images/icons/ic-email-48-px.svg")}
         ></img>
       </div>
@@ -16,7 +16,7 @@ const Contact = () => (
     </div>
     <div className="row2">
       <div className="img-container">
-        <img className="img2" src={require("../../images/icons/gps.svg")}></img>
+        <img className="img2 animated-wigle" src={require("../../images/icons/gps.svg")}></img>
       </div>
       <div className="info-container">
         <p className="title">Adresse</p>
@@ -32,7 +32,7 @@ const Contact = () => (
     <div className="row">
       <div className="img-container-cl">
         <img
-          className="img1"
+          className="img1 animated-wigle"
           src={require("../../images/icons/call.svg")}
         ></img>
       </div>
@@ -92,6 +92,23 @@ const StyledDiv = styled.div`
     float: left;
   }
 
+  .animated-wigle {
+    &:hover {
+      animation : wigle 1s alternate infinite linear ; 
+    @keyframes wigle {
+      0%{
+        transform : rotateZ(-10deg);
+      }
+      50%{
+        transform : rotateZ(0deg);
+      }
+      100% {
+        transform : rotateZ(10deg);
+      }
+    }
+    }
+    
+  }
   .img-container-cl {
     margin-left: 1vw;
     float: left;
@@ -101,6 +118,7 @@ const StyledDiv = styled.div`
   }
   .img2 {
     width: 3vw;
+   
   }
   @media (max-width: 768px) {
     max-width: 60vw;
@@ -138,6 +156,7 @@ const StyledDiv = styled.div`
     .info-container {
       padding-top: 1vw;
       margin-left: 4vw;
+      margin-bottom : 20px;
       float: left;
     }
 

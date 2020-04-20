@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-
+import {ExternalLink} from '../common/utils'
 const Wrapper = styled.section`
   width: 100%;
   padding: 5vh;
@@ -33,7 +33,7 @@ const sponsors = [
 
 const GreyImg = styled.img`
   filter: grayscale(100%);
-  max-width: 30vw;
+  max-width: 300px;
   object-fit: contain;
   padding: 0 1vw;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
@@ -41,7 +41,7 @@ const GreyImg = styled.img`
     filter: none;
   }
   @media screen and (max-width: 768px) {
-    max-width: 80vw;
+    max-width: 50vw;
   }
 `
 
@@ -49,6 +49,7 @@ const renderPartners = partners.map(featuredin => (
   <GreyImg
     src={require(`../../images/partners/${featuredin.img}`)}
     alt={featuredin.alt}
+    width={`${100/partners.length}%`}
   ></GreyImg>
 ))
 

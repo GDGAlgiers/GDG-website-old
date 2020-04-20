@@ -5,7 +5,7 @@ import Form from "./form.js"
 import NewsLetter from "./newsLetter.js"
 
 const ContactUS = () => (
-  <StyledSection>
+  <StyledSection id="contact">
     <BigTitle>Contact us</BigTitle>
     <div className="wrapper">
       <div className="discription">
@@ -34,7 +34,8 @@ const ContactUS = () => (
   </StyledSection>
 )
 const StyledSection = styled.div`
-  margin-left: 8%;
+    margin: 0 auto;
+    width: 90%;
   .form {
     float: left;
     width: 38%;
@@ -51,6 +52,15 @@ const StyledSection = styled.div`
     width: 12%;
     margin-left: 6%;
     padding-top: 5vw;
+    animation : floating 2s alternate infinite ease-out ; 
+    @keyframes floating {
+      from{
+        transform : translateY(0);
+      }
+      to {
+        transform : translateY(-3vh);
+      }
+    }
   }
   .wrapper:after {
     content: "";
