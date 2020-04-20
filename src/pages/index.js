@@ -3,8 +3,7 @@ import SEO from "../components/layout/seo"
 import Landing from "../components/landing/landing"
 import Events from "../components/events/Events"
 
-import ContactUS from "../components/contact/contactUs.js"
-
+import ContactUS from "../components/contact/ContactUs"
 import Description from "../components/description/Description"
 import Featured from "../components/featured/Featured"
 import Partners from "../components/partners/Partners"
