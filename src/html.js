@@ -33,7 +33,7 @@ export default function HTML(props) {
             zIndex: 1,
           }}
         >
-          <img width="100px" src={logos.PhoneGDGLogo} style={{ margin: 0 }} />
+          <img width="200px" height="200px" src={logos.PhoneGDGLogo} style={{ margin: 0 }} />
           <p
             style={{
               fontSize: 18,

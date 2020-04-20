@@ -9,6 +9,7 @@ exports.wrapPageElement = ({ element, props }) => {
 
 
 exports.onInitialClientRender = () => {
+   
     setTimeout(function() {
       let element = document.getElementById("___loader");
       element.style.transition ="opacity 0.5s ease"
@@ -17,4 +18,13 @@ exports.onInitialClientRender = () => {
         element.style.display = "none"
       },500)
     }, 200);
+}
+exports.onServiceWorkerUpdateReady = () => {
+  const answer = window.confirm(
+    `This application has been updated. ` +
+      `Reload to display the latest version?`
+  )
+  if (answer === true) {
+    window.location.reload()
+  }
 }

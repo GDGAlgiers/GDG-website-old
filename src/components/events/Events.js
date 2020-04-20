@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react"
+import React, {  useState, useEffect } from "react"
 import EventCard from "./eventCard"
 import EventMobileCard from "./eventMobileCard"
 import styled from "styled-components"
@@ -6,8 +6,6 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import GDGBtn from "../common/button/GDGButton"
-import Header from "../layout/header"
-
 const events = [
   {
     title: "GDG School",
@@ -67,11 +65,7 @@ const events = [
   },
 ]
 
-const SlideGrid = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-`
+
 
 const renderEvents = events.map(event => (
   <EventCard height="60vh" event={event} key={event.title}></EventCard>

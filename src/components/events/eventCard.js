@@ -116,7 +116,6 @@ const locationStyle = {
 }
 export default class EventCard extends Component {
   render() {
-    const event = this.props.event
     return (
       <Card height={this.props.height}>
         <BackImg className="backImg" img={this.props.event.img}></BackImg>

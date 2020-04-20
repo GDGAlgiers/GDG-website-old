@@ -34,8 +34,6 @@ const GDGBtn = styled.button`
     transition: background-image 0.2s ease-in-out;
   }
 `
-const rippleColor = props =>
-  props.outlined ? "rgba(125, 233, 208, 0.25)" : "rgba(13, 157, 88, 0.25)"
 export class GDGButon extends Component {
   render() {
     return (

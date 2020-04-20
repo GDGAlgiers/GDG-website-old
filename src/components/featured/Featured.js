@@ -44,7 +44,6 @@ const GreyImg = styled.img`
 
 const renderFeatures = features.map(featuredin => (
   <GreyImg
-    loading="lazy"
     src={featuredin.img}
     alt={featuredin.alt}
   ></GreyImg>
