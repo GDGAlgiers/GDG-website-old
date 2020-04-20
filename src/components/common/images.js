@@ -15,10 +15,13 @@ import triangle from '../../images/icons/triangle.svg'
 /// menu icons 
 import close from '../../images/icons/close.svg'
 import menu from '../../images/icons/menu.svg'
+// featured in
 
+import hive from '../../images/featured_in/hive.png';
+import radio from '../../images/featured_in/radio.png';
 
 import React from 'react';
-
+import loading from "../../images/icons/loading.svg"
 const Menu= {
     menu,
     close
@@ -36,10 +39,13 @@ const BoxIcons = {
  triangle 
 } 
 const logos = {
-GDGLogo , PhoneGDGLogo
+GDGLogo , PhoneGDGLogo,loading
 }
 
-
+const featuredIn = {
+    hive,
+    radio
+}
 
 
 /// used emojis
@@ -56,5 +62,6 @@ export {
     logos , 
     BoxIcons ,
     Menu ,
-    emojis
+    emojis,
+    featuredIn
 }

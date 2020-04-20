@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {logos} from './components/common/images'
+import { logos } from "./components/common/images"
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
@@ -33,19 +33,21 @@ export default function HTML(props) {
             zIndex: 1,
           }}
         >
-          <img
-            width="100px"
-            src={logos.PhoneGDGLogo}
-            style={{ margin: 0 }}
-          />
-         <p style={{
-           fontSize : 18,
-           fontFamily : 'sans-serif',
-           margin : 0,
-           opacity : 0.5
-         }}>Epicness is on the way</p>
+          <img width="100px" src={logos.PhoneGDGLogo} style={{ margin: 0 }} />
+          <p
+            style={{
+              fontSize: 18,
+              fontFamily: "sans-serif",
+              margin: 0,
+              opacity: 0.5,
+            }}
+          >
+            Epicness is on the way
+          </p>
+         <img src={logos.loading} width="100px" style={{ margin:"0 auto" , fontFamily:"sans-serif" , color:"#fafafa" , fontSize:14}} alt="loading..."></img>
         </div>
 
+ 
         <div
           key={`body`}
           id="___gatsby"

@@ -15,6 +15,6 @@ exports.onInitialClientRender = () => {
       element.style.opacity ="0"
       setTimeout(()=>{
         element.style.display = "none"
-      },1000)
-    }, 0);
+      },500)
+    }, 200);
 }
