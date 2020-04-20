@@ -38,7 +38,9 @@ const Footer = () => (
     </div>
     <div className="row3">
       <h2>Intrested in sponsoring GDG Algiers ?</h2>
-      <StyledButton onClick={e=> navigate("#")}>GET IN TOUCH</StyledButton>
+      <StyledButton onClick={e=>{
+        e.preventDefault()
+        navigate("#")}}>GET IN TOUCH</StyledButton>
     </div>
   </StyledFooter>
 )

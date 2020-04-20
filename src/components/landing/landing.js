@@ -144,13 +144,18 @@ export default function Landing({ id }) {
           <Button
             title="ABOUT US"
             outlined={true}
-            onClick={() => navigate("#about")}
+            onClick={e => {
+              e.preventDefault();
+              navigate("#about")}}
           ></Button>
           <div className="gap"></div>
           <Button
             title="UPCOMING EVENTS"
             outlined={false}
-            onClick={() => navigate("#events")}
+            onClick={e =>{ 
+              e.preventDefault();
+              navigate("#events")
+            }}
           ></Button>
         </Buttons>
       </Content>
