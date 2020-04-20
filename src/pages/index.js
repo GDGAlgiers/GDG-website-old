@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import Landing from "../components/landing/landing"
 import Events from "../components/events/Events"
@@ -13,7 +12,7 @@ import Partners from "../components/partners/Partners"
 // example of using styled components ( writing CSS-in-JS )
 
 const IndexPage = () => (
-  <Layout>
+    <>
     <SEO title="Home" />
     <Landing></Landing>
     <Description></Description>
@@ -26,7 +25,7 @@ const IndexPage = () => (
       // TODO : ADD CONTACT US SECTION with id : #contact
       // TODO : ADD NEWSLETTER
     }
-  </Layout>
+ </>
 )
 
 export default IndexPage

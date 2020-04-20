@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <svg
+        id="loading"
+          width ="80px"
+          height="80px"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns-xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 100 100"
+          enable-background="new 0 0 0 0"
+          xml-space="preserve"
+        >
+          <g transform="translate(20)">
+          <circle fill="#25A769" stroke="none" cx="6" cy="50" r="6">
+            <animateTransform
+              attributeName="transform"
+              dur="1s"
+              type="translate"
+              values="0 15 ; 0 -15; 0 15"
+              repeatCount="indefinite"
+              begin="0.1"
+            />
+          </circle>
+          <circle fill="#EA4435" stroke="none" cx="30" cy="50" r="6">
+            <animateTransform
+              attributeName="transform"
+              dur="1s"
+              type="translate"
+              values="0 10 ; 0 -10; 0 10"
+              repeatCount="indefinite"
+              begin="0.2"
+            />
+          </circle>
+          <circle fill="#5591F5" stroke="none" cx="54" cy="50" r="6">
+            <animateTransform
+              attributeName="transform"
+              dur="1s"
+              type="translate"
+              values="0 5 ; 0 -5; 0 5"
+              repeatCount="indefinite"
+              begin="0.3"
+            />
+          </circle>
+          </g>
+        </svg>

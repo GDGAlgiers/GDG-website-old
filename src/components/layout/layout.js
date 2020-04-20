@@ -14,15 +14,15 @@ import Footer from "./footer"
 import "../../styles/layout.css"
 import "../../styles/main.css"
 
-import styled,{ createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
 
 `
 const Main = styled.main`
-  padding-top : 10vh;
+  padding-top: 10vh;
   @media screen and (max-width: 768px) {
-    padding-top : 13vh;
+    padding-top: 13vh;
   }
 `
 
@@ -32,13 +32,15 @@ const Layout = ({ children }) => {
       <Header />
       <div>
         <Main>{children}</Main>
-        <Footer>
-        </Footer>
+        <Footer></Footer>
       </div>
     </>
   )
 }
 
+const Loader = styled.img`
+
+`
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }

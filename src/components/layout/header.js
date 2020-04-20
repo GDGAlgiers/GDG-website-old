@@ -3,7 +3,8 @@ import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { CSSTransition } from "react-transition-group"
-
+import { dropShadow } from "../common/effects"
+import {logos , Menu as m} from '../common/images';
 const links = [
   <Link to="/#about"> About </Link>,
   <Link to="/#events"> Events </Link>,
@@ -12,7 +13,7 @@ const links = [
   <Link to="/#contact"> Contact </Link>,
 ]
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const [isNavVisible, setNavVisible] = useState(false)
   const toggleNav = () => {
     setNavVisible(!isNavVisible)
@@ -31,7 +32,9 @@ const Header = ({ siteTitle }) => {
 
   const handleMediaQueryChange = mediaQuery => {
     if (mediaQuery.matches) {
+      setNavVisible(false)
       setIsSmallScreen(true)
+      
     } else {
       setIsSmallScreen(false)
     }
@@ -49,8 +52,8 @@ const Header = ({ siteTitle }) => {
           alt="brand"
           src={
             isSmallScreen
-              ? require("../../images/icons/phonelogo.png")
-              : require("../../images/gdg_algiers.png")
+              ? logos.PhoneGDGLogo
+              : logos.GDGLogo
           }
           width={isSmallScreen ? "10vw" : "18vw"}
         ></Brand>
@@ -66,10 +69,11 @@ const Header = ({ siteTitle }) => {
       </CSSTransition>
       <Menu onClick={toggleNav}>
         <img
+          alt="menu"
           src={
             !isNavVisible
-              ? require("../../images/icons/menu.svg")
-              : require("../../images/icons/close.svg")
+              ? m.menu
+              : m.close
           }
         ></img>
       </Menu>
@@ -89,34 +93,47 @@ const StyledHeader = styled.header`
   font-weight: 600;
   font-size: 16px;
   z-index: 10;
-  -webkit-box-shadow: -1px -3px 23px 10px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: -1px -3px 23px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: -1px -3px 23px 10px rgba(0, 0, 0,0.2);
+  ${dropShadow}
   transition: height 1s ease-in;
+  transform : translateY(-10vh);
+  animation : drop 0.5s ease-in forwards ;
+  @keyframes drop {
+    from{
+      transform : translateY(-10vh);
+    }
+    to{
+      transform : translateY(0)
+    }
+  }
+  
   @media screen and (max-width: 768px) {
+    animation : drop 2.5s linear forwards ;
+    @keyframes drop {
+    from{
+      transform : translateY(-100vh);
+    }
+    to{
+      transform : translateY(0)
+    }
+  }
     grid-template-areas: "logo burger" "nav nav";
-    .NavAnimation-enter{
-    opacity : 0;
-  
-  }
-  .NavAnimation-enter-active {
-    opacity : 1 ;
-  
-    transition : opacity 500ms ;
-  } 
-  .NavAnimation-exit {
-    opacity : 1;
-    
+    .NavAnimation-enter {
+      opacity: 0;
+    }
+    .NavAnimation-enter-active {
+      opacity: 1;
 
-  }
-  .NavAnimation-exit-active{
-    opacity : 0 ;
-   
-    transition : opacity 500ms ;
-  }
-  }
+      transition: opacity 500ms;
+    }
+    .NavAnimation-exit {
+      opacity: 1;
+    }
+    .NavAnimation-exit-active {
+      opacity: 0;
 
-  
+      transition: opacity 500ms;
+    }
+  }
 `
 
 const StyledNav = styled.nav`
@@ -147,11 +164,21 @@ const StyledNav = styled.nav`
 `
 const Brand = styled.img`
   grid-area: logo;
-  min-width :80px;
-  max-width : 300px;
+  min-width: 80px;
+  max-width: 300px;
   width: ${({ width }) => width};
   margin: auto 0 auto 3%;
   cursor: pointer;
+  opacity : 0;
+  animation : fadeInBrand 0.5s 1s ease forwards ; 
+  @keyframes fadeInBrand {
+    from {
+      opacity : 0
+    }
+    to {
+      opacity : 1;
+    }
+  } 
 `
 
 const Menu = styled.button`
@@ -182,13 +209,5 @@ const Menu = styled.button`
     display: block;
   }
 `
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-
+import {featuredIn} from '../common/images'
 const Wrapper = styled.section`
   width: 100%;
   padding-top: 5vh;
@@ -8,6 +8,7 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-items: center;
   @media screen and (max-width: 768px) {
+    padding : var(--mobileSectionPadding);
   }
 `
 
@@ -20,11 +21,11 @@ const Flex = styled.div`
 
 const features = [
   {
-    img: "hive.png",
+    img: featuredIn.hive,
     alt: "Hive Digit",
   },
   {
-    img: "radio.png",
+    img: featuredIn.radio,
     alt: "Radio Algerie",
   },
 ]
@@ -43,7 +44,8 @@ const GreyImg = styled.img`
 
 const renderFeatures = features.map(featuredin => (
   <GreyImg
-    src={require(`../../images/featured_in/${featuredin.img}`)}
+    loading="lazy"
+    src={featuredin.img}
     alt={featuredin.alt}
   ></GreyImg>
 ))

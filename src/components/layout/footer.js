@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import {ExternalLink , Emoji} from '../common/utils';
+import {ExternalLink } from '../common/utils';
+import {navigate} from 'gatsby'
+import {emojis} from '../common/images';
 const Footer = () => (
   <StyledFooter>
     <div className="row1">
@@ -31,12 +33,14 @@ const Footer = () => (
       </div>
     </div>
     <div className="row2">
-      <h2>Made with <Emoji data="❤️"></Emoji> and <Emoji data="☕"></Emoji></h2>
+      <h2>Made with {emojis.HeartEmoji} and  {emojis.CoffeeEmoji}</h2>
       <p>©️ GDG ALGIERS 2020</p>
     </div>
     <div className="row3">
       <h2>Intrested in sponsoring GDG Algiers ?</h2>
-      <StyledButton>GET IN TOUCH</StyledButton>
+      <StyledButton onClick={e=>{
+        e.preventDefault()
+        navigate("#")}}>GET IN TOUCH</StyledButton>
     </div>
   </StyledFooter>
 )
@@ -88,6 +92,7 @@ const StyledFooter = styled.footer`
   }
   .row1 {
     display: flex;
+    flex-wrap : wrap;
     width: 80%;
     justify-content: space-evenly;
     .content {
@@ -114,7 +119,7 @@ const StyledFooter = styled.footer`
           font-size: 100%;
           font-weight: 550;
           &:visited {
-            color : var(--blue)
+            color : var(--grey) ; 
           }
         }
       }
@@ -152,15 +157,15 @@ const StyledFooter = styled.footer`
 
   @media screen and (max-width: 768px) {
     .row1 {
-      flex-direction: column;
       width: 100%;
       .content {
         margin-bottom: 10%;
         align-items: center;
-        width: 100%;
+        justify-content : start;
+        width: 50%;
         flex-direction: column;
         p {
-          text-align: center;
+          text-align: left;
           margin-bottom: 5%;
           font-size: 100%;
         }
@@ -171,14 +176,13 @@ const StyledFooter = styled.footer`
         }
       }
       .social-media {
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
         justify-content: center;
         align-items: center;
         .sm {
           margin: 0;
           margin-left: 20px;
-          margin-top: 20px;
         }
       }
     }
@@ -189,14 +193,24 @@ const StyledButton = styled.button`
   border-radius: 50px;
   font-family: inherit;
   font-weight: bold;
-  background-color: white;
-  color: var(--green);
+
+background: #0D9D58;
+box-shadow:  12px 12px 29px #0b844a, 
+             -12px -12px 29px #0fb666;
+  color: white;
   border: none;
   cursor: pointer;
   outline: none;
-  transition: 1s ease;
   &:hover {
-    transform: scale(1.2);
+    animation: scaler 1s ease alternate 2;
+    @keyframes scaler {
+      from{
+        transform : scale(1)
+      }
+      to{
+        transform: scale(1.2)
+      }
+    }
   }
 `
 

@@ -1,87 +1,218 @@
 import React from "react"
 import styled, { css } from "styled-components"
-
-const bounce = css`
-animation: bounce 0.5s ease infinite alternate;
-
-@keyframes bounce {
-  from {
-    transform: scale(1) translateY(0px);
-  }
-  to {
-    transform: scale(1.1) translateY(-15px);
-  }
-}
-`
+import {BoxIcons} from '../common/images'
+import { bounce } from "../common/animation/animations"
 export default function AnimatedBoxes() {
-  const randomlyRotate = id => {
-    let box = document.getElementById(id)
-    box.classList.add("rotate-box-randomly")
-    setTimeout(() => {
-      box.classList.remove("rotate-box-randomly")
-    }, 1000)
-  }
   return (
     <Boxes>
       <BoxRow>
         <Box
           color="#8CD5FF"
-          id="box1"
+          id="light-blue"
           className="box"
-          
+          transform={css`
+            transform: translateX(-100vw) translateY(200px) rotateZ(-90deg);
+          `}
+          mountAnimation={css`
+            transform-origin: left bottom;
+            animation: shoot1 1s 4.2s ease-out forwards 1;
+            @keyframes shoot1 {
+              from {
+                transform: translateX(-100vw) translateY(200px) rotateZ(-90deg);
+              }
+              to {
+                transform: translateX(0px) translateY(0) rotateZ(0deg);
+              }
+            }
+          `}
         >
-          <img src={require("../../images/icons/icon2.svg")} alt="" />
+          <img src={BoxIcons.icon2} alt="light-blue" />
         </Box>
       </BoxRow>
       <BoxRow>
         <Box
           color="#FFAA9C"
-          id="box2"
+          id="light-red"
           className="box"
-        
-        ></Box>
+          transform={css`
+            transform: translateX(-100vw) translateY(-200px) rotateZ(-90deg);
+          `}
+          mountAnimation={css`
+            transform-origin: left bottom;
+            animation: shoot2 1s 4s ease-out forwards;
+            @keyframes shoot2 {
+              from {
+                transform: translateX(-100vw) translateY(-200px) rotateZ(-90deg);
+              }
+              to {
+                transform: translateX(0px) translateY(0) rotateZ(0deg);
+              }
+            }
+          `}
+        >
+          <img src={BoxIcons.cross} alt="light-red" />
+        </Box>
         <Box
-          color="#7DE9D0"
-          id="box3"
+          color="#0D9D58"
+          id="green"
           className="box"
-        
-        ></Box>
+          transform={css`
+            transform: translateX(-100vw) translateY(400px) rotateZ(-90deg);
+          `}
+          mountAnimation={css`
+            transform-origin: left bottom;
+            animation: shoot3 1s 3.5s ease-out forwards 1;
+            @keyframes shoot3 {
+              from {
+                transform: translateX(-100vw) translateY(400px) rotateZ(-90deg);
+              }
+              to {
+                transform: translateX(0px) translateY(0) rotateZ(0deg);
+              }
+            }
+          `}
+        >
+          <img src={BoxIcons.losange} alt="green" />
+        </Box>
       </BoxRow>
       <BoxRow>
         <Box
           color="#212121"
-          id="box4"
+          id="black"
           className="box"
-        
-        ></Box>
-        <Box color="#EA4334" id="box5" className="box"></Box>
-        <Box color="#0D9D58" id="box6" className="box"></Box>
+          transform={css`
+            transform: translateX(-100vw) translateY(-400px) rotateZ(90deg);
+          `}
+          mountAnimation={css`
+            transform-origin: left bottom;
+            animation: shoot4 1s 3s ease-out forwards 1;
+            @keyframes shoot4 {
+              from {
+                transform: translateX(-100vw) translateY(-400px) rotateZ(90deg);
+              }
+              to {
+                transform: translateX(0px) translateY(0) rotateZ(0deg);
+              }
+            }
+          `}
+        >
+          <img src={BoxIcons.arrow} alt="black" />
+        </Box>
+        <Box
+          color="#EA4334"
+          id="red"
+          className="box"
+          transform={css`
+            transform: translateX(0px) translateY(-100vh) rotateZ(40deg);
+          `}
+          mountAnimation={css`
+            transform-origin: left bottom;
+            animation: shoot5 1s 2.5s ease-out forwards 1;
+            @keyframes shoot5 {
+              from {
+                transform: translateX(0px) translateY(-100vh) rotateZ(40deg);
+              }
+              to {
+                transform: translateX(0px) translateY(0) rotateZ(0deg);
+              }
+            }
+          `}
+        >
+          <img src={BoxIcons.triangle} alt="red" />
+        </Box>
+        <Box
+       
+          color="#7DE9D0"
+          id="light-green"
+          className="box"
+          transform={css`
+            transform: translateX(100vw) translateY(400px) rotateZ(90deg);
+          `}
+          mountAnimation={css`
+            transform-origin: left bottom;
+            animation: shoot6 1s 2s ease-out forwards 1;
+            @keyframes shoot6 {
+              from {
+                transform: translateX(100vw) translateY(400px) rotateZ(90deg);
+              }
+              to {
+                transform: translateX(0px) translateY(0) rotateZ(0deg);
+              }
+            }
+          `}
+        >
+          <img src={BoxIcons.plus} alt="light-green" />
+        </Box>
       </BoxRow>
       <BoxRow>
         <Box
           color="#F2E877"
-          id="box7"
+          id="light-yellow"
           className="box"
+          transform={css`
+            transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
+          `}
+          mountAnimation={css`
+            transform-origin: left bottom;
+            animation: shoot7 1s 1.5s ease-out forwards 1;
+            @keyframes shoot7 {
+              from {
+                transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
+              }
+              to {
+                transform: translateX(0px) translateY(0) rotateZ(0deg);
+              }
+            }
+          `}
         >
-          <img src={require("../../images/icons/icon1.svg")} alt="" />
+          <img src={BoxIcons.icon1} alt="light-yellow" />
         </Box>
-        <Box color="#4285F4" id="box8" className="box">
-          <img src={require("../../images/icons/icon3.svg")} alt="" />
+        <Box
+          color="#4285F4"
+          id="blue"
+          className="box"
+          transform={css`
+            transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
+          `}
+          mountAnimation={css`
+            transform-origin: left bottom;
+            animation: shoot7 1s 1s ease-out forwards 1;
+          `}
+        >
+          <img src={BoxIcons.icon3} alt="blue" />
         </Box>
-        <Box color="#E0E0E0" id="box9" className="box"></Box>
-        <Box color="#FCBC05" id="box10" className="box"></Box>
+        <Box
+          color="#E0E0E0"
+          id="grey"
+          className="box"
+          transform={css`
+            transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
+          `}
+          mountAnimation={css`
+            transform-origin: left bottom;
+            animation: shoot7 1s 0.5s ease-out forwards 1;
+          `}
+        >
+          <img src={BoxIcons.percentage} alt="grey" />
+        </Box>
+        <Box
+          color="#FCBC05"
+          id="yellow"
+          className="box"
+          transform={css`
+            transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
+          `}
+          mountAnimation={css`
+            transform-origin: left bottom;
+            animation: shoot7 1s ease-out forwards 1;
+          `}
+        >
+          <img src={BoxIcons.dots} alt="yellow" />
+        </Box>
       </BoxRow>
     </Boxes>
   )
 }
-
-const getRandomRotationBetween = (low, high) => {
-  let rand = Math.random()
-  rand = rand * high
-  rand = rand + low
-  return rand
-}
-
 
 const Boxes = styled.div`
   display: flex;
@@ -121,12 +252,25 @@ const Box = styled.div`
     margin: auto;
     max-width: 50%;
   }
+  ${props => props.transform}
+  ${props => props.mountAnimation}
   &:hover {
     z-index: 99;
     cursor: pointer;
     opacity: 1;
+    
+    
 
-    ${props => props.animationOnHover || bounce}
+    /* ${props => {
+      if (props.animationOnHover) return props.animationOnHover
+      else {
+        let defaultAnim = css`
+          animation: bounce 0.5s ease infinite alternate;
+          ${bounce}
+        `
+        return defaultAnim
+      }
+    }} */
   }
 
   background-color: ${props => props.color || "var(--green)"};
