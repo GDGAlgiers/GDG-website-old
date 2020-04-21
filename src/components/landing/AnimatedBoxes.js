@@ -204,7 +204,7 @@ export default function AnimatedBoxes() {
           `}
           mountAnimation={css`
             transform-origin: left bottom;
-            animation: shoot7 1s 0.5s ease-out forwards 1;
+            animation: shoot7 1s  ease-out forwards 1;
           `}
         >
           <img src={BoxIcons.dots} alt="yellow" />

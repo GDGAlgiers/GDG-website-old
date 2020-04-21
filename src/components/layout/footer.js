@@ -34,7 +34,7 @@ const Footer = () => (
     </div>
     <div className="row2">
       <h2>Made with {emojis.HeartEmoji} and  {emojis.CoffeeEmoji}</h2>
-      <p><span role="img" aria-label="copyright" aria-labelledby="copyright">©️</span> GDG ALGIERS 2020</p>
+      <p><span role="img" aria-label="copyright">©️</span> GDG ALGIERS 2020</p>
     </div>
     <div className="row3">
       <h2>Intrested in sponsoring GDG Algiers ?</h2>
