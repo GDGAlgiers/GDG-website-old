@@ -16,8 +16,7 @@
   --sectionPadding: 1rem 4rem;
   --mobileSectionPadding : 20px;
 }
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
 .flex {
   display: flex;
 }

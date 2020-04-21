@@ -8,7 +8,7 @@ const NotFoundPage = () => (
   <>
     <SEO title="Not found" />
     <NotFoundWrapper>
-     <img src={require('../images/404.webp')} alt="NOT FOUND 404" style={{margin : "50px" , maxHeight :"50%" , maxWidth:"70%" ,marginTop:"0"}} loading="lazy" ></img>
+     <img src={require('../images/404.webp')} alt="NOT FOUND 404" height ="50%"  width="70%" style={{margin : "50px" ,marginTop:"0"}} loading="lazy" ></img>
 <h2>We could'nt find the page you are looking for {emojis.SadFaceEmoji}</h2>
       <Button title="TAKE ME BACK" outlined={true} onClick={()=> navigate("/")}></Button>
     </NotFoundWrapper>
@@ -21,6 +21,10 @@ flex-direction : column;
 justify-content : center ;
 align-items : center;
 height : 100vh;
+img {
+  max-height : 600px;
+  max-width : 700px;
+}
 animation : enterandbounce 1s  ease forwards;
     @keyframes enterandbounce {
       0% {
@@ -38,6 +42,7 @@ animation : enterandbounce 1s  ease forwards;
     }
 h2 {
   font-size : 2rem;
+  font-family: var(--font-header);
   color : var(--green)
 }
 @media screen and (max-width: 768px) {

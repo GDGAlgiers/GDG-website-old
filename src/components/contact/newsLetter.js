@@ -65,7 +65,7 @@ const StyledDiv = styled.div`
   }
 `
 const StyledButton = styled.button`
-  font-family: Montserrat;
+  font-family: var(--font-header);
   height: 3vw;
   width: 8vw;
   color: #ffff;

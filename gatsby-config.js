@@ -20,7 +20,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gdg algiers 2020`,
-        short_name: `gdg-algiers20`,
+        short_name: `gdg20`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#fafafa`,
@@ -32,7 +32,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        precachePages: [`/*`],
+        precachePages: [`/`],
       },
     },
   ],

@@ -5,7 +5,7 @@ const Card = styled.div`
   height: ${props => props.height};
   border-radius: 16px;
   border: solid 1px #707070;
-  font-family: Roboto;
+  font-family: var(--font);
   overflow: hidden;
   margin: 1rem;
   display: flex;

@@ -130,7 +130,7 @@ const StyledDiv = styled.div`
     padding-top: 7vw;
     padding-left: 4vw;
     margin-left: 20vw;
-    font-family: Roboto;
+    font-family: var(--font);
     .row {
       height: 10vw;
     }

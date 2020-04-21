@@ -40,7 +40,7 @@ const Footer = () => (
       <h2>Intrested in sponsoring GDG Algiers ?</h2>
       <StyledButton onClick={e=>{
         e.preventDefault()
-        navigate("#")}}>GET IN TOUCH</StyledButton>
+        navigate("#contact")}}>GET IN TOUCH</StyledButton>
     </div>
   </StyledFooter>
 )

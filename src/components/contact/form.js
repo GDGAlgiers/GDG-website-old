@@ -120,7 +120,7 @@ const StyledButton = styled.button`
   height: 3vw;
   border: none;
   background-color: #0d9d58;
-  font-family: Montserrat;
+  font-family: var(--font-header);
   font-size : 20px;
   text-align: center;
   color: #ffffff;
