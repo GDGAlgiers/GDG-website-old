@@ -51,6 +51,9 @@ const renderPartners = partners.map(featuredin => (
   <GreyImg
     src={require(`../../images/partners/${featuredin.img}`)}
     alt={featuredin.alt}
+    loading="lazy"
+    width="100%"
+    height="100%"
   ></GreyImg>
 ))
 
@@ -58,6 +61,9 @@ const renderSponsors = sponsors.map(featuredin => (
   <GreyImg
     src={require(`../../images/sponsors/${featuredin.img}`)}
     alt={featuredin.alt}
+    loading="lazy"
+    width="100%"
+    height="100%"
   ></GreyImg>
 ))
 
@@ -99,14 +105,14 @@ const Partners = () => {
         <Flex style={{ justifyContent: "space-evenly" }}>{renderSponsors}</Flex>
       </Wrapper>
       <iframe
+        defer
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6397.405219325686!2d3.172649597364618!3d36.70568361550312!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e522f19b578df%3A0xd6e74be7191a6758!2sGDG%20Algiers!5e0!3m2!1sen!2sdz!4v1587142697549!5m2!1sen!2sdz"
         width="100%"
-        style={{ height: "50vh"  }}
-        frameborder="0"
-        allowfullscreen=""
+        style={{height: "50vh"}}
+        frameBorder="0"
+        allowFullscreen
         aria-hidden="false"
         title="gdgmap"
-        loading="lazy"
       ></iframe>
     </div>
   )

@@ -6,6 +6,8 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import GDGBtn from "../common/button/GDGButton"
+import gdgimage from '../../images/event.jpg'
+import gdgSchool from '../../images/GDG_School_Logo.png'
 const events = [
   {
     title: "GDG School",
@@ -16,9 +18,9 @@ const events = [
     },
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
-    img: "https://gdgalgiers.com/assets/header_1.jpg",
+    img:  gdgimage ,
     logo:
-      "https://cdn.zeplin.io/5e8a80d14af9de22805a072e/assets/a6f00b2b-5c21-45ee-88f0-e443d9354020.png",
+     gdgSchool,
     location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
   {
@@ -30,9 +32,9 @@ const events = [
     },
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
-    img: "https://gdgalgiers.com/assets/header_1.jpg",
+    img: gdgimage,
     logo:
-      "https://cdn.zeplin.io/5e8a80d14af9de22805a072e/assets/a6f00b2b-5c21-45ee-88f0-e443d9354020.png",
+    gdgSchool,
     location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
   {
@@ -44,9 +46,9 @@ const events = [
     },
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
-    img: "https://gdgalgiers.com/assets/header_1.jpg",
+    img: gdgimage,
     logo:
-      "https://cdn.zeplin.io/5e8a80d14af9de22805a072e/assets/a6f00b2b-5c21-45ee-88f0-e443d9354020.png",
+    gdgSchool,
     location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
   {
@@ -58,9 +60,9 @@ const events = [
     },
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
-    img: "https://gdgalgiers.com/assets/header_1.jpg",
+    img: gdgimage,
     logo:
-      "https://cdn.zeplin.io/5e8a80d14af9de22805a072e/assets/a6f00b2b-5c21-45ee-88f0-e443d9354020.png",
+    gdgSchool,
     location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
 ]

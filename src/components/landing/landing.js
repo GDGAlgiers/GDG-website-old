@@ -12,19 +12,6 @@ const Wrapper = styled.section`
   background-color: white;
   .landing-title {
     font-size: 5rem;
-    animation : enter 0.5s ease forwards;
-    transform : translateX(-50vw);
-    opacity : 0;
-    @keyframes enter {
-      from {
-        opacity : 0;
-        transform : translateX(-50vw);
-      }
-      to{
-        opacity : 1;
-        transform : translateX(0%);
-      }
-    }
     .matter {
       opacity :0;
       animation : fadeIn 1s 2.5s ease forwards;
@@ -87,27 +74,24 @@ const Buttons = styled.div`
       width: 5%;
     }
   }
-  transform : translateY(-100vh);
-  animation : enterandbounce 2s 2s ease forwards;
-    @keyframes enterandbounce {
-      0% {
-        transform : translateY(-100vh)
-      }
-      40%{
-        transform : translateY(0%)
-      }
-      80%{
-        transform : translateY(-1vh)
-      }
-      100%{
-        transform : translateY(0%)
-      }
-    }
+ 
 `
 const Content = styled.div`
   position: relative;
   z-index: 3;
   width: 60%;
+  animation : enter 0.5s ease forwards;
+    opacity : 0;
+    @keyframes enter {
+      from {
+        opacity : 0;
+       
+      }
+      to{
+        opacity : 1;
+        
+      }
+    }
   @media screen and (max-width: 1024px) {
     width: 90%;
     margin: 0 auto;

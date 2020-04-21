@@ -7,24 +7,15 @@ exports.wrapPageElement = ({ element, props }) => {
   return <Layout {...props}>{element}</Layout>
 }
 
-
 exports.onInitialClientRender = () => {
-   
-    setTimeout(function() {
-      let element = document.getElementById("___loader");
-      element.style.transition ="opacity 0.5s ease"
-      element.style.opacity ="0"
-      setTimeout(()=>{
-        element.style.display = "none"
-      },500)
-    }, 200);
-}
-exports.onServiceWorkerUpdateReady = () => {
-  const answer = window.confirm(
-    `This application has been updated. ` +
-      `Reload to display the latest version?`
-  )
-  if (answer === true) {
-    window.location.reload()
-  }
+
+  setImmediate(function() {
+    let element = document.getElementById("___loader")
+    element.style.transition = "opacity 0.5s ease"
+    element.style.opacity = "0"
+    setTimeout(() => {
+      element.style.display = "none"
+    }, 500)
+  })
+  
 }

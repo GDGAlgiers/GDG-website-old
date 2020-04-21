@@ -49,9 +49,9 @@ const featuredIn = {
 
 
 /// used emojis
-const HeartEmoji = <span role="img" aria-label="heart" aria-labelledby="heart" >❤️</span>
-const CoffeeEmoji = <span role="img"  aria-label="coffee" aria-labelledby="coffee">☕</span>
-const SadFaceEmoji = <span role="img"  aria-label="sad" aria-labelledby="sad">🥺</span>
+const HeartEmoji = <span role="img" aria-label="heart" >❤️</span>
+const CoffeeEmoji = <span role="img"  aria-label="coffee-cup" >☕</span>
+const SadFaceEmoji = <span role="img"  aria-label="sad-face" >🥺</span>
 const emojis = {
     HeartEmoji,
     CoffeeEmoji,

@@ -120,7 +120,7 @@ export default class EventCard extends Component {
       <Card height={this.props.height}>
         <BackImg className="backImg" img={this.props.event.img}></BackImg>
         <HoveredText className="hoveredText">
-          <Column>
+          <Column>²
             <p style={pStyle}>{this.props.event.date.days}</p>
             <p style={pStyle}> {this.props.event.date.month}</p>
             <p style={pStyle}>{this.props.event.date.year}</p>

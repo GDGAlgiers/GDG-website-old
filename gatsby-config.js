@@ -3,7 +3,6 @@ module.exports = {
     title: `GDG Algiers`,
     description: `The official website for the GDG Algiers community`,
     author: `@GDG_ALGIERS`,
-    url:"https://www.gdgalgiers.com",
   },
   plugins: [
     `gatsby-plugin-styled-components`,
