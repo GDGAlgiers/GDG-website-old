@@ -37,6 +37,7 @@ const TextHolder = styled.div`
   width: 100%;
   background-color: #f7f7f7;
   border-radius: 16px;
+  color :#212121;
   padding: 35% 1rem 0 1rem;
   display: flex;
   flex-direction: column;
@@ -74,7 +75,6 @@ export default class eventMobileCard extends Component {
           <p
             style={{
               fontSize: "0.9rem",
-              color: "var(--grey)",
             }}
           >{`${event.date.days} ${event.date.month} ${event.date.year}`}</p>
           <p

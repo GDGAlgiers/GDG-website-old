@@ -92,7 +92,7 @@ const BigTitle = styled.h1`
 const Wrapper = styled.section`
   width: 100%;
   height: 100vh;
-  background-color: white;
+  background-color: inherit;
   padding: 0 4rem;
   @media screen and (max-width: 768px) {
     padding: 0;

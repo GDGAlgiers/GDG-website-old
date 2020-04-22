@@ -10,7 +10,7 @@ GDG Algiers Chapter hosts a variety of technical activities for developers throu
 
 const Wrapper = styled.section`
   width: 100%;
-  background-color: white;
+  background-color: inherit;
 `
 
 const BiggerH1 = styled.h1`

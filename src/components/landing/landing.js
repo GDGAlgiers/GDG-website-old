@@ -9,7 +9,7 @@ const Wrapper = styled.section`
   padding-top: 10%;
   padding-left: 10%;
   display: flex;
-  background-color: white;
+  background-color: inherit;
   .landing-title {
     font-size: 5rem;
     .matter {

@@ -52,7 +52,7 @@ const StyledFooter = styled.footer`
   width: 100vw;
   min-height: 10vh;
   padding-top: 24px;
-  background: #fafafa;
+  background: inherit;
   font-family: var(--font), sans-serif;
   border-top: 10px solid var(--green);
   justify-content: start;

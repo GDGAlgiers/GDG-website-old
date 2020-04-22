@@ -9,6 +9,7 @@ const Card = styled.div`
   overflow: hidden;
   margin: 1rem;
   display: flex;
+  color : inherit;
   position: relative;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
