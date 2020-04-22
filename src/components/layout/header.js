@@ -87,7 +87,7 @@ const StyledHeader = styled.header`
   min-height: 10vh;
   width: 100vw;
   display: grid;
-  background-color: white;
+  background-color: inherit;
   grid-template-areas: "logo nav";
   font-family: var(--font), sans-serif;
   font-weight: 600;
@@ -136,7 +136,7 @@ const StyledNav = styled.nav`
   transition: height 1s ease-in;
 
   a {
-    color: var(--grey-dark);
+    color: inherit;
     opacity: 0.4;
     text-decoration-line: none;
     transition: 0.5s ease-in-out;

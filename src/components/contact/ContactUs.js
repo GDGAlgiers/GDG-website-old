@@ -76,6 +76,9 @@ const StyledSection = styled.div`
   @media (max-width: 768px) {
     margin-left: 5%;
     margin-right: 5%;
+    .wrapper {
+      margin-bottom : 20%;
+    }
     .email {
       display: none;
     }

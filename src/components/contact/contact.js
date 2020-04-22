@@ -50,12 +50,12 @@ const StyledDiv = styled.div`
   max-width: 28vw;
   height: auto;
 
-  background-color: #f8f8f8;
+  background-color: inherit;
   border-radius: 0.5vw;
   margin-bottom: 14vw;
   padding-top: 2.2vw;
 
-  color: #212121;
+  color: inherit;
 
   .row {
     height: 6vw;
@@ -125,7 +125,7 @@ const StyledDiv = styled.div`
   @media (max-width: 768px) {
     max-width: 60vw;
     height: auto;
-    background-color: #ffff;
+    background-color: inherit;
     margin-bottom: 14vw;
     padding-top: 7vw;
     padding-left: 4vw;

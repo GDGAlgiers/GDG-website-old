@@ -15,7 +15,6 @@ const StyledDiv = styled.div`
   height: auto;
   width: 100%;
   text-align: center;
-  
   margin-top: 2vw;
   padding-top: 3vw;
   padding-bottom: 6vw;

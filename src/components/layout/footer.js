@@ -81,6 +81,9 @@ const StyledFooter = styled.footer`
         margin-bottom : 20px;
       }
       align-items : center;
+      button {
+        margin-top : 20px;
+      }
     }
   }
   .row2 {
