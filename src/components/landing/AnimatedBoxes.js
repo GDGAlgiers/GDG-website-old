@@ -1,214 +1,195 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
-import {BoxIcons} from '../common/images'
-import { bounce } from "../common/animation/animations"
+import { BoxIcons } from "../common/images"
+import Draggable from "react-draggable"
+
+const DraggableBox = ({
+  initTransform,
+  animationDurationMs,
+  animationDelayMs = 0,
+  color,
+  id,
+  className,
+  imageSrc,
+  altImg,
+}) => {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setTimeout(() => {
+      setMounted(true)
+    }, animationDelayMs + animationDurationMs + 100)
+  })
+  let keyFrameName = `${id}-animtion`
+  return mounted ? (
+    <Draggable>
+      <Box
+        color={color}
+        id={id}
+        className={className}
+        style={{
+          cursor: "move",
+          position: "relative",
+          zIndex: 99999,
+        }}
+      >
+        <img src={imageSrc} alt={altImg} />
+      </Box>
+    </Draggable>
+  ) : (
+    <Box
+      color={color}
+      id={id}
+      className={className}
+      transform={initTransform}
+      mountAnimation={css`
+        transform-origin: left bottom;
+        animation: ${keyFrameName} ${animationDurationMs + "ms"}
+          ${animationDelayMs + "ms"} ease-out forwards 1;
+        @keyframes ${keyFrameName} {
+          from {
+            ${initTransform}
+          }
+          to {
+            transform: translateX(0px) translateY(0) rotateZ(0deg);
+          }
+        }
+      `}
+    >
+      <img src={imageSrc} alt={altImg} />
+    </Box>
+  )
+}
 export default function AnimatedBoxes() {
   return (
     <Boxes>
       <BoxRow>
-        <Box
-          color="#8CD5FF"
+        <DraggableBox
           id="light-blue"
           className="box"
-          transform={css`
+          color="#8CD5FF"
+          initTransform={css`
             transform: translateX(-100vw) translateY(200px) rotateZ(-90deg);
           `}
-          mountAnimation={css`
-            transform-origin: left bottom;
-            animation: shoot1 1s 4.2s ease-out forwards 1;
-            @keyframes shoot1 {
-              from {
-                transform: translateX(-100vw) translateY(200px) rotateZ(-90deg);
-              }
-              to {
-                transform: translateX(0px) translateY(0) rotateZ(0deg);
-              }
-            }
-          `}
-        >
-          <img src={BoxIcons.icon2} alt="light-blue" />
-        </Box>
+          animationDurationMs={1000}
+          animationDelayMs={4200}
+          imageSrc={BoxIcons.icon2}
+          altImg="light-blue"
+        ></DraggableBox>
       </BoxRow>
       <BoxRow>
-        <Box
+        <DraggableBox
           color="#FFAA9C"
           id="light-red"
           className="box"
-          transform={css`
+          initTransform={css`
             transform: translateX(-100vw) translateY(-200px) rotateZ(-90deg);
           `}
-          mountAnimation={css`
-            transform-origin: left bottom;
-            animation: shoot2 1s 4s ease-out forwards;
-            @keyframes shoot2 {
-              from {
-                transform: translateX(-100vw) translateY(-200px) rotateZ(-90deg);
-              }
-              to {
-                transform: translateX(0px) translateY(0) rotateZ(0deg);
-              }
-            }
-          `}
-        >
-          <img src={BoxIcons.cross} alt="light-red" />
-        </Box>
-        <Box
+          animationDurationMs={1000}
+          animationDelayMs={4000}
+          imageSrc={BoxIcons.cross}
+          altImg="light-red"
+        ></DraggableBox>
+
+        <DraggableBox
           color="#0D9D58"
           id="green"
           className="box"
-          transform={css`
+          initTransform={css`
             transform: translateX(-100vw) translateY(400px) rotateZ(-90deg);
           `}
-          mountAnimation={css`
-            transform-origin: left bottom;
-            animation: shoot3 1s 3.5s ease-out forwards 1;
-            @keyframes shoot3 {
-              from {
-                transform: translateX(-100vw) translateY(400px) rotateZ(-90deg);
-              }
-              to {
-                transform: translateX(0px) translateY(0) rotateZ(0deg);
-              }
-            }
-          `}
-        >
-          <img src={BoxIcons.losange} alt="green" />
-        </Box>
+          animationDurationMs={1000}
+          animationDelayMs={3500}
+          imageSrc={BoxIcons.losange}
+          altImg="green"
+        ></DraggableBox>
       </BoxRow>
       <BoxRow>
-        <Box
+        <DraggableBox
           color="#212121"
           id="black"
           className="box"
-          transform={css`
+          initTransform={css`
             transform: translateX(-100vw) translateY(-400px) rotateZ(90deg);
           `}
-          mountAnimation={css`
-            transform-origin: left bottom;
-            animation: shoot4 1s 3s ease-out forwards 1;
-            @keyframes shoot4 {
-              from {
-                transform: translateX(-100vw) translateY(-400px) rotateZ(90deg);
-              }
-              to {
-                transform: translateX(0px) translateY(0) rotateZ(0deg);
-              }
-            }
-          `}
-        >
-          <img src={BoxIcons.arrow} alt="black" />
-        </Box>
-        <Box
+          animationDurationMs={1000}
+          animationDelayMs={3000}
+          imageSrc={BoxIcons.arrow}
+          altImg="black"
+        ></DraggableBox>
+        <DraggableBox
           color="#EA4334"
           id="red"
           className="box"
-          transform={css`
+          initTransform={css`
             transform: translateX(0px) translateY(-100vh) rotateZ(40deg);
           `}
-          mountAnimation={css`
-            transform-origin: left bottom;
-            animation: shoot5 1s 2.5s ease-out forwards 1;
-            @keyframes shoot5 {
-              from {
-                transform: translateX(0px) translateY(-100vh) rotateZ(40deg);
-              }
-              to {
-                transform: translateX(0px) translateY(0) rotateZ(0deg);
-              }
-            }
-          `}
-        >
-          <img src={BoxIcons.triangle} alt="red" />
-        </Box>
-        <Box
-       
+          animationDurationMs={1000}
+          animationDelayMs={2500}
+          imageSrc={BoxIcons.triangle}
+          altImg="red"
+        ></DraggableBox>
+        <DraggableBox
           color="#7DE9D0"
           id="light-green"
           className="box"
-          transform={css`
+          initTransform={css`
             transform: translateX(100vw) translateY(400px) rotateZ(90deg);
           `}
-          mountAnimation={css`
-            transform-origin: left bottom;
-            animation: shoot6 1s 2s ease-out forwards 1;
-            @keyframes shoot6 {
-              from {
-                transform: translateX(100vw) translateY(400px) rotateZ(90deg);
-              }
-              to {
-                transform: translateX(0px) translateY(0) rotateZ(0deg);
-              }
-            }
-          `}
-        >
-          <img src={BoxIcons.plus} alt="light-green" />
-        </Box>
+          animationDurationMs={1000}
+          animationDelayMs={2000}
+          imageSrc={BoxIcons.plus}
+          altImg="light-green"
+        ></DraggableBox>
       </BoxRow>
       <BoxRow>
-        <Box
+        <DraggableBox
           color="#F2E877"
           id="light-yellow"
           className="box"
-          transform={css`
+          initTransform={css`
             transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
           `}
-          mountAnimation={css`
-            transform-origin: left bottom;
-            animation: shoot7 1s 1.5s ease-out forwards 1;
-            @keyframes shoot7 {
-              from {
-                transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
-              }
-              to {
-                transform: translateX(0px) translateY(0) rotateZ(0deg);
-              }
-            }
-          `}
-        >
-          <img src={BoxIcons.icon1} alt="light-yellow" />
-        </Box>
-        <Box
+          animationDurationMs={1000}
+          animationDelayMs={1500}
+          imageSrc={BoxIcons.icon1}
+          altImg="light-yellow"
+        ></DraggableBox>
+        <DraggableBox
           color="#4285F4"
           id="blue"
           className="box"
-          transform={css`
+          initTransform={css`
             transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
           `}
-          mountAnimation={css`
-            transform-origin: left bottom;
-            animation: shoot7 1s 1s ease-out forwards 1;
-          `}
-        >
-          <img src={BoxIcons.icon3} alt="blue" />
-        </Box>
-        <Box
+          animationDurationMs={1000}
+          animationDelayMs={1000}
+          imageSrc={BoxIcons.icon3}
+          altImg="blue"
+        ></DraggableBox>
+        <DraggableBox
           color="#E0E0E0"
           id="grey"
           className="box"
-          transform={css`
+          initTransform={css`
             transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
           `}
-          mountAnimation={css`
-            transform-origin: left bottom;
-            animation: shoot7 1s 0.5s ease-out forwards 1;
-          `}
-        >
-          <img src={BoxIcons.percentage} alt="grey" />
-        </Box>
-        <Box
+          animationDurationMs={1000}
+          animationDelayMs={500}
+          imageSrc={BoxIcons.percentage}
+          altImg="blue"
+        ></DraggableBox>
+        <DraggableBox
           color="#FCBC05"
           id="yellow"
           className="box"
-          transform={css`
+          initTransform={css`
             transform: translateX(-100vw) translateY(0px) rotateZ(90deg);
           `}
-          mountAnimation={css`
-            transform-origin: left bottom;
-            animation: shoot7 1s  ease-out forwards 1;
-          `}
-        >
-          <img src={BoxIcons.dots} alt="yellow" />
-        </Box>
+          animationDurationMs={1000}
+          animationDelayMs={0}
+          imageSrc={BoxIcons.dots}
+          altImg="yellow"
+        ></DraggableBox>
       </BoxRow>
     </Boxes>
   )
@@ -244,33 +225,28 @@ const Box = styled.div`
   height: 8vw;
   width: 8vw;
   z-index: 1;
-  opacity: 0.9;
-  transition: opacity 1s ease;
+  opacity: 1;
+  transition: box-shadow 0.5s ease;
   display: flex;
 
   img {
     margin: auto;
     max-width: 50%;
+    transition: transform 0.5s ease;
+    
   }
   ${props => props.transform}
   ${props => props.mountAnimation}
   &:hover {
-    z-index: 99;
-    cursor: pointer;
-    opacity: 1;
     
-    
+    -webkit-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.2);
+-moz-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.2);
+box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.2);
 
-    /* ${props => {
-      if (props.animationOnHover) return props.animationOnHover
-      else {
-        let defaultAnim = css`
-          animation: bounce 0.5s ease infinite alternate;
-          ${bounce}
-        `
-        return defaultAnim
-      }
-    }} */
+    img{
+      transform : scale(1.1)
+    }
+   
   }
 
   background-color: ${props => props.color || "var(--green)"};

@@ -60,7 +60,7 @@ const Wrapper = styled.section`
 `
 const Buttons = styled.div`
   display: flex;
-
+  position : relative;
   .gap {
     width: 40px;
     visibility: hidden;
@@ -78,7 +78,7 @@ const Buttons = styled.div`
 `
 const Content = styled.div`
   position: relative;
-  z-index: 3;
+  z-index: 4;
   width: 60%;
   animation : enter 0.5s ease forwards;
     opacity : 0;
@@ -101,7 +101,7 @@ const Canvas = styled.div`
   width: 100vw;
   padding-top: 10vh;
 
-  z-index: 1;
+  z-index: 3;
   position: absolute;
   background: transparent;
   opacity: 1;
