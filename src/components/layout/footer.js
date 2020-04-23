@@ -1,57 +1,89 @@
 import React from "react"
 import styled from "styled-components"
-import {ExternalLink } from '../common/utils';
-import {navigate} from 'gatsby'
-import {emojis} from '../common/images';
+import { ExternalLink } from "../common/utils"
+import { navigate } from "gatsby"
+import { emojis } from "../common/images"
 const Footer = () => (
   <StyledFooter>
     <div className="row1">
       <div className="content">
         <p>About</p>
         <div>
-          <ExternalLink url="https://www.wtm-algiers.tech/" text ="WTM Algiers"></ExternalLink>
-          <ExternalLink url="https://developers.google.com/community/gdg" text ="Google Developers Group"></ExternalLink>
-          <ExternalLink url="https://www.womentechmakers.com/" text ="Women Techmakers"></ExternalLink>
+          <ExternalLink
+            url="https://www.wtm-algiers.tech/"
+            text="WTM Algiers"
+          ></ExternalLink>
+          <ExternalLink
+            url="https://developers.google.com/community/gdg"
+            text="Google Developers Group"
+          ></ExternalLink>
+          <ExternalLink
+            url="https://www.womentechmakers.com/"
+            text="Women Techmakers"
+          ></ExternalLink>
         </div>
       </div>
       <div className="content">
         <p>Information</p>
         <div>
-        <ExternalLink url="#" text ="Join Us"></ExternalLink>
-          <ExternalLink url="#" text ="Sponsorship"></ExternalLink>
-          <ExternalLink url="#" text ="Submit Talk"></ExternalLink>
-          <ExternalLink url="#" text ="Code of Conduct"></ExternalLink>
+          <ExternalLink url="#" text="Join Us"></ExternalLink>
+          <ExternalLink url="#" text="Sponsorship"></ExternalLink>
+          <ExternalLink url="#" text="Submit Talk"></ExternalLink>
+          <ExternalLink url="#" text="Code of Conduct"></ExternalLink>
         </div>
       </div>
       <div className="social-media">
         <p>Follow Us</p>
         <div className="sm">
-          <ExternalLink url="https://www.instagram.com/gdg_algiers/" icon={require("../../images/icons/instagram.svg")} text="instagram"></ExternalLink>
-          <ExternalLink url="https://twitter.com/gdg_algiers"  icon={require("../../images/icons/twitter.svg")} text="twitter"></ExternalLink>
-          <ExternalLink url="https://www.facebook.com/GDGAlgiers/" icon={require("../../images/icons/facebook.svg")} text="facebook"></ExternalLink>
+          <ExternalLink
+            url="https://www.instagram.com/gdg_algiers/"
+            icon={require("../../images/icons/instagram.svg")}
+            text="instagram"
+          ></ExternalLink>
+          <ExternalLink
+            url="https://twitter.com/gdg_algiers"
+            icon={require("../../images/icons/twitter.svg")}
+            text="twitter"
+          ></ExternalLink>
+          <ExternalLink
+            url="https://www.facebook.com/GDGAlgiers/"
+            icon={require("../../images/icons/facebook.svg")}
+            text="facebook"
+          ></ExternalLink>
         </div>
       </div>
     </div>
     <div className="row2">
-      <h2>Made with {emojis.HeartEmoji} and  {emojis.CoffeeEmoji}</h2>
-      <p><span role="img" aria-label="copyright">©️</span> GDG ALGIERS 2020</p>
+      <h2>
+        Made with {emojis.HeartEmoji} and {emojis.CoffeeEmoji}
+      </h2>
+      <p>
+        <span role="img" aria-label="copyright">
+          ©️
+        </span>{" "}
+        GDG ALGIERS 2020
+      </p>
     </div>
     <div className="row3">
       <h2>Intrested in sponsoring GDG Algiers ?</h2>
-      <StyledButton onClick={e=>{
-        e.preventDefault()
-        navigate("#contact")}}>GET IN TOUCH</StyledButton>
+      <StyledButton
+        onClick={e => {
+          e.preventDefault()
+          navigate("#contact")
+        }}
+      >
+        GET IN TOUCH
+      </StyledButton>
     </div>
   </StyledFooter>
 )
-
-
-
 
 const StyledFooter = styled.footer`
   width: 100vw;
   min-height: 10vh;
   padding-top: 24px;
+  position: relative;
+  z-index: 100;
   background: inherit;
   font-family: var(--font), sans-serif;
   border-top: 10px solid var(--green);
@@ -74,15 +106,15 @@ const StyledFooter = styled.footer`
       font-family: inherit;
     }
     @media screen and (max-width: 768px) {
-      flex-direction : column;
-      justify-content : center;
+      flex-direction: column;
+      justify-content: center;
       h2 {
-        text-align  :center;
-        margin-bottom : 20px;
+        text-align: center;
+        margin-bottom: 20px;
       }
-      align-items : center;
+      align-items: center;
       button {
-        margin-top : 20px;
+        margin-top: 20px;
       }
     }
   }
@@ -95,7 +127,7 @@ const StyledFooter = styled.footer`
   }
   .row1 {
     display: flex;
-    flex-wrap : wrap;
+    flex-wrap: wrap;
     width: 80%;
     justify-content: space-evenly;
     .content {
@@ -114,15 +146,15 @@ const StyledFooter = styled.footer`
       div {
         a {
           display: block;
-          cursor : pointer;
-          text-decoration : none;
+          cursor: pointer;
+          text-decoration: none;
           margin-bottom: 10px;
           color: inherit;
           font-family: inherit;
           font-size: 100%;
           font-weight: 550;
           &:visited {
-            color : var(--grey) ; 
+            color: var(--grey);
           }
         }
       }
@@ -133,7 +165,7 @@ const StyledFooter = styled.footer`
       p {
         margin: 0;
         font-size: 100%;
-        color:var(--green);
+        color: var(--green);
         font-family: inherit;
         font-size: 100%;
         font-weight: 550;
@@ -164,7 +196,7 @@ const StyledFooter = styled.footer`
       .content {
         margin-bottom: 10%;
         align-items: center;
-        justify-content : start;
+        justify-content: start;
         width: 50%;
         flex-direction: column;
         p {
@@ -197,9 +229,8 @@ const StyledButton = styled.button`
   font-family: inherit;
   font-weight: bold;
 
-background: #0D9D58;
-box-shadow:  12px 12px 29px #0b844a, 
-             -12px -12px 29px #0fb666;
+  background: #0d9d58;
+  box-shadow: 12px 12px 29px #0b844a, -12px -12px 29px #0fb666;
   color: white;
   border: none;
   cursor: pointer;
@@ -207,11 +238,11 @@ box-shadow:  12px 12px 29px #0b844a,
   &:hover {
     animation: scaler 1s ease alternate 2;
     @keyframes scaler {
-      from{
-        transform : scale(1)
+      from {
+        transform: scale(1);
       }
-      to{
-        transform: scale(1.2)
+      to {
+        transform: scale(1.2);
       }
     }
   }

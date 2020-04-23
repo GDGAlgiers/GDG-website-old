@@ -2,10 +2,9 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import Modal from "../common/modal/Modal"
 
-
-const INVALID_EMAIL  = "Please put a valid email"
-const REGISTERING =  "Registering...";
-const THANKS =  "Thank you for registering to our newsletter";
+const INVALID_EMAIL = "Please put a valid email"
+const REGISTERING = "Registering..."
+const THANKS = "Thank you for registering to our newsletter"
 const NewsLetter = () => {
   const [email, setEmail] = useState("")
   const [error, setError] = useState({
@@ -14,11 +13,9 @@ const NewsLetter = () => {
   })
   const [showModal, setShowModal] = useState({ show: false, msg: "" })
   const validEmail = () => {
-    let valid =
-      email !== "" ||
-      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+    let valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
     if (!valid) setError({ isError: true, msg: INVALID_EMAIL })
-    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+    return valid
   }
   const handleSubmit = async e => {
     e.preventDefault()

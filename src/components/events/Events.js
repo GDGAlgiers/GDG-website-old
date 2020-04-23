@@ -1,4 +1,4 @@
-import React, {  useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import EventCard from "./eventCard"
 import EventMobileCard from "./eventMobileCard"
 import styled from "styled-components"
@@ -6,10 +6,24 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import GDGBtn from "../common/button/GDGButton"
-import gdgimage from '../../images/event.jpg'
-import gdgSchool from '../../images/GDG_School_Logo.png'
+import gdgimage from "../../images/event.jpg"
+import gdgSchool from "../../images/GDG_School_Logo.png"
 const events = [
   {
+    title: "DEVFEST 2020",
+    date: {
+      days: "10-11",
+      month: "January",
+      year: "2020",
+    },
+    content:
+      "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
+    img: gdgimage,
+    logo: gdgSchool,
+    location: "Higher School Of Computer Science \n (ESI Algiers)",
+    url: "/events/devfest20",
+  },
+  {
     title: "GDG School",
     date: {
       days: "10-11",
@@ -18,9 +32,8 @@ const events = [
     },
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
-    img:  gdgimage ,
-    logo:
-     gdgSchool,
+    img: gdgimage,
+    logo: gdgSchool,
     location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
   {
@@ -33,8 +46,7 @@ const events = [
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
     img: gdgimage,
-    logo:
-    gdgSchool,
+    logo: gdgSchool,
     location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
   {
@@ -47,27 +59,10 @@ const events = [
     content:
       "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
     img: gdgimage,
-    logo:
-    gdgSchool,
-    location: "Higher School Of Computer Science \n (ESI Algiers)",
-  },
-  {
-    title: "GDG School",
-    date: {
-      days: "10-11",
-      month: "January",
-      year: "2020",
-    },
-    content:
-      "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
-    img: gdgimage,
-    logo:
-    gdgSchool,
+    logo: gdgSchool,
     location: "Higher School Of Computer Science \n (ESI Algiers)",
   },
 ]
-
-
 
 const renderEvents = events.map(event => (
   <EventCard height="60vh" event={event} key={event.title}></EventCard>

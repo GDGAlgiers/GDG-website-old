@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-
+import { navigate } from "gatsby"
 const Card = styled.div`
   height: ${props => props.height};
   border-radius: 16px;
@@ -9,7 +9,7 @@ const Card = styled.div`
   overflow: hidden;
   margin: 1rem;
   display: flex;
-  color : inherit;
+  color: inherit;
   position: relative;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
@@ -36,7 +36,7 @@ const BackImg = styled.div`
   width: 50%;
   background: ${props => `url("${props.img}")`};
   transition: width 0.5s cubic-bezier(0.4, 0, 0.6, 1);
-  :after {
+  &:after {
     content: "\A";
     position: absolute;
     width: 100%;
@@ -118,11 +118,17 @@ const locationStyle = {
 export default class EventCard extends Component {
   render() {
     return (
-      <Card height={this.props.height}>
+      <Card
+        height={this.props.height}
+        onClick={e => {
+          e.preventDefault()
+          navigate(this.props.event.url)
+        }}
+      >
         <BackImg className="backImg" img={this.props.event.img}></BackImg>
         <HoveredText className="hoveredText">
-          <Column>²
-            <p style={pStyle}>{this.props.event.date.days}</p>
+          <Column>
+            ²<p style={pStyle}>{this.props.event.date.days}</p>
             <p style={pStyle}> {this.props.event.date.month}</p>
             <p style={pStyle}>{this.props.event.date.year}</p>
           </Column>
