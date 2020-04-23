@@ -24,7 +24,7 @@ const events = [
     url: "/events/devfest20",
   },
   {
-    title: "GDG School",
+    title: "FAST & HACK 20",
     date: {
       days: "10-11",
       month: "January",
@@ -35,6 +35,7 @@ const events = [
     img: gdgimage,
     logo: gdgSchool,
     location: "Higher School Of Computer Science \n (ESI Algiers)",
+    url: "/events/fastAndHack20"
   },
   {
     title: "GDG School",

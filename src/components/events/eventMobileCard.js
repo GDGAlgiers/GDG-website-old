@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-
+import {navigate} from 'gatsby'
 const Flex = styled.div`
   position: relative;
   display: flex;
@@ -66,7 +66,10 @@ export default class eventMobileCard extends Component {
   render() {
     const event = this.props.event
     return (
-      <Flex height={this.props.height}>
+      <Flex height={this.props.height} onClick={e=> {
+        e.preventDefault()
+        navigate(this.props.event.url)
+      }}>
         <LogoHolder>
           <LogoCard img={event.logo}></LogoCard>
         </LogoHolder>

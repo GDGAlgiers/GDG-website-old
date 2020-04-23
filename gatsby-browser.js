@@ -12,6 +12,26 @@ exports.wrapPageElement = ({ element, props }) => {
 
 exports.onInitialClientRender = () => {
 
+  document.addEventListener('wheel', (evt) => {
+   
+    
+  }, {
+    capture: true,
+    passive: true
+  })
+  document.addEventListener('scroll', (evt) => {
+  
+  }, {
+    capture: true,
+    passive: true
+  })
+  document.addEventListener('touchmove', (evt) => {
+   
+  }, {
+    capture: true,
+    passive: true
+  })
+  
   setImmediate(function() {
     let element = document.getElementById("___loader")
     element.style.transition = "opacity 0.5s ease"
