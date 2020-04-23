@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import ReactFormInputValidation from "react-form-input-validation"
-import Modal from "../common/modal/Modal"
+import Modal from "../common/modal/Modal";
+
 class Form extends React.Component {
   constructor(props) {
     super(props)
@@ -12,38 +12,75 @@ class Form extends React.Component {
         email: "",
         message: "",
       },
-      errors: {},
+      errors: {
+        name:"" ,
+        email :"",
+        message :""
+      },
       modalMsg: "",
+      submited : false 
     }
-    this.form = new ReactFormInputValidation(this)
-    this.form.useRules({
-      name: "required",
-      email: "required|email",
-      message: "required",
-    })
-    this.form.onFormSubmit = fields => {
-      if (this.hasError()) {
-        this.setState({
-          showModal: true,
-          modalMsg: "Please fix the errors before submiting",
-        })
-      } else if (this.state.fields.message === "") {
-        this.setState({ showModal: true, modalMsg: "fill all form please" })
-      } else {
-        console.log(fields)
-        this.setState({
-          showModal: true,
-          modalMsg: "Thank you for submiting , we will reach out to you ",
-        })
-      }
+    
+   
+  }
+  onFormSubmit = fields => {
+    let errors = {
+      name:"" ,
+      email :"",
+      message :""
+    }
+    let err=  false ;
+    if( ! fields.name) {
+      errors ={...errors , name:"The name field is required"}
+      err = true ;
+    }
+    if( ! fields.email) {
+      errors ={...errors , email:"The email field is required"}
+      err = true 
+    }
+    if( ! fields.message) {
+      errors ={...errors , message:"The message field is required"}
+      err = true 
+    }
+  
+   
+    if (this.hasError(errors)) {
+      this.setState({
+        errors : errors,
+        showModal: true,
+        submited :false ,
+        modalMsg: "Please fix the errors before submiting",
+      })
+    } else if (fields.message === "") {
+      this.setState({ submited :false , showModal: true, modalMsg: "fill all form please" })
+    } else {
+      console.log(fields)
+      this.setState({
+        fields :{
+          name: "",
+          email: "",
+          message: "",
+        },
+         errors : {
+          name:"" ,
+          email :"",
+          message :""
+        },
+        submited :true,
+        showModal: true,
+        modalMsg: "Thank you for submiting , we will reach out to you ",
+      })
     }
   }
-  hasError() {
+  hasError(errors) {
     return (
-      this.state.errors.name ||
-      this.state.errors.message ||
-      this.state.errors.email
+      errors.name ||
+      errors.message ||
+      errors.email
     )
+  }
+  handleChange(e){
+    this.setState({fields : {...this.state.fields,[e.target.name ]: [e.target.value]},errors : {...this.state.errors , [e.target.name] : ""}}) // removing the error
   }
   render() {
     return (
@@ -56,7 +93,7 @@ class Form extends React.Component {
           data-netlify="true"
           onSubmit={e => {
             e.preventDefault()
-            this.form.onFormSubmit(this.state.fields)
+            this.onFormSubmit(this.state.fields)
           }}
         >
           <input type="hidden" name="bot-field" />
@@ -67,8 +104,8 @@ class Form extends React.Component {
               placeholder="Name"
               type="text"
               id="name"
-              onBlur={this.form.handleBlurEvent}
-              onChange={this.form.handleChangeEvent}
+          
+              onChange={e=>this.handleChange(e)}
               value={this.state.fields.name}
             />
           </div>
@@ -82,8 +119,8 @@ class Form extends React.Component {
               placeholder="Email"
               type="email"
               id="email"
-              onBlur={this.form.handleBlurEvent}
-              onChange={this.form.handleChangeEvent}
+
+              onChange={e=>this.handleChange(e)}
               value={this.state.fields.email}
             />
           </div>
@@ -99,8 +136,7 @@ class Form extends React.Component {
               rows="5"
               placeholder="Type something..."
               id="message"
-              onBlur={this.form.handleBlurEvent}
-              onChange={this.form.handleChangeEvent}
+              onChange={e=>this.handleChange(e)}
               value={this.state.fields.message}
             />
           </div>
@@ -115,7 +151,7 @@ class Form extends React.Component {
         </StyledForm>
         {this.state.showModal && (
           <Modal
-            error={this.hasError() || this.state.fields.message === ""}
+            error={!this.state.submited }
             close={e => this.setState({ showModal: false })}
           >
             {this.state.modalMsg}
