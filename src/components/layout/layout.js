@@ -50,7 +50,7 @@ const Layout = ({ children }) => {
         }}>
          {theme==='dark' ? <img className={animate ? "shrink-grow" : null} src={require('../../images/icons/sun.svg')} alt="sun"/>: <img  className={animate ? "shrink-grow" : null} src={require('../../images/icons/moon.svg')} alt="moon"/>} 
         </ThemeSwitch>
-        <Main style={{backgroundColor : 'inherit'}} >{children}</Main>
+        <Main style={{backgroundColor : 'inherit'}}>{children}</Main>
         <Footer></Footer>
       </div>
     </div>
@@ -59,7 +59,7 @@ const Layout = ({ children }) => {
 
 const ThemeSwitch = styled.button`
   position : fixed ;
-  top : 90vh;
+  top : 94vh;
   height : 50px;
   width : 50px;
   border : none;

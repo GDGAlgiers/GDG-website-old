@@ -29,18 +29,17 @@ class Form extends React.Component {
       email :"",
       message :""
     }
-    let err=  false ;
     if( ! fields.name) {
       errors ={...errors , name:"The name field is required"}
-      err = true ;
+    
     }
     if( ! fields.email) {
       errors ={...errors , email:"The email field is required"}
-      err = true 
+   
     }
     if( ! fields.message) {
       errors ={...errors , message:"The message field is required"}
-      err = true 
+ 
     }
   
    

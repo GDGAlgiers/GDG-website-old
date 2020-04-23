@@ -117,7 +117,7 @@ const StyledFooter = styled.footer`
           cursor : pointer;
           text-decoration : none;
           margin-bottom: 10px;
-          color: var(--grey-dark);
+          color: inherit;
           font-family: inherit;
           font-size: 100%;
           font-weight: 550;

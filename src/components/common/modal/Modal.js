@@ -17,19 +17,21 @@ const StyledWrapper = styled.div`
     ${dropShadow}
     opacity : 0;
     padding : 50px;
-    border-radius : 100px;
-    border-top-left-radius : 10px;
+    text-align : center;
+    border-radius : 100px;  
     border : 2px solid inherit;
+    ${props=> props.corner} : 10px;
     transform : scale(0);
-    transform-origin : left top;
+    transform-origin : ${props => props.origin};
     animation : fade 0.5s ease-out forwards ;
     &.close {
         animation : fade 0.5s ease-out backwards;
     }
     @media screen and (max-width: 768px) {
-        top : 3vh;
+        top : 4vh;
         left : 0;
-        margin : 0 auto;
+        margin : 10% auto;
+        max-width : 90% !important ;
     }
     @keyframes fade {
         from {
@@ -75,10 +77,14 @@ const StyledWrapper = styled.div`
 `
 const Modal = (props) => {
     const [close,setClose] = useState(false);
+    let corner = props.corner ? `border-${props.corner}-radius` : 'border-top-left-radius';
+    let origin = props.corner ? props.corner.split('-').join(' ') : 'top left';
     return (
-        <StyledWrapper className={`${close ? 'close' : ""}`}>
+        <StyledWrapper origin={origin} corner={corner} className={`${close ? 'close' : ""}`} style={{
+            maxWidth : props.maxWidth,
+        }}>
                 <div className="modal-header">
-                    <img src={props.error ? logos.loading : logos.PhoneGDGLogo} width="100px" height="100px"></img>
+                    <img src={props.error ? logos.loading : logos.PhoneGDGLogo} width="100px" height="100px" alt="logo"></img>
                 </div>
                 <div className="modal-body">
                     <p>
