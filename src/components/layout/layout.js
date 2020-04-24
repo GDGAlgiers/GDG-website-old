@@ -11,7 +11,7 @@ import Footer from "./footer"
 import "../../styles/layout.css"
 import "../../styles/main.css"
 import styled from "styled-components"
-
+import PageLoader from '../common/loader'
 const Main = styled.main`
   padding-top: 10vh;
   @media screen and (max-width: 768px) {
@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
     let storedTheme = localStorage.getItem("theme") || "light"
     setTheme(storedTheme)
   }, [])
-  return theme === "loading" ? null : (
+  return theme === "loading" ? <PageLoader loadingText="We are coming"  ></PageLoader> : (
     <div className={`${theme}-theme`}>
       <Header />
       <div style={{ backgroundColor: "inherit" }}>

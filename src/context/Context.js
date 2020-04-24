@@ -22,11 +22,21 @@ class ContextProviderComponent extends React.Component {
     }
   }
   componentDidMount() {
+    const handleMediaChange = mediaQuery => {
+    
+        if(mediaQuery.matches) {
+          this.state.set({isMobile : true })
+        }else {
+          this.state.set({isMobile : false })
+        
+      }
+    }
     const mediaQuery = window.matchMedia("(max-width : 768px)")
+    mediaQuery.addListener(handleMediaChange)
     this.setState({data: {isMobile : mediaQuery.matches }})
   }
 
-  
+ 
   setData(newData) {
     this.setState(state => ({
       data: {

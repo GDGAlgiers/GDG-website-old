@@ -1,14 +1,15 @@
 import React from 'react'
 import { logos } from "./images"
-export default function PageLoader({loadingText}) {
+export default function PageLoader({loadingText,style,id}) {
 
 
     return (
        
         <div
           key={`loader`}
-          id="___loader"
+          id={id}
           style={{
+            ...style,
             alignItems: "center",
             backgroundColor: "inherit",
             display: "flex",
