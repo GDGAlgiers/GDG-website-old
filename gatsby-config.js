@@ -3,6 +3,7 @@ module.exports = {
     title: `GDG Algiers`,
     description: `The official website for the GDG Algiers community`,
     author: `@GDG_ALGIERS`,
+    favicon :'./src/images/favicon.png'
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -30,8 +31,8 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#fafafa`,
-        display: `minimal-ui`,
-        icon: `src/images/icons/phonelogo.png`, // This path is relative to the root of the site.
+        display: `fullscreen`,
+        icon: './src/images/favicon.png', // This path is relative to the root of the site.
       },
     },
     

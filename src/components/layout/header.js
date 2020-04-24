@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { CSSTransition } from "react-transition-group"
 import { dropShadow } from "../common/effects"
