@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import {featuredIn} from '../common/images'
+import {featuredIn} from '../../common/images'
 const Wrapper = styled.section`
   width: 100%;
   padding-top: 5vh;

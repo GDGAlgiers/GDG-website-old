@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
-import { BoxIcons } from "../common/images"
+import { BoxIcons } from "../../common/images"
 import Draggable from "react-draggable"
-
+import ContextConsumer from '../../../context/Context'
 const DraggableBox = ({
   initTransform,
   animationDurationMs,
@@ -14,50 +14,78 @@ const DraggableBox = ({
   altImg,
 }) => {
   const [mounted, setMounted] = useState(false)
+  
   useEffect(() => {
     setTimeout(() => {
       setMounted(true)
     }, animationDelayMs + animationDurationMs + 100)
   })
   let keyFrameName = `${id}-animtion`
-  return mounted ? (
-    <Draggable>
-      <Box
+ return <ContextConsumer>
+    {({data})=> {
+      if(data.isMobile) {
+        return <Box
         color={color}
         id={id}
         className={className}
-        style={{
-          cursor: "move",
-          position: "relative",
-          zIndex: 99999,
-        }}
+        transform={initTransform}
+        mountAnimation={css`
+          transform-origin: left bottom;
+          animation: ${keyFrameName} ${animationDurationMs + "ms"}
+            ${animationDelayMs + "ms"} ease-out forwards 1;
+          @keyframes ${keyFrameName} {
+            from {
+              ${initTransform}
+            }
+            to {
+              transform: translateX(0px) translateY(0) rotateZ(0deg);
+            }
+          }
+        `}
       >
         <img src={imageSrc} alt={altImg} />
       </Box>
-    </Draggable>
-  ) : (
-    <Box
-      color={color}
-      id={id}
-      className={className}
-      transform={initTransform}
-      mountAnimation={css`
-        transform-origin: left bottom;
-        animation: ${keyFrameName} ${animationDurationMs + "ms"}
-          ${animationDelayMs + "ms"} ease-out forwards 1;
-        @keyframes ${keyFrameName} {
-          from {
-            ${initTransform}
+      }else {
+        return  mounted ? (
+          <Draggable>
+            <Box
+              color={color}
+              id={id}
+              className={className}
+              style={{
+                cursor: "move",
+                position: "relative",
+                zIndex: 99999,
+              }}
+            >
+              <img src={imageSrc} alt={altImg} />
+            </Box>
+          </Draggable>
+        ) : <Box
+        color={color}
+        id={id}
+        className={className}
+        transform={initTransform}
+        mountAnimation={css`
+          transform-origin: left bottom;
+          animation: ${keyFrameName} ${animationDurationMs + "ms"}
+            ${animationDelayMs + "ms"} ease-out forwards 1;
+          @keyframes ${keyFrameName} {
+            from {
+              ${initTransform}
+            }
+            to {
+              transform: translateX(0px) translateY(0) rotateZ(0deg);
+            }
           }
-          to {
-            transform: translateX(0px) translateY(0) rotateZ(0deg);
-          }
-        }
-      `}
-    >
-      <img src={imageSrc} alt={altImg} />
-    </Box>
-  )
+        `}
+      >
+        <img src={imageSrc} alt={altImg} />
+      </Box>
+      }
+    }}
+  </ContextConsumer>
+  ;
 }
 export default function AnimatedBoxes() {
   return (

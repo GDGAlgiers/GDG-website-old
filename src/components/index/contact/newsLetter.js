@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import Modal from "../common/modal/Modal"
+import Modal from "../../common/modal/Modal"
 
 const INVALID_EMAIL = "Please put a valid email"
 const REGISTERING = "Registering..."

@@ -6,7 +6,6 @@
  */
 
 import React, { useState, useEffect } from "react"
-
 import Header from "./header"
 import Footer from "./footer"
 import "../../styles/layout.css"
@@ -21,24 +20,22 @@ const Main = styled.main`
 `
 
 const Layout = ({ children }) => {
-  const [theme, setTheme] = useState("light")
-  useEffect(() => {
-    let data = localStorage.getItem("theme")
-    let state = data || "light"
-    setTheme(state)
-  }, [])
+  const [theme, setTheme] = useState("loading")
   const [animate, setAnimate] = useState(false)
-  return (
-    <div className={theme === "dark" ? "dark-theme" : "light-theme"}>
+  useEffect(() => {
+    let storedTheme = localStorage.getItem("theme") || "light"
+    setTheme(storedTheme)
+  }, [])
+  return theme === "loading" ? null : (
+    <div className={`${theme}-theme`}>
       <Header />
       <div style={{ backgroundColor: "inherit" }}>
         <ThemeSwitch
           onClick={e => {
             let newdata = theme === "light" ? "dark" : "light"
-            console.log("new data", newdata)
+            setTheme(newdata)
 
             localStorage.setItem("theme", newdata)
-            setTheme(newdata)
 
             setAnimate(true)
             setTimeout(() => setAnimate(false), 500)

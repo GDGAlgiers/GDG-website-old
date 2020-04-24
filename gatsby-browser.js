@@ -1,44 +1,24 @@
 const React = require("react")
 const Layout = require("./src/components/layout/layout").default;
-
+const { ContextProviderComponent } =require("./src/context/Context")
 
 
 exports.wrapPageElement = ({ element, props }) => {
   // props provide same data to Layout as Page element will get
   // including location, data, etc - you don't need to pass it
 
-  return <Layout {...props} >{element}</Layout>
+    return <Layout {...props}>{element}</Layout>
+
+
 }
 
-exports.onInitialClientRender = () => {
 
-  document.addEventListener('wheel', (evt) => {
-   
-    
-  }, {
-    capture: true,
-    passive: true
-  })
-  document.addEventListener('scroll', (evt) => {
-  
-  }, {
-    capture: true,
-    passive: true
-  })
-  document.addEventListener('touchmove', (evt) => {
-   
-  }, {
-    capture: true,
-    passive: true
-  })
-  
-  setImmediate(function() {
-    let element = document.getElementById("___loader")
-    element.style.transition = "opacity 0.5s ease"
-    element.style.opacity = "0"
-    setTimeout(() => {
-      element.style.display = "none"
-    }, 500)
-  })
-  
+exports.wrapRootElement = ({ element }) => {
+  return (
+    <ContextProviderComponent >
+      {element}
+    </ContextProviderComponent>
+  )
 }
+
+

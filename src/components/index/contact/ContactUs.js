@@ -27,7 +27,7 @@ const ContactUS = () => (
         <img
           className="email"
           alt="email"
-          src={require("../../images/icons/email.svg")}
+          src={require("../../../images/icons/email.svg")}
         ></img>
       </div>
     </div>

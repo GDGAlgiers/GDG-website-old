@@ -5,9 +5,9 @@ import styled from "styled-components"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import GDGBtn from "../common/button/GDGButton"
-import gdgimage from "../../images/event.jpg"
-import gdgSchool from "../../images/GDG_School_Logo.png"
+import GDGBtn from "../../common/button/GDGButton"
+import gdgimage from "../../../images/event.jpg"
+import gdgSchool from "../../../images/GDG_School_Logo.png"
 const events = [
   {
     title: "DEVFEST 2020",

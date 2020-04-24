@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import PageLoader from './components/common/loader'
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
@@ -14,11 +13,9 @@ export default function HTML(props) {
         />
         {props.headComponents}
       </head>
+
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
-
-      <PageLoader loadingText="Epicness is on the way"></PageLoader>
- 
         <div
           key={`body`}
           id="___gatsby"

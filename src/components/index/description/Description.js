@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import heroImage from "../../images/heroimage.jpg"
+import heroImage from "../../../images/heroimage.jpg"
+import { navigate } from "gatsby"
 
 const desc = `GDG Algiers is a local community located at the National Higher School of Computer Science, Algiers, Algeria.
 It is part of the big global community of developers "Google Developers Group" (960 communities worldwide)
@@ -27,6 +28,7 @@ const HeroCard = styled.div`
   grid-template-rows: 1fr 1fr;
   justify-content: center;
   align-items: center;
+  cursor : pointer;
   color: white;
   min-height: 40vh;
   @media screen and (max-width: 768px) {
@@ -81,7 +83,12 @@ export default function Description({ id }) {
           {desc}
         </p>
       </DescDiv>
-      <HeroCard img={heroImage}>
+      <HeroCard img={heroImage} onClick={
+        e => {
+          e.preventDefault()
+          navigate('/community')
+        }
+      }>
         <h1 style={{ width: "100%", textAlign: "center" }}>
           GDG Algiers in numbers
         </h1>

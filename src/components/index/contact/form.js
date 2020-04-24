@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Modal from "../common/modal/Modal";
+import Modal from "../../common/modal/Modal";
 
 class Form extends React.Component {
   constructor(props) {

@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { navigate } from "gatsby"
 
 const Wrapper = styled.section`
   width: 100%;
@@ -21,6 +22,7 @@ const partners = [
   {
     img: "wtm.png",
     alt: "WTM Algiers",
+    url:"/wtm"
   },
 ]
 
@@ -33,6 +35,7 @@ const sponsors = [
 
 const GreyImg = styled.img`
   filter: grayscale(100%);
+  cursor : pointer;
   max-width: 300px;
   max-height: 300px;
   object-fit: contain;
@@ -49,17 +52,21 @@ const GreyImg = styled.img`
 
 const renderPartners = partners.map(featuredin => (
   <GreyImg
-    src={require(`../../images/partners/${featuredin.img}`)}
+    src={require(`../../../images/partners/${featuredin.img}`)}
     alt={featuredin.alt}
     loading="lazy"
     width="100%"
     height="100%"
+    onClick={e=> {
+      e.preventDefault()
+      navigate(featuredin.url)
+    }}
   ></GreyImg>
 ))
 
 const renderSponsors = sponsors.map(featuredin => (
   <GreyImg
-    src={require(`../../images/sponsors/${featuredin.img}`)}
+    src={require(`../../../images/sponsors/${featuredin.img}`)}
     alt={featuredin.alt}
     loading="lazy"
     width="100%"

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Button from "../common/button/GDGButton"
+import Button from "../../common/button/GDGButton"
 import { navigate } from "gatsby"
 import AnimatedBoxes from "./AnimatedBoxes"
 const Wrapper = styled.section`

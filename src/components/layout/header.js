@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { CSSTransition } from "react-transition-group"
 import { dropShadow } from "../common/effects"
 import {logos , Menu as m} from '../common/images';
+import ContextConsumer from '../../context/Context'
 const links = [
   <Link to="/#about"> About </Link>,
   <Link to="/#events"> Events </Link>,
@@ -17,67 +18,51 @@ const Header = () => {
   const toggleNav = () => {
     setNavVisible(!isNavVisible)
   }
-  const [isSmallScreen, setIsSmallScreen] = useState(false)
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width : 768px)")
-    mediaQuery.addListener(handleMediaQueryChange)
-    handleMediaQueryChange(mediaQuery)
-
-    return () => {
-      mediaQuery.removeListener(handleMediaQueryChange)
-    }
-  }, [])
-
-  const handleMediaQueryChange = mediaQuery => {
-    if (mediaQuery.matches) {
-      setNavVisible(false)
-      setIsSmallScreen(true)
-      
-    } else {
-      setIsSmallScreen(false)
-    }
-  }
-
   return (
-    <StyledHeader isNavVisible={isNavVisible}>
-      <Link
-        to="/#"
-        style={{
-          margin: "auto 0",
-        }}
-      >
-        <Brand
-          alt="brand"
-          loading="eager"
-          src={
-            isSmallScreen
-              ? logos.PhoneGDGLogo
-              : logos.GDGLogo
-          }
-          width={isSmallScreen ? "10vw" : "18vw"}
-        ></Brand>
-      </Link>
+    <ContextConsumer>
+      {({data})=> {
 
-      <CSSTransition
-        in={!isSmallScreen || isNavVisible}
-        timeout={200}
-        classNames="NavAnimation"
-        unmountOnExit
-      >
-        <StyledNav>{links}</StyledNav>
-      </CSSTransition>
-      <Menu onClick={toggleNav}>
-        <img
-          alt="menu"
-          src={
-            !isNavVisible
-              ? m.menu
-              : m.close
-          }
-        ></img>
-      </Menu>
-    </StyledHeader>
+        return <StyledHeader isNavVisible={isNavVisible}>
+        <Link
+          to="/#"
+          style={{
+            margin: "auto 0",
+          }}
+        >
+          <Brand
+            alt="brand"
+            loading="eager"
+            src={
+             (data.isMobile)
+                ? logos.PhoneGDGLogo
+                : logos.GDGLogo
+            }
+            width={(data.isMobile) ? "10vw" : "18vw"}
+          ></Brand>
+        </Link>
+  
+        <CSSTransition
+          in={!(data.isMobile) || isNavVisible}
+          timeout={200}
+          classNames="NavAnimation"
+          unmountOnExit
+        >
+          <StyledNav>{links}</StyledNav>
+        </CSSTransition>
+        <Menu onClick={toggleNav}>
+          <img
+            alt="menu"
+            src={
+              !isNavVisible
+                ? m.menu
+                : m.close
+            }
+          ></img>
+        </Menu>
+      </StyledHeader>
+      }}
+    </ContextConsumer>
+    
   )
 }
 

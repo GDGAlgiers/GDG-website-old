@@ -6,8 +6,8 @@ import PageTransition from 'gatsby-plugin-page-transitions'
 export default function fastAndHack20() {
   return (
     <PageTransition>
-      <SEO title="FAST&HACK20" />
-      <PageLoader loadingText="We are planning the event , see you soon"></PageLoader>
+      <SEO title="CONTRIBUTORS" />
+      <PageLoader loadingText="We are building this page"></PageLoader>
     </PageTransition>
   )
 }
