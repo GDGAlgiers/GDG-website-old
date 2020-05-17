@@ -20,6 +20,7 @@ export default function fastAndHack20() {
       ></Countdown>
       <h2 className="title">What is it ?</h2>
   <p className="description">{content.description}</p>
+      <h3 id="joinslack">Join Slack Workspace <br></br> ↓	</h3>
       <a href={content.slack_url} target="_blank" rel="noopener noreferrer"  ><img className="btn" src={require('../../images/icons/slack-new-logo.svg')} alt="slack workspace" title="join slack workspace"></img></a>
       <div className="faq">
         <Faq data={content.faq} styles ={faqStyles} config={{animate : true}}></Faq>
@@ -43,9 +44,9 @@ align-items : center;
 flex-direction : column;
 padding : 64px;
 h1 {
-  font-size : 5rem;
+  font-size : 4rem;
   text-align : center ;
-  font-family : Caveat, sans-serif;
+  font-family : 'Reem Kufi', sans-serif;
   .fast {
     color : var(--green)
   }
@@ -57,6 +58,16 @@ a img {
   width : 100px;
   height :100px;
   cursor : pointer;
+  padding : 20px;
+  border-radius : 50%; 
+  border : 2px solid var(--grey);
+
+}
+#joinslack{
+  text-align :center;
+  margin-bottom : 5px;
+  color : #E01E5A;
+  font-family : 'Reem Kufi', sans-serif;
 }
 .btn {
   transition : transform 0.5s ease;
@@ -74,7 +85,7 @@ a img {
   font-family : var(--font-header);
   h2 {
     margin-top : 10px;
-    font-family : Caveat, sans-serif
+    font-family : 'Reem Kufi', sans-serif;
   }
 }
 .styles_faq-row-wrapper__3Hsch {
@@ -95,7 +106,7 @@ p{
   color : var(--blue);
   margin-top :5%;
   font-size : 48px;
-  font-family : Caveat, sans-serif
+  font-family : 'Reem Kufi', sans-serif;
 }
 @media screen and (max-width: 768px) {
   padding : 32px;
