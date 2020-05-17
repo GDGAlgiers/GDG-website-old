@@ -85,15 +85,15 @@
             {
                 "title": "FAST & HACK 20",
                 "date": {
-                  "days": "10-11",
-                  "month": "January",
+                  "days": "19-29",
+                  "month": "Mai",
                   "year": "2020"
                 },
                 "content":
-                  "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
+                  "After enormous positive feedback that we received last year, GDG Algiers has the pleasure to organize again the second edition of its original online Hackathon “Fast & Hack”! The main idea is to let developers from our community put their coding skills in use all while their fasting in this sacred month. We believe that hacking under such circumstances would give opportunity to some cool ideas that will certainly add value either spiritually or collectively to the society as we’re suggesting to the participants a variety of themes that they can be hacking in.This hackathon is for students, professionals, and programming enthusiasts who want to invest two weeks of their lives in building some cool stuff, that matter.",
                   "img": "event.jpg",
                   "logo": "GDG_School_Logo.png",
-                "location": "Higher School Of Computer Science \n (ESI Algiers)",
+                "location": "Online Hackathon",
                 "url": "/events/fastAndHack20"
               },
               {

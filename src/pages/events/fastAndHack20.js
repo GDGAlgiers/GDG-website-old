@@ -1,13 +1,95 @@
 import React from "react"
-import PageLoader from "../../components/common/loader"
+import content from '../../content/events/fast&hack.json'
 import SEO from "../../components/layout/seo"
 import PageTransition from 'gatsby-plugin-page-transitions'
+import Countdown from '../../components/common/Countdown'
+import styled from 'styled-components'
+import Faq from "react-faq-component";
 /// remove the loader when you implement this page
 export default function fastAndHack20() {
   return (
     <PageTransition>
       <SEO title="FAST&HACK20" />
-      <PageLoader loadingText="We are planning the event , see you soon"></PageLoader>
+     
+      <Wrapper>
+        <h1><span className="fast">FAST</span> & <span className="hack">HACK</span></h1>
+      <Countdown
+      className ="countdown"
+      timeTillDate={content.date} 
+      timeFormat={content.date_format}
+      ></Countdown>
+      <h2>What is it ?</h2>
+      <p>{content.description}</p>
+      <a href={content.slack_url} target="_blank" rel="noopener noreferrer"  ><img src={require('../../images/icons/slack-new-logo.svg')} alt="slack workspace" title="join slack workspace"></img></a>
+      <div className="faq">
+        <Faq data={content.faq} styles ={faqStyles} config={{animate : true}}></Faq>
+      </div>
+      </Wrapper>
     </PageTransition>
   )
 }
+const faqStyles ={
+  bgColor: 'inherit',
+   titleTextColor: "var(--green)",
+   rowTitleColor: "var(--green)",
+  rowContentColor: 'inherit',
+  arrowColor: "var(--red)",
+}
+const Wrapper = styled.div`
+display : flex ;
+justify-content :flex-start; 
+align-items : center;
+
+flex-direction : column;
+padding : 64px;
+h1 {
+  font-size : 3rem;
+  text-align : center ;
+  .fast {
+    color : var(--green)
+  }
+  .hack{
+    color :var(--red)
+  }
+}
+a img {
+  width : 100px;
+  height :100px;
+  cursor : pointer;
+}
+.countdown {
+  margin-top : 0%;
+}
+.faq {
+  margin-top : 10%;
+  background-color : inherit;
+  width: 100%;
+  font-family : var(--font-header);
+  h2 {
+    margin-top : 10px;
+  }
+}
+.styles_faq-row-wrapper__3Hsch {
+  background-color : inherit !important;
+  color : inherit !important;
+  .styles_row-body__8wIE9 .styles_faq-row__2Rd2Y .styles_row-content__TVd0Y {
+    color : inherit !important;
+  }
+}
+p{
+ 
+  text-align : center;
+  max-width : 50%;
+
+}
+h2{
+  margin-top :5%;
+}
+@media screen and (max-width: 768px) {
+  padding : 32px;
+  p{
+    max-width : 90%;
+  }
+}
+
+`
