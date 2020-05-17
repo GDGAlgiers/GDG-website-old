@@ -71,7 +71,7 @@ export default class eventMobileCard extends Component {
         navigate(this.props.event.url)
       }}>
         <LogoHolder>
-          <LogoCard img={event.logo}></LogoCard>
+          <LogoCard img={require(`../../../images/${this.props.event.logo}`)}></LogoCard>
         </LogoHolder>
         <TextHolder>
           <h2 style={{ marginBottom: "0.5rem" }}>{event.title}</h2>

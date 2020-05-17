@@ -1,0 +1,21 @@
+{
+    "footer" : {
+        "socialmedia" : [
+            {
+                "icon" : "instagram.svg",
+                "alt" : "gdg algiers instagram",
+                "url" :"https://www.instagram.com/gdg_algiers/"
+            },
+            {
+                "icon" : "twitter.svg",
+                "alt" : "gdg algiers twitter",
+                "url" :"https://twitter.com/gdg_algiers"
+            },
+            {
+                "icon" : "facebook.svg",
+                "alt" : "gdg algiers facebook",
+                "url" :"https://www.facebook.com/GDGAlgiers/"
+            }
+        ]
+    }
+}

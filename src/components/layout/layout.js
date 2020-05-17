@@ -12,12 +12,7 @@ import "../../styles/layout.css"
 import "../../styles/main.css"
 import styled from "styled-components"
 import PageLoader from '../common/loader'
-const Main = styled.main`
-  padding-top: 10vh;
-  @media screen and (max-width: 768px) {
-    padding-top: 13vh;
-  }
-`
+import content from '../../content/layout.json'
 
 const Layout = ({ children }) => {
   const [theme, setTheme] = useState("loading")
@@ -58,12 +53,18 @@ const Layout = ({ children }) => {
         <Main style={{ backgroundColor: "inherit", minHeight: "100vh" }}>
           {children}
         </Main>
-        <Footer></Footer>
+        <Footer content={content.footer}></Footer>
       </div>
     </div>
   )
 }
 
+const Main = styled.main`
+  padding-top: 10vh;
+  @media screen and (max-width: 768px) {
+    padding-top: 13vh;
+  }
+`
 const ThemeSwitch = styled.button`
   position: fixed;
   top: 94vh;

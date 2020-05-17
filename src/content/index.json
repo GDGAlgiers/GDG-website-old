@@ -1,0 +1,163 @@
+{
+    "landing" :{
+        "title" : "We do cool things that",
+        "titlematter":" matter",
+        "buttonRight" :{"text" : "EVENTS" , "link" :"#events"} ,
+        "buttonLeft":{"text" : "ABOUT US" , "link" :"#about"}
+    },
+    "description" : {
+        "header" : {
+            "text1": "About",
+            "text2" :"GDG ALGIERS"
+        },
+        "description" : "GDG Algiers is a local community located at the National Higher School of Computer Science, Algiers, Algeria.It is part of the big global community of developers \"Google Developers Group\" (960 communities worldwide) Our community is made up of passionate developers and motivated young students.It has started from the simple status of GTUG (Google Technology User Group) in 2011 to become today one of the most active GDGs in the MENA region.GDG Algiers Chapter hosts a variety of technical activities for developers through the different events we organize, aiming to help the developers community get the latest technology updates.",
+        "hero" : {
+            "title" : "GDG Algiers in numbers",
+            "image" :"heroimage.jpg",
+            "link" :"/community",
+            "numbers" :[
+                {
+                    "title" : "participants",
+                    "data" :"2000"
+                }
+                , {
+                    "title" : "events",
+                    "data" :"88"
+                },{
+                    "title" : "members",
+                    "data" :"280"
+                },{
+                    "title" : "tracks",
+                    "data" :"20"
+                }
+            ]
+        }
+    } ,
+    "featured" :{
+        "title" : "We've been featured in",
+        "items" : [
+            {
+                "image" :"hive.png",
+                "alt" :"HiveDigit",
+                "link" :"/"
+            },
+            {
+                "image" :"radio.png",
+                "alt" :"radio nationale",
+                "link" : "/"
+            }
+        ]
+    },
+    "events" : {
+        "titlePrevious" :"Our previous events",
+        "titleUpcoming" :"Our upcoming events",
+        "previous" : [
+            {
+                "title": "GDG School 2019",
+                "date": {
+                  "days": "10-11",
+                  "month": "January",
+                  "year": "2020"
+                },
+                "content":
+                  "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
+                "img": "event.jpg",
+                "logo": "GDG_School_Logo.png",
+                "location": "Higher School Of Computer Science \n (ESI Algiers)",
+                "url" :"/"
+              }
+        ],
+        "upcoming" : [
+            {
+                "title": "DEVFEST 2020",
+                "date": {
+                  "days": "10-11",
+                  "month": "January",
+                  "year": "2020"
+                },
+                "content":
+                  "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
+                  "img": "event.jpg",
+                  "logo": "GDG_School_Logo.png",
+                "location": "Higher School Of Computer Science \n (ESI Algiers)",
+                "url": "/events/devfest20"
+            },
+            {
+                "title": "FAST & HACK 20",
+                "date": {
+                  "days": "10-11",
+                  "month": "January",
+                  "year": "2020"
+                },
+                "content":
+                  "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
+                  "img": "event.jpg",
+                  "logo": "GDG_School_Logo.png",
+                "location": "Higher School Of Computer Science \n (ESI Algiers)",
+                "url": "/events/fastAndHack20"
+              },
+              {
+                "title": "IWD 2021",
+                "date": {
+                  "days": "10-11",
+                  "month": "January",
+                  "year": "2020"
+                },
+                "content":
+                  "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
+                  "img": "event.jpg",
+                  "logo": "GDG_School_Logo.png",
+                "location": "Higher School Of Computer Science \n (ESI Algiers)",
+                "url": "/events/iwd21"
+            }
+        ]
+    },
+    "partners" : {
+        "title" : "Our community partners",
+        "items" : [
+            {
+                "image" :"wtm.png",
+                "alt" :"WTM algiers",
+                "link" : "/wtm"
+            }
+        ],
+        "sponsors" : {
+            "title" : "Our sponsors",
+            "items" : [
+                {
+                    "image" :"GitHubEducation.svg",
+                    "alt" :"Github Education",
+                    "link" : "/"
+                }
+            ]
+        }
+    },
+   
+    "contactUs" : {
+        "title" : "Contact Us",
+        "description" :"We are always happy to offer advice and further information so if you have any questions, complete the form below and a member of the team will be in touch very soon.",
+        "contacts" : {
+            "email":{
+                "title" : "Email",
+                "icon" :"ic-email-48-px.svg" ,
+                "data" : "gdg.algiers@esi.dz"
+            },
+            "address": {
+                "title" : "Adress",
+                "icon" :"gps.svg" ,
+                "data" : "BP 68M Oued Smar,El Herrach Algiers,16309 , Algeria"
+            },
+            "phone":{
+                "title" : "Phone number",
+                "icon" :"call.svg" ,
+                "data" : "+213 123 456 789"
+            }
+        },
+        "newsletter" : {
+            "title"  : "Be part of the community",
+            "content": "Sign up for to GDG Algiers newsletter."
+        }
+    }
+    
+   
+}

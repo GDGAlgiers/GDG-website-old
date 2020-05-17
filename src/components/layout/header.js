@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { CSSTransition } from "react-transition-group"
 import { dropShadow } from "../common/effects"
@@ -22,7 +22,7 @@ const Header = () => {
     <ContextConsumer>
       {({data})=> {
 
-        return <StyledHeader isNavVisible={isNavVisible}>
+        return <StyledHeader isNavVisible={isNavVisible} id="header">
         <Link
           to="/#"
           style={{

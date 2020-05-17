@@ -5,41 +5,41 @@ import { dropShadow } from '../effects';
 const StyledWrapper = styled.div`
     display : flex ;
     flex-direction : column;
-    position : relative ;
+    position : fixed ;
     justify-content :center;
     align-items : center;
-    width : 90%;
-    max-width : 90vw;
+    width : 50vw;
     left : 25vw;
-    top : -2vh;
+    top : 20vh;
     font-family : var(--font);
-    background-color : inherit;
+    background-color : #fafafa;
     ${dropShadow}
     opacity : 0;
     padding : 50px;
+    z-index : 999;
     text-align : center;
     border-radius : 100px;  
     border : 2px solid inherit;
-    ${props=> props.corner} : 10px;
-    transform : scale(0);
-    transform-origin : ${props => props.origin};
+   
+    transform : translateY(-100vh);
     animation : fade 0.5s ease-out forwards ;
     &.close {
-        animation : fade 0.5s ease-out backwards;
+        animation : fade 0.5s ease-out backwards 1;
     }
     @media screen and (max-width: 768px) {
-        top : 4vh;
-        left : 0;
+        top : 2vh;
+        width: 80vw ;
+        left : 10vw; 
         margin : 10% auto;
         max-width : 90% !important ;
     }
     @keyframes fade {
         from {
-            transform  :scale(0);
+            transform : translateY(-100vh);
            opacity : 0
         }
         to {
-            transform  :scale(1);
+            transform : translateY(0vh);
             opacity : 1;
         }
     }
@@ -48,6 +48,7 @@ const StyledWrapper = styled.div`
     }
     .modal-body {
         background-color : inherit;
+        color : var(--grey-dark)
     }
     .modal-footer {
         width : 100%;
@@ -77,12 +78,8 @@ const StyledWrapper = styled.div`
 `
 const Modal = (props) => {
     const [close,setClose] = useState(false);
-    let corner = props.corner ? `border-${props.corner}-radius` : 'border-top-left-radius';
-    let origin = props.corner ? props.corner.split('-').join(' ') : 'top left';
     return (
-        <StyledWrapper origin={origin} corner={corner} className={`${close ? 'close' : ""}`} style={{
-            maxWidth : props.maxWidth,
-        }}>
+        <StyledWrapper className={`${close ? 'close' : ""}`} >
                 <div className="modal-header">
                     <img src={props.error ? logos.loading : logos.PhoneGDGLogo} width="100px" height="100px" alt="logo"></img>
                 </div>

@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { ExternalLink } from "../common/utils"
 import { navigate } from "gatsby"
 import { emojis } from "../common/images"
-const Footer = () => (
+const Footer = ({content}) => (
   <StyledFooter>
     <div className="row1">
       <div className="content">
@@ -35,21 +35,11 @@ const Footer = () => (
       <div className="social-media">
         <p>Follow Us</p>
         <div className="sm">
-          <ExternalLink
-            url="https://www.instagram.com/gdg_algiers/"
-            icon={require("../../images/icons/instagram.svg")}
-            text="instagram"
-          ></ExternalLink>
-          <ExternalLink
-            url="https://twitter.com/gdg_algiers"
-            icon={require("../../images/icons/twitter.svg")}
-            text="twitter"
-          ></ExternalLink>
-          <ExternalLink
-            url="https://www.facebook.com/GDGAlgiers/"
-            icon={require("../../images/icons/facebook.svg")}
-            text="facebook"
-          ></ExternalLink>
+          {content.socialmedia.map(item => <ExternalLink
+            url={item.url}
+            icon={require(`../../images/icons/${item.icon}`)}
+            text={item.alt}
+          />)}
         </div>
       </div>
     </div>

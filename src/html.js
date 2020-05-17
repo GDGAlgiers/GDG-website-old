@@ -14,7 +14,7 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
 
-      <body {...props.bodyAttributes}>
+      <body {...props.bodyAttributes} >
         {props.preBodyComponents}
         <div
           key={`body`}

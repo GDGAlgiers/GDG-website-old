@@ -1,32 +1,29 @@
 import React from "react"
 import styled from "styled-components"
-const Contact = () => (
+const Contact = ({content}) => (
   <StyledDiv>
     <div className="row">
       <div className="img-container">
         <img
           className="img2 animated-wigle"
-          src={require("../../../images/icons/ic-email-48-px.svg")}
+          src={require(`../../../images/icons/${content.email.icon}`)}
           alt="email"
         ></img>
       </div>
       <div className="info-container">
-        <p className="title">Email</p>
-        <p className="info">gdg.algiers@esi.dz</p>
+        <p className="title">{content.email.title}</p>
+        <p className="info">{content.email.data}</p>
       </div>
     </div>
     <div className="row2">
       <div className="img-container">
-        <img alt="location" className="img2 animated-wigle" src={require("../../../images/icons/gps.svg")}></img>
+        <img alt="location" className="img2 animated-wigle" src={require(`../../../images/icons/${content.address.icon}`)}></img>
       </div>
       <div className="info-container">
-        <p className="title">Adresse</p>
+        <p className="title">{content.address.title}</p>
         <p className="info">
-          BP 68M Oued Smar,
-          <span className="br"></span>
-          El Herrach Algiers,
-          <span className="br"></span>
-          16309
+         {content.address.data.split(',').map(item =>  <>{item}<span className="br"></span>
+         </>)}
         </p>
       </div>
     </div>
@@ -35,12 +32,12 @@ const Contact = () => (
         <img
           alt="phone"
           className="img1 animated-wigle"
-          src={require("../../../images/icons/call.svg")}
+          src={require(`../../../images/icons/${content.phone.icon}`)}
         ></img>
       </div>
       <div className="info-container">
-        <p className="title">Telephone</p>
-        <p className="info">+213 123 456 789</p>
+        <p className="title">{content.phone.title}</p>
+        <p className="info">{content.phone.data}</p>
       </div>
     </div>
   </StyledDiv>

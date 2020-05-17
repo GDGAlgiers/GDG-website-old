@@ -1,13 +1,48 @@
 import React from "react"
 import styled from "styled-components"
-import heroImage from "../../../images/heroimage.jpg"
 import { navigate } from "gatsby"
 
-const desc = `GDG Algiers is a local community located at the National Higher School of Computer Science, Algiers, Algeria.
-It is part of the big global community of developers "Google Developers Group" (960 communities worldwide)
-Our community is made up of passionate developers and motivated young students.
-It has started from the simple status of GTUG (Google Technology User Group) in 2011 to become today one of the most active GDGs in the MENA region.
-GDG Algiers Chapter hosts a variety of technical activities for developers through the different events we organize, aiming to help the developers community get the latest technology updates.`
+
+export default function Description({ content }) {
+  return (
+    <Wrapper id="about">
+      <DescDiv>
+        <div>
+  <BiggerH1>{content.header.text1}</BiggerH1>
+  <BiggerH1>{content.header.text2}</BiggerH1>
+        </div>
+        <p
+          style={{
+            whiteSpace: "pre-line",
+            lineHeight: 1.45,
+          }}
+        >
+          {content.description}
+        </p>
+      </DescDiv>
+      <HeroCard img={require(`../../../images/${content.hero.image}`)} onClick={
+        e => {
+          e.preventDefault()
+          navigate(content.hero.link)
+        }
+      }>
+        <h1 style={{ width: "100%", textAlign: "center" }}>
+          {content.hero.title}
+        </h1>
+        <StatsHolder>
+          {
+            content.hero.numbers.map(item => {
+              return <Column>
+              <h1>{item.data}</h1>
+              <h2>{item.title}</h2>
+            </Column>
+            })
+          }
+        </StatsHolder>
+      </HeroCard>
+    </Wrapper>
+  )
+}
 
 const Wrapper = styled.section`
   width: 100%;
@@ -65,52 +100,3 @@ const StatsHolder = styled.div`
     grid-template-columns: 1fr 1fr;
   }
 `
-
-export default function Description({ id }) {
-  return (
-    <Wrapper id="about">
-      <DescDiv>
-        <div>
-          <BiggerH1>About</BiggerH1>
-          <BiggerH1>GDG Algiers</BiggerH1>
-        </div>
-        <p
-          style={{
-            whiteSpace: "pre-line",
-            lineHeight: 1.45,
-          }}
-        >
-          {desc}
-        </p>
-      </DescDiv>
-      <HeroCard img={heroImage} onClick={
-        e => {
-          e.preventDefault()
-          navigate('/community')
-        }
-      }>
-        <h1 style={{ width: "100%", textAlign: "center" }}>
-          GDG Algiers in numbers
-        </h1>
-        <StatsHolder>
-          <Column>
-            <h1>2000</h1>
-            <h2>participants</h2>
-          </Column>
-          <Column>
-            <h1>88</h1>
-            <h2>events</h2>
-          </Column>
-          <Column>
-            <h1>280</h1>
-            <h2>members</h2>
-          </Column>
-          <Column>
-            <h1>20</h1>
-            <h2>tracks</h2>
-          </Column>
-        </StatsHolder>
-      </HeroCard>
-    </Wrapper>
-  )
-}

@@ -1,6 +1,23 @@
 import React from "react"
 import styled from "styled-components"
-import {featuredIn} from '../../common/images'
+
+const Featured = ({content}) => {
+  return (
+    <Wrapper>
+      <h1 style={{ textAlign: "center" }}>{content.title}</h1>
+      <Flex>{content.items.map(item => 
+         <GreyImg
+         src={require(`../../../images/featured_in/${item.image}`)}
+         alt={item.alt}
+         width="100%"
+         height="100%"
+         loading="lazy"
+       ></GreyImg>
+      )}</Flex>
+    </Wrapper>
+  )
+}
+
 const Wrapper = styled.section`
   width: 100%;
   padding-top: 5vh;
@@ -19,16 +36,6 @@ const Flex = styled.div`
   flex-wrap: wrap;
 `
 
-const features = [
-  {
-    img: featuredIn.hive,
-    alt: "Hive Digit",
-  },
-  {
-    img: featuredIn.radio,
-    alt: "Radio Algerie",
-  },
-]
 
 const GreyImg = styled.img`
   filter: grayscale(100%);
@@ -42,23 +49,5 @@ const GreyImg = styled.img`
   }
 `
 
-const renderFeatures = features.map(featuredin => (
-  <GreyImg
-    src={featuredin.img}
-    alt={featuredin.alt}
-    width="100%"
-    height="100%"
-    loading="lazy"
-  ></GreyImg>
-))
-
-const Featured = () => {
-  return (
-    <Wrapper>
-      <h1 style={{ textAlign: "center" }}> We’ve been featured in</h1>
-      <Flex>{renderFeatures}</Flex>
-    </Wrapper>
-  )
-}
 
 export default Featured

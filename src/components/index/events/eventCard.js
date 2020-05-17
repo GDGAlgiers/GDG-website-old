@@ -125,7 +125,7 @@ export default class EventCard extends Component {
           navigate(this.props.event.url)
         }}
       >
-        <BackImg className="backImg" img={this.props.event.img}></BackImg>
+        <BackImg className="backImg" img={require(`../../../images/${this.props.event.img}`)}></BackImg>
         <HoveredText className="hoveredText">
           <Column>
             ²<p style={pStyle}>{this.props.event.date.days}</p>

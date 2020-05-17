@@ -8,22 +8,21 @@ import Description from "../components/index/description/Description"
 import Featured from "../components/index/featured/Featured"
 import Partners from "../components/index/partners/Partners"
 import PageTransition from 'gatsby-plugin-page-transitions'
-// example of using styled components ( writing CSS-in-JS )
+
+
+// Content 
+import index from '../content/index.json'
+///
 
 const IndexPage = () => (
     <PageTransition>
     <SEO title="Home" />
-    <Landing></Landing>
-    <Description></Description>
-    <Featured></Featured>
-    <Events></Events>
-    <Partners></Partners>
-    <ContactUS></ContactUS>
-
-    {
-      // TODO : ADD CONTACT US SECTION with id : #contact
-      // TODO : ADD NEWSLETTER
-    }
+    <Landing content={index.landing}></Landing>
+    <Description content={index.description}></Description>
+    <Featured content={index.featured}></Featured>
+    <Events content={index.events}></Events>
+    <Partners content={index.partners}></Partners>
+    <ContactUS content={index.contactUs}></ContactUS>
  </PageTransition>
 )
 

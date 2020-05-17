@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import Modal from "../../common/modal/Modal"
-
+/// messages 
 const INVALID_EMAIL = "Please put a valid email"
 const REGISTERING = "Registering..."
-const THANKS = "Thank you for registering to our newsletter"
+const THANKS = "Newsletter not setup yet , please send your email to gdg.algiers@esi.dz"
 const NewsLetter = () => {
   const [email, setEmail] = useState("")
   const [error, setError] = useState({
@@ -30,7 +30,7 @@ const NewsLetter = () => {
         setError({ isError: false })
         setShowModal({ show: true, msg: THANKS })
       }, 1000)
-      setTimeout(() => reset(), 1500)
+      setTimeout(() => reset(), 5000)
     }
   }
   const reset = () => {
@@ -42,9 +42,7 @@ const NewsLetter = () => {
     <StyledDiv>
       {showModal.show ? (
         <Modal
-          corner="bottom-left"
           error={error.isError}
-          maxWidth="40%"
           close={e => setShowModal(false)}
         >
           {showModal.msg}

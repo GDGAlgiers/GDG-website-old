@@ -66,8 +66,8 @@ class Form extends React.Component {
           message :""
         },
         submited :true,
-        showModal: true,
-        modalMsg: "Thank you for submiting , we will reach out to you ",
+        showModal: true, // thank you
+        modalMsg: "Email not setup up yet , please send your message to gdg.algiers@esi.dz",
       })
     }
   }

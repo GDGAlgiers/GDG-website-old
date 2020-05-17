@@ -94,22 +94,40 @@ const Line = styled.div`
     border-radius: 2px;
   }
 `
-const Partners = () => {
+const Partners = ({content}) => {
   return (
     <div>
       <Wrapper id="partners">
-        <BigTitle>Our community partners</BigTitle>
+        <BigTitle>{content.title}</BigTitle>
         <Flex style={{ marginBottom: "3vh" }}>
           <Line style={{ width: "30%", marginRight: "1vw" }}></Line>
           <Line style={{ width: "10%", marginRight: "1vw" }}></Line>
           <Line style={{ width: "5%" }}></Line>
         </Flex>
-        <Flex style={{ justifyContent: "space-evenly" }}>{renderPartners}</Flex>
+        <Flex style={{ justifyContent: "space-evenly" }}>{
+          content.items.map(item => <GreyImg
+            src={require(`../../../images/partners/${item.image}`)}
+            alt={item.alt}
+            loading="lazy"
+            width="100%"
+            height="100%"
+            onClick={e=> {
+              e.preventDefault()
+              navigate(item.link)
+            }}
+          ></GreyImg>)
+        }</Flex>
         <Flex id="sponsors">
-          <BigTitle>Our Sponsors</BigTitle>
+  <BigTitle>{content.sponsors.title}</BigTitle>
         </Flex>
 
-        <Flex style={{ justifyContent: "space-evenly" }}>{renderSponsors}</Flex>
+        <Flex style={{ justifyContent: "space-evenly" }}>{content.sponsors.items.map(item=><GreyImg
+    src={require(`../../../images/sponsors/${item.image}`)}
+    alt={item.alt}
+    loading="lazy"
+    width="100%"
+    height="100%"
+  ></GreyImg>)}</Flex>
       </Wrapper>
       <iframe
         defer

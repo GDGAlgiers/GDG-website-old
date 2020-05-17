@@ -3,6 +3,40 @@ import styled from "styled-components"
 import Button from "../../common/button/GDGButton"
 import { navigate } from "gatsby"
 import AnimatedBoxes from "./AnimatedBoxes"
+
+
+export default function Landing({ content }) {
+  return (
+    <Wrapper>
+      <Content>
+        <h1 className="landing-title">
+         {content.title}<span className="matter">{content.titlematter}</span>
+        </h1>
+        <Buttons>
+          <Button
+            title={content.buttonLeft.text}
+            outlined={true}
+            onClick={e => {
+              e.preventDefault();
+              navigate(content.buttonLeft.link)}}
+          ></Button>
+          <div className="gap"></div>
+          <Button
+            title={content.buttonRight.text}
+            outlined={false}
+            onClick={e =>{ 
+              e.preventDefault();
+              navigate(content.buttonRight.link)
+            }}
+          ></Button>
+        </Buttons>
+      </Content>
+      <Canvas>
+        <AnimatedBoxes></AnimatedBoxes>
+      </Canvas>
+    </Wrapper>
+  )
+}
 const Wrapper = styled.section`
   width: 100%;
   height: 90vh;
@@ -116,36 +150,3 @@ const Canvas = styled.div`
   opacity :1;
  
 `
-
-export default function Landing({ id }) {
-  return (
-    <Wrapper>
-      <Content>
-        <h1 className="landing-title">
-          We do cool things that <span className="matter">matter</span>
-        </h1>
-        <Buttons>
-          <Button
-            title="ABOUT US"
-            outlined={true}
-            onClick={e => {
-              e.preventDefault();
-              navigate("#about")}}
-          ></Button>
-          <div className="gap"></div>
-          <Button
-            title="UPCOMING EVENTS"
-            outlined={false}
-            onClick={e =>{ 
-              e.preventDefault();
-              navigate("#events")
-            }}
-          ></Button>
-        </Buttons>
-      </Content>
-      <Canvas>
-        <AnimatedBoxes></AnimatedBoxes>
-      </Canvas>
-    </Wrapper>
-  )
-}
