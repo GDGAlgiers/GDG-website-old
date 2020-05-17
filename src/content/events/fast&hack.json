@@ -4,7 +4,7 @@
     "date_format" :"MM DD YYYY, h:mm a",
     "tracks":[],
     "faq" : {
-        "title": "FAQs about the event",
+        "title": "FAQs",
         "rows": [
             {
                 "title": "What is the event about ?",

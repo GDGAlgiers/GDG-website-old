@@ -19,7 +19,7 @@ export default function fastAndHack20() {
       timeFormat={content.date_format}
       ></Countdown>
       <h2 className="title">What is it ?</h2>
-      <p>{content.description}</p>
+  <p className="description">{content.description}</p>
       <a href={content.slack_url} target="_blank" rel="noopener noreferrer"  ><img className="btn" src={require('../../images/icons/slack-new-logo.svg')} alt="slack workspace" title="join slack workspace"></img></a>
       <div className="faq">
         <Faq data={content.faq} styles ={faqStyles} config={{animate : true}}></Faq>
@@ -43,9 +43,9 @@ align-items : center;
 flex-direction : column;
 padding : 64px;
 h1 {
-  font-size : 3rem;
+  font-size : 5rem;
   text-align : center ;
-
+  font-family : Caveat, sans-serif;
   .fast {
     color : var(--green)
   }
@@ -74,6 +74,7 @@ a img {
   font-family : var(--font-header);
   h2 {
     margin-top : 10px;
+    font-family : Caveat, sans-serif
   }
 }
 .styles_faq-row-wrapper__3Hsch {
@@ -84,7 +85,8 @@ a img {
   }
 }
 p{
- 
+  font-style : italic;
+  font-family : var(--font);
   text-align : center;
   max-width : 50%;
 
@@ -92,6 +94,8 @@ p{
 .title{
   color : var(--blue);
   margin-top :5%;
+  font-size : 48px;
+  font-family : Caveat, sans-serif
 }
 @media screen and (max-width: 768px) {
   padding : 32px;

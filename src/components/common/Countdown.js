@@ -35,7 +35,8 @@ export default function Countdown(props) {
   const minutesRadius = mapNumber(minutes, 60, 0, 0, 360)
   const secondsRadius = mapNumber(seconds, 60, 0, 0, 360)
   if (!seconds) {
-    return null
+      // not done 
+    return <img src={require('../../images/icons/loading.svg')} alt="loading countdown" title="loading countdown" width="100px" style={{margin : 0}}></img>
   }
   return (
     <Wrapper className={props.className}>

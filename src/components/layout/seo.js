@@ -71,6 +71,7 @@ function SEO({ description, lang, meta, title }) {
     >
       <link  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
       <link  href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"></link>
     </Helmet>
   )
 }
