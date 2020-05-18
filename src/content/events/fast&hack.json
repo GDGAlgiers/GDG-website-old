@@ -59,6 +59,35 @@
                         "url" :"https://github.com/MeridjaNassim"
                     }
                 ]
+            },
+            {
+                "image" :"asmaa.jpg",
+                "name":"Haidour Asmaa",
+                "profession" :"UX designer",
+                "socialmedia" : [
+                    {
+                        "icon" :"facebook.svg",
+                        "alt" :"facebook",
+                        "url" :"https://www.facebook.com/profile.php?id=100009955786666"
+                    },
+                    {
+
+                        "icon" :"slack.svg",
+                        "alt" :"slack",
+                        "url" :"https://app.slack.com/client/T013QSR6BFF/browse-people/user_profile/U01472BK97T"
+                    },
+                    {
+
+                        "icon" :"twitter.svg",
+                        "alt" :"twitter",
+                        "url" :"https://twitter.com/HaidourAsma?s=07&fbclid=IwAR0mkUqcuvPRmXsp3PpkhHODrLJKv7jsmPLylaaUp5h6AoeWd6afzVUSJHg"
+                    },
+                    {
+                        "icon" :"linkedin.svg",
+                        "alt" :"linkedin",
+                        "url" :"https://www.linkedin.com/mwlite/in/haidour-asmaa-1669b5153"
+                    }
+                ]
             }
            
         ]

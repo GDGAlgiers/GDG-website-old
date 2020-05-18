@@ -42,9 +42,9 @@ const FastAndHack20 = () => {
             title="join slack workspace"
           ></img>
         </a>
-        <Themes>
+         <Themes>
           <h2 className="title">{content.themes.title}</h2>
-          <div className="theme-row">
+           {!countdownFinished ? <h3 className="not-revealed">Dont rush things ... we will reveal them sooner</h3> :  <div className="theme-row">
             {content.themes.items.map(item => {
               return (
                 <div className="theme-item">
@@ -58,8 +58,9 @@ const FastAndHack20 = () => {
                 </div>
               )
             })}
-          </div>
+          </div>}
         </Themes>
+        
         <Mentors>
         <h2 className="title">{content.mentors.title}</h2>
         <div className="mentors-row">
@@ -187,6 +188,13 @@ const Themes = styled.section`
 width: 100%;
 .title {
   text-align : center;
+}
+.not-revealed {
+  text-align :center; 
+  color : var(--grey);
+  font-family : var(--font);
+  font-weight : 300;
+  font-style : italic;
 }
 .theme-row {
   margin-top : 5%;
