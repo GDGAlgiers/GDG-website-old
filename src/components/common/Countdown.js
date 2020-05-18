@@ -1,25 +1,33 @@
 import React, { useState, useEffect } from "react"
 import moment from "moment"
 import styled from "styled-components"
-import {colors} from '../../constants/theme'
+import { colors } from "../../constants/theme"
 export default function Countdown(props) {
   let interval = undefined
   const [countdown, setCountDown] = useState({
-    days: undefined,
-    hours: undefined,
-    minutes: undefined,
-    seconds: undefined,
+    days: "0",
+    hours: "0",
+    minutes: "0",
+    seconds: "0",
   })
+  const [countdownFinished, setCountDownFinished] = useState(false)
   useEffect(() => {
     interval = setInterval(() => {
       const { timeTillDate, timeFormat } = props
       const then = moment(timeTillDate, timeFormat)
       const now = moment()
-      const countdown = moment(then - now)
-      const days = countdown.format("D")
-      const hours = countdown.format("HH")
-      const minutes = countdown.format("mm")
-      const seconds = countdown.format("ss")
+     
+      const diff = moment.duration(then.diff(now))
+      const days = diff.days().toString()
+      const hours = diff.hours().toString()
+      const minutes = diff.minutes().toString()
+      const seconds = diff.seconds().toString()
+      // time passed
+      if (seconds < 0) {
+        setCountDownFinished(true)
+        console.log("finished counting" , countdownFinished);
+        
+      }
       setCountDown({ days, hours, minutes, seconds })
     }, 1000)
     /// cleanup function
@@ -34,35 +42,46 @@ export default function Countdown(props) {
   const hoursRadius = mapNumber(hours, 24, 0, 0, 360)
   const minutesRadius = mapNumber(minutes, 60, 0, 0, 360)
   const secondsRadius = mapNumber(seconds, 60, 0, 0, 360)
+ 
   if (!seconds) {
-      // not done 
-    return <img src={require('../../images/icons/loading.svg')} alt="loading countdown" title="loading countdown" width="100px" style={{margin : 0}}></img>
+    // not done
+    return (
+      <img
+        src={require("../../images/icons/loading.svg")}
+        alt="loading countdown"
+        title="loading countdown"
+        width="100px"
+        style={{ margin: 0 }}
+      ></img>
+    )
   }
-  return (
+  return countdownFinished ? (
+    null
+  ) : (
     <Wrapper className={props.className}>
       {days && (
-        <div className="countdown-item" style={{color : colors.blue}}>
+        <div className="countdown-item" style={{ color: colors.blue }}>
           <SVGCircle radius={daysRadius} fill={colors.blue} />
           {days}
           <span>days</span>
         </div>
       )}
       {hours && (
-        <div className="countdown-item" style={{color : colors.red}}>
-          <SVGCircle radius={hoursRadius} fill={colors.red}/>
+        <div className="countdown-item" style={{ color: colors.red }}>
+          <SVGCircle radius={hoursRadius} fill={colors.red} />
           {hours}
           <span>hours</span>
         </div>
       )}
       {minutes && (
-        <div className="countdown-item" style={{color : colors.green}}>
+        <div className="countdown-item" style={{ color: colors.green }}>
           <SVGCircle radius={minutesRadius} fill={colors.green} />
           {minutes}
           <span>minutes</span>
         </div>
       )}
       {seconds && (
-        <div className="countdown-item" style={{color : colors.yellow}}>
+        <div className="countdown-item" style={{ color: colors.yellow }}>
           <SVGCircle radius={secondsRadius} fill={colors.yellow} />
           {seconds}
           <span>seconds</span>
@@ -77,10 +96,9 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   .countdown-item {
-   
     font-size: 40px;
     display: flex;
-    font-family : var(--font-header);
+    font-family: var(--font-header);
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -108,7 +126,7 @@ const Wrapper = styled.div`
   }
 `
 
-const SVGCircle = ({ radius ,fill}) => (
+const SVGCircle = ({ radius, fill }) => (
   <svg className="countdown-svg">
     <path
       fill="none"

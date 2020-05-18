@@ -1,4 +1,4 @@
-import React from "react"
+import React ,{ useEffect }from "react"
 import content from '../../content/events/fast&hack.json'
 import SEO from "../../components/layout/seo"
 import PageTransition from 'gatsby-plugin-page-transitions'
@@ -18,9 +18,9 @@ export default function fastAndHack20() {
       timeTillDate={content.date} 
       timeFormat={content.date_format}
       ></Countdown>
-      <h2 className="title">What is it ?</h2>
+      <h2 className="title">{content.title}</h2>
   <p className="description">{content.description}</p>
-      <h3 id="joinslack">Join Slack Workspace <br></br> ↓	</h3>
+      <h3 id="joinslack">Click here to join Slack Workspace <br></br> ↓	</h3>
       <a href={content.slack_url} target="_blank" rel="noopener noreferrer"  ><img className="btn" src={require('../../images/icons/slack-new-logo.svg')} alt="slack workspace" title="join slack workspace"></img></a>
       <div className="faq">
         <Faq data={content.faq} styles ={faqStyles} config={{animate : true}}></Faq>
