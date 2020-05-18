@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect ,useState} from "react"
 import moment from "moment"
 import styled from "styled-components"
 import { colors } from "../../constants/theme"
@@ -10,10 +10,10 @@ export default function Countdown(props) {
     minutes: "0",
     seconds: "0",
   })
-  const [countdownFinished, setCountDownFinished] = useState(false)
+  const { timeTillDate, timeFormat , onFinish ,reversedClock} = props
   useEffect(() => {
     interval = setInterval(() => {
-      const { timeTillDate, timeFormat } = props
+      
       const then = moment(timeTillDate, timeFormat)
       const now = moment()
      
@@ -22,11 +22,9 @@ export default function Countdown(props) {
       const hours = diff.hours().toString()
       const minutes = diff.minutes().toString()
       const seconds = diff.seconds().toString()
-      // time passed
+      // countdown finished
       if (seconds < 0) {
-        setCountDownFinished(true)
-        console.log("finished counting" , countdownFinished);
-        
+        onFinish();
       }
       setCountDown({ days, hours, minutes, seconds })
     }, 1000)
@@ -38,10 +36,11 @@ export default function Countdown(props) {
     }
   }, [])
   const { days, hours, minutes, seconds } = countdown
-  const daysRadius = mapNumber(days, 30, 0, 0, 360)
-  const hoursRadius = mapNumber(hours, 24, 0, 0, 360)
-  const minutesRadius = mapNumber(minutes, 60, 0, 0, 360)
-  const secondsRadius = mapNumber(seconds, 60, 0, 0, 360)
+  /// reversedClock reverses the direction of the ticking clock
+  const daysRadius = !reversedClock? mapNumber(days, 30, 0, 0, 360) : 360 - mapNumber(days, 30, 0, 0, 360)
+  const hoursRadius =!reversedClock? mapNumber(hours, 24, 0, 0, 360) :360- mapNumber(hours, 24, 0, 0, 360)
+  const minutesRadius =!reversedClock? mapNumber(minutes, 60, 0, 0, 360):360 -mapNumber(minutes, 60, 0, 0, 360)
+  const secondsRadius =!reversedClock? mapNumber(seconds, 60, 0, 0, 360):360 - mapNumber(seconds, 60, 0, 0, 360)
  
   if (!seconds) {
     // not done
@@ -55,9 +54,7 @@ export default function Countdown(props) {
       ></img>
     )
   }
-  return countdownFinished ? (
-    null
-  ) : (
+  return (
     <Wrapper className={props.className}>
       {days && (
         <div className="countdown-item" style={{ color: colors.blue }}>

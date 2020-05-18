@@ -3,7 +3,66 @@
     "description" : "After enormous positive feedback that we received last year, GDG Algiers has the pleasure to organize again the second edition of its original online Hackathon “Fast & Hack”! The main idea is to let developers from our community put their coding skills in use all while their fasting in this sacred month. We believe that hacking under such circumstances would give opportunity to some cool ideas that will certainly add value either spiritually or collectively to the society as we’re suggesting to the participants a variety of themes that they can be hacking in.This hackathon is for students, professionals, and programming enthusiasts who want to invest two weeks of their lives in building some cool stuff, that matter. So if you’re one of those then feel free to join the competition by entering our slack workspace.",
     "date" :"05 19 2020, 0:00 am",
     "date_format" :"MM DD YYYY, h:mm a",
-    "tracks":[],
+    "themes":{
+        "title" : "Event Themes",
+        "items" : [
+            {
+                "icon" : "eid.svg",
+                "title" :"Quarantine Eid",
+                "description" :"It’s 2020, everything’s changed and El-Eid is certainly not gonna be the exception, people will be spending the happiest days of the year alone this time. Can you imagine other sweet stuff that we’ll miss from this Eid and build alternatives for them to keep the happy vibes always on despite everything?"
+            },
+            {
+                "icon" : "mental-health.svg",
+                "title" :"Mental Fitness",
+                "description" :"We can’t think of any problems in this period while ignoring the big effect of staying at home on the mental health of many ones, especially in our society where not all families have the luxury of very fun indoors. Your challenge is to think of a way to help people keep up a mentally safe lifestyle while staying at their homes, we need less depression, anxiety, stress... but more positivity and up beats!"
+            },
+            {
+                "icon" : "good.svg",
+                "title" :"Good deeds & spirituality",
+                "description" :"Technology allowed us to connect all the outer world together, but what about our inner selves? Do you think you can find a use of technology to make us feel closer to our beliefs and have deeper religious experiences in our daily lives, especially in these sacred times?"
+            },
+            {
+                "icon" : "vulenteer.svg",
+                "title" :"Vulenteering Apps",
+                "description" :"Non-profit organizations and associations feel the need to act all the time. However, crisis and catastrophes often make them face plenty of challenges in pursuing their work. Do you think these organizations can take advantage of technology and find a solution to continue their volunteering work in the best conditions? Could we find digital solutions that support this humanitarian movement?"
+            }
+        ]
+    },
+    "mentors" : {
+        "title" :"Our Mentors",
+        "items" :[
+            {
+                "image" :"nassim.jpg",
+                "name":"Meridja Nassim",
+                "profession" :"Web/Mobile developer",
+                "socialmedia" : [
+                    {
+                        "icon" :"facebook.svg",
+                        "alt" :"facebook",
+                        "url" :"https://www.facebook.com/nassim.top2/"
+                    },
+                    {
+
+                        "icon" :"slack.svg",
+                        "alt" :"slack",
+                        "url" :"https://app.slack.com/client/T013QSR6BFF/composer/draft-0ec31753-151e-4c01-876d-fb8f4c3ef694/user_profile/U013UA0BDB4"
+                    },
+                    {
+
+                        "icon" :"twitter.svg",
+                        "alt" :"twitter",
+                        "url" :"https://twitter.com/AbdMeri"
+                    },
+                    {
+                        "icon" :"github.svg",
+                        "alt" :"github",
+                        "url" :"https://github.com/MeridjaNassim"
+                    }
+                ]
+            }
+           
+        ]
+    },
     "faq" : {
         "title": "FAQs",
         "rows": [
