@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import content from "../../content/events/fast&hack.json"
 import SEO from "../../components/layout/seo"
 import PageTransition from "gatsby-plugin-page-transitions"
@@ -9,26 +9,33 @@ import {colors} from '../../constants/theme';
 /// remove the loader when you implement this page
 const cirColors = [colors.blue ,colors.red,colors.green,colors.yellow];
 const FastAndHack20 = () => {
-  const [countdownFinished, setCountDownFinished] = useState(false)
+  const [eventStart, setEventStart] = useState(false)
+  const [eventFinish, setEventFinish] = useState(false)
   return (
     <PageTransition>
       <SEO title="FAST&HACK20" />
 
       <Wrapper>
-        <h1>
-          <span className="fast">FAST</span> &{" "}
-          <span className="hack">HACK</span>2020
-        </h1>
-        {countdownFinished ? null : (
+        <img className="logo" alt="Fast & Hack logo" src={require(`../../images/events/fastandhack20/${content.logo}`)}></img>
+        {eventStart  ? <Countdown
+            className="countdown"
+            reversedClock={true}
+            timeTillDate={content.end_date}
+            timeFormat={content.date_format}
+            onFinish={() => {
+              setEventFinish(true);
+            }}
+          ></Countdown> : (
           <Countdown
             className="countdown"
             timeTillDate={content.date}
             timeFormat={content.date_format}
             onFinish={() => {
-              setCountDownFinished(true)
+              setEventStart(true)
             }}
           ></Countdown>
         )}
+        {eventFinish ? <h2>The event is completed , we thank all participants for their dedication</h2>:null}
         <h2 className="title">{content.title}</h2>
         <p className="description">{content.description}</p>
         <h3 id="joinslack">
@@ -44,7 +51,7 @@ const FastAndHack20 = () => {
         </a>
          <Themes>
           <h2 className="title">{content.themes.title}</h2>
-           {!countdownFinished ? <h3 className="not-revealed">Dont rush things ... we will reveal them sooner</h3> :  <div className="theme-row">
+           {!eventStart ? <h3 className="not-revealed">Dont rush things ... we will reveal them sooner</h3> :  <div className="theme-row">
             {content.themes.items.map(item => {
               return (
                 <div className="theme-item">
@@ -107,16 +114,8 @@ const Wrapper = styled.div`
 
   flex-direction: column;
   padding: 64px;
-  h1 {
-    font-size: 4rem;
-    text-align: center;
-    font-family: "Reem Kufi", sans-serif;
-    .fast {
-      color: var(--green);
-    }
-    .hack {
-      color: var(--red);
-    }
+  .logo {
+    width : 50%;
   }
   a img {
     width: 100px;
@@ -174,6 +173,9 @@ const Wrapper = styled.div`
     font-family: "Reem Kufi", sans-serif;
   }
   @media screen and (max-width: 768px) {
+    .logo {
+    width : 100%;
+  }
     .faq {
       width: 100%;
     }
