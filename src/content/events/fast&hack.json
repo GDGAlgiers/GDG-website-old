@@ -148,6 +148,50 @@
                         "url" :"https://github.com/mostefamourad"
                     }
                 ]
+            },
+            {
+                "image" :"azzedine.jpg",
+                "name":"Chenine Azzeddine",
+                "profession" :"Software developer",
+                "socialmedia" : [
+                    {
+
+                        "icon" :"twitter.svg",
+                        "alt" :"twitter",
+                        "url" :"https://twitter.com/azzeddineCH_"
+                    },
+                    {
+                        "icon" :"github.svg",
+                        "alt" :"github",
+                        "url" :"https://github.com/chenineazeddine"
+                    }
+                ]
+            },
+            {
+                "image" :"redha.jpg",
+                "name":"Amirouche Redha",
+                "profession" :"Frontend developer",
+                "socialmedia" : [
+                    {
+
+                        "icon" :"facebook.svg",
+                        "alt" :"facebook",
+                        "url" :"https://www.facebook.com/redh1mirouche3"
+                    },
+                    {
+
+                        "icon" :"slack.svg",
+                        "alt" :"slack",
+                        "url" :"https://app.slack.com/client/T013QSR6BFF/browse-people/user_profile/U013TL1HWBF"
+                    },
+                    {
+
+                        "icon" :"twitter.svg",
+                        "alt" :"twitter",
+                        "url" :"https://twitter.com/am__redha"
+                    }
+                    
+                ]
             }
            
         ]
