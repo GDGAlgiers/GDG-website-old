@@ -17,7 +17,7 @@ const FastAndHack20 = () => {
 
       <Wrapper>
         <img className="logo" alt="Fast & Hack logo" src={require(`../../images/events/fastandhack20/${content.logo}`)}></img>
-        {eventStart  ? <Countdown
+        <Countdown
             className="countdown"
             reversedClock={true}
             timeTillDate={content.end_date}
@@ -25,16 +25,7 @@ const FastAndHack20 = () => {
             onFinish={() => {
               setEventFinish(true);
             }}
-          ></Countdown> : (
-          <Countdown
-            className="countdown"
-            timeTillDate={content.date}
-            timeFormat={content.date_format}
-            onFinish={() => {
-              setEventStart(true)
-            }}
           ></Countdown>
-        )}
         {eventFinish ? <h2>The event is completed , we thank all participants for their dedication</h2>:null}
         <h2 className="title">{content.title}</h2>
         <p className="description">{content.description}</p>
