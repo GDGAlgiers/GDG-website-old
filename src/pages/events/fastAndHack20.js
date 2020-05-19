@@ -17,7 +17,8 @@ const FastAndHack20 = () => {
 
       <Wrapper>
         <img className="logo" alt="Fast & Hack logo" src={require(`../../images/events/fastandhack20/${content.logo}`)}></img>
-       
+
+      <h4 className="countdown-title">{!eventStart ?"Hacking starts in" : "Hacking ends in" }</h4>
         {!eventStart ? <Countdown
             className="countdown"
             reversedClock={true}
@@ -118,6 +119,11 @@ const Wrapper = styled.div`
   padding: 64px;
   .logo {
     width : 50%;
+  }
+  .countdown-title{
+    font-family :  "Reem Kufi", sans-serif;
+    font-size :20px;
+    color : var(--red)
   }
   a img {
     width: 100px;
