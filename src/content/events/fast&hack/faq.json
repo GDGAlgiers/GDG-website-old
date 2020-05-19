@@ -1,0 +1,29 @@
+{
+    "title": "FAQs",
+    "rows": [
+        {
+            "title": "What is the event about ?",
+            "content": "This event is about breaking the routine of the COVID-19 pandemic and enjoying a challenging event with others while aiming to be on top , this year's edition will have 4 themes namely : Quarantine Eid , Mental Fitness ,Good deeds & Spirituality and Volunteering Apps ,you are welcome to suggest & build any solution that tackles one or more of these themes"
+        },
+        {
+            "title": "What do i need to join ?",
+            "content":
+                "Motivation and determination and of caurse, the will to bring change."
+        },
+        {
+            "title": "What is asked from me to do ? ",
+            "content": "The only thing that is asked from you , is that you enjoy this event and build something you are proud of , we can't wait to see what you make"
+        },
+        {
+            "title": "Do i need a team to participate ?  ",
+            "content": "No you can participate alone , but it is always nice to share joy in teams :) ."
+        }, {
+            "title": "How do i showcase my work ? ",
+            "content": "We will provide you with a link to post your work on Devpost."
+        },
+        {
+            "title": "What are the prizes ? ",
+            "content": "An early doze of COVID-19 cure , just kidding it's a SECRET !"
+        }
+    ]
+}

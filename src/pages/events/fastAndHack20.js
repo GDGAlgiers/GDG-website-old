@@ -1,13 +1,19 @@
 import React, { useState } from "react"
-import content from "../../content/events/fast&hack.json"
 import SEO from "../../components/layout/seo"
 import PageTransition from "gatsby-plugin-page-transitions"
 import Countdown from "../../components/common/Countdown"
 import styled from "styled-components"
 import Faq from "react-faq-component"
-import {colors} from '../../constants/theme';
-/// remove the loader when you implement this page
-const cirColors = [colors.blue ,colors.red,colors.green,colors.yellow];
+import { colors } from "../../constants/theme"
+
+//importing content : 
+import landing from "../../content/events/fast&hack/landing.json"
+import themes from "../../content/events/fast&hack/themes.json"
+import mentors from "../../content/events/fast&hack/mentors.json"
+import faq from "../../content/events/fast&hack/faq.json"
+
+
+const cirColors = [colors.blue, colors.red, colors.green, colors.yellow]
 const FastAndHack20 = () => {
   const [eventStart, setEventStart] = useState(false)
   const [eventFinish, setEventFinish] = useState(false)
@@ -16,35 +22,50 @@ const FastAndHack20 = () => {
       <SEO title="FAST&HACK20" />
 
       <Wrapper>
-        <img className="logo" alt="Fast & Hack logo" src={require(`../../images/events/fastandhack20/${content.logo}`)}></img>
+        <img
+          className="logo"
+          alt="Fast & Hack logo"
+          src={require(`../../images/events/fastandhack20/${landing.logo}`)}
+          loading="eager"
+        ></img>
 
-      <h4 className="countdown-title">{!eventStart ?"Hacking starts in" : "Hacking ends in" }</h4>
-        {!eventStart ? <Countdown
+        <h4 className="countdown-title">
+          {!eventStart ? "Hacking starts in" : "Hacking ends in"}
+        </h4>
+        {!eventStart ? (
+          <Countdown
             className="countdown"
             reversedClock={true}
-            timeTillDate={content.date}
-            timeFormat={content.date_format}
+            timeTillDate={landing.date}
+            timeFormat={landing.date_format}
             onFinish={() => {
-                setEventStart(true);
+              setEventStart(true)
             }}
-          ></Countdown> : null}
-           {eventStart && !eventFinish ? <Countdown
+          ></Countdown>
+        ) : null}
+        {eventStart && !eventFinish ? (
+          <Countdown
             className="countdown"
             reversedClock={true}
-            timeTillDate={content.end_date}
-            timeFormat={content.date_format}
+            timeTillDate={landing.end_date}
+            timeFormat={landing.date_format}
             onFinish={() => {
-                setEventFinish(true)
-              
+              setEventFinish(true)
             }}
-          ></Countdown> : null}
-        {eventFinish ? <h2>The event is completed , we thank all participants for their dedication</h2>: null}
-        <h2 className="title">{content.title}</h2>
-        <p className="description">{content.description}</p>
+          ></Countdown>
+        ) : null}
+        {eventFinish ? (
+          <h2>
+            The event is completed , we thank all participants for their
+            dedication
+          </h2>
+        ) : null}
+        <h2 className="title">{landing.title}</h2>
+        <p className="description">{landing.description}</p>
         <h3 id="joinslack">
           Click here to join Slack Workspace <br></br> ↓{" "}
         </h3>
-        <a href={content.slack_url} target="_blank" rel="noopener noreferrer">
+        <a href={landing.slack_url} target="_blank" rel="noopener noreferrer">
           <img
             className="btn"
             src={require("../../images/icons/slack-new-logo.svg")}
@@ -52,42 +73,63 @@ const FastAndHack20 = () => {
             title="join slack workspace"
           ></img>
         </a>
-         <Themes>
-          <h2 className="title">{content.themes.title}</h2>
-           {!eventStart ? <h3 className="not-revealed">Dont rush things ... we will reveal them sooner</h3> :  <div className="theme-row">
-            {content.themes.items.map(item => {
-              return (
-                <div className="theme-item">
-                  <img
-                    src={require(`../../images/events/fastandhack20/themes/${item.icon}`)}
-                    alt={item.title}
-                    className="theme-icon"
-                  ></img>
-                  <h3 className="theme-title">{item.title}</h3>
-                  <p className="theme-desc">{item.description}</p>
-                </div>
-              )
-            })}
-          </div>}
+        <Themes>
+          <h2 className="title">{themes.title}</h2>
+          {!eventStart ? (
+            <h3 className="not-revealed">
+              Dont rush things ... we will reveal them sooner
+            </h3>
+          ) : (
+            <div className="theme-row">
+              {themes.items.map(item => {
+                return (
+                  <div className="theme-item">
+                    <img
+                      src={require(`../../images/events/fastandhack20/themes/${item.icon}`)}
+                      alt={item.title}
+                      className="theme-icon"
+                    ></img>
+                    <h3 className="theme-title">{item.title}</h3>
+                    <p className="theme-desc">{item.description}</p>
+                  </div>
+                )
+              })}
+            </div>
+          )}
         </Themes>
-        
+
         <Mentors>
-        <h2 className="title">{content.mentors.title}</h2>
-        <div className="mentors-row">
-            {content.mentors.items.map((item,index) => {
+          <h2 className="title">{mentors.title}</h2>
+          <div className="mentors-row">
+            {mentors.items.map((item, index) => {
+              let color = cirColors[index % cirColors.length];
               return (
                 <div className="mentor-item">
                   <img
                     src={require(`../../images/events/fastandhack20/mentors/${item.image}`)}
                     alt={item.name}
                     className="mentor-image"
-                    style={{borderColor : cirColors[index%cirColors.length]}}
+                    style={{ borderColor: color}}
+                    loading="lazy"
                   ></img>
-                  <h3 className="mentor-name">{item.name}</h3>
+                  <h3 className="mentor-name" style={{color : color}}>{item.name}</h3>
                   <h4 className="mentor-profession">{item.profession}</h4>
                   <div className="sm">
                     {item.socialmedia.map(sm => {
-                      return <a className="sm-item" href={sm.url} target="_blank" rel="noopener noreferrer"><img src={require(`../../images/events/fastandhack20/icons/${sm.icon}`)} alt={sm.alt} title={sm.alt}></img></a>
+                      return (
+                        <a
+                          className="sm-item"
+                          href={sm.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            src={require(`../../images/events/fastandhack20/icons/${sm.icon}`)}
+                            alt={sm.alt}
+                            title={sm.alt}
+                          ></img>
+                        </a>
+                      )
                     })}
                   </div>
                 </div>
@@ -97,7 +139,7 @@ const FastAndHack20 = () => {
         </Mentors>
         <div className="faq">
           <Faq
-            data={content.faq}
+            data={faq}
             styles={faqStyles}
             config={{ animate: true }}
           ></Faq>
@@ -118,12 +160,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding: 64px;
   .logo {
-    width : 50%;
+    width: 50%;
   }
-  .countdown-title{
-    font-family :  "Reem Kufi", sans-serif;
-    font-size :20px;
-    color : var(--red)
+  .countdown-title {
+    font-family: "Reem Kufi", sans-serif;
+    font-size: 20px;
+    color: #CE9138;
   }
   a img {
     width: 100px;
@@ -162,7 +204,7 @@ const Wrapper = styled.div`
     background-color: inherit !important;
     color: inherit !important;
     .styles_faq-row__2Rd2Y {
-      border-color : transparent !important;
+      border-color: transparent !important;
     }
     .styles_row-body__8wIE9 .styles_faq-row__2Rd2Y .styles_row-content__TVd0Y {
       color: inherit !important;
@@ -182,8 +224,8 @@ const Wrapper = styled.div`
   }
   @media screen and (max-width: 768px) {
     .logo {
-    width : 100%;
-  }
+      width: 100%;
+    }
     .faq {
       width: 100%;
     }
@@ -195,120 +237,130 @@ const Wrapper = styled.div`
 `
 
 const Themes = styled.section`
-width: 100%;
-.title {
-  text-align : center;
-}
-.not-revealed {
-  text-align :center; 
-  color : var(--grey);
-  font-family : var(--font);
-  font-weight : 300;
-  font-style : italic;
-}
-.theme-row {
-  margin-top : 5%;
-  display : flex ; 
-  width: 100% ;
-  justify-content : center;
-  flex-wrap : wrap;
-  .theme-item {
-    border : 3px solid var(--green);
-    border-radius : 20px;
-    margin : 10px;
-    padding : 30px;
-    min-width : 25%;
-    max-width : 40%;
-    display : flex; 
-    flex-direction : column ;
-    justify-content : flex-start ;
-    align-items : center;
-    .theme-icon {
-      width : 3rem;
-      
-    }
-    .theme-title{
-      color : #e01e5a;
-    }
-    .theme-desc{
+  width: 100%;
+  .title {
+    text-align: center;
+  }
+  .not-revealed {
+    text-align: center;
+    color: var(--grey);
+    font-family: var(--font);
+    font-weight: 300;
+    font-style: italic;
+  }
+  .theme-row {
+    margin-top: 5%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    .theme-item {
+      -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+      -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
 
-      max-width: 90%;
-    }
-    @media screen and (max-width: 768px) {
-      min-width : 90%;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+      border-radius: 20px;
+      margin: 10px;
+      padding: 30px;
+      min-width: 25%;
+      max-width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      .theme-icon {
+        width: 3rem;
+      }
+      .theme-title {
+        color: #e01e5a;
+      }
+      .theme-desc {
+        max-width: 90%;
+      }
+      @media screen and (max-width: 768px) {
+        min-width: 90%;
+      }
     }
   }
-} 
 `
 const Mentors = styled.section`
-
-width : 90%;
-.title {
-  text-align :center;
-}
-.mentors-row {
-  display : flex;
-  justify-content : center;
-  align-items : center;
-  flex-wrap : wrap;
-  .mentor-item {
-    max-width : 20%;
-    margin : 0 20px;
-    .mentor-image {
-      border-radius : 50%;
-      width : 60%;
-      margin : 10px 20%;
-      border : 5px solid var(--green);
-    }
-    .mentor-name {
-      font-family : "Reem Kufi", sans-serif;
-      color : var(--blue);
-      text-align : center;
-      margin-bottom : 2px;
-    }
-    .mentor-profession {
-      color : var(--grey);
-      font-family : var(--font);
-      letter-spacing : 3px;
-      text-align : center;
-      margin-bottom : 20px;
-    }
-    .sm {
-      display : flex ; 
-      justify-content : center;
-      .sm-item {
-        opacity : 0.8;
-        margin : 0 4%;
-        img {
-          border : none;
-          padding : 0 ;
-          max-width : 30px;
-          max-height : 30px;
-          border-radius : 0;
-        }
-        cursor : pointer;
-        transition : 0.5s ease;
-        &:hover {
-          opacity : 1;
+  width: 100%;
+  .title {
+    text-align: center;
+  }
+  .mentors-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .mentor-item {
+      max-width: 20%;
+      margin: 0 20px;
+      .mentor-image {
+        border-radius: 50%;
+        width: 60%;
+        margin: 10px 20%;
+        border: 5px solid var(--green);
+      }
+      .mentor-name {
+        font-family: "Reem Kufi", sans-serif;
+        text-align: center;
+        margin-bottom: 2px;
+      }
+      .mentor-profession {
+        color: var(--grey);
+        font-family: var(--font);
+        letter-spacing: 3px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .sm {
+        display: flex;
+        justify-content: center;
+        .sm-item {
+          opacity: 0.8;
+          margin: 0 4%;
+          img {
+            border: none;
+            padding: 0;
+            max-width: 30px;
+            max-height: 30px;
+            border-radius: 0;
+          }
+          cursor: pointer;
+          transition: 0.5s ease;
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }
-    
   }
-  
-}
-@media screen and (max-width: 768px) {
-    width : 100%;
+  @media screen and (max-width: 1370px) {
+    width: 100%;
     .mentors-row {
-      width : 100%;
-      flex-direction : column ; 
+      width: 100%;
       .mentor-item {
-        max-width : 100%;
-        margin : 10px 0px;
-        width : 100% !important;
+        max-width: 25%;
       }
-    }   
+    }
   }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    .mentors-row {
+      width: 100%;
+      flex-direction: column;
+      .mentor-item {
+        max-width: 100%;
+        margin: 10px 0px;
+        width: 100% !important;
+      }
+    }
+  }
+
 `
 /// styles :
 const faqStyles = {

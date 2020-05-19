@@ -1,0 +1,25 @@
+{
+    "title" : "Event Themes",
+        "items" : [
+            {
+                "icon" : "eid.svg",
+                "title" :"Quarantine Eid",
+                "description" :"It’s 2020, everything’s changed and El-Eid is certainly not gonna be the exception, people will be spending the happiest days of the year alone this time. Can you imagine other sweet stuff that we’ll miss from this Eid and build alternatives for them to keep the happy vibes always on despite everything?"
+            },
+            {
+                "icon" : "mental-health.svg",
+                "title" :"Mental Fitness",
+                "description" :"We can’t think of any problems in this period while ignoring the big effect of staying at home on the mental health of many ones, especially in our society where not all families have the luxury of very fun indoors. Your challenge is to think of a way to help people keep up a mentally safe lifestyle while staying at their homes, we need less depression, anxiety, stress... but more positivity and up beats!"
+            },
+            {
+                "icon" : "good.svg",
+                "title" :"Good deeds & spirituality",
+                "description" :"Technology allowed us to connect all the outer world together, but what about our inner selves? Do you think you can find a use of technology to make us feel closer to our beliefs and have deeper religious experiences in our daily lives, especially in these sacred times?"
+            },
+            {
+                "icon" : "vulenteer.svg",
+                "title" :"Vulenteering Apps",
+                "description" :"Non-profit organizations and associations feel the need to act all the time. However, crisis and catastrophes often make them face plenty of challenges in pursuing their work. Do you think these organizations can take advantage of technology and find a solution to continue their volunteering work in the best conditions? Could we find digital solutions that support this humanitarian movement?"
+            }
+        ]
+}
