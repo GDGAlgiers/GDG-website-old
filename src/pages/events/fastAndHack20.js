@@ -173,7 +173,6 @@ const Wrapper = styled.div`
     cursor: pointer;
     padding: 20px;
     border-radius: 50%;
-    border: 2px solid var(--grey);
   }
   #joinslack {
     text-align: center;
@@ -182,9 +181,11 @@ const Wrapper = styled.div`
     font-family: "Reem Kufi", sans-serif;
   }
   .btn {
-    transition: transform 0.5s ease;
+    box-shadow: 0 4px 1px rgba(0,0,0,0.1), 0 6px 10px rgba(0,0,0,0.22);
+    transition:  0.5s ease;
     &:hover {
       transform: scale(1.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.22), 0 6px 10px rgba(0,0,0,0.22);
     }
   }
   .countdown {

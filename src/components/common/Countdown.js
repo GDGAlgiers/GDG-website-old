@@ -1,4 +1,4 @@
-import React, { useEffect ,useState} from "react"
+import React, { useEffect, useState } from "react"
 import moment from "moment"
 import styled from "styled-components"
 import { colors } from "../../constants/theme"
@@ -10,13 +10,12 @@ export default function Countdown(props) {
     minutes: "0",
     seconds: "0",
   })
-  const { timeTillDate, timeFormat , onFinish ,reversedClock} = props
+  const { timeTillDate, timeFormat, onFinish, reversedClock } = props
   useEffect(() => {
     interval = setInterval(() => {
-      
       const then = moment(timeTillDate, timeFormat)
       const now = moment()
-     
+
       const diff = moment.duration(then.diff(now))
       const days = diff.days().toString()
       const hours = diff.hours().toString()
@@ -24,7 +23,7 @@ export default function Countdown(props) {
       const seconds = diff.seconds().toString()
       // countdown finished
       if (seconds < 0) {
-        onFinish();
+        onFinish()
       }
       setCountDown({ days, hours, minutes, seconds })
     }, 1000)
@@ -37,11 +36,19 @@ export default function Countdown(props) {
   }, [])
   const { days, hours, minutes, seconds } = countdown
   /// reversedClock reverses the direction of the ticking clock
-  const daysRadius = !reversedClock? mapNumber(days, 30, 0, 0, 360) : 360 - mapNumber(days, 30, 0, 0, 360)
-  const hoursRadius =!reversedClock? mapNumber(hours, 24, 0, 0, 360) :360- mapNumber(hours, 24, 0, 0, 360)
-  const minutesRadius =!reversedClock? mapNumber(minutes, 60, 0, 0, 360):360 -mapNumber(minutes, 60, 0, 0, 360)
-  const secondsRadius =!reversedClock? mapNumber(seconds, 60, 0, 0, 360):360 - mapNumber(seconds, 60, 0, 0, 360)
- 
+  const daysRadius = !reversedClock
+    ? mapNumber(days, 30, 0, 0, 360)
+    : 360 - mapNumber(days, 30, 0, 0, 360)
+  const hoursRadius = !reversedClock
+    ? mapNumber(hours, 24, 0, 0, 360)
+    : 360 - mapNumber(hours, 24, 0, 0, 360)
+  const minutesRadius = !reversedClock
+    ? mapNumber(minutes, 60, 0, 0, 360)
+    : 360 - mapNumber(minutes, 60, 0, 0, 360)
+  const secondsRadius = !reversedClock
+    ? mapNumber(seconds, 60, 0, 0, 360)
+    : 360 - mapNumber(seconds, 60, 0, 0, 360)
+
   if (!seconds) {
     // not done
     return (
@@ -101,10 +108,13 @@ const Wrapper = styled.div`
     flex-direction: column;
     line-height: 30px;
     margin: 10px;
-    padding-top: 10px;
+    padding: 10px;
+
     position: relative;
     width: 100px;
     height: 100px;
+    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.1), 0 6px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 50%;
   }
 
   .countdown-item span {
