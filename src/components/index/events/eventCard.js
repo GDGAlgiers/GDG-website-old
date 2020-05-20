@@ -35,6 +35,8 @@ const BackImg = styled.div`
   height: 100%;
   width: 50%;
   background: ${props => `url("${props.img}")`};
+  background-size : contain;
+  background-repeat : no-repeat;
   transition: width 0.5s cubic-bezier(0.4, 0, 0.6, 1);
   &:after {
     content: "\A";
@@ -125,7 +127,7 @@ export default class EventCard extends Component {
           navigate(this.props.event.url)
         }}
       >
-        <BackImg className="backImg" img={require(`../../../images/${this.props.event.img}`)}></BackImg>
+        <BackImg className="backImg" img={require(`../../../images/events/${this.props.event.img}`)}></BackImg>
         <HoveredText className="hoveredText">
           <Column>
             ²<p style={pStyle}>{this.props.event.date.days}</p>

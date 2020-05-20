@@ -302,6 +302,7 @@ const Mentors = styled.section`
       margin: 0 20px;
       .mentor-image {
         border-radius: 50%;
+        box-shadow: 0 4px 1px rgba(0,0,0,0.1), 0 6px 10px rgba(0,0,0,0.22);
         width: 60%;
         margin: 10px 20%;
         border: 5px solid var(--green);

@@ -60,9 +60,9 @@
                   "year": "2020"
                 },
                 "content":
-                  "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
-                "img": "event.jpg",
-                "logo": "GDG_School_Logo.png",
+                  "GDG School is an internal gdg event for our dear new members where old members do training sessions in different technologies like : web , mobile , ML , cloud ... the aim from it is breaking the ice between the new members and the old ones and creating a comfortable environnement for networking and learning , gdg school's end goal is training beginners to be trainers in the future",
+                "img": "gdgschool19/GDG_School_Logo.png",
+                "logo": "gdgschool19/GDG_School_Logo.png",
                 "location": "Higher School Of Computer Science \n (ESI Algiers)",
                 "url" :"/"
               }
@@ -71,45 +71,31 @@
             {
                 "title": "DEVFEST 2020",
                 "date": {
-                  "days": "10-11",
-                  "month": "January",
+                  "days": "",
+                  "month": "Fall",
                   "year": "2020"
                 },
                 "content":
                   "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
-                  "img": "event.jpg",
-                  "logo": "GDG_School_Logo.png",
+                  "img": "devfest20/devfest.jpg",
+                  "logo": "devfest20/devfest.jpg",
                 "location": "Higher School Of Computer Science \n (ESI Algiers)",
                 "url": "/events/devfest20"
             },
             {
                 "title": "FAST & HACK 20",
                 "date": {
-                  "days": "19-29",
+                  "days": "17-30",
                   "month": "Mai",
                   "year": "2020"
                 },
                 "content":
                   "After enormous positive feedback that we received last year, GDG Algiers has the pleasure to organize again the second edition of its original online Hackathon “Fast & Hack”! The main idea is to let developers from our community put their coding skills in use all while their fasting in this sacred month. We believe that hacking under such circumstances would give opportunity to some cool ideas that will certainly add value either spiritually or collectively to the society as we’re suggesting to the participants a variety of themes that they can be hacking in.This hackathon is for students, professionals, and programming enthusiasts who want to invest two weeks of their lives in building some cool stuff, that matter.",
-                  "img": "event.jpg",
-                  "logo": "GDG_School_Logo.png",
+                  "img": "fastandhack20/f&h.jpg",
+                  "logo": "fastandhack20/f&h.jpg",
                 "location": "Online Hackathon",
                 "url": "/events/fastAndHack20"
-              },
-              {
-                "title": "IWD 2021",
-                "date": {
-                  "days": "10-11",
-                  "month": "January",
-                  "year": "2020"
-                },
-                "content":
-                  "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
-                  "img": "event.jpg",
-                  "logo": "GDG_School_Logo.png",
-                "location": "Higher School Of Computer Science \n (ESI Algiers)",
-                "url": "/events/iwd21"
-            }
+              }
         ]
     },
     "partners" : {
