@@ -1,22 +1,19 @@
 import React, { useState } from "react"
 import SEO from "../../components/layout/seo"
 import PageTransition from "gatsby-plugin-page-transitions"
-import Countdown from "../../components/common/Countdown"
 import styled from "styled-components"
 import Faq from "react-faq-component"
 import { colors } from "../../constants/theme"
-
+import Submissions from '../../components/events/fast&hack20/submissions'
 //importing content : 
 import landing from "../../content/events/fast&hack/landing.json"
 import themes from "../../content/events/fast&hack/themes.json"
 import mentors from "../../content/events/fast&hack/mentors.json"
 import faq from "../../content/events/fast&hack/faq.json"
-
+import submissions from '../../content/events/fast&hack/submissions.json'
 
 const cirColors = [colors.blue, colors.red, colors.green, colors.yellow]
 const FastAndHack20 = () => {
-  const [eventStart, setEventStart] = useState(false)
-  const [eventFinish, setEventFinish] = useState(false)
   return (
     <PageTransition>
       <SEO title="FAST&HACK20" />
@@ -29,10 +26,10 @@ const FastAndHack20 = () => {
           loading="eager"
         ></img>
 
-        <h4 className="countdown-title">
+        {/* <h4 className="countdown-title">
           {!eventStart ? "Hacking starts in" : "Hacking ends in"}
-        </h4>
-        {!eventStart ? (
+        </h4> */}
+        {/* {!eventStart ? (
           <Countdown
             className="countdown"
             reversedClock={true}
@@ -53,19 +50,14 @@ const FastAndHack20 = () => {
               setEventFinish(true)
             }}
           ></Countdown>
-        ) : null}
-        {eventFinish ? (
-          <h2>
-            The event is completed , we thank all participants for their
-            dedication
-          </h2>
-        ) : null}
+        ) : null} */}
+
         <h2 className="title">{landing.title}</h2>
         <p className="description">{landing.description}</p>
         <h3 id="joinslack">
           Click here to join Slack Workspace <br></br> ↓{" "}
         </h3>
-        <a href={landing.slack_url} target="_blank" rel="noopener noreferrer">
+        <a href="#" target="_blank" rel="noopener noreferrer">
           <img
             className="btn"
             src={require("../../images/icons/slack-new-logo.svg")}
@@ -75,12 +67,7 @@ const FastAndHack20 = () => {
         </a>
         <Themes>
           <h2 className="title">{themes.title}</h2>
-          {!eventStart ? (
-            <h3 className="not-revealed">
-              Dont rush things ... we will reveal them sooner
-            </h3>
-          ) : (
-            <div className="theme-row">
+          <div className="theme-row">
               {themes.items.map(item => {
                 return (
                   <div className="theme-item">
@@ -95,9 +82,9 @@ const FastAndHack20 = () => {
                 )
               })}
             </div>
-          )}
         </Themes>
-
+        <h1 className="title">Fast & Hack Submissions</h1>
+        <Submissions submissionsData={submissions}></Submissions>    
         <Mentors>
           <h2 className="title">{mentors.title}</h2>
           <div className="mentors-row">
@@ -239,6 +226,7 @@ const Wrapper = styled.div`
 
 const Themes = styled.section`
   width: 100%;
+  margin-bottom : 10%;
   .title {
     text-align: center;
   }
@@ -256,13 +244,14 @@ const Themes = styled.section`
     justify-content: center;
     flex-wrap: wrap;
     .theme-item {
-      -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-        0 10px 10px rgba(0, 0, 0, 0.22);
-      -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-        0 10px 10px rgba(0, 0, 0, 0.22);
+      -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      -moz-box-shadow:0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-        0 10px 10px rgba(0, 0, 0, 0.22);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        &:hover {
+    box-shadow: 0 1px 10px rgba(0,0,0,0.12), 0 1px 10px rgba(0,0,0,0.24);
+}
       border-radius: 20px;
       margin: 10px;
       padding: 30px;

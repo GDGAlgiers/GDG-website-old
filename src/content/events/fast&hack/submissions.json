@@ -1,0 +1,50 @@
+[
+    {
+        "youtubeId" : "mgoMhqweAGc",
+        "githubLink":"https://github.com/MeridjaNassim",
+        "image" :"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1000px-React-icon.svg.png",
+        "teamName":"Pixilions",
+        "brief" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        "desc" :"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus commodi non, saepe minima pariatur amet repudiandae corporis eveniet ab illo ipsam voluptatum quo iusto! Cum repudiandae aspernatur architecto consequuntur inventore!"
+    },
+    {
+        "youtubeId" : "mgoMhqweAGc",
+        "githubLink":"https://github.com/MeridjaNassim",
+        "image" :"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1000px-React-icon.svg.png",
+        "teamName":"Soldiers",
+        "brief" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        "desc" :"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus commodi non, saepe minima pariatur amet repudiandae corporis eveniet ab illo ipsam voluptatum quo iusto! Cum repudiandae aspernatur architecto consequuntur inventore!"
+    },
+    {
+        "youtubeId" : "mgoMhqweAGc",
+        "githubLink":"https://github.com/MeridjaNassim",
+        "image" :"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1000px-React-icon.svg.png",
+        "teamName":"Step In",
+        "brief" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        "desc" :"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus commodi non, saepe minima pariatur amet repudiandae corporis eveniet ab illo ipsam voluptatum quo iusto! Cum repudiandae aspernatur architecto consequuntur inventore!"
+    },
+    {
+        "youtubeId" : "mgoMhqweAGc",
+        "githubLink":"https://github.com/MeridjaNassim",
+        "image" :"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1000px-React-icon.svg.png",
+        "teamName":"Volunteer Heroes",
+        "brief" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        "desc" :"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus commodi non, saepe minima pariatur amet repudiandae corporis eveniet ab illo ipsam voluptatum quo iusto! Cum repudiandae aspernatur architecto consequuntur inventore!"
+    },
+    {
+        "youtubeId" : "mgoMhqweAGc",
+        "githubLink":"https://github.com/MeridjaNassim",
+        "image" :"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1000px-React-icon.svg.png",
+        "teamName":"Sudden Impact",
+        "brief" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        "desc" :"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus commodi non, saepe minima pariatur amet repudiandae corporis eveniet ab illo ipsam voluptatum quo iusto! Cum repudiandae aspernatur architecto consequuntur inventore!"
+    }
+    ,{
+        "youtubeId" : "mgoMhqweAGc",
+        "githubLink":"https://github.com/MeridjaNassim",
+        "image" :"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1000px-React-icon.svg.png",
+        "teamName":"Bniwen Team",
+        "brief" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        "desc" :"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus commodi non, saepe minima pariatur amet repudiandae corporis eveniet ab illo ipsam voluptatum quo iusto! Cum repudiandae aspernatur architecto consequuntur inventore!"
+    }
+]
