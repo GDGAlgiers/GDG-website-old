@@ -16,6 +16,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/content/`,
+        ignore: [`**/\.*`], // ignore files starting with a dot
+      },
+    },
+    {
       resolve: 'gatsby-plugin-page-transitions',
       options: {
         transitionTime: 500
@@ -31,7 +39,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#fafafa`,
-        display: `fullscreen`,
+        display: `standalone`,
         icon: './src/images/favicon.png', // This path is relative to the root of the site.
       },
     },

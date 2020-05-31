@@ -9,6 +9,8 @@ import GlobalContext from "../../../context/Context"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Youtube from "react-youtube"
+
+const baseImageUrl = "../../../images/events/fastandhack20/submissions"
 const settings = {
   dots: true,
   infinite: true,
@@ -16,6 +18,7 @@ const settings = {
   slidesToShow: 3,
   slidesToScroll: 3,
   slide: "SlideGrid",
+  arrows: false,
   adaptiveHeight: true,
   lazyLoad: "ondemand",
 }
@@ -24,9 +27,14 @@ const mobileSettings = {
   slidesToShow: 1,
   slidesToScroll: 1,
 }
+/// #1Gold , #2Silver ,#3Bronze
+const rankingColors = ["#FFD700", "#C0C0C0", "#CD7F32"]
 
 const Submissions = ({ submissionsData }) => {
   const [dataInitilized, setDataInitialized] = useState(false)
+  const sortedData = submissionsData.sort(
+    (item1, item2) => item1.rank - item2.rank
+  )
   const getSettings = isMobile => {
     return isMobile ? mobileSettings : settings
   }
@@ -49,7 +57,7 @@ const Submissions = ({ submissionsData }) => {
                 return (
                   <SubimissionsWrapper>
                     <Slider {...s} className="slider">
-                      {submissionsData.map((item, index) => {
+                      {sortedData.map((item, index) => {
                         let key = `submission-${index}`
 
                         return <Submission data={item} key={key}></Submission>
@@ -78,15 +86,26 @@ Submissions.propTypes = {
 const Submission = ({ data }) => {
   return (
     <Consumer>
-      {({ data: ctx, set }) => {
+      {({ set }) => {
         return (
           <SubWrapper>
-            <img className="sub-logo" src={data.image} alt={data.alt} />
-            <h2 className="sub-team">{data.teamName}</h2>
+            <h1
+              className="rank"
+              style={{ color: `${rankingColors[data.rank - 1]}` }}
+            >{`#${data.rank}`}</h1>
+            <img
+              className="sub-logo"
+              src={require(`../../../images/events/fastandhack20/submissions/${data.image}`)}
+              alt={data.alt}
+            />
+            <h2 className="sub-team">{data.name}</h2>
+
             <p className="sub-desc">{data.brief}</p>
+
             <div className="links">
               {data.youtubeId ? (
-                <a
+                <button
+                  title="see details & video"
                   className="btn"
                   onClick={e => {
                     set({ showSubmission: true, currentSub: data })
@@ -97,10 +116,11 @@ const Submission = ({ data }) => {
                     src={require("../../../images/icons/youtube.svg")}
                     alt="youtube video"
                   ></img>
-                </a>
+                </button>
               ) : null}
               {data.githubLink ? (
                 <a
+                  title="see github"
                   target="_blank"
                   rel="noopener noreferer"
                   className="btn"
@@ -136,6 +156,10 @@ const SubmissionDetails = ({ data }) => {
     <Consumer>
       {({ set }) => (
         <SubDetails className={`${closing ? "shrinkin" : "growin"}`}>
+          <h1
+            className="rank"
+            style={{ color: `${rankingColors[data.rank - 1]}` }}
+          >{`#${data.rank}`}</h1>
           <button
             id="closebtn"
             onClick={e => {
@@ -151,8 +175,14 @@ const SubmissionDetails = ({ data }) => {
               alt="close"
             ></img>
           </button>
-          <img className="sub-logo" src={data.image} alt={data.alt} />
-          <h2 className="sub-team">{data.teamName}</h2>
+          <img
+            className="sub-logo"
+            src={require(`../../../images/events/fastandhack20/submissions/${data.image}`)}
+            alt={data.alt}
+          />
+          <h2 className="sub-team">
+            {data.name} by - {data.teamName}
+          </h2>
           <div className="content">
             <div>
               <h3 className="title">Description</h3>
@@ -160,6 +190,7 @@ const SubmissionDetails = ({ data }) => {
               <div className="github-repo">
                 {data.githubLink ? (
                   <a
+                    title="see github"
                     target="_blank"
                     rel="noopener noreferer"
                     href={data.githubLink}
@@ -206,6 +237,15 @@ const SubimissionsWrapper = styled.div`
       }
     }
   }
+  .rank {
+    position: relative;
+    top: 0;
+    left: -40%;
+    font-size: 4.5rem;
+    margin: 0;
+    font-family: "Reem Kufi", sans-serif;
+    color: #ce9138;
+  }
   .shrinkin {
     transform: scaleX(1);
     animation: shrink 0.3s ease-in-out forwards;
@@ -223,9 +263,19 @@ const SubimissionsWrapper = styled.div`
   .btn {
     outline: none;
     cursor: pointer;
+    max-width: 60px;
+    max-height: 60px;
+    background: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     border: none;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+    @media screen and (max-width: 768px) {
+      max-width: 50px;
+      max-height: 50px;
+    }
   }
   .icon {
     max-width: 60px;
@@ -250,12 +300,18 @@ const SubWrapper = styled.div`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   .sub-logo {
-    max-width: 10vw;
+    max-width: 200px;
+    max-height: 60px;
   }
   .sub-team {
     color: #ce9138;
+    text-align: center;
   }
-
+  .sub-desc {
+    width: 100%;
+    text-align: center;
+    max-width: 100%;
+  }
   .links {
     display: flex;
     width: 90%;
@@ -275,7 +331,8 @@ const SubWrapper = styled.div`
 const SubDetails = styled.div`
   position: fixed;
   width: 90%;
-  top: 10%;
+  top: 2%;
+  min-height: 80vh;
   z-index: 99999;
   overflow-y: auto;
   font-family: "Reem Kufi", sans-serif;
@@ -286,9 +343,18 @@ const SubDetails = styled.div`
   border-radius: 20px;
   justify-content: center;
   align-items: center;
+  .rank {
+    position: fixed;
+    font-size: 10rem;
+    display: flex;
+    top: 10%;
+    left: 10%;
+  }
   .sub-logo {
-    max-width: 15vw;
+    max-width: 300px;
+    max-height: 160px;
     margin: 0;
+    margin-bottom: 1rem;
   }
   .sub-team {
     color: #ce9138;
@@ -331,7 +397,8 @@ const SubDetails = styled.div`
     text-align: center;
     width: 90%;
     .text {
-      width: 100%;
+      width: 60%;
+      margin: 0 auto;
       max-width: 100%;
       color: var(--grey);
     }
@@ -351,10 +418,18 @@ const SubDetails = styled.div`
   @media screen and (max-width: 1300px) {
     .sub-logo {
       max-width: 30vw;
+      margin-top : 30px
+    }
+    .rank {
+      position: fixed;
+      font-size: 5rem;
+      display: flex;
+      top: 5%;
+      left: 5%;
     }
     .content {
       .text {
-        margin: 20px 0px;
+        margin: 20px auto;
       }
     }
     top: 0%;

@@ -3,66 +3,109 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { CSSTransition } from "react-transition-group"
 import { dropShadow } from "../common/effects"
-import {logos , Menu as m} from '../common/images';
-import ContextConsumer from '../../context/Context'
-const links = [
-  <Link to="/#about"> About </Link>,
-  <Link to="/#events"> Events </Link>,
-  <Link to="/#partners"> Partners </Link>,
-  <Link to="/#sponsors"> Sponsors </Link>,
-  <Link to="/#contact"> Contact </Link>,
-]
+import { logos, Menu as m } from "../common/images"
+import ContextConsumer from "../../context/Context"
 
+const activeStyle = {
+  opacity: 1,
+}
+const links = [
+  <Link to="/#about" activeStyle={activeStyle}>
+    {" "}
+    About{" "}
+  </Link>,
+  <Link to="/#events" activeStyle={activeStyle}>
+    {" "}
+    Events{" "}
+  </Link>,
+  <Link to="/#partners" activeStyle={activeStyle}>
+    {" "}
+    Partners{" "}
+  </Link>,
+  <Link to="/#sponsors" activeStyle={activeStyle}>
+    {" "}
+    Sponsors{" "}
+  </Link>,
+  <Link to="/#contact" activeStyle={activeStyle}>
+    {" "}
+    Contact{" "}
+  </Link>,
+]
+/// scroll watchers
+let scrollTimeout
+let toggled
 const Header = () => {
   const [isNavVisible, setNavVisible] = useState(false)
   const toggleNav = () => {
+    toggled = true
     setNavVisible(!isNavVisible)
   }
+  useEffect(() => {
+    window.addEventListener('scroll',(e)=>{
+      HandleScroll()
+    },{
+      capture : true ,
+      passive : true,
+    })
+
+    // Get the header
+    let header = document.getElementById("header")
+
+    // Get the offset position of the navbar
+    let sticky = header.offsetTop
+
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function HandleScroll() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("des")
+        window.clearTimeout(scrollTimeout)
+        scrollTimeout = setTimeout(() => {
+          header.classList.remove("des")
+          if (toggled) {
+            setNavVisible(false)
+            toggled = false
+          }
+        }, 3000)
+      }
+    }
+    return () => {
+      window.clearTimeout(scrollTimeout)
+    }
+  }, [])
   return (
     <ContextConsumer>
-      {({data})=> {
+      {({ data }) => {
+        return (
+          <StyledHeader isNavVisible={isNavVisible} id="header">
+            <Link
+              to="/#"
+              style={{
+                margin: "auto 0",
+              }}
+            >
+              <Brand
+                alt="brand"
+                loading="eager"
+                src={data.isMobile ? logos.PhoneGDGLogo : logos.GDGLogo}
+                width={data.isMobile ? "10vw" : "18vw"}
+              ></Brand>
+            </Link>
 
-        return <StyledHeader isNavVisible={isNavVisible} id="header">
-        <Link
-          to="/#"
-          style={{
-            margin: "auto 0",
-          }}
-        >
-          <Brand
-            alt="brand"
-            loading="eager"
-            src={
-             (data.isMobile)
-                ? logos.PhoneGDGLogo
-                : logos.GDGLogo
-            }
-            width={(data.isMobile) ? "10vw" : "18vw"}
-          ></Brand>
-        </Link>
-  
-        <CSSTransition
-          in={!(data.isMobile) || isNavVisible}
-          timeout={200}
-          classNames="NavAnimation"
-          unmountOnExit
-        >
-          <StyledNav>{links}</StyledNav>
-        </CSSTransition>
-        <Menu onClick={toggleNav}>
-          <img
-            alt="menu"
-            src={
-              !isNavVisible
-                ? m.menu
-                : m.close
-            }
-          ></img>
-        </Menu>
-      </StyledHeader>
+            <CSSTransition
+              in={!data.isMobile || isNavVisible}
+              timeout={200}
+              classNames="NavAnimation"
+              unmountOnExit
+            >
+              <StyledNav>{links}</StyledNav>
+            </CSSTransition>
+            <Menu onClick={toggleNav}>
+              <img alt="menu" src={!isNavVisible ? m.menu : m.close}></img>
+            </Menu>
+          </StyledHeader>
+        )
       }}
     </ContextConsumer>
-    
   )
 }
 
@@ -70,6 +113,11 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0; /* Stick it to the top */
   min-height: 10vh;
+  transform: translateY(-10vh);
+  &.des {
+    transform: translateY(0vh) !important ;
+  }
+  transition: transform 1s ease-out;
   width: 100vw;
   display: grid;
   background-color: inherit;
@@ -78,18 +126,9 @@ const StyledHeader = styled.header`
   font-weight: 600;
   font-size: 16px;
   z-index: 10;
-  ${dropShadow} 
+  ${dropShadow}
   @media screen and (max-width: 768px) {
-    transform : translateY(-100vh);
-    animation : drop 2.5s linear forwards ;
-    @keyframes drop {
-    from{
-      transform : translateY(-100vh);
-    }
-    to{
-      transform : translateY(0)
-    }
-  }
+    transform: translateY(-50vh);
     grid-template-areas: "logo burger" "nav nav";
     .NavAnimation-enter {
       opacity: 0;
@@ -143,7 +182,6 @@ const Brand = styled.img`
   width: ${({ width }) => width};
   margin: auto 0 auto 3%;
   cursor: pointer;
-  
 `
 
 const Menu = styled.button`

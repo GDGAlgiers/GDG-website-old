@@ -225,16 +225,9 @@ const StyledButton = styled.button`
   border: none;
   cursor: pointer;
   outline: none;
+  transition : background 0.2s ease-in;
   &:hover {
-    animation: scaler 1s ease alternate 2;
-    @keyframes scaler {
-      from {
-        transform: scale(1);
-      }
-      to {
-        transform: scale(1.2);
-      }
-    }
+    background :#11c16c;
   }
 `
 

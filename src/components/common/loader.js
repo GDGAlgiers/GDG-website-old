@@ -24,16 +24,7 @@ export default function PageLoader({loadingText,style,id}) {
           }}
         >
           <img width="100px" height="100px" src={logos.PhoneGDGLogo} style={{ margin: 0 }} alt="gdg-logo" />
-          <p
-            style={{
-              fontSize: 18,
-              fontFamily: "sans-serif",
-              margin: 0,
-              opacity: 0.5,
-            }}
-          >
-            {loadingText}
-          </p>
+        
          <img src={logos.loading} width="100px" style={{ margin:"0 auto" , fontFamily:"sans-serif" , color:"#fafafa" , fontSize:14}} alt="loading..."></img>
         </div>
     )

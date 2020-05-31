@@ -3,12 +3,14 @@ import styled from "styled-components"
 import Button from "../../common/button/GDGButton"
 import { navigate } from "gatsby"
 import AnimatedBoxes from "./AnimatedBoxes"
-
+import {logos } from '../../common/images';
 
 export default function Landing({ content }) {
+  const {PhoneGDGLogo} = logos
   return (
     <Wrapper>
       <Content>
+        <img src={PhoneGDGLogo} alt="gdg algiers" title="GDG Algiers" className="brand" loading="eager"></img>
         <h1 className="landing-title">
          {content.title}<span className="matter">{content.titlematter}</span>
         </h1>
@@ -39,7 +41,7 @@ export default function Landing({ content }) {
 }
 const Wrapper = styled.section`
   width: 100%;
-  height: 90vh;
+  min-height: 100vh;
   padding-top: 10%;
   padding-left: 10%;
   display: flex;
@@ -114,6 +116,11 @@ const Content = styled.div`
   position: relative;
   z-index: 4;
   width: 60%;
+  .brand {
+    position: relative;
+    margin : 0;
+    max-width : 100px;
+  }
   animation : enter 0.5s ease forwards;
     opacity : 0;
     @keyframes enter {
@@ -129,11 +136,16 @@ const Content = styled.div`
   @media screen and (max-width: 1024px) {
     width: 90%;
     margin: 0 auto;
+    margin-top : 2vh;
+    text-align : center;
+    .brand {
+    
+    }
   }
 `
 const Canvas = styled.div`
   width: 100vw;
-  padding-top: 10vh;
+  margin-top: 2vh;
 
   z-index: 3;
   position: absolute;

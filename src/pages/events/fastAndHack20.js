@@ -11,8 +11,8 @@ import themes from "../../content/events/fast&hack/themes.json"
 import mentors from "../../content/events/fast&hack/mentors.json"
 import faq from "../../content/events/fast&hack/faq.json"
 import submissions from '../../content/events/fast&hack/submissions.json'
+import {Link} from 'gatsby';
 
-const cirColors = [colors.blue, colors.red, colors.green, colors.yellow]
 const FastAndHack20 = () => {
   return (
     <PageTransition>
@@ -26,45 +26,11 @@ const FastAndHack20 = () => {
           loading="eager"
         ></img>
 
-        {/* <h4 className="countdown-title">
-          {!eventStart ? "Hacking starts in" : "Hacking ends in"}
-        </h4> */}
-        {/* {!eventStart ? (
-          <Countdown
-            className="countdown"
-            reversedClock={true}
-            timeTillDate={landing.date}
-            timeFormat={landing.date_format}
-            onFinish={() => {
-              setEventStart(true)
-            }}
-          ></Countdown>
-        ) : null}
-        {eventStart && !eventFinish ? (
-          <Countdown
-            className="countdown"
-            reversedClock={true}
-            timeTillDate={landing.end_date}
-            timeFormat={landing.date_format}
-            onFinish={() => {
-              setEventFinish(true)
-            }}
-          ></Countdown>
-        ) : null} */}
 
         <h2 className="title">{landing.title}</h2>
         <p className="description">{landing.description}</p>
-        <h3 id="joinslack">
-          Click here to join Slack Workspace <br></br> ↓{" "}
-        </h3>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          <img
-            className="btn"
-            src={require("../../images/icons/slack-new-logo.svg")}
-            alt="slack workspace"
-            title="join slack workspace"
-          ></img>
-        </a>
+       
+        
         <Themes>
           <h2 className="title">{themes.title}</h2>
           <div className="theme-row">
@@ -83,47 +49,9 @@ const FastAndHack20 = () => {
               })}
             </div>
         </Themes>
-        <h1 className="title">Fast & Hack Submissions</h1>
+        <h1 className="title">Fast & Hack Submissions </h1>
         <Submissions submissionsData={submissions}></Submissions>    
-        <Mentors>
-          <h2 className="title">{mentors.title}</h2>
-          <div className="mentors-row">
-            {mentors.items.map((item, index) => {
-              let color = cirColors[index % cirColors.length];
-              return (
-                <div className="mentor-item">
-                  <img
-                    src={require(`../../images/events/fastandhack20/mentors/${item.image}`)}
-                    alt={item.name}
-                    className="mentor-image"
-                    style={{ borderColor: color}}
-                    loading="lazy"
-                  ></img>
-                  <h3 className="mentor-name" style={{color : color}}>{item.name}</h3>
-                  <h4 className="mentor-profession">{item.profession}</h4>
-                  <div className="sm">
-                    {item.socialmedia.map(sm => {
-                      return (
-                        <a
-                          className="sm-item"
-                          href={sm.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <img
-                            src={require(`../../images/events/fastandhack20/icons/${sm.icon}`)}
-                            alt={sm.alt}
-                            title={sm.alt}
-                          ></img>
-                        </a>
-                      )
-                    })}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </Mentors>
+         <MentorsComp mentors={mentors}></MentorsComp>
         <div className="faq">
           <Faq
             data={faq}
@@ -134,6 +62,62 @@ const FastAndHack20 = () => {
       </Wrapper>
     </PageTransition>
   )
+}
+
+
+const MentorsComp = ({mentors}) => {
+  const [display,setDisplay] = useState(3);
+  const renderList = mentors.items.slice(0,display)
+  let i = display +1;
+  return <Mentors>
+  <h2 className="title">{mentors.title}</h2>
+  <div className="mentors-row">
+    {renderList.map((item, index) => {
+      console.log('rendering item ', index)
+      let color = cirColors[index % cirColors.length];
+      return (
+        <div className="mentor-item" key={index} style={{
+          animationDelay : `${(index * 100)+100}ms`
+        }}>
+          <img
+            src={require(`../../images/events/fastandhack20/mentors/${item.image}`)}
+            alt={item.name}
+            className="mentor-image"
+            style={{ borderColor: color}}
+            loading="lazy"
+          ></img>
+          <h3 className="mentor-name" style={{color : color}}>{item.name}</h3>
+          <h4 className="mentor-profession">{item.profession}</h4>
+          <div className="sm">
+            {item.socialmedia.map(sm => {
+              return (
+                <a
+                  className="sm-item"
+                  href={sm.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={require(`../../images/events/fastandhack20/icons/${sm.icon}`)}
+                    alt={sm.alt}
+                    title={sm.alt}
+                  ></img>
+                </a>
+              )
+            })}
+          </div>
+        </div>
+      )
+    })}
+  </div>
+  <button  title="Show more" className="btn" disabled={display>= mentors.items.length} onClick={e=>{
+    console.log('adding')
+    if(display< mentors.items.length){
+      console.log(display +3)
+      setDisplay(Math.min(mentors.items.length,display+3))
+    }
+  }}>+</button>
+</Mentors>
 }
 export default FastAndHack20
 
@@ -207,6 +191,7 @@ const Wrapper = styled.div`
   .title {
     color: var(--blue);
     margin-top: 5%;
+    text-align : center;
     font-size: 48px;
     font-family: "Reem Kufi", sans-serif;
   }
@@ -278,8 +263,25 @@ const Themes = styled.section`
 `
 const Mentors = styled.section`
   width: 100%;
+  display : flex;
+  flex-direction : column ;
+  justify-content : center ; 
+  align-items : center;
   .title {
     text-align: center;
+  }
+  .btn {
+    margin : 20px ;
+    background : inherit ;
+    color : var(--grey);
+    cursor : pointer;
+    outline : none;
+    border : none;
+    font-size : 3rem;
+    font-weight : 200;
+    border-radius : 50%;
+    font-family: "Reem Kufi", sans-serif;
+    padding :20px;
   }
   .mentors-row {
     display: flex;
@@ -287,7 +289,17 @@ const Mentors = styled.section`
     align-items: center;
     flex-wrap: wrap;
     .mentor-item {
-      max-width: 20%;
+      opacity : 0;
+      @keyframes fadeAnim {
+        from {
+          opacity : 0 ;
+        }
+        to{
+          opacity : 1 ;
+        }
+      }
+      animation : fadeAnim 0.5s ease-in forwards;
+      max-width: 25%;
       margin: 0 20px;
       .mentor-image {
         border-radius: 50%;
@@ -361,3 +373,5 @@ const faqStyles = {
   rowContentColor: "inherit",
   arrowColor: "var(--red)",
 }
+
+const cirColors = [colors.blue, colors.red, colors.green, colors.yellow]
