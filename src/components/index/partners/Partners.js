@@ -50,30 +50,6 @@ const GreyImg = styled.img`
   }
 `
 
-const renderPartners = partners.map(featuredin => (
-  <GreyImg
-    src={require(`../../../images/partners/${featuredin.img}`)}
-    alt={featuredin.alt}
-    loading="lazy"
-    width="100%"
-    height="100%"
-    onClick={e=> {
-      e.preventDefault()
-      navigate(featuredin.url)
-    }}
-  ></GreyImg>
-))
-
-const renderSponsors = sponsors.map(featuredin => (
-  <GreyImg
-    src={require(`../../../images/sponsors/${featuredin.img}`)}
-    alt={featuredin.alt}
-    loading="lazy"
-    width="100%"
-    height="100%"
-  ></GreyImg>
-))
-
 const BigTitle = styled.h1`
   font-family: var(--font-header);
   font-size: 3.5rem;

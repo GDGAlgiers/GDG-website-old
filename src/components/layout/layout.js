@@ -11,7 +11,6 @@ import Footer from "./footer"
 import "../../styles/layout.css"
 import "../../styles/main.css"
 import styled from "styled-components"
-import PageLoader from "../common/loader"
 import content from "../../content/layout.json"
 
 const Layout = ({ children }) => {

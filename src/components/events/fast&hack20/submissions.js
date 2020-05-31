@@ -10,7 +10,6 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Youtube from "react-youtube"
 
-const baseImageUrl = "../../../images/events/fastandhack20/submissions"
 const settings = {
   dots: true,
   infinite: true,
@@ -122,7 +121,7 @@ const Submission = ({ data }) => {
                 <a
                   title="see github"
                   target="_blank"
-                  rel="noopener noreferer"
+                  rel="noopener noreferrer"
                   className="btn"
                   href={data.githubLink}
                 >
@@ -192,7 +191,7 @@ const SubmissionDetails = ({ data }) => {
                   <a
                     title="see github"
                     target="_blank"
-                    rel="noopener noreferer"
+                    rel="noopener noreferrer"
                     href={data.githubLink}
                   >
                     Check out github repository of the project{" "}
@@ -302,22 +301,22 @@ const SubWrapper = styled.div`
   .sub-logo {
     max-width: 200px;
     max-height: 60px;
-    flex :1 ;
+    flex: 1;
   }
   .sub-team {
     color: #ce9138;
     text-align: center;
-    flex :1 ;
+    flex: 1;
   }
   .sub-desc {
     width: 100%;
     text-align: center;
     max-width: 100%;
-    flex : 2
+    flex: 2;
   }
   .links {
     display: flex;
-    flex :1 ;
+    flex: 1;
     width: 90%;
     justify-content: space-evenly;
   }
@@ -333,18 +332,17 @@ const SubWrapper = styled.div`
 `
 
 const SubDetails = styled.div`
-::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 0px;
     background: transparent !important; /* make scrollbar transparent */
-}
+  }
   position: fixed;
   top: 2%;
-  left : 0;
-  height : 80vh;
-  min-width : 90%;
+  height: 80vh;
+  min-width: 90%;
   z-index: 99999;
   overflow-y: auto;
-  overflow-x : hidden;
+  overflow-x: hidden;
   font-family: "Reem Kufi", sans-serif;
   display: flex;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
@@ -383,7 +381,7 @@ const SubDetails = styled.div`
     }
   }
   #closebtn {
-    position: absolute;
+    position: fixed;
     top: 2%;
     border-radius: 50%;
     background: transparent;
@@ -417,25 +415,24 @@ const SubDetails = styled.div`
     }
     @media screen and (max-width: 1300px) {
       flex-direction: column;
-      
+
       .video {
         width: 100%;
         margin: auto;
       }
     }
   }
- 
-  @media screen and (max-width: 1300px) {
 
-    height : 95vh;
+  @media screen and (max-width: 1300px) {
+    height: 95vh;
     .sub-logo {
       max-width: 20vw;
-      max-height : 10%;
-      margin-top : 0px
+      max-height: 10%;
+      margin-top: 0px;
     }
     .rank {
       position: fixed;
-      font-size: 3rem;
+      font-size: 4rem;
       display: flex;
       top: 1%;
       left: 1%;
@@ -452,15 +449,15 @@ const SubDetails = styled.div`
     }
   }
   @media screen and (max-width: 768px) {
-    height : 95vh;
-    left : 0;
+    height: 95vh;
+    left: 0;
     .sub-logo {
       max-width: 30vw;
-      margin-top : 200px
+      margin-top: 200px;
     }
     .rank {
       position: fixed;
-      font-size: 2rem;
+      font-size: 4rem;
       display: flex;
       top: 3%;
       left: 3%;
@@ -470,14 +467,19 @@ const SubDetails = styled.div`
         margin: auto;
       }
       .title {
-      font-size : 2rem;
+        font-size: 2rem;
+      }
     }
-    }
-   
+
     top: 2%;
     .btn {
       position: relative;
       top: -20%;
+    }
+  }
+  @media screen and (max-width: 360px) {
+    .rank {
+      font-size: 3rem;
     }
   }
 `

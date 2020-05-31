@@ -11,7 +11,6 @@ import themes from "../../content/events/fast&hack/themes.json"
 import mentors from "../../content/events/fast&hack/mentors.json"
 import faq from "../../content/events/fast&hack/faq.json"
 import submissions from '../../content/events/fast&hack/submissions.json'
-import {Link} from 'gatsby';
 
 const FastAndHack20 = () => {
   return (
