@@ -42,7 +42,7 @@ export default function Landing({ content }) {
 const Wrapper = styled.section`
   width: 100%;
   min-height: 100vh;
-  padding-top: 10%;
+  padding : 0;
   padding-left: 10%;
   display: flex;
   background-color: inherit;
@@ -68,6 +68,7 @@ const Wrapper = styled.section`
   }
 
   @media screen and (max-width: 1024px) {
+    padding : 0;
     padding-left: 0;
     padding-top: 0%;
     justify-content: flex-end;
@@ -80,9 +81,13 @@ const Wrapper = styled.section`
       font-size: 2rem;
     }
   }
+  @media screen and (max-width: 768px) {
+    padding : 0 !important;
+  }
   @media screen and (max-width: 370px) {
+    padding : 0;
     padding-left: 0;
-    padding-top: 4vh;
+
     justify-content: flex-end;
     flex-direction: column-reverse;
 

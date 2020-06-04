@@ -81,7 +81,14 @@ const Layout = ({ children }) => {
   )
 }
 
-const Main = styled.main``
+const Main = styled.main`
+section {
+  padding-top : 10vh;
+  @media screen and (max-width: 768px) {
+    padding-top:13vh;
+  }
+}
+`
 const ThemeSwitch = styled.button`
   position: fixed;
   top: 2.5vh;

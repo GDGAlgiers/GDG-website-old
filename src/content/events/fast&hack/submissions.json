@@ -1,45 +1,44 @@
-[
-    {   
-        "youtubeId" :"BzZVOtW2CuE",
-        "name" :"Mihrabi",
+[{
+        "name": "Mihrabi",
         "githubLink": "https://github.com/CerineBnsd/mihrabi/",
         "image": "mihrabi.png",
         "teamName": "Step In",
         "rank": 1,
-        "brief": "The Go-to muslim App to learn more about Islam and practice the religion.",
-        "desc": "The Go-to muslim App to learn more about Islam and practice the religion."
+        "brief": "A religious app that empowers both spiritual and community connection.",
+        "desc": "“Mihrabi” is an online platform that can be seen as a communication space for the muslims community around the world. Its users can learn more of their religion, help each other, share their personal experiences and work together in improving themselves through modern yet spiritual personal challenges.The aim is to facilitate the nice aspects of the “Mosque” institution in Islam through technology. So by joining the app, real mosques from around the world can go digital and expand their work which is teaching, inspiring and connecting Muslims by providing religious classes, conferences (ei: Friday’s Khutbah) as well as occasional monitoring of social good deeds.If you’re curious to know more about the app and its developers then check out their idea pitch in Fast & Hack 2020 from the video embedding besides!"
     },
     {
-        "name" :"Jiwar",
+        "name": "Jiwar",
         "youtubeId": "_8TXIHpFg5E",
         "githubLink": "https://github.com/ZakariaKermouche/Jiwar",
         "image": "jiwar.png",
         "teamName": "Bniwen Team",
         "rank": 2,
-        "brief": "An app that improves vulenteering events visibility",
-        "desc": "An app that improves vulenteering events visibility"
+        "brief": "Mobile app to keep your volunteering spirit on, even during quarantine!",
+        "desc": "JIWAR came under the track of how 2020’s quarantine significantly slowed down volunteering work spirit globally. The hack is a mobile app that allows people to organize and participate in different volunteer activities happening nearby, serving as a digital solution to why NGOs can’t promote physically for their activities anymore.The platform also aims to promote the culture of volunteering by allowing users to share their remarkable moments and showcase their experiences to get recognized thanks to the community-based system that also serves to suggest the most interesting content for the other app users and enhance potential collaborations between them."
     },
     {
-        "name" :"Volbag",
+        "name": "Volbag",
         "youtubeId": "LDUNhbm71zk",
         "githubLink": "https://github.com/madani-kh5/VolBag",
         "image": "volbag.png",
         "rank": 3,
         "teamName": "Pixilions",
-        "brief": "A Super App that contains many apps related to volunteering",
-        "desc": "A Super App that contains many apps related to volunteering"
+        "brief": "A smart bundle of apps that designed to facilitate volunteering and community work",
+        "desc": "VolBag is a super-app based on an objective and a strong will and promise, which is to make available to users, with a simple \"click\", almost all forms of individual and collective volunteering services, whether the user is a person in need or a volunteer willing to meet the needs of others. The aim is to facilitate volunteering work by getting all parties from all different industries and fields of the Algerian community involved. For the time being, The super-app consists of three mini-applications: Emergency Map, Community Hand and Medical Hand. And they are all designed to be simple to use and well integrated with each other."
     },
-    {     
-        "name" :"Volunteero",
+    {
+        "name": "Volunteero",
         "image": "flutter.svg",
-        "githubLink" :"https://github.com/RANYAKETFI/haf",
+        "youtubeId": "8kowbRcjcA0",
+        "githubLink": "https://github.com/RANYAKETFI/haf",
         "teamName": "Volunteer Heroes",
         "rank": 4,
         "brief": "A mobile app for organizations and users to engage in volunteering activities",
         "desc": "A mobile app for organizations and users to engage in volunteering activities"
     },
     {
-        "name" :"Mindset",
+        "name": "Mindset",
         "githubLink": "https://github.com/DevelSo/mindset",
         "image": "web.png",
         "teamName": "Soldiers",
@@ -47,10 +46,10 @@
         "brief": "A Web Application to improve Mental fitness by providing online services",
         "desc": "Web Application to improve Mental fitness by providing online services"
     },
-   
-   
+
+
     {
-        "name" :"Impact",
+        "name": "Impact",
         "githubLink": "https://github.com/SaadiSidali/Impact",
         "image": "flutter.svg",
         "teamName": "Sudden Impact",

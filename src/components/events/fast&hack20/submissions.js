@@ -336,11 +336,15 @@ const SubDetails = styled.div`
     width: 0px;
     background: transparent !important; /* make scrollbar transparent */
   }
+  
   position: fixed;
+  padding : 64px;
   top: 2%;
-  height: 80vh;
+  height: 90vh;
   min-width: 90%;
+  left :0;
   z-index: 99999;
+  margin : 0 5%;
   overflow-y: auto;
   overflow-x: hidden;
   font-family: "Reem Kufi", sans-serif;
@@ -367,6 +371,7 @@ const SubDetails = styled.div`
   .sub-team {
     color: #ce9138;
   }
+
   .github-repo a {
     display: flex;
     text-align: cetner;
@@ -386,6 +391,8 @@ const SubDetails = styled.div`
     border-radius: 50%;
     background: transparent;
     outline: none;
+    max-width : 20vw;
+    max-height :20vw;
     border: 2px solid rgba(128, 128, 128, 1);
     opacity: 0.3;
     cursor: pointer;
@@ -401,7 +408,8 @@ const SubDetails = styled.div`
   }
   .content {
     display: flex;
-
+    justify-content: center;
+    align-items :center;
     text-align: center;
     width: 95%;
     .text {
@@ -411,19 +419,21 @@ const SubDetails = styled.div`
       color: var(--grey);
     }
     .video {
-      margin-left: 10%;
+    
     }
-    @media screen and (max-width: 1300px) {
+
+    @media screen and (max-width: 1600px) {
       flex-direction: column;
 
       .video {
-        width: 100%;
-        margin: auto;
+        width: 90vw !important;
       }
     }
   }
 
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 1600px) {
+    padding : 0px;
+    padding-top : 15vw;
     height: 95vh;
     .sub-logo {
       max-width: 20vw;
@@ -441,6 +451,9 @@ const SubDetails = styled.div`
       .text {
         margin: auto;
       }
+      .video {
+        width: 90vw !important;
+      }
     }
     top: 2%;
     .btn {
@@ -448,7 +461,12 @@ const SubDetails = styled.div`
       top: -20%;
     }
   }
+  @media screen and ( max-width : 1100px) {
+    padding-top : 18vw;
+  } 
   @media screen and (max-width: 768px) {
+    padding : 0px;
+    padding-top : 18vw;
     height: 95vh;
     left: 0;
     .sub-logo {
@@ -464,10 +482,21 @@ const SubDetails = styled.div`
     }
     .content {
       .text {
+        ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent !important; /* make scrollbar transparent */
+  }
         margin: auto;
+        height : 30vh;
+        padding : 0 10px;
+        width : 80%;
+      overflow-y : scroll;
       }
       .title {
         font-size: 2rem;
+      }
+      .video {
+        width: 90vw !important;
       }
     }
 
@@ -478,6 +507,8 @@ const SubDetails = styled.div`
     }
   }
   @media screen and (max-width: 360px) {
+    padding : 0px;
+    padding-top : 20vw;
     .rank {
       font-size: 3rem;
     }
