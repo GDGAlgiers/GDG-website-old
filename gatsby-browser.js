@@ -11,9 +11,7 @@ function callAnalyticsAPI() {
   gtag("config", "UA-170263587-1")
 }
 exports.onClientEntry = () => {
-  console.log(window.dataLayer)
   callAnalyticsAPI()
-  console.log(window.dataLayer)
 }
 
 exports.wrapPageElement = ({ element, props }) => {
