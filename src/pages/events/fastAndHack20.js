@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useCallback } from "react"
 import SEO from "../../components/layout/seo"
 import PageTransition from "gatsby-plugin-page-transitions"
 import styled from "styled-components"
@@ -66,16 +66,19 @@ const FastAndHack20 = () => {
 
 const MentorsComp = ({mentors}) => {
   const [display,setDisplay] = useState(3);
-  const renderList = mentors.items.slice(0,display)
-  let i = display +1;
+  const [renderList,setRenderList] = useState(mentors.items)
+  const handleAdd = useCallback(()=>{
+      if(display < mentors.items.length){
+        setDisplay(display => Math.min(display+3,mentors.items.length))
+      } 
+  },[])
   return <Mentors>
   <h2 className="title">{mentors.title}</h2>
   <div className="mentors-row">
-    {renderList.map((item, index) => {
-      console.log('rendering item ', index)
+    {renderList.slice(0,display).map((item,index) => {
       let color = cirColors[index % cirColors.length];
       return (
-        <div className="mentor-item" key={index} style={{
+        <div className="mentor-item" key={item.name} style={{
           animationDelay : `${(index * 100)+100}ms`
         }}>
           <img
@@ -110,11 +113,7 @@ const MentorsComp = ({mentors}) => {
     })}
   </div>
   <button  title="Show more" className="btn" disabled={display>= mentors.items.length} onClick={e=>{
-    console.log('adding')
-    if(display< mentors.items.length){
-      console.log(display +3)
-      setDisplay(Math.min(mentors.items.length,display+3))
-    }
+    handleAdd()
   }}>+</button>
 </Mentors>
 }

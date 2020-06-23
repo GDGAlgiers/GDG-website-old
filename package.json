@@ -1,6 +1,7 @@
 {
   "name": "gdg-website-20",
   "private": true,
+  "main": "server.js",
   "description": "the official website of the gdg algiers community",
   "version": "0.1.0",
   "author": "GDG Algiers <gdg.algiers@esi.dz>",
