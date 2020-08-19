@@ -1,6 +1,4 @@
 import React, { useState } from "react"
-import EventCard from "./eventCard"
-import EventMobileCard from "./eventMobileCard"
 import styled from "styled-components"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
@@ -68,7 +66,7 @@ const BigTitle = styled.h1`
 `
 const Wrapper = styled.section`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: inherit;
   padding: 0 4rem;
   @media screen and (max-width: 768px) {

@@ -9,7 +9,7 @@ export default function devfest20() {
    
     >
       <SEO title="DEVFEST 2020" />
-      <PageLoader loadingText="We are planning the event , see you soon"></PageLoader>
+      <PageLoader  loadingText="We are planning the event , see you soon"></PageLoader>
     </PageTransition>
   )
 }
