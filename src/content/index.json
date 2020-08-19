@@ -108,11 +108,16 @@
             }
         ],
         "sponsors" : {
-            "title" : "Our sponsors",
+            "title" : "They trusted us",
             "items" : [
                 {
                     "image" :"GitHubEducation.svg",
                     "alt" :"Github Education",
+                    "link" : "/"
+                },
+                {
+                    "image" :"enp_incubator.svg",
+                    "alt" :"ENP incubator by Djezzy",
                     "link" : "/"
                 }
             ]

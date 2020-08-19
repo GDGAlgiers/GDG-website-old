@@ -111,9 +111,10 @@ const StyledFooter = styled.footer`
   .row2 {
     margin-top: 20px;
     text-align: center;
-    font-family: inherit;
+    font-family: var(--font-header);
     font-size: 100%;
-    font-weight: 550;
+    font-weight: 500;
+    color : var(--grey)
   }
   .row1 {
     display: flex;

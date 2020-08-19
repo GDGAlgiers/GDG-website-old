@@ -5,7 +5,7 @@ import Form from "./form.js"
 import NewsLetter from "./newsLetter.js"
 
 const ContactUS = ({content}) => (
-  <StyledSection id="contact">
+  <StyledSection id="contact" className="section">
     <BigTitle>{content.title}</BigTitle>
     <div className="wrapper">
       <div className="discription">
@@ -34,7 +34,6 @@ const ContactUS = ({content}) => (
 )
 const StyledSection = styled.div`
     margin: 0 auto;
-    width: 90%;
   .form {
     float: left;
     width: 38%;

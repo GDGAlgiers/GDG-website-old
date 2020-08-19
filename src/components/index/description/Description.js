@@ -2,16 +2,16 @@ import React from "react"
 import styled from "styled-components"
 import { navigate } from "gatsby"
 
-
 export default function Description({ content }) {
   return (
     <Wrapper id="about">
       <DescDiv>
-        <div>
-  <BiggerH1>{content.header.text1}</BiggerH1>
-  <BiggerH1>{content.header.text2}</BiggerH1>
+        <div className="header">
+          <BiggerH1>{content.header.text1}</BiggerH1>
+          <img src={require("../../../images/gdg_algiers.png")} alt="gdg" />
         </div>
         <p
+          className="description"
           style={{
             whiteSpace: "pre-line",
             lineHeight: 1.45,
@@ -20,24 +20,25 @@ export default function Description({ content }) {
           {content.description}
         </p>
       </DescDiv>
-      <HeroCard img={require(`../../../images/${content.hero.image}`)} onClick={
-        e => {
+      <HeroCard
+        img={require(`../../../images/${content.hero.image}`)}
+        onClick={e => {
           e.preventDefault()
           navigate(content.hero.link)
-        }
-      }>
+        }}
+      >
         <h1 style={{ width: "100%", textAlign: "center" }}>
           {content.hero.title}
         </h1>
         <StatsHolder>
-          {
-            content.hero.numbers.map(item => {
-              return <Column>
-              <h1>{item.data}</h1>
-              <h2>{item.title}</h2>
-            </Column>
-            })
-          }
+          {content.hero.numbers.map(item => {
+            return (
+              <Column>
+                <h1>{item.data}</h1>
+                <h2>{item.title}</h2>
+              </Column>
+            )
+          })}
         </StatsHolder>
       </HeroCard>
     </Wrapper>
@@ -51,20 +52,24 @@ const Wrapper = styled.section`
 
 const BiggerH1 = styled.h1`
   font-size: 3.5rem;
+  font-weight: 500;
+  font-family : var(--font);
+  color: var(--grey);
 `
 
 const HeroCard = styled.div`
   width: 100vw;
   height: 40vh;
-  background-image: ${props => `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("${props.img}");`};
+  background-image: ${props =>
+    `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("${props.img}");`};
   background-position: center;
   background-size: cover;
   display: grid;
   grid-template-rows: 1fr 1fr;
   justify-content: center;
   align-items: center;
-  cursor : pointer;
-  color: white;
+  cursor: pointer;
+  color: white !important;
   min-height: 40vh;
   @media screen and (max-width: 768px) {
     display: flex;
@@ -78,15 +83,32 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white !important;
 `
 const DescDiv = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
   padding: var(--sectionPadding);
+  .header {
+    flex: 1;
+    text-align: left;
+    margin: 0 auto;
+    img {
+      max-height: 80px;
+    }
+  }
+  .description {
+    flex : 1;
+  }
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    padding : var(--mobileSectionPadding)
+    padding: var(--mobileSectionPadding);
+    .header {
+      margin: 0;
+    }
   }
 `
 

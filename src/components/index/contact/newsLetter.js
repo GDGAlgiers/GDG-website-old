@@ -87,6 +87,10 @@ const StyledDiv = styled.div`
     vertical-align: middle;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    &:focus {
+      background : transparent;
+      outline : none;
+    }
   }
   .title {
     font-size: 3rem;

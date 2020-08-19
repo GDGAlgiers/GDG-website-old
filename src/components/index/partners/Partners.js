@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { navigate } from "gatsby"
-
+import Line from '../../common/Line'
 const Wrapper = styled.section`
   width: 100%;
   padding: 5vh;
@@ -33,20 +33,18 @@ const sponsors = [
   },
 ]
 
-const GreyImg = styled.img`
-  filter: grayscale(100%);
-  cursor : pointer;
-  max-width: 300px;
-  max-height: 300px;
+const Img = styled.img`
+ 
+  max-height: 350px;
+  max-width: 350px;
   object-fit: contain;
-  padding: 0 1vw;
+  margin : auto 0 ;
+  flex : 1;
+  cursor : pointer;
+  padding: 10px 1vw;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
-  &:hover {
-    filter: none;
-  }
   @media screen and (max-width: 768px) {
-    max-width: 50vw;
-    max-height: 50vw;
+    margin : 20px;
   }
 `
 
@@ -59,21 +57,10 @@ const BigTitle = styled.h1`
     font-size: 2.5rem;
   }
 `
-
-const Line = styled.div`
-  &:after {
-    content: " ";
-    display: block;
-    align-self: flex-start;
-    border-top: 2px solid var(--green);
-    border-bottom: 2px solid var(--green);
-    border-radius: 2px;
-  }
-`
 const Partners = ({content}) => {
   return (
     <div>
-      <Wrapper id="partners">
+      <Wrapper id="partners" className="section">
         <BigTitle>{content.title}</BigTitle>
         <Flex style={{ marginBottom: "3vh" }}>
           <Line style={{ width: "30%", marginRight: "1vw" }}></Line>
@@ -81,40 +68,33 @@ const Partners = ({content}) => {
           <Line style={{ width: "5%" }}></Line>
         </Flex>
         <Flex style={{ justifyContent: "space-evenly" }}>{
-          content.items.map(item => <GreyImg
+          content.items.map(item => <Img
             src={require(`../../../images/partners/${item.image}`)}
             alt={item.alt}
             loading="lazy"
             width="100%"
             height="100%"
+            title={item.alt}
             onClick={e=> {
               e.preventDefault()
               navigate(item.link)
             }}
-          ></GreyImg>)
+          ></Img>)
         }</Flex>
         <Flex id="sponsors">
   <BigTitle>{content.sponsors.title}</BigTitle>
         </Flex>
 
-        <Flex style={{ justifyContent: "space-evenly" }}>{content.sponsors.items.map(item=><GreyImg
+        <Flex style={{ justifyContent: "space-evenly" }}>{content.sponsors.items.map(item=><Img
     src={require(`../../../images/sponsors/${item.image}`)}
     alt={item.alt}
     loading="lazy"
     width="100%"
+    title={item.alt}
     height="100%"
-  ></GreyImg>)}</Flex>
+  ></Img>)}</Flex>
       </Wrapper>
-      <iframe
-        defer
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6397.405219325686!2d3.172649597364618!3d36.70568361550312!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e522f19b578df%3A0xd6e74be7191a6758!2sGDG%20Algiers!5e0!3m2!1sen!2sdz!4v1587142697549!5m2!1sen!2sdz"
-        width="100%"
-        style={{height: "50vh"}}
-        frameBorder="0"
-        allowFullscreen
-        aria-hidden="false"
-        title="gdgmap"
-      ></iframe>
+      
     </div>
   )
 }

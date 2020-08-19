@@ -14,7 +14,7 @@ const Events = ({ content }) => {
   }
   const events = previousSelected ? content.previous : content.upcoming
   return (
-    <Wrapper id="events">
+    <Wrapper id="events" className="section">
       <BigTitle>
         {previousSelected ? content.titlePrevious : content.titleUpcoming}
       </BigTitle>
@@ -59,6 +59,7 @@ const Events = ({ content }) => {
 const BigTitle = styled.h1`
   font-family: var(--font-header);
   font-size: 3.5rem;
+  margin-bottom : 2rem;
   @media screen and (max-width: 768px) {
     padding: 1rem;
     font-size: 0.5;

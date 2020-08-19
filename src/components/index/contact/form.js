@@ -226,6 +226,7 @@ const StyledForm = styled.form`
     input[type="email"] {
       height: 8vw;
       border-radius: 5vw;
+      padding :20px 30px;
     }
 
     textarea {
@@ -234,7 +235,7 @@ const StyledForm = styled.form`
 
     .textarea {
       height: 35vw;
-      padding-top: 1vw;
+      padding: 30px;
     }
 
     width: 80vw;

@@ -30,6 +30,7 @@ const links = [
     {" "}
     Contact{" "}
   </Link>,
+  <a href="#" target="_blank">Code of conduct</a>
 ]
 /// scroll watchers
 let scrollTimeout

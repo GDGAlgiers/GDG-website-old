@@ -7,7 +7,7 @@
   --red-light: #ffaa9c;
   --yellow: #fcbc05;
   --yellow-light: #f2e877;
-  --grey: #676c72;
+  --grey: #696E74;
   --grey-dark: #212121;
 
   --font-header: "Montserrat", sans-serif;
@@ -68,6 +68,12 @@ p {
   font-family: Roboto;
 }
 
-h1 {
+h1,h2 {
   font-family: var(--font-header);
+}
+.title {
+  color : var(--grey)
+}
+.section {
+  padding : 20px;
 }
