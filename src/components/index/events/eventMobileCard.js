@@ -8,6 +8,7 @@ const Flex = styled.div`
   width: 100%;
   height: ${props => props.height};
   overflow: auto;
+  padding : 40px 0px;
   justify-content: center;
   cursor: pointer;
 `

@@ -1,4 +1,4 @@
-import React, { useState} from "react"
+import React, { useState } from "react"
 import EventCard from "./eventCard"
 import EventMobileCard from "./eventMobileCard"
 import styled from "styled-components"
@@ -7,7 +7,8 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import GDGBtn from "../../common/button/GDGButton"
 import ConsumerContext from "../../../context/Context"
-
+import EventShowcase from "./EventShowcase"
+import EventMobileShowcase from "./EventMobileShowcase"
 const Events = ({ content }) => {
   const [previousSelected, setPreviousSelected] = useState(false)
   const toggleEvents = e => {
@@ -26,23 +27,19 @@ const Events = ({ content }) => {
               {!isMobile ? (
                 <Slider {...settings}>
                   {events.map(event => (
-                    
-                      <EventCard
-                        height="60vh"
-                        event={event}
-                        key={event.title}
-                      ></EventCard>
-                   
+                    <EventShowcase
+                      key={event.title}
+                      event={event}
+                    ></EventShowcase>
                   ))}
                 </Slider>
               ) : (
                 <Slider {...settingsMobile}>
                   {events.map(event => (
-                    <EventMobileCard
-                      height="60vh"
+                    <EventMobileShowcase
                       event={event}
                       key={event.title}
-                    ></EventMobileCard>
+                    ></EventMobileShowcase>
                   ))}
                 </Slider>
               )}
