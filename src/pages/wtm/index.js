@@ -1,16 +1,15 @@
-import PageTransition from "gatsby-plugin-page-transitions"
 import React from "react"
 import SEO from "../../components/layout/seo"
 
 const IndexPage = () => (
-  <PageTransition>
+  <>
     <SEO title="WTM20" />
     <div
       style={{
         height: "100vh",
         width: "100%",
         display: "flex",
-        flexDirection :'column',
+        flexDirection: "column",
         justifyContent: "flex-start",
         alignItems: "center",
       }}
@@ -21,7 +20,7 @@ const IndexPage = () => (
         rel="noopener noreferrer"
         style={{
           display: "flex",
-          marginTop : '10vh',
+          marginTop: "10vh",
           justifyContent: "center",
           alignItems: "center",
         }}
@@ -34,7 +33,7 @@ const IndexPage = () => (
         ></img>
       </a>
     </div>
-  </PageTransition>
+  </>
 )
 
 export default IndexPage

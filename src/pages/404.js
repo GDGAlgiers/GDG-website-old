@@ -3,7 +3,6 @@ import SEO from "../components/layout/seo"
 import styled from "styled-components"
 import Button from "../components/common/button/GDGButton"
 import { navigate } from "gatsby"
-import { emojis } from "../components/common/images"
 import Fade from 'react-reveal/Fade'
 const NotFoundPage = () => (
   <>

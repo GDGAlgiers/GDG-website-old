@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { navigate } from "gatsby"
 import Fade from "react-reveal/Fade"
-import Zoom from "react-reveal/Zoom"
 export default function Description({ content }) {
   return (
     <Wrapper id="about">
@@ -21,7 +20,7 @@ export default function Description({ content }) {
             lineHeight: 1.45,
           }}
         >
-          <Fade top>{content.description}</Fade>
+          <Fade right>{content.description}</Fade>
         </p>
       </DescDiv>
       <Fade>

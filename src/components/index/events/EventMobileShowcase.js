@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from '../../common/button/GDGButton'
-import {Link,navigate} from 'gatsby'
+import {Link} from 'gatsby'
 function EventMobileShowcase({event}) {
     return (
         <StyledWrapper>

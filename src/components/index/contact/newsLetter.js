@@ -14,7 +14,7 @@ const NewsLetter = () => {
   })
   const [showModal, setShowModal] = useState({ show: false, msg: "" })
   const validEmail = () => {
-    let valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+    let valid = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(email)
     if (!valid) setError({ isError: true, msg: INVALID_EMAIL })
     return valid
   }

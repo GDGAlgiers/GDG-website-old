@@ -1,6 +1,5 @@
-import React, { useState, useCallback } from "react"
+import React from "react"
 import SEO from "../../components/layout/seo"
-import PageTransition from "gatsby-plugin-page-transitions"
 import styled from "styled-components"
 import Faq from "react-faq-component"
 import { colors } from "../../constants/theme"
@@ -11,10 +10,10 @@ import themes from "../../content/events/fast&hack/themes.json"
 import mentors from "../../content/events/fast&hack/mentors.json"
 import faq from "../../content/events/fast&hack/faq.json"
 import submissions from '../../content/events/fast&hack/submissions.json'
-
+import Fade from 'react-reveal/Fade'
 const FastAndHack20 = () => {
   return (
-    <PageTransition>
+    <>
       <SEO title="FAST&HACK20" />
 
       <Wrapper>
@@ -31,8 +30,12 @@ const FastAndHack20 = () => {
        
         
         <Themes>
+
           <h2 className="title">{themes.title}</h2>
           <div className="theme-row">
+            <Fade bottom>
+
+           
               {themes.items.map(item => {
                 return (
                   <div className="theme-item">
@@ -46,6 +49,7 @@ const FastAndHack20 = () => {
                   </div>
                 )
               })}
+               </Fade>
             </div>
         </Themes>
         <h1 className="title">Fast & Hack Submissions </h1>
@@ -59,28 +63,24 @@ const FastAndHack20 = () => {
           ></Faq>
         </div>
       </Wrapper>
-    </PageTransition>
+    </>
   )
 }
 
 
 const MentorsComp = ({mentors}) => {
-  const [display,setDisplay] = useState(3);
-  const [renderList,setRenderList] = useState(mentors.items)
-  const handleAdd = useCallback(()=>{
-      if(display < mentors.items.length){
-        setDisplay(display => Math.min(display+3,mentors.items.length))
-      } 
-  },[])
   return <Mentors>
   <h2 className="title">{mentors.title}</h2>
+  
   <div className="mentors-row">
-    {renderList.slice(0,display).map((item,index) => {
+  <Fade bottom>
+    {mentors.items.map((item,index) => {
       let color = cirColors[index % cirColors.length];
       return (
-        <div className="mentor-item" key={item.name} style={{
-          animationDelay : `${(index * 100)+100}ms`
-        }}>
+        
+
+       
+        <div className="mentor-item" key={item.name} >
           <img
             src={require(`../../images/events/fastandhack20/mentors/${item.image}`)}
             alt={item.name}
@@ -109,12 +109,11 @@ const MentorsComp = ({mentors}) => {
             })}
           </div>
         </div>
-      )
+    )
     })}
+    </Fade>
   </div>
-  <button  title="Show more" className="btn" disabled={display>= mentors.items.length} onClick={e=>{
-    handleAdd()
-  }}>+</button>
+  
 </Mentors>
 }
 export default FastAndHack20
@@ -287,16 +286,6 @@ const Mentors = styled.section`
     align-items: center;
     flex-wrap: wrap;
     .mentor-item {
-      opacity : 0;
-      @keyframes fadeAnim {
-        from {
-          opacity : 0 ;
-        }
-        to{
-          opacity : 1 ;
-        }
-      }
-      animation : fadeAnim 0.5s ease-in forwards;
       max-width: 25%;
       margin: 0 20px;
       .mentor-image {

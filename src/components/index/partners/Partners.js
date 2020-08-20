@@ -19,21 +19,6 @@ const Flex = styled.div`
   flex-wrap: wrap;
 `
 
-const partners = [
-  {
-    img: "wtm.png",
-    alt: "WTM Algiers",
-    url: "/wtm",
-  },
-]
-
-const sponsors = [
-  {
-    img: "GitHubEducation.svg",
-    alt: "Github Education",
-  },
-]
-
 const Img = styled.img`
   max-height: 350px;
   max-width: 350px;

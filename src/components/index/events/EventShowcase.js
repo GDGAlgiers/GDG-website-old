@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import Button from "../../common/button/GDGButton"
 import { navigate } from "gatsby"
@@ -16,10 +16,10 @@ function EventShowcase({ event }) {
             >
               <Line style={{ width: "30%", marginRight: "1vw" }}></Line>
               <Line style={{ width: "10%", marginRight: "1vw" }}></Line>
-              <Line style={{ width: "5%" }}></Line>
+              <Line style={{ width: "60%" }}></Line>
             </div>
-          <p>
-            <span>
+          <p style={{display : "flex"}}>
+            <span style={{marginRight : 20}}>
               <img
                 src={require("../../../images/icons/gps.svg")}
                 alt="location"
@@ -47,10 +47,6 @@ function EventShowcase({ event }) {
 ///Styled Components
 
 //linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
-const BgShadow = styled.div`
-box-shadow : 0px 0px 16px rgba(0,0,0,0.4);
-`
-
 const StyledWrapper = styled.div`
   background-image: url(${props => props.bg});
   background-repeat: no-repeat;

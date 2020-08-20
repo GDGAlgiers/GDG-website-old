@@ -7,7 +7,7 @@ import ContactUS from "../components/index/contact/ContactUs"
 import Description from "../components/index/description/Description"
 import Featured from "../components/index/featured/Featured"
 import Partners from "../components/index/partners/Partners"
-import PageTransition from "gatsby-plugin-page-transitions"
+
 
 // Content
 import index from "../content/index.json"

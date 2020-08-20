@@ -31,14 +31,17 @@ const DraggableBox = ({
         transform={initTransform}
         mountAnimation={css`
           transform-origin: left bottom;
+          opacity : 0;
           animation: ${keyFrameName} ${animationDurationMs + "ms"}
             ${animationDelayMs + "ms"} ease-out forwards 1;
           @keyframes ${keyFrameName} {
             from {
+              opacity : 0;
               ${initTransform}
             }
             to {
               transform: translateX(0px) translateY(0) rotateZ(0deg);
+              opacity : 1;
             }
           }
         `}
