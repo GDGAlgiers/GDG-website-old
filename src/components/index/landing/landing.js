@@ -4,12 +4,16 @@ import Button from "../../common/button/GDGButton"
 import { navigate } from "gatsby"
 import AnimatedBoxes from "./AnimatedBoxes"
 import {logos } from '../../common/images';
-
+import Fade from 'react-reveal/Fade';
 export default function Landing({ content }) {
   const {PhoneGDGLogo} = logos
   return (
     <Wrapper>
+    
+
+     
       <Content>
+      <Fade>
         <img src={PhoneGDGLogo} alt="gdg algiers" title="GDG Algiers" className="brand" loading="eager"></img>
         <h1 className="landing-title">
          {content.title}<span className="matter">{content.titlematter}</span>
@@ -32,6 +36,7 @@ export default function Landing({ content }) {
             }}
           ></Button>
         </Buttons>
+        </Fade>
       </Content>
       <Canvas>
         <AnimatedBoxes></AnimatedBoxes>
@@ -50,17 +55,6 @@ const Wrapper = styled.section`
     font-size: 5rem;
     .matter {
       opacity :0;
-      animation : fadeIn 1s 2.5s ease forwards;
-    @keyframes fadeIn {
-      from {
-        
-        opacity : 0;
-      }
-      to{
-        
-        opacity : 1;
-      }
-    }
     }
     .matter:hover {
       border-bottom: 5px solid var(--yellow);

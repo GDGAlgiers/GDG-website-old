@@ -14,6 +14,36 @@ const Events = ({ content }) => {
     setPreviousSelected(!previousSelected)
   }
   const events = previousSelected ? content.previous : content.upcoming
+
+  const renderEvents = (events, isMobile, { mobile, desktop }) => {
+    if (!isMobile) {
+      return (
+        <Slider {...settings}>
+          {events.map(event => (
+            <Fade>
+              <desktop.Component
+                key={event.title}
+                event={event}
+              ></desktop.Component>
+            </Fade>
+          ))}
+        </Slider>
+      )
+    } else {
+      return (
+        <Slider {...settingsMobile}>
+          {events.map(event => (
+            <Fade>
+              <mobile.Component
+                event={event}
+                key={event.title}
+              ></mobile.Component>
+            </Fade>
+          ))}
+        </Slider>
+      )
+    }
+  }
   return (
     <Wrapper id="events" className="section">
       <BigTitle>
@@ -23,29 +53,14 @@ const Events = ({ content }) => {
         {({ data: { isMobile } }) => {
           return (
             <div style={{ padding: "0 2rem 2rem 2rem" }}>
-              {!isMobile ? (
-                <Slider {...settings}>
-                  {events.map(event => (
-                    <Fade>
-                      <EventShowcase
-                        key={event.title}
-                        event={event}
-                      ></EventShowcase>
-                    </Fade>
-                  ))}
-                </Slider>
-              ) : (
-                <Slider {...settingsMobile}>
-                  {events.map(event => (
-                    <Fade>
-                      <EventMobileShowcase
-                        event={event}
-                        key={event.title}
-                      ></EventMobileShowcase>
-                    </Fade>
-                  ))}
-                </Slider>
-              )}
+              {renderEvents(events,isMobile,{
+                mobile :{
+                  Component : EventMobileShowcase
+                },
+                desktop : {
+                  Component : EventShowcase
+                }
+              })}
             </div>
           )
         }}

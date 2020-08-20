@@ -2,12 +2,22 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import Button from "../../common/button/GDGButton"
 import { navigate } from "gatsby"
+import Line from '../../common/Line'
 function EventShowcase({ event }) {
   return (
+
+   
     <StyledWrapper bg={require(`../../../images/events/${event.img}`)}>
       <div className="content">
         <div className="content__text">
           <h1>{event.title}</h1>
+          <div
+              style={{ display: "flex", marginBottom: "20px" }}
+            >
+              <Line style={{ width: "30%", marginRight: "1vw" }}></Line>
+              <Line style={{ width: "10%", marginRight: "1vw" }}></Line>
+              <Line style={{ width: "5%" }}></Line>
+            </div>
           <p>
             <span>
               <img
@@ -30,19 +40,24 @@ function EventShowcase({ event }) {
         ></Button>
       </div>
     </StyledWrapper>
+  
   )
 }
 
 ///Styled Components
 
 //linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+const BgShadow = styled.div`
+box-shadow : 0px 0px 16px rgba(0,0,0,0.4);
+`
+
 const StyledWrapper = styled.div`
   background-image: url(${props => props.bg});
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
-
+  box-shadow : 0px 5px 16px rgba(0,0,0,0.4);
   height: 100%;
   min-height: 60vh;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -71,7 +86,7 @@ const StyledWrapper = styled.div`
     .content__text {
       p {
         margin: 0;
-        color: var(--green);
+        color: white;
       }
     }
     button {
@@ -83,6 +98,7 @@ const StyledWrapper = styled.div`
   .content:focus {
     opacity: 1;
     backdrop-filter: blur(4px);
+    background : linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) );
   }
 `
 
