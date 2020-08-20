@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import Modal from "../../common/modal/Modal"
+import Fade from 'react-reveal/Fade';
 /// messages 
 const INVALID_EMAIL = "Please put a valid email"
 const REGISTERING = "Registering..."
@@ -40,6 +41,7 @@ const NewsLetter = () => {
   }
   return (
     <StyledDiv>
+      <Fade bottom>
       {showModal.show ? (
         <Modal
           error={error.isError}
@@ -47,7 +49,7 @@ const NewsLetter = () => {
         >
           {showModal.msg}
         </Modal>
-      ) : null}
+      ) : <div></div>}
       <h1 className="title">Be a part of our community</h1>
       <p className="info">Sign up for to GDG Algiers newsletter.</p>
       <div>
@@ -64,6 +66,7 @@ const NewsLetter = () => {
         />
         <StyledButton onClick={handleSubmit}>SIGN UP</StyledButton>
       </div>
+      </Fade>
     </StyledDiv>
   )
 }

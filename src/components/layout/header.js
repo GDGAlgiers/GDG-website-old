@@ -30,7 +30,7 @@ const links = [
     {" "}
     Contact{" "}
   </Link>,
-  <a href="#" target="_blank">Code of conduct</a>
+  <a href="https://drive.google.com/file/u/1/d/0BwpQHA5WLZ2pMnJuTF9ubWlQUmhkdDMyTHJLdHVtUWFlb3VV/view?usp=sharing" rel="noreferrer" target="_blank">Code of conduct</a>
 ]
 /// scroll watchers
 let scrollTimeout

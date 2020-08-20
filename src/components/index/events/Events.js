@@ -7,6 +7,7 @@ import GDGBtn from "../../common/button/GDGButton"
 import ConsumerContext from "../../../context/Context"
 import EventShowcase from "./EventShowcase"
 import EventMobileShowcase from "./EventMobileShowcase"
+import Fade from "react-reveal/Fade"
 const Events = ({ content }) => {
   const [previousSelected, setPreviousSelected] = useState(false)
   const toggleEvents = e => {
@@ -25,19 +26,23 @@ const Events = ({ content }) => {
               {!isMobile ? (
                 <Slider {...settings}>
                   {events.map(event => (
-                    <EventShowcase
-                      key={event.title}
-                      event={event}
-                    ></EventShowcase>
+                    <Fade>
+                      <EventShowcase
+                        key={event.title}
+                        event={event}
+                      ></EventShowcase>
+                    </Fade>
                   ))}
                 </Slider>
               ) : (
                 <Slider {...settingsMobile}>
                   {events.map(event => (
-                    <EventMobileShowcase
-                      event={event}
-                      key={event.title}
-                    ></EventMobileShowcase>
+                    <Fade>
+                      <EventMobileShowcase
+                        event={event}
+                        key={event.title}
+                      ></EventMobileShowcase>
+                    </Fade>
                   ))}
                 </Slider>
               )}
@@ -59,7 +64,7 @@ const Events = ({ content }) => {
 const BigTitle = styled.h1`
   font-family: var(--font-header);
   font-size: 3.5rem;
-  margin-bottom : 2rem;
+  margin-bottom: 2rem;
   @media screen and (max-width: 768px) {
     padding: 1rem;
     font-size: 0.5;

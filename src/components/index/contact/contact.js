@@ -1,7 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import Fade from 'react-reveal/Fade'
 const Contact = ({content}) => (
+ 
   <StyledDiv>
+     <Fade right>
     <div className="row">
       <div className="img-container">
         <img
@@ -12,7 +15,7 @@ const Contact = ({content}) => (
       </div>
       <div className="info-container">
         <p className="title">{content.email.title}</p>
-        <p className="info">{content.email.data}</p>
+        <a style={{color: "var(--grey)"}} className="info" href={`mailto:${content.email.data?.trim()}`}>{content.email.data}</a>
       </div>
     </div>
     <div className="row2">
@@ -40,7 +43,9 @@ const Contact = ({content}) => (
         <p className="info">{content.phone.data}</p>
       </div>
     </div>
+    </Fade>
   </StyledDiv>
+ 
 )
 const StyledDiv = styled.div`
   font-family: var(--font);

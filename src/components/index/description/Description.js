@@ -1,15 +1,19 @@
 import React from "react"
 import styled from "styled-components"
 import { navigate } from "gatsby"
-
+import Fade from "react-reveal/Fade"
+import Zoom from "react-reveal/Zoom"
 export default function Description({ content }) {
   return (
     <Wrapper id="about">
       <DescDiv>
-        <div className="header">
-          <BiggerH1>{content.header.text1}</BiggerH1>
-          <img src={require("../../../images/gdg_algiers.png")} alt="gdg" />
-        </div>
+        <Fade top>
+          <div className="header">
+            <BiggerH1>{content.header.text1}</BiggerH1>
+            <img src={require("../../../images/gdg_algiers.png")} alt="gdg" />
+          </div>
+        </Fade>
+
         <p
           className="description"
           style={{
@@ -17,30 +21,32 @@ export default function Description({ content }) {
             lineHeight: 1.45,
           }}
         >
-          {content.description}
+          <Fade top>{content.description}</Fade>
         </p>
       </DescDiv>
-      <HeroCard
-        img={require(`../../../images/${content.hero.image}`)}
-        onClick={e => {
-          e.preventDefault()
-          navigate(content.hero.link)
-        }}
-      >
-        <h1 style={{ width: "100%", textAlign: "center" }}>
-          {content.hero.title}
-        </h1>
-        <StatsHolder>
-          {content.hero.numbers.map(item => {
-            return (
-              <Column>
-                <h1>{item.data}</h1>
-                <h2>{item.title}</h2>
-              </Column>
-            )
-          })}
-        </StatsHolder>
-      </HeroCard>
+      <Fade>
+        <HeroCard
+          img={require(`../../../images/${content.hero.image}`)}
+          onClick={e => {
+            e.preventDefault()
+            navigate(content.hero.link)
+          }}
+        >
+          <h1 style={{ width: "100%", textAlign: "center" }}>
+            {content.hero.title}
+          </h1>
+          <StatsHolder>
+            {content.hero.numbers.map(item => {
+              return (
+                <Column>
+                  <h1>{item.data}</h1>
+                  <h2>{item.title}</h2>
+                </Column>
+              )
+            })}
+          </StatsHolder>
+        </HeroCard>
+      </Fade>
     </Wrapper>
   )
 }
@@ -53,7 +59,7 @@ const Wrapper = styled.section`
 const BiggerH1 = styled.h1`
   font-size: 3.5rem;
   font-weight: 500;
-  font-family : var(--font);
+  font-family: var(--font);
   color: var(--grey);
 `
 
@@ -100,7 +106,7 @@ const DescDiv = styled.div`
     }
   }
   .description {
-    flex : 1;
+    flex: 1;
   }
   @media screen and (max-width: 768px) {
     display: flex;

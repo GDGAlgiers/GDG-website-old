@@ -1,11 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-
+import Zoom from 'react-reveal/Zoom'
 const Featured = ({content}) => {
   return (
     <Wrapper id="featured" className="section">
       <h1 style={{ textAlign: "center" }}>{content.title}</h1>
       <Flex>{content.items.map(item => 
+       <Zoom>
          <Img
          src={require(`../../../images/featured_in/${item.image}`)}
          alt={item.alt}
@@ -13,6 +14,7 @@ const Featured = ({content}) => {
          height="100%"
          loading="lazy"
        ></Img>
+       </Zoom>
       )}</Flex>
     </Wrapper>
   )

@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { navigate } from "gatsby"
-import Line from '../../common/Line'
+import Line from "../../common/Line"
+import Zoom from "react-reveal/Zoom"
 const Wrapper = styled.section`
   width: 100%;
   padding: 5vh;
@@ -22,7 +23,7 @@ const partners = [
   {
     img: "wtm.png",
     alt: "WTM Algiers",
-    url:"/wtm"
+    url: "/wtm",
   },
 ]
 
@@ -34,17 +35,16 @@ const sponsors = [
 ]
 
 const Img = styled.img`
- 
   max-height: 350px;
   max-width: 350px;
   object-fit: contain;
-  margin : auto 0 ;
-  flex : 1;
-  cursor : pointer;
+  margin: auto 0;
+  flex: 1;
+  cursor: pointer;
   padding: 10px 1vw;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
   @media screen and (max-width: 768px) {
-    margin : 20px;
+    margin: 20px;
   }
 `
 
@@ -57,7 +57,7 @@ const BigTitle = styled.h1`
     font-size: 2.5rem;
   }
 `
-const Partners = ({content}) => {
+const Partners = ({ content }) => {
   return (
     <div>
       <Wrapper id="partners" className="section">
@@ -67,34 +67,43 @@ const Partners = ({content}) => {
           <Line style={{ width: "10%", marginRight: "1vw" }}></Line>
           <Line style={{ width: "5%" }}></Line>
         </Flex>
-        <Flex style={{ justifyContent: "space-evenly" }}>{
-          content.items.map(item => <Img
-            src={require(`../../../images/partners/${item.image}`)}
-            alt={item.alt}
-            loading="lazy"
-            width="100%"
-            height="100%"
-            title={item.alt}
-            onClick={e=> {
-              e.preventDefault()
-              navigate(item.link)
-            }}
-          ></Img>)
-        }</Flex>
+        <Flex style={{ justifyContent: "space-evenly" }}>
+          {content.items.map(item => (
+            <Zoom>
+              <Img
+                src={require(`../../../images/partners/${item.image}`)}
+                alt={item.alt}
+                loading="lazy"
+                width="100%"
+                height="100%"
+                title={item.alt}
+                onClick={e => {
+                  e.preventDefault()
+                  navigate(item.link)
+                }}
+              ></Img>
+            </Zoom>
+          ))}
+        </Flex>
         <Flex id="sponsors">
-  <BigTitle>{content.sponsors.title}</BigTitle>
+          <BigTitle>{content.sponsors.title}</BigTitle>
         </Flex>
 
-        <Flex style={{ justifyContent: "space-evenly" }}>{content.sponsors.items.map(item=><Img
-    src={require(`../../../images/sponsors/${item.image}`)}
-    alt={item.alt}
-    loading="lazy"
-    width="100%"
-    title={item.alt}
-    height="100%"
-  ></Img>)}</Flex>
+        <Flex style={{ justifyContent: "space-evenly" }}>
+          {content.sponsors.items.map((item, index) => (
+            <Zoom>
+              <Img
+                src={require(`../../../images/sponsors/${item.image}`)}
+                alt={item.alt}
+                loading="lazy"
+                width="100%"
+                title={item.alt}
+                height="100%"
+              ></Img>
+            </Zoom>
+          ))}
+        </Flex>
       </Wrapper>
-      
     </div>
   )
 }

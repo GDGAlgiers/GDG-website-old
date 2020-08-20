@@ -28,6 +28,7 @@
     "react-draggable": "^4.4.2",
     "react-faq-component": "^1.0.5",
     "react-helmet": "^5.2.1",
+    "react-reveal": "^1.2.2",
     "react-ripples": "^2.2.1",
     "react-slick": "^0.25.2",
     "react-transition-group": "^4.4.1",

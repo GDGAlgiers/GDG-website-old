@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Modal from "../../common/modal/Modal";
-
+import Fade from 'react-reveal/Fade'
 class Form extends React.Component {
   constructor(props) {
     super(props)
@@ -95,6 +95,7 @@ class Form extends React.Component {
             this.onFormSubmit(this.state.fields)
           }}
         >
+           <Fade left>
           <input type="hidden" name="bot-field" />
           <div className="input-row ">
             <input
@@ -147,6 +148,7 @@ class Form extends React.Component {
               Send
             </StyledButton>
           </div>
+          </Fade>
         </StyledForm>
         {this.state.showModal && (
           <Modal
