@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { CSSTransition } from "react-transition-group"
-import { dropShadow } from "../common/effects"
 import { logos, Menu as m } from "../common/images"
 import ContextConsumer from "../../context/Context"
 
@@ -124,7 +123,7 @@ const StyledHeader = styled.header`
   font-weight: 600;
   font-size: 16px;
   z-index: 10;
-  ${dropShadow}
+  box-shadow : 0px 3px 10px rgba(0,0,0,0.1);
   @media screen and (max-width: 768px) {
     transform: translateY(-50vh);
     grid-template-areas: "logo burger" "nav nav";
