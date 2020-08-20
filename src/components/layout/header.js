@@ -22,10 +22,7 @@ const links = [
     {" "}
     Partners{" "}
   </Link>,
-  <Link to="/#sponsors" activeStyle={activeStyle}>
-    {" "}
-    Sponsors{" "}
-  </Link>,
+  <Link to="/team21" activeStyle={activeStyle}>Our Team</Link>,
   <Link to="/#contact" activeStyle={activeStyle}>
     {" "}
     Contact{" "}
