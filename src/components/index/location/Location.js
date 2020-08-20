@@ -102,6 +102,9 @@ const Content = styled.div`
     #contentDivider {
       display: none !important ;
     }
+    img {
+      max-height : 300px;
+    }
   }
   a {
     text-decoration: none;

@@ -41,8 +41,7 @@ const StyledSection = styled.div`
   .contact {
     float: right;
     width: 30%;
-    margin-right: 6%;
-    margin-top: 2vw;
+   
   }
 
   .email {

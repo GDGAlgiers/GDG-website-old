@@ -64,7 +64,6 @@ const StyledDiv = styled.div`
   }
   .row,
   .row2 {
-    margin-left: 4vw;
   }
   .row2 {
     height: 8vw;
@@ -129,9 +128,6 @@ const StyledDiv = styled.div`
     height: auto;
     background-color: inherit;
     margin-bottom: 14vw;
-    padding-top: 7vw;
-    padding-left: 4vw;
-    margin-left: 20vw;
     font-family: var(--font);
     .row {
       height: 10vw;

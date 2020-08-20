@@ -145,7 +145,7 @@ class Form extends React.Component {
           </p>
           <div>
             <StyledButton className="button-row" type="submit">
-              Send
+              send message
             </StyledButton>
           </div>
           </Fade>
@@ -206,14 +206,10 @@ const StyledForm = styled.form`
     outline: none;
   }
 
-  width: 40vw;
-  height: 38vw;
+  width: 90%;
   font-size: 2vw;
   line-height: 1.22;
   margin: 0 auto;
-  padding: 2vw;
-  top: "";
-
   .input-row,
   .textarea-row,
   .button-row {
@@ -240,7 +236,7 @@ const StyledForm = styled.form`
       padding: 30px;
     }
 
-    width: 80vw;
+    width: 100%;
     height: 80vw;
     font-size: 3vw;
 
@@ -252,20 +248,21 @@ const StyledForm = styled.form`
   }
 `
 const StyledButton = styled.button`
-  width: 100%;
-  height: 3vw;
-  border: none;
-  background-color: #0d9d58;
+  display : block;
+  width : 100%;
+  margin:auto;
   font-family: var(--font-header);
-  font-size: 20px;
-  text-align: center;
-  color: #ffffff;
+  font-size : 1.3rem;
+  color: #ffff;
+  background-color: var(--green);
+  border: none;
+  text-transform : uppercase;
+  padding:5px 10px;
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0px 5px 16px rgba(14, 157, 89, 0.5);
   cursor: pointer;
-  margin-top: 1vw;
-  border-radius: 3vw;
-  @media (max-width: 768px) {
-    height: 8vw;
-    border-radius: 5vw;
-  }
+  outline: none;
+  vertical-align: middle;
 `
 export default Form
