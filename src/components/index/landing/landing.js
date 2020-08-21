@@ -13,7 +13,7 @@ export default function Landing({ content }) {
 
      
       <Content>
-      <Fade>
+      <Fade top>
         <img src={PhoneGDGLogo} alt="gdg algiers" title="GDG Algiers" className="brand" loading="eager"></img>
         <h1 className="landing-title">
          {content.title}<span className="matter">{content.titlematter}</span>
@@ -120,18 +120,6 @@ const Content = styled.div`
     margin : 0;
     max-width : 100px;
   }
-  animation : enter 0.5s ease forwards;
-    opacity : 0;
-    @keyframes enter {
-      from {
-        opacity : 0;
-       
-      }
-      to{
-        opacity : 1;
-        
-      }
-    }
   @media screen and (max-width: 1024px) {
     width: 90%;
     margin: 0 auto;
