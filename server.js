@@ -2,11 +2,15 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+
+
+app.use(cors());
 app.use(express.static('public'))
 app.use(express.json())
-app.use(cors());
 
-app.post('/api/v1/contact',(req,res)=> {
+
+
+app.post('/api/v1/contact',(req,res,next)=> {
     console.log(req.body)
     const {body : data} = req
     const {name , email, message} = data;

@@ -1,11 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import { navigate } from "gatsby"
 import Line from "../../common/Line"
 import Zoom from "react-reveal/Zoom"
 const Wrapper = styled.section`
   width: 100%;
-  padding: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,7 +45,7 @@ const Partners = ({ content }) => {
     <div>
       <Wrapper id="partners" className="section">
         <BigTitle>{content.title}</BigTitle>
-        <Flex style={{ marginBottom: "3vh" }}>
+        <Flex style={{marginLeft : "20px", marginBottom: "3vh" }}>
           <Line style={{ width: "30%", marginRight: "1vw" }}></Line>
           <Line style={{ width: "10%", marginRight: "1vw" }}></Line>
           <Line style={{ width: "5%" }}></Line>
@@ -70,6 +68,11 @@ const Partners = ({ content }) => {
         </Flex>
         <Flex id="sponsors">
           <BigTitle>{content.sponsors.title}</BigTitle>
+          <Flex style={{marginLeft : "20px", marginBottom: "3vh"  }}>
+            <Line style={{ width: "10%", marginRight: "1vw" }}></Line>
+            <Line style={{ width: "20%", marginRight: "1vw" }}></Line>
+            <Line style={{ width: "20%" }}></Line>
+          </Flex>
         </Flex>
 
         <Flex style={{ justifyContent: "space-evenly" }}>

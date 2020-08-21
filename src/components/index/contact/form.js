@@ -2,8 +2,6 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import Modal from "../../common/modal/Modal"
 import Fade from "react-reveal/Fade"
-import useForm from "../../../hooks/useForm"
-
 
 const initForm = {
   name :"",
@@ -241,11 +239,12 @@ const StyledButton = styled.button`
   margin: auto;
   font-family: var(--font-header);
   font-size: 1.3rem;
+  font-weight : 300;
   color: #ffff;
   background-color: var(--green);
   border: none;
   text-transform: uppercase;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border-radius: 16px;
   text-decoration: none;
   box-shadow: 0px 5px 16px rgba(14, 157, 89, 0.5);

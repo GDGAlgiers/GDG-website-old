@@ -55,7 +55,7 @@ function Location({ location }) {
               href="https://gdg.community.dev/gdg-algiers/"
               target="_blank"
               rel="noopener noreferrer"
-              title="go to map"
+              title="go to gdg platform"
             >
               <img src={OnlineMeeting} alt="online" />
             </a>
@@ -101,6 +101,7 @@ function Location({ location }) {
 
 const StyledWrapper = styled.section`
   font-family: var(--font-header);
+  margin-bottom : 3rem;
 `
 
 const BigTitle = styled.h1`
