@@ -55,18 +55,16 @@ const Partners = ({ content }) => {
         <Flex style={{ justifyContent: "space-evenly" }}>
           {content.items.map(item => (
             <Zoom>
-              <Img
-                src={require(`../../../images/partners/${item.image}`)}
-                alt={item.alt}
-                loading="lazy"
-                width="100%"
-                height="100%"
-                title={item.alt}
-                onClick={e => {
-                  e.preventDefault()
-                  navigate(item.link)
-                }}
-              ></Img>
+              <a href={item.link} target="_blank" rel="noreferrer">
+                <Img
+                  src={require(`../../../images/partners/${item.image}`)}
+                  alt={item.alt}
+                  loading="lazy"
+                  width="100%"
+                  height="100%"
+                  title={item.alt}
+                ></Img>
+              </a>
             </Zoom>
           ))}
         </Flex>

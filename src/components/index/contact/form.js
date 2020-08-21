@@ -95,7 +95,7 @@ class Form extends React.Component {
             this.onFormSubmit(this.state.fields)
           }}
         >
-           <Fade left>
+           <Fade bottom>
           <input type="hidden" name="bot-field" />
           <div className="input-row ">
             <input
