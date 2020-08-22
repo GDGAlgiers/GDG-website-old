@@ -9,7 +9,7 @@ const initForm = {
   message:""
 }
 const sendEmail = emailData =>
-  fetch("http://localhost/api/v1/messages", {
+  fetch(process.env.GATSBY_MESSAGING_ENDPOINT, {
     method: "POST",
     headers: [["Content-Type", "application/json"]],
     body: JSON.stringify({
@@ -60,7 +60,7 @@ const FormFun = props => {
     } else {
       /// no errors so can send
       setSubmited(false)
-      setModalMsg("We are sending your email !")
+      setModalMsg("We are sending your message !")
       setShowModal(true)
       sendEmail(values)
         .then(res => {
