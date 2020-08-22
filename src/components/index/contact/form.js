@@ -9,10 +9,14 @@ const initForm = {
   message:""
 }
 const sendEmail = emailData =>
-  fetch("http://localhost/api/v1/contact", {
+  fetch("http://localhost/api/v1/messages", {
     method: "POST",
     headers: [["Content-Type", "application/json"]],
-    body: JSON.stringify(emailData),
+    body: JSON.stringify({
+      senderName : emailData.name,
+      senderEmail :emailData.email,
+      message : emailData.message
+    }),
   })
 
 function hasError(errors) {

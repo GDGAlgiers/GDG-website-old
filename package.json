@@ -1,14 +1,11 @@
 {
   "name": "gdg-website-20",
   "private": true,
-  "main": "server.js",
   "description": "the official website of the gdg algiers community",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "author": "GDG Algiers <gdg.algiers@esi.dz>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
     "gatsby": "^2.21.33",
     "gatsby-image": "^2.4.3",
     "gatsby-plugin-manifest": "^2.4.3",
@@ -19,7 +16,6 @@
     "gatsby-plugin-styled-components": "^3.3.1",
     "gatsby-source-filesystem": "^2.3.3",
     "gatsby-transformer-sharp": "^2.5.2",
-    "moment": "^2.25.3",
     "nodemailer": "^6.4.8",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
