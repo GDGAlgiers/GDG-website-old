@@ -127,7 +127,7 @@ const FormFun = props => {
           <p className="error">{errors.message ? errors.message : ""}</p>
           <div>
             <StyledButton className="button-row" type="submit">
-              send message
+              send
             </StyledButton>
           </div>
         </Fade>
@@ -239,7 +239,7 @@ const StyledButton = styled.button`
   margin: auto;
   font-family: var(--font-header);
   font-size: 1.3rem;
-  font-weight : 300;
+  font-weight : 400;
   color: #ffff;
   background-color: var(--green);
   border: none;

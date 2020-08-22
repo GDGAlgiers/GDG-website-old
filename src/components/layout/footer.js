@@ -26,10 +26,10 @@ const Footer = ({content}) => (
       <div className="content">
         <p>Information</p>
         <div>
-          <ExternalLink url="#" text="Join Us"></ExternalLink>
+          <ExternalLink url="https://gdg.community.dev/gdg-algiers/" text="Join Us"></ExternalLink>
           <ExternalLink url="#" text="Sponsorship"></ExternalLink>
           <ExternalLink url="#" text="Submit Talk"></ExternalLink>
-          <ExternalLink url="#" text="Code of Conduct"></ExternalLink>
+          <ExternalLink url="https://drive.google.com/file/u/1/d/0BwpQHA5WLZ2pMnJuTF9ubWlQUmhkdDMyTHJLdHVtUWFlb3VV/view?usp=sharing" text="Code of Conduct"></ExternalLink>
         </div>
       </div>
       <div className="social-media">
@@ -55,7 +55,7 @@ const Footer = ({content}) => (
       </p>
     </div>
     <div className="row3">
-      <h2>Intrested in sponsoring GDG Algiers ?</h2>
+      <h2>Interested in sponsoring GDG Algiers ?</h2>
       <StyledButton
         onClick={e => {
           e.preventDefault()

@@ -13,7 +13,7 @@ export default function Landing({ content }) {
 
      
       <Content>
-      <Fade top>
+      <Fade>
         <img src={PhoneGDGLogo} alt="gdg algiers" title="GDG Algiers" className="brand" loading="eager"></img>
         <h1 className="landing-title">
          {content.title}<span className="matter">{content.titlematter}</span>
@@ -53,12 +53,6 @@ const Wrapper = styled.section`
   background-color: inherit;
   .landing-title {
     font-size: 5rem;
-    .matter {
-      opacity :0;
-    }
-    .matter:hover {
-      border-bottom: 5px solid var(--yellow);
-    }
   }
 
   @media screen and (max-width: 1024px) {
