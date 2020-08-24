@@ -37,7 +37,13 @@ module.exports = {
         icon: './src/images/favicon.png', // This path is relative to the root of the site.
       },
     },
-    
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      options: {
+        analyzerPort: 3000,
+        production: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-offline`,
       options: {
