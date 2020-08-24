@@ -13,7 +13,7 @@ export default function Landing({ content }) {
 
      
       <Content>
-      <Fade>
+      <Fade top>
         <img src={PhoneGDGLogo} alt="gdg algiers" title="GDG Algiers" className="brand" loading="eager"></img>
         <h1 className="landing-title">
          {content.title}<span className="matter">{content.titlematter}</span>

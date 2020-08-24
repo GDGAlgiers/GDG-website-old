@@ -2,23 +2,19 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import Modal from "../../common/modal/Modal"
 import Fade from "react-reveal/Fade"
+import { sendMessage } from "../../../services/messaging"
 
 const initForm = {
   name :"",
   email:"",
   message:""
 }
-const sendEmail = emailData =>
-  fetch(process.env.GATSBY_MESSAGING_ENDPOINT, {
-    method: "POST",
-    headers: [["Content-Type", "application/json"]],
-    body: JSON.stringify({
-      senderName : emailData.name,
-      senderEmail :emailData.email,
-      message : emailData.message
-    }),
-  })
-
+const send = data => sendMessage({
+  senderName : data.name,
+  senderEmail : data.email,
+  message : data.message
+})
+  
 function hasError(errors) {
   return errors.name || errors.message || errors.email
 }
@@ -62,7 +58,7 @@ const FormFun = props => {
       setSubmited(false)
       setModalMsg("We are sending your message !")
       setShowModal(true)
-      sendEmail(values)
+      send(values)
         .then(res => {
           setSubmited(true)
           setModalMsg("Your email was sent correctly, Thank you!")

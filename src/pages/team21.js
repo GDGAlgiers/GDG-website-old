@@ -1,7 +1,6 @@
 import React from "react"
 import SEO from "../components/layout/seo"
 import PageLoader from "../components/common/loader"
-import Fade from 'react-reveal/Fade'
 const Team21 = () => (
   <>
     <SEO title="Team" />
