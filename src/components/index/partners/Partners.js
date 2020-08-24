@@ -21,13 +21,11 @@ const Img = styled.img`
   max-height: 350px;
   max-width: 350px;
   object-fit: contain;
-  margin: auto 0;
   flex: 1;
   cursor: pointer;
-  padding: 10px 1vw;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
   @media screen and (max-width: 768px) {
-    margin: 20px;
+    padding : 10%;
   }
 `
 
