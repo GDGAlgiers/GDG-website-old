@@ -18,7 +18,9 @@ const Events = ({ content }) => {
   const renderEvents = (events, isMobile, { mobile, desktop }) => {
     if (!isMobile) {
       return (
-        <Slider {...settings}>
+        <Slider {...settings} style={{
+          padding : 0
+        }}>
           {events.map(event => (
             <Fade>
               <desktop.Component
@@ -52,7 +54,7 @@ const Events = ({ content }) => {
       <ConsumerContext>
         {({ data: { isMobile } }) => {
           return (
-            <div style={{ padding: "0 2rem 2rem 2rem" }}>
+            <div className="slider-show">
               {renderEvents(events,isMobile,{
                 mobile :{
                   Component : EventMobileShowcase
@@ -90,6 +92,9 @@ const Wrapper = styled.section`
   min-height: 100vh;
   background-color: inherit;
   padding: 0 4rem;
+  .slider-show {
+    margin-bottom : 64px;
+  }
   @media screen and (max-width: 768px) {
     padding: 0;
   }

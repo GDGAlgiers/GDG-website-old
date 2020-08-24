@@ -21,7 +21,7 @@ const StyledWrapper = styled.div`
     flex-direction : column;
     margin :20px;
     border-radius : 20px;
-    min-height : 400px;
+    height : 400px;
     box-shadow: 0 5px 6px -3px rgba(0, 0, 0, 0.1),
     0 9px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 16px 2px rgba(0, 0, 0, 0.12);
     background-image : url(${props => props.bg});
@@ -43,8 +43,8 @@ const StyledWrapper = styled.div`
     }
 `
 const EventLogo = styled.img`
-    width :100%;
-    height :100%;
+    max-height :100%;
+    max-width :100%;
     padding : auto;
     border-radius : 20px;
 `
