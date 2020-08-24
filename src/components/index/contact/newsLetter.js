@@ -15,6 +15,7 @@ const NewsLetter = () => {
         <StyledButton
             href="https://gdg.community.dev/gdg-algiers/"
             target="_blank"
+            rel="noreferrer noopener"
           >
             JOIN NOW
           </StyledButton>
