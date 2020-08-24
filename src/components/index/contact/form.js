@@ -5,44 +5,45 @@ import Fade from "react-reveal/Fade"
 import { sendMessage } from "../../../services/messaging"
 
 const initForm = {
-  name :"",
-  email:"",
-  message:""
+  name: "",
+  email: "",
+  message: "",
 }
-const send = data => sendMessage({
-  senderName : data.name,
-  senderEmail : data.email,
-  message : data.message
-})
-  
+const send = data =>
+  sendMessage({
+    senderName: data.name,
+    senderEmail: data.email,
+    message: data.message,
+  })
+
 function hasError(errors) {
   return errors.name || errors.message || errors.email
 }
 
 const FormFun = props => {
-  const [values,setValues] =useState(initForm)
-  const [errors,setErrors] = useState(initForm)
+  const [values, setValues] = useState(initForm)
+  const [errors, setErrors] = useState(initForm)
   const [showModal, setShowModal] = useState(false)
   const [modalMsg, setModalMsg] = useState("")
   const [submited, setSubmited] = useState(false)
 
   /// handlers
-  const handleChange = e => setValues({...values, [e.target.name]:e.target.value})
-  const resetValues = ()=> setValues(initForm)
-  const resetErrors = ()=> setErrors(initForm)
+  const handleChange = e =>
+    setValues({ ...values, [e.target.name]: e.target.value })
+  const resetValues = () => setValues(initForm)
+  const resetErrors = () => setErrors(initForm)
   const handleSubmit = e => {
     e.preventDefault()
     let err = {
-      name : "",
-      email : "",
-      message :""
+      name: "",
+      email: "",
+      message: "",
     }
     if (!values.name) {
       err.name = "The name field is required"
     }
     if (!values.email) {
       err.email = "The email field is required"
-   
     }
     if (!values.message) {
       err.message = "The message field is required"
@@ -61,20 +62,20 @@ const FormFun = props => {
       send(values)
         .then(res => {
           setSubmited(true)
-          setModalMsg("Your email was sent correctly, Thank you!")
+          setModalMsg("Your message was sent correctly, Thank you!")
           setShowModal(true)
         })
         .catch(err => {
           setSubmited(true)
-          setModalMsg(`Looks like an error occured while sending your email here is the error message, it might help:
-            ${err.message}`)
+          setModalMsg(
+            `Looks like an error occured while sending your message, try again later, or send it directly to our email at : gdg.algiers@esi.dz`
+          )
           setShowModal(true)
         })
         .finally(() => {
           resetValues()
           resetErrors()
         })
-
     }
   }
   return (
@@ -133,10 +134,7 @@ const FormFun = props => {
         </Fade>
       </StyledForm>
       {showModal && (
-        <Modal
-          error={!submited}
-          close={e => setShowModal(false)}
-        >
+        <Modal error={!submited} close={e => setShowModal(false)}>
           {modalMsg}
         </Modal>
       )}
@@ -144,10 +142,7 @@ const FormFun = props => {
   )
 }
 
-
-
-
-/// Styled components : 
+/// Styled components :
 
 const StyledForm = styled.form`
   font-family: var(--font);
@@ -239,7 +234,7 @@ const StyledButton = styled.button`
   margin: auto;
   font-family: var(--font-header);
   font-size: 1.3rem;
-  font-weight : 400;
+  font-weight: 400;
   color: #ffff;
   background-color: var(--green);
   border: none;
