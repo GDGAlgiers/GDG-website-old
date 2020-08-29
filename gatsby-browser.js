@@ -2,7 +2,6 @@ const React = require("react")
 const Layout = require("./src/components/layout/layout").default
 const { ContextProviderComponent } = require("./src/context/Context")
 require('./src/firebase/firebase')
-
 function callAnalyticsAPI() {
   window.dataLayer = window.dataLayer || []
   function gtag() {

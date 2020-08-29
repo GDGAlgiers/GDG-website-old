@@ -9,7 +9,7 @@ import EventShowcase from "./EventShowcase"
 import EventMobileShowcase from "./EventMobileShowcase"
 import Fade from "react-reveal/Fade"
 const Events = ({ content }) => {
-  const [previousSelected, setPreviousSelected] = useState(false)
+  const [previousSelected, setPreviousSelected] = useState(true)
   const toggleEvents = e => {
     setPreviousSelected(!previousSelected)
   }

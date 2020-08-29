@@ -8,10 +8,7 @@ import Fade from 'react-reveal/Fade';
 export default function Landing({ content }) {
   const {PhoneGDGLogo} = logos
   return (
-    <Wrapper>
-    
-
-     
+    <Wrapper> 
       <Content>
       <Fade top>
         <img src={PhoneGDGLogo} alt="gdg algiers" title="GDG Algiers" className="brand" loading="eager"></img>
