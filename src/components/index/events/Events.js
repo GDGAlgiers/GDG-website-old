@@ -9,7 +9,7 @@ import EventShowcase from "./EventShowcase"
 import EventMobileShowcase from "./EventMobileShowcase"
 import Fade from "react-reveal/Fade"
 const Events = ({ content }) => {
-  const [previousSelected, setPreviousSelected] = useState(true)
+  const [previousSelected, setPreviousSelected] = useState(false)
   const toggleEvents = e => {
     setPreviousSelected(!previousSelected)
   }
@@ -22,9 +22,9 @@ const Events = ({ content }) => {
           padding : 0
         }}>
           {events.map(event => (
-            <Fade>
+            <Fade key={event.title}>
               <desktop.Component
-                key={event.title}
+               
                 event={event}
               ></desktop.Component>
             </Fade>
@@ -35,10 +35,10 @@ const Events = ({ content }) => {
       return (
         <Slider {...settingsMobile}>
           {events.map(event => (
-            <Fade>
+            <Fade  key={event.title}>
               <mobile.Component
                 event={event}
-                key={event.title}
+               
               ></mobile.Component>
             </Fade>
           ))}

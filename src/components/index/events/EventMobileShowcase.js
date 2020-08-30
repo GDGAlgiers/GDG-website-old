@@ -1,19 +1,35 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+import { navigate } from "gatsby"
 import Fade from "react-reveal/Fade"
 function EventMobileShowcase({ event }) {
   const [showContent, setShowContent] = useState(false)
   const toggleContent = () => setShowContent(!showContent)
+  const gotoEvent = path => navigate(path)
   return (
     <StyledWrapper>
       <EventLogo
         src={require(`../../../images/events/${event.logo}`)}
         alt={event.title}
       ></EventLogo>
-      <EventDescription className={showContent && "show__content"}>{event.content}</EventDescription>
+      <p className="date">{event.date.days} {event.date.month} {event.date.year}</p>
+      <EventDescription className={showContent && "show__content"}>
+        {event.content}
+      </EventDescription>
 
-      <button onClick={toggleContent}>See details</button>
+      <div style={{ display: "flex" }}>
+        <button
+          style={{
+            marginRight: 10,
+            backgroundColor: "var(--green)",
+            color: "white",
+          }}
+          onClick={() => gotoEvent(event.url)}
+        >
+          Go To Event
+        </button>
+        <button onClick={toggleContent}>See details</button>
+      </div>
     </StyledWrapper>
   )
 }
@@ -33,7 +49,10 @@ const StyledWrapper = styled.div`
   background-image: url(${props => props.bg});
   padding: 10px;
   transition: 280ms ease-in;
-
+  .date {
+      font-family : var(--font-header);
+      font-weight : 500;
+  }
   button {
     text-decoration: none;
     background-color: transparent;
@@ -45,11 +64,11 @@ const StyledWrapper = styled.div`
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     color: var(--green);
-    outline : none;
-    &:focus{
-        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
-        outline : none;
-        border : none;
+    outline: none;
+    &:focus {
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+      outline: none;
+      border: none;
     }
   }
 `
@@ -59,9 +78,9 @@ const EventLogo = styled.img`
   margin: 0;
 `
 const EventDescription = styled.p`
-  margin-top: 20%;
   padding: 0 18px;
-  max-height : 0px;
+  max-height: 0px;
+  margin : 0;
   transition: 280ms ease-in;
   overflow-y: hidden;
   font-family: var(--font-header);
@@ -70,6 +89,7 @@ const EventDescription = styled.p`
   }
   &.show__content {
     max-height: 400px;
+    margin-bottom: 1rem ;
     overflow-y: scroll;
   }
 `
