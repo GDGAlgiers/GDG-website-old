@@ -62,7 +62,7 @@
                 "content" : "HashCode is a Google programming competition where teams are gathered in a yearly organized hub by GDG Algiers to solve an engineering problem in a competitve atmosphere.",
                 "img":"hashCode19/hashCode19.webp",
                 "logo" :"hashCode19/logo.png",
-                "location" :"ESI Algiers",
+                "location" :"Higher School Of Computer Science \n (ESI Algiers)",
                 "url":"/"
              },
              {
@@ -75,7 +75,7 @@
                 "content" : "DevFest in one of GDG Algiers' biggest traditional events. It's a festival gathering the development loving community in a well-executed cocktail of talks and workshops revolving around the latest technologies available, especially Google's. Devfest 2018 & Devfest 2019 had a very large resonance thanks to \"Digital well-being and Diversity and Inclusion\" themed hackathons and the rich workshops and talks held by experts which took place over 3 consecutive days.",
                 "img":"devfest19/devfest19.webp",
                 "logo" :"devfest19/logo.png",
-                "location" :"ENP Incubator",
+                "location" :"ENP Incubator at Ecole National Supérieure Polytechnique",
                 "url":"/"
              },
             
@@ -101,9 +101,9 @@
                     "year" :"2020"
                 },
                 "content" : "HashCode is a Google programming competition where teams are gathered in a yearly organized hub by GDG Algiers to solve an engineering problem in a competitve atmosphere.",
-                "img":"devfest19/devfest19.webp",
+                "img":"hashCode20/hashCode20.webp",
                 "logo" :"hashCode19/logo.png",
-                "location" :"ESI Algiers",
+                "location" :"Higher School Of Computer Science \n (ESI Algiers)",
                 "url":"/"
              },
             
@@ -131,9 +131,9 @@
                   "year": "2020"
                 },
                 "content":
-                  "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
+                  "This is a global series of community-led online events connecting you with other developers near you to learn what you need to know to prepare for the next release of Android. Come together to learn about what's new in Android 11 and how to make your app compatible.",
                   "img": "android11meetup/android.webp",
-                  "logo": "android11meetup/android.webp",
+                  "logo": "android11meetup/logo.png",
                 "location": "Online Event",
                 "url": "/events/android11meetup"
             },
