@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { navigate } from "gatsby"
-import Fade from "react-reveal/Fade"
 function EventMobileShowcase({ event }) {
   const [showContent, setShowContent] = useState(false)
   const toggleContent = () => setShowContent(!showContent)
