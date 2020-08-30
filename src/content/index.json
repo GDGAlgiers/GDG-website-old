@@ -53,11 +53,38 @@
         "titleUpcoming" :"Our upcoming events",
         "previous" : [
             {
+                "title" : "HashCode 2019",
+                "date": {
+                    "days" :"10-11",
+                    "month" :"February",
+                    "year" :"2019"
+                },
+                "content" : "HashCode is a Google programming competition where teams are gathered in a yearly organized hub by GDG Algiers to solve an engineering problem in a competitve atmosphere.",
+                "img":"hashCode19/hashCode19.webp",
+                "logo" :"hashCode19/logo.png",
+                "location" :"ESI Algiers",
+                "url":"/"
+             },
+             {
+                "title" : "Devfest 2019",
+                "date": {
+                    "days" :"10-11",
+                    "month" :"october",
+                    "year" :"2019"
+                },
+                "content" : "DevFest in one of GDG Algiers' biggest traditional events. It's a festival gathering the development loving community in a well-executed cocktail of talks and workshops revolving around the latest technologies available, especially Google's. Devfest 2018 & Devfest 2019 had a very large resonance thanks to \"Digital well-being and Diversity and Inclusion\" themed hackathons and the rich workshops and talks held by experts which took place over 3 consecutive days.",
+                "img":"devfest19/devfest19.webp",
+                "logo" :"devfest19/logo.png",
+                "location" :"ENP Incubator",
+                "url":"/"
+             },
+            
+             {
                 "title": "GDG School 2019",
                 "date": {
                   "days": "10-11",
-                  "month": "January",
-                  "year": "2020"
+                  "month": "December",
+                  "year": "2019"
                 },
                 "content":
                   "GDG School is an internal gdg event for our dear new members where old members do training sessions in different technologies like : web , mobile , ML , cloud ... the aim from it is breaking the ice between the new members and the old ones and creating a comfortable environnement for networking and learning , gdg school's end goal is training beginners to be trainers in the future",
@@ -66,6 +93,20 @@
                 "location": "Higher School Of Computer Science \n (ESI Algiers)",
                 "url" :"/"
               },
+             {
+                "title" : "HashCode 2020",
+                "date": {
+                    "days" :"10-11",
+                    "month" :"February",
+                    "year" :"2020"
+                },
+                "content" : "HashCode is a Google programming competition where teams are gathered in a yearly organized hub by GDG Algiers to solve an engineering problem in a competitve atmosphere.",
+                "img":"devfest19/devfest19.webp",
+                "logo" :"hashCode19/logo.png",
+                "location" :"ESI Algiers",
+                "url":"/"
+             },
+            
               {
                 "title": "FAST & HACK 20",
                 "date": {
@@ -83,6 +124,20 @@
         ],
         "upcoming" : [
             {
+                "title": "ANDROID 11 MEETUP",
+                "date": {
+                  "days": "12",
+                  "month": "September",
+                  "year": "2020"
+                },
+                "content":
+                  "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
+                  "img": "android11meetup/android.webp",
+                  "logo": "android11meetup/android.webp",
+                "location": "Online Event",
+                "url": "/events/android11meetup"
+            },
+            {
                 "title": "DEVFEST 2020",
                 "date": {
                   "days": "",
@@ -93,7 +148,7 @@
                   "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
                   "img": "devfest20/devfest.webp",
                   "logo": "devfest20/devfest.jpg",
-                "location": "Higher School Of Computer Science \n (ESI Algiers)",
+                "location": "Online Event",
                 "url": "/events/devfest20"
             }
         ]
