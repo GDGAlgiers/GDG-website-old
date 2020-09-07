@@ -79,8 +79,7 @@ const StyledSection = styled.div`
       display: none;
     }
     .form {
-      width: 90%;
-      margin-left: 5%;
+      width: 100%;
     }
     .contact {
       width: 100%;

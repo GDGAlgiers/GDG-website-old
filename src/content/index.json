@@ -1,7 +1,6 @@
 {
     "landing" :{
-        "title" : "We do cool things that",
-        "titlematter":" matter",
+        "title" : "We do cool things that matter",
         "buttonRight" :{"text" : "EVENTS" , "link" :"#events"} ,
         "buttonLeft":{"text" : "ABOUT US" , "link" :"#about"}
     },

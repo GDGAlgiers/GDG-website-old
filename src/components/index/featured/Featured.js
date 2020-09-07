@@ -50,7 +50,8 @@ const Img = styled.img`
   padding: 10px 1vw;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
   @media screen and (max-width: 768px) {
-    margin : 20px;
+    padding : 32px 0px;
+    box-sizing : content-box;
   }
 `
 
