@@ -5,7 +5,6 @@ import { navigate } from "gatsby"
 import AnimatedBoxes from "./AnimatedBoxes"
 import { logos } from "../../common/images"
 import Fade from "react-reveal/Fade"
-import Zoom from "react-reveal/Zoom"
 export default function Landing({ content }) {
   const { PhoneGDGLogo } = logos
   return (
