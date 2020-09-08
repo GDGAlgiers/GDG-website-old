@@ -61,10 +61,9 @@ export default function android11meetup() {
             <h1>Featuring</h1>
 
             <ul>
-              
-                {speakers.map(speaker => {
-                  return (
-                    <Fade bottom>
+              {speakers.map(speaker => {
+                return (
+                  <Fade bottom>
                     <li key={speaker.name} className="speaker">
                       <img src={speaker.image} alt={speaker.name} />
                       <h3>{speaker.name}</h3>
@@ -74,9 +73,9 @@ export default function android11meetup() {
                         <p>{speaker.topic}</p>
                       </div>
                     </li>
-                    </Fade>
-                  )
-                })}
+                  </Fade>
+                )
+              })}
             </ul>
           </div>
           <div className="register">
@@ -105,7 +104,7 @@ const Wrapper = styled.div`
       margin-bottom: 1rem;
     }
     h1 {
-      font-family: "Reem Kufi", Montserrat, sans-serif;
+      font-family: "Roboto", Montserrat, sans-serif;
       color: #3cd984;
       #meetup {
         color: #072f41;
@@ -120,10 +119,13 @@ const Wrapper = styled.div`
       padding: 30px;
       padding-top: 1rem;
       color: #072f41;
+      p {
+        font-family: "Roboto", Montserrat, sans-serif;
+      }
     }
     .featuring {
       h1 {
-        font-family: "Reem Kufi", Montserrat, sans-serif;
+        font-family: "Roboto", Montserrat, sans-serif;
         color: #072f41;
       }
       ul {
@@ -138,13 +140,13 @@ const Wrapper = styled.div`
           border-radius: 20px;
           margin: 10px;
           .talk {
-            font-family: "Reem Kufi", Montserrat, sans-serif;
+            font-family: "Roboto", Montserrat, sans-serif;
             .type {
               font-weight: 500;
               color: #3cd984;
             }
             p {
-              font-family: "Reem Kufi", Montserrat, sans-serif;
+              font-family: "Roboto", Montserrat, sans-serif;
             }
           }
           img {
@@ -154,7 +156,7 @@ const Wrapper = styled.div`
 
           h3,
           h5 {
-            font-family: "Reem Kufi", Montserrat, sans-serif;
+            font-family: "Roboto", Montserrat, sans-serif;
           }
           h3 {
           }
@@ -177,9 +179,15 @@ const Wrapper = styled.div`
       a {
         border: 2px solid #3cd984;
         color: #072f41;
+        font-family: "Roboto", Montserrat, sans-serif;
+        background-color : #3cd984;
         padding: 10px;
+        font-weight : bolder;
         text-decoration: none;
         border-radius: 5px;
+      &::focus {
+        background-color : #3cd984;
+      }
       }
     }
   }
