@@ -3,36 +3,44 @@ import styled from "styled-components"
 import Button from "../../common/button/GDGButton"
 import { navigate } from "gatsby"
 import AnimatedBoxes from "./AnimatedBoxes"
-import {logos } from '../../common/images';
-import Fade from 'react-reveal/Fade';
+import { logos } from "../../common/images"
+import Fade from "react-reveal/Fade"
 export default function Landing({ content }) {
-  const {PhoneGDGLogo} = logos
+  const { PhoneGDGLogo } = logos
   return (
-    <Wrapper> 
+    <Wrapper>
       <Content>
-      <Fade top>
-        <img src={PhoneGDGLogo} alt="gdg algiers" title="GDG Algiers" className="brand" loading="eager"></img>
-        <h1 className="landing-title">
-         {content.title}<span className="matter">{content.titlematter}</span>
-        </h1>
-        <Buttons>
-          <Button
-            title={content.buttonLeft.text}
-            outlined={true}
-            onClick={e => {
-              e.preventDefault();
-              navigate(content.buttonLeft.link)}}
-          ></Button>
-          <div className="gap"></div>
-          <Button
-            title={content.buttonRight.text}
-            outlined={false}
-            onClick={e =>{ 
-              e.preventDefault();
-              navigate(content.buttonRight.link)
-            }}
-          ></Button>
-        </Buttons>
+        <img
+          src={PhoneGDGLogo}
+          alt="gdg algiers"
+          title="GDG Algiers"
+          className="brand"
+          loading="eager"
+        ></img>
+
+        <h1 className="landing-title">{content.title}</h1>
+
+        <Fade top delay={1000}>
+          <Buttons>
+            <Button
+              title={content.buttonLeft.text}
+              outlined={true}
+              onClick={e => {
+                e.preventDefault()
+                navigate(content.buttonLeft.link)
+              }}
+            ></Button>
+            <div className="gap"></div>
+
+            <Button
+              title={content.buttonRight.text}
+              outlined={false}
+              onClick={e => {
+                e.preventDefault()
+                navigate(content.buttonRight.link)
+              }}
+            ></Button>
+          </Buttons>
         </Fade>
       </Content>
       <Canvas>
@@ -44,7 +52,7 @@ export default function Landing({ content }) {
 const Wrapper = styled.section`
   width: 100%;
   min-height: 100vh;
-  padding : 0;
+  padding: 0;
   padding-left: 10%;
   display: flex;
   background-color: inherit;
@@ -53,7 +61,7 @@ const Wrapper = styled.section`
   }
 
   @media screen and (max-width: 1024px) {
-    padding : 0;
+    padding: 0;
     padding-left: 0;
     padding-top: 0%;
     justify-content: flex-end;
@@ -67,10 +75,10 @@ const Wrapper = styled.section`
     }
   }
   @media screen and (max-width: 768px) {
-    padding : 0 !important;
+    padding: 0 !important;
   }
   @media screen and (max-width: 370px) {
-    padding : 0;
+    padding: 0;
     padding-left: 0;
 
     justify-content: flex-end;
@@ -86,7 +94,7 @@ const Wrapper = styled.section`
 `
 const Buttons = styled.div`
   display: flex;
-  position : relative;
+  position: relative;
   .gap {
     width: 40px;
     visibility: hidden;
@@ -100,7 +108,6 @@ const Buttons = styled.div`
       width: 5%;
     }
   }
- 
 `
 const Content = styled.div`
   position: relative;
@@ -108,16 +115,15 @@ const Content = styled.div`
   width: 60%;
   .brand {
     position: relative;
-    margin : 0;
-    max-width : 100px;
+    margin: 0;
+    max-width: 100px;
   }
   @media screen and (max-width: 1024px) {
     width: 90%;
     margin: 0 auto;
-    margin-top : 2vh;
-    text-align : center;
+    margin-top: 2vh;
+    text-align: center;
     .brand {
-    
     }
   }
 `
@@ -137,6 +143,5 @@ const Canvas = styled.div`
     top: -3vh;
     min-height: 60%;
   }
-  opacity :1;
- 
+  opacity: 1;
 `

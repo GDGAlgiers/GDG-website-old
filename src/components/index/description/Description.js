@@ -8,22 +8,23 @@ export default function Description({ content }) {
       <DescDiv>
         <Fade top>
           <div className="header">
-            <BiggerH1>{content.header.text1}</BiggerH1>
+            <h2 className="title__header">{content.header.text1}</h2>
             <img src={require("../../../images/gdg_algiers.png")} alt="gdg" />
           </div>
         </Fade>
-
-        <p
-          className="description"
-          style={{
-            whiteSpace: "pre-line",
-            lineHeight: 1.45,
-          }}
-        >
-          <Fade right>{content.description}</Fade>
-        </p>
+        <Fade>
+          <p
+            className="description"
+            style={{
+              whiteSpace: "pre-line",
+              lineHeight: 1.45,
+            }}
+          >
+            {content.description}
+          </p>
+        </Fade>
       </DescDiv>
-      <Fade>
+
         <HeroCard
           img={require(`../../../images/${content.hero.image}`)}
           onClick={e => {
@@ -45,7 +46,6 @@ export default function Description({ content }) {
             })}
           </StatsHolder>
         </HeroCard>
-      </Fade>
     </Wrapper>
   )
 }
@@ -55,12 +55,6 @@ const Wrapper = styled.section`
   background-color: inherit;
 `
 
-const BiggerH1 = styled.h1`
-  font-size: 3.5rem;
-  font-weight: 500;
-  font-family: var(--font);
-  color: var(--grey);
-`
 
 const HeroCard = styled.div`
   width: 100vw;
@@ -92,20 +86,34 @@ const Column = styled.div`
 `
 const DescDiv = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   width: 100%;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
   padding: var(--sectionPadding);
   .header {
-    flex: 1;
-    text-align: left;
+    display: flex;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 50px;
+    .title__header {
+      font-weight: 500;
+      margin-right: 10px;
+      color: var(--grey);
+    }
     img {
-      max-height: 80px;
+      max-height: 40px;
     }
   }
   .description {
     flex: 1;
+    padding: 50px;
+    text-align: center;
+    width: 70%;
+    margin: auto;
   }
   @media screen and (max-width: 768px) {
     display: flex;
@@ -113,6 +121,12 @@ const DescDiv = styled.div`
     padding: var(--mobileSectionPadding);
     .header {
       margin: 0;
+      padding-top: 20px;
+      flex-wrap: wrap;
+    }
+    .description {
+      width: 100%;
+      padding: 20px;
     }
   }
 `

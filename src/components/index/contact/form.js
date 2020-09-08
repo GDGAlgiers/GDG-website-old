@@ -119,7 +119,7 @@ const FormFun = props => {
               className={`textarea ${errors.message ? "error-border" : ""}`}
               name="message"
               rows="5"
-              placeholder="Type something..."
+              placeholder="Your message..."
               id="message"
               onChange={handleChange}
               value={values.message}

@@ -1,7 +1,6 @@
 {
     "landing" :{
-        "title" : "We do cool things that",
-        "titlematter":" matter",
+        "title" : "We do cool things that matter",
         "buttonRight" :{"text" : "EVENTS" , "link" :"#events"} ,
         "buttonLeft":{"text" : "ABOUT US" , "link" :"#about"}
     },
@@ -89,7 +88,7 @@
                 "content":
                   "GDG School is an internal gdg event for our dear new members where old members do training sessions in different technologies like : web , mobile , ML , cloud ... the aim from it is breaking the ice between the new members and the old ones and creating a comfortable environnement for networking and learning , gdg school's end goal is training beginners to be trainers in the future",
                 "img": "gdgschool19/gdgschool.webp",
-                "logo": "gdgschool19/GDG_School_Logo.webp",
+                "logo": "gdgschool19/logo.webp",
                 "location": "Higher School Of Computer Science \n (ESI Algiers)",
                 "url" :"/"
               },
@@ -132,8 +131,8 @@
                 },
                 "content":
                   "This is a global series of community-led online events connecting you with other developers near you to learn what you need to know to prepare for the next release of Android. Come together to learn about what's new in Android 11 and how to make your app compatible.",
-                  "img": "android11meetup/android.webp",
-                  "logo": "android11meetup/logo.png",
+                  "img": "android11meetup/android1.webp",
+                  "logo": "android11meetup/logo.webp",
                 "location": "Online Event",
                 "url": "/events/android11meetup"
             },
@@ -147,7 +146,7 @@
                 "content":
                   "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
                   "img": "devfest20/devfest.webp",
-                  "logo": "devfest20/devfest.jpg",
+                  "logo": "devfest20/logo.webp",
                 "location": "Online Event",
                 "url": "/events/devfest20"
             }

@@ -11,7 +11,7 @@
   --grey-dark: #212121;
 
   --font-header: "Montserrat", sans-serif;
-  --font: Roboto;
+  --font: Montserrat,Roboto,sans-serif;
 
   --sectionPadding: 1rem 4rem;
   --mobileSectionPadding : 20px;
@@ -65,7 +65,7 @@
 }
 
 p {
-  font-family: Roboto;
+  font-family: var(--font);
 }
 
 h1,h2 {
