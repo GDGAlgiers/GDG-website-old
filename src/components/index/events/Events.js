@@ -18,15 +18,15 @@ const Events = ({ content }) => {
   const renderEvents = (events, isMobile, { mobile, desktop }) => {
     if (!isMobile) {
       return (
-        <Slider {...settings} style={{
-          padding : 0
-        }}>
+        <Slider
+          {...settings}
+          style={{
+            padding: 0,
+          }}
+        >
           {events.map(event => (
             <Fade key={event.title}>
-              <desktop.Component
-               
-                event={event}
-              ></desktop.Component>
+              <desktop.Component event={event}></desktop.Component>
             </Fade>
           ))}
         </Slider>
@@ -35,11 +35,8 @@ const Events = ({ content }) => {
       return (
         <Slider {...settingsMobile}>
           {events.map(event => (
-            <Fade  key={event.title}>
-              <mobile.Component
-                event={event}
-               
-              ></mobile.Component>
+            <Fade key={event.title}>
+              <mobile.Component event={event}></mobile.Component>
             </Fade>
           ))}
         </Slider>
@@ -55,13 +52,13 @@ const Events = ({ content }) => {
         {({ data: { isMobile } }) => {
           return (
             <div className="slider-show">
-              {renderEvents(events,isMobile,{
-                mobile :{
-                  Component : EventMobileShowcase
+              {renderEvents(events, isMobile, {
+                mobile: {
+                  Component: EventMobileShowcase,
                 },
-                desktop : {
-                  Component : EventShowcase
-                }
+                desktop: {
+                  Component: EventShowcase,
+                },
               })}
             </div>
           )
@@ -93,9 +90,9 @@ const Wrapper = styled.section`
   background-color: inherit;
   padding: 0 4rem;
   .slider-show {
-    margin-bottom : 64px;
+    margin-bottom: 64px;
     .slick-list {
-      height : auto !important;
+      height: auto !important;
     }
   }
   @media screen and (max-width: 768px) {

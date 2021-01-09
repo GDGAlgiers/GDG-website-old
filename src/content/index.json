@@ -119,10 +119,8 @@
                   "logo": "fastandhack20/f&h.jpg",
                 "location": "Online Hackathon",
                 "url": "/events/fastAndHack20"
-              }
-        ],
-        "upcoming" : [
-            {
+              },
+              {
                 "title": "ANDROID 11 MEETUP",
                 "date": {
                   "days": "12",
@@ -135,6 +133,37 @@
                   "logo": "android11meetup/logo.webp",
                 "location": "Online Event",
                 "url": "/events/android11meetup"
+            },
+            {
+                "title": "DEVFEST 2020",
+                "date": {
+                  "days": "",
+                  "month": "Fall",
+                  "year": "2020"
+                },
+                "content":
+                  "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
+                  "img": "devfest20/devfest.webp",
+                  "logo": "devfest20/logo.webp",
+                "location": "Online Event",
+                "url": "/events/devfest20"
+            }
+        ],
+        "upcoming" : [
+           
+            {
+                "title": "Community Heroes - A week with us !",
+                "date": {
+                  "days": "12",
+                  "month": "January",
+                  "year": "2021"
+                },
+                "content":
+                  "Not all heroes wear capes some use their screens to make this world a better place by learning and sharing their knowledge with the community \nThey have a special name, and that is\nCommunity Heroes \nJoin us from January 6th to 12th as we introduce you to the beautiful world of GDG Algiers and WTM Algiers so you can be a community hero yourself !",
+                  "img": "communityheroes/identity.webp",
+                  "logo": "communityheroes/logo.webp",
+                "location": "Online Event",
+                "url": "/events/communityHeroes"
             },
             {
                 "title": "DEVFEST 2020",
