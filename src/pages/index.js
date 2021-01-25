@@ -8,22 +8,31 @@ import Description from "../components/index/description/Description"
 import Featured from "../components/index/featured/Featured"
 import Partners from "../components/index/partners/Partners"
 
-
 // Content
 import index from "../content/index.json"
 ///
 
-const IndexPage = () => (
-  <>
-    <SEO title="Home" />
-    <Landing content={index.landing}></Landing>
-    <Description content={index.description}></Description>
-    <Featured content={index.featured}></Featured>
-    <Events content={index.events}></Events>
-    <Partners content={index.partners}></Partners>
-    <Location></Location>
-    <ContactUS content={index.contactUs}></ContactUS>
-  </>
-)
+const IndexPage = () => {
+  console.log(` 
+  ***********************************************************************
+  *                                                                     *
+  *             This is definitely not the code part :)                 *
+  *                       Z28gY2hlY2s                                   *
+  *                                                                     *
+  ***********************************************************************
+  `)
+  return (
+    <>
+      <SEO title="Home" />
+      <Landing content={index.landing}></Landing>
+      <Description content={index.description}></Description>
+      <Featured content={index.featured}></Featured>
+      <Events content={index.events}></Events>
+      <Partners content={index.partners}></Partners>
+      <Location></Location>
+      <ContactUS content={index.contactUs}></ContactUS>
+    </>
+  )
+}
 
 export default IndexPage
