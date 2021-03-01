@@ -22,3 +22,12 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
       });
     }
   };
+
+  exports.createPages = ({ graphql, actions }) => {
+    const { createRedirect } = actions //actions is collection of many actions - https://www.gatsbyjs.org/docs/actions
+    createRedirect({
+      fromPath: "/discord",
+      toPath: "http://discord.gg/zeTe8Um2Ca",
+      isPermanent: true,
+    })
+  }
