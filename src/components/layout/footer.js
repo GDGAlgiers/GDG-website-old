@@ -3,14 +3,16 @@ import styled from "styled-components"
 import { ExternalLink } from "../common/utils"
 import { navigate } from "gatsby"
 import { emojis } from "../common/images"
-const Footer = ({content}) => (
-  <StyledFooter>
+const Footer = ({content}) => {
+  let currentYear = (new Date).getFullYear();
+
+  return (<StyledFooter>
     <div className="row1">
       <div className="content">
         <p>About</p>
         <div>
           <ExternalLink
-            url="https://www.wtm-algiers.tech/"
+            url="https://www.wtmalgiers.org/"
             text="WTM Algiers"
           ></ExternalLink>
           <ExternalLink
@@ -51,7 +53,7 @@ const Footer = ({content}) => (
         <span role="img" aria-label="copyright">
           ©️
         </span>{" "}
-        GDG ALGIERS 2020
+        GDG ALGIERS {currentYear}
       </p>
     </div>
     <div className="row3">
@@ -65,9 +67,8 @@ const Footer = ({content}) => (
         GET IN TOUCH
       </StyledButton>
     </div>
-  </StyledFooter>
-)
-
+  </StyledFooter>)
+}
 const StyledFooter = styled.footer`
   width: 100vw;
   min-height: 10vh;
