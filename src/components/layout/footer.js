@@ -7,6 +7,22 @@ const Footer = ({content}) => {
   let currentYear = (new Date).getFullYear();
 
   return (<StyledFooter>
+    <form className="row0">
+      <div className="title">
+        <h2>Subscribe to our newsletter</h2>
+      </div>
+      <div className="text">
+        <p>You can subscribe now to our amazing newsletters by writing your email to recieve a weakly mail containing our news</p>
+      </div>
+      
+      
+      <div className="newsletter-field">
+        <div className="mailIcon">{emojis.MailEmoji}</div>
+        <input type="email" name="emailNewsletter" placeholder="Enter your email" autoComplete="off" className="inputNewsletter" />
+        <button type="submit" className="btn-submit">Subscribe</button>
+      </div>
+      
+    </form>
     <div className="row1">
       <div className="content">
         <p>About</p>
@@ -77,13 +93,107 @@ const StyledFooter = styled.footer`
   z-index: 100;
   background: inherit;
   font-family: var(--font), sans-serif;
-  border-top: 10px solid var(--green);
+  
   justify-content: start;
   display: flex;
   flex-direction: column;
+  padding-top: 0px;
 
   align-items: center;
 
+  .row0 {
+    width: 100%;
+    background-color: var(--green);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+
+    .title {
+      color: white;
+      font-family: inherit;
+      text-align: center;
+    }
+    .text {
+      width : 70%;
+      text-align: center;
+      margin: 0;
+      font-size: 100%;
+      color: white;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 550;
+    }
+    .newsletter-field {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+      width: 60%;
+      border-radius: 10px;
+      
+
+      .mailIcon {
+        width: 5%;
+        display: flex;
+        justify-content: center;
+        background: white;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        padding: 10px 0px;
+        
+      }
+      .inputNewsletter {
+        width: 75%;
+        border: none;
+        outline: none;
+        background: white;
+        margin: 10px 0;
+        padding: 10px 5px;
+        
+
+      }
+      .btn-submit {
+        width: 20%;
+        color: white;
+        background: #09A5EE;
+        font-family: inherit;
+        border: none;
+        padding: 10px 0px;
+        cursor: pointer;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        font-weight: bold;
+        transition: 0.6s ease-out;
+      }
+      .btn-submit:hover {
+        transition: 0.6s ease-out;
+        background: #3FBCF6;
+      }
+
+    }
+
+    @media screen and (max-width: 768px) {
+      .newsletter-field {
+        flex-direction: column;
+        width: 100%;
+
+        .mailIcon {
+          display: none;
+        }
+        .inputNewsletter {
+          border-radius: 10px;
+        }
+        .btn-submit {
+          width: 75%;
+          border-radius: 10px;
+        }
+      }
+    }
+
+  }
   .row3 {
     overflow-x: hidden;
     padding: 50px;
