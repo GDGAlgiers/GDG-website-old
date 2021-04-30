@@ -3,6 +3,9 @@ import styled from "styled-components"
 import { ExternalLink } from "../common/utils"
 import { navigate } from "gatsby"
 import { emojis } from "../common/images"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+
 const Footer = ({content}) => {
   let currentYear = (new Date).getFullYear();
 
@@ -17,7 +20,9 @@ const Footer = ({content}) => {
       
       
       <div className="newsletter-field">
-        <div className="mailIcon">{emojis.MailEmoji}</div>
+        <div className="mailIcon">
+          <FontAwesomeIcon icon={faEnvelope} className="icn" />
+        </div>
         <input type="email" name="emailNewsletter" placeholder="Enter your email" autoComplete="off" className="inputNewsletter" />
         <button type="submit" className="btn-submit">Subscribe</button>
       </div>
@@ -103,7 +108,7 @@ const StyledFooter = styled.footer`
 
   .row0 {
     width: 100%;
-    background-color: var(--green);
+    background-color: #4285F4;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -142,7 +147,9 @@ const StyledFooter = styled.footer`
         background: white;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
-        padding: 10px 0px;
+        padding: 14px 0px;
+        
+        
         
       }
       .inputNewsletter {
@@ -158,7 +165,7 @@ const StyledFooter = styled.footer`
       .btn-submit {
         width: 20%;
         color: white;
-        background: #09A5EE;
+        background: #FFBF46;
         font-family: inherit;
         border: none;
         padding: 10px 0px;
@@ -166,11 +173,12 @@ const StyledFooter = styled.footer`
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         font-weight: bold;
+        font-size: 0.9rem;
         transition: 0.6s ease-out;
       }
       .btn-submit:hover {
         transition: 0.6s ease-out;
-        background: #3FBCF6;
+        background: #FEA600;
       }
 
     }
@@ -179,15 +187,17 @@ const StyledFooter = styled.footer`
       .newsletter-field {
         flex-direction: column;
         width: 100%;
+        align-items: flex-start;
 
         .mailIcon {
           display: none;
         }
         .inputNewsletter {
           border-radius: 10px;
+          padding-left: 10px;
         }
         .btn-submit {
-          width: 75%;
+          width: 35%;
           border-radius: 10px;
         }
       }

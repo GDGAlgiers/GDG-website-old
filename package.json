@@ -5,6 +5,9 @@
   "version": "0.9.0",
   "author": "GDG Algiers <gdg.algiers@esi.dz>",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "babel-plugin-styled-components": "^1.10.7",
     "firebase": "^7.19.0",
     "gatsby": "^2.21.33",
