@@ -102,13 +102,13 @@ const StyledFooter = styled.footer`
   justify-content: start;
   display: flex;
   flex-direction: column;
-  padding-top: 0px;
+  border-top: 10px solid var(--green);
 
   align-items: center;
 
   .row0 {
     width: 100%;
-    background-color: #4285F4;
+    background-color: white;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -117,7 +117,7 @@ const StyledFooter = styled.footer`
     
 
     .title {
-      color: white;
+      color: black;
       font-family: inherit;
       text-align: center;
     }
@@ -126,7 +126,7 @@ const StyledFooter = styled.footer`
       text-align: center;
       margin: 0;
       font-size: 100%;
-      color: white;
+      color: black;
       font-family: inherit;
       font-size: 1rem;
       font-weight: 550;
@@ -148,7 +148,8 @@ const StyledFooter = styled.footer`
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
         padding: 14px 0px;
-        
+        border: 1px solid #FFBF46;
+        border-right: none;
         
         
       }
@@ -159,6 +160,8 @@ const StyledFooter = styled.footer`
         background: white;
         margin: 10px 0;
         padding: 10px 5px;
+        border-top: 1px solid #FFBF46;
+        border-bottom: 1px solid #FFBF46;
         
 
       }
@@ -167,7 +170,7 @@ const StyledFooter = styled.footer`
         color: white;
         background: #FFBF46;
         font-family: inherit;
-        border: none;
+        border: 1px solid #FFBF46;
         padding: 10px 0px;
         cursor: pointer;
         border-top-right-radius: 10px;
@@ -187,7 +190,7 @@ const StyledFooter = styled.footer`
       .newsletter-field {
         flex-direction: column;
         width: 100%;
-        align-items: flex-start;
+        
 
         .mailIcon {
           display: none;
@@ -195,10 +198,12 @@ const StyledFooter = styled.footer`
         .inputNewsletter {
           border-radius: 10px;
           padding-left: 10px;
+          border: 1px solid #FFBF46;
         }
         .btn-submit {
           width: 35%;
           border-radius: 10px;
+          border: none;
         }
       }
     }
