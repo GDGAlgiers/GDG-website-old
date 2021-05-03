@@ -1,2 +1,1 @@
-export const SEND_GRID_API_KEY =
-  "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"
+export const SEND_GRID_API_KEY = process.env.SEND_GRID_API_KEY
