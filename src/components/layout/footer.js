@@ -11,7 +11,7 @@ import { validateEmail } from "../../components/common/utils"
 
 const Footer = ({ content }) => {
   let currentYear = new Date().getFullYear()
-  let [subscriptionState, setSubscriptionState] = useState("")
+  let [subscriptionState, setSubscriptionState] = useState(0)
   let [subscriptionMail, setSubscriptionMail] = useState("")
   const onSubscribeClicked = e => {
     e.preventDefault()
@@ -29,7 +29,7 @@ const Footer = ({ content }) => {
           onScreen: true,
         },
       })
-      setSubscriptionState("-error")
+      setSubscriptionState(-1)
     } else {
       if (validateEmail(subscriptionMail)) {
         fetch("https://api.sendgrid.com/v3/marketing/contacts", {
@@ -63,7 +63,7 @@ const Footer = ({ content }) => {
                   onScreen: true,
                 },
               })
-              setSubscriptionState("-success")
+              setSubscriptionState(1)
             })
             .catch(error => {
               store.addNotification({
@@ -79,7 +79,7 @@ const Footer = ({ content }) => {
                   onScreen: true,
                 },
               })
-              setSubscriptionState("-error")
+              setSubscriptionState(-1)
             })
         )
       } else {
@@ -115,7 +115,15 @@ const Footer = ({ content }) => {
         </div>
 
         <div className="newsletter-field">
-          <div className={`mailIcon${subscriptionState}`}>
+          <div
+            className={`mailIcon ${
+              subscriptionState === 0
+                ? ""
+                : subscriptionState === 1
+                ? "success"
+                : "error"
+            }`}
+          >
             <FontAwesomeIcon icon={faEnvelope} className="icn" />
           </div>
           <input
@@ -125,7 +133,13 @@ const Footer = ({ content }) => {
             autoComplete="off"
             value={subscriptionMail}
             onChange={event => setSubscriptionMail(event.target.value)}
-            className={`inputNewsletter${subscriptionState}`}
+            className={`inputNewsletter ${
+              subscriptionState === 0
+                ? ""
+                : subscriptionState === 1
+                ? "success-input"
+                : "error-input"
+            }`}
           />
           <button
             type="submit"
@@ -266,28 +280,6 @@ const StyledFooter = styled.footer`
         border: 1px solid #ffbf46;
         border-right: none;
       }
-      .mailIcon-success {
-        width: 5%;
-        display: flex;
-        justify-content: center;
-        background: white;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        padding: 14px 0px;
-        border: 1px solid #0d9d58;
-        border-right: none;
-      }
-      .mailIcon-error {
-        width: 5%;
-        display: flex;
-        justify-content: center;
-        background: white;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        padding: 14px 0px;
-        border: 1px solid #ea4334;
-        border-right: none;
-      }
       .inputNewsletter {
         width: 75%;
         border: none;
@@ -298,23 +290,17 @@ const StyledFooter = styled.footer`
         border-top: 1px solid #ffbf46;
         border-bottom: 1px solid #ffbf46;
       }
-      .inputNewsletter-error {
-        width: 75%;
-        border: none;
-        outline: none;
-        background: white;
-        margin: 10px 0;
-        padding: 10px 5px;
+      .success {
+        border: 1px solid #0d9d58;
+      }
+      .error {
+        border: 1px solid #ea4334;
+      }
+      .error-input {
         border-top: 1px solid #ea4334;
         border-bottom: 1px solid #ea4334;
       }
-      .inputNewsletter-success {
-        width: 75%;
-        border: none;
-        outline: none;
-        background: white;
-        margin: 10px 0;
-        padding: 10px 5px;
+      .success-input {
         border-top: 1px solid #0d9d58;
         border-bottom: 1px solid #0d9d58;
       }
@@ -351,6 +337,20 @@ const StyledFooter = styled.footer`
           border-radius: 10px;
           padding-left: 10px;
           border: 1px solid #ffbf46;
+        }
+        .success {
+          border: 1px solid #0d9d58;
+        }
+        .error {
+          border: 1px solid #ea4334;
+        }
+        .error-input {
+          border: 1px solid #ea4334;
+         =
+        }
+        .success-input {
+          border: 1px solid #0d9d58;
+          
         }
         .btn-submit {
           width: 35%;
