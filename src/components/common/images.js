@@ -52,10 +52,12 @@ const featuredIn = {
 const HeartEmoji = <span role="img" aria-label="heart" >❤️</span>
 const CoffeeEmoji = <span role="img"  aria-label="coffee-cup" >☕</span>
 const SadFaceEmoji = <span role="img"  aria-label="sad-face" >🥺</span>
+const MailEmoji = <span role="img" aria-label="mail" >📧</span>
 const emojis = {
     HeartEmoji,
     CoffeeEmoji,
     SadFaceEmoji,
+    MailEmoji
 }
 export {
     logos , 

@@ -7,23 +7,18 @@ import ContactUS from "../components/index/contact/ContactUs"
 import Description from "../components/index/description/Description"
 import Featured from "../components/index/featured/Featured"
 import Partners from "../components/index/partners/Partners"
+import ReactNotification from "react-notifications-component"
+import "react-notifications-component/dist/theme.css"
 
 // Content
 import index from "../content/index.json"
 ///
 
 const IndexPage = () => {
-  console.log(` 
-  ***********************************************************************
-  *                                                                     *
-  *             This is definitely not the code part :)                 *
-  *                       Z28gY2hlY2s                                   *
-  *                                                                     *
-  ***********************************************************************
-  `)
   return (
     <>
       <SEO title="Home" />
+      <ReactNotification />
       <Landing content={index.landing}></Landing>
       <Description content={index.description}></Description>
       <Featured content={index.featured}></Featured>
