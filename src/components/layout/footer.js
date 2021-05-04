@@ -109,8 +109,8 @@ const Footer = ({ content }) => {
         </div>
         <div className="text">
           <p>
-            You can subscribe now to our amazing newsletters by writing your
-            email to recieve a weakly mail containing our news
+            You can subscribe now to our amazing newsletter by writing your
+            email to recieve a monthly mail containing our latest news
           </p>
         </div>
 
