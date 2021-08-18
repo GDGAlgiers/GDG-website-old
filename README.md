@@ -58,10 +58,8 @@
   </a>
 </p>
 
-Hack The Bot is a **Hackathon** organized by `GDG Algiers` & `WTM Algiers` where participants will try to build solutions based on the theme of bots multiple platforms can be used like `discord`, `slack`, `telegram`, `chatbots`, and many more ... 
+This is a repository of **GDG Website** that presents information about our community, our events, how to contact us and so on.
 <br />
-
-This repository hold both the Website and the API that will provide content of event to consumers as a **REST API** .
 
 link to site: <a href="https://www.gdgalgiers.com">https://www.gdgalgiers.com</a>
 
