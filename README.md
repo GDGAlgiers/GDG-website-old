@@ -54,7 +54,7 @@
 
 <p align="center">
   <a href="https://github.com/GDGAlgiers/GDG-website-2020">
-    <img src="src/images/home.png" width="300px"/>
+    <img src="src/images/home.png" width="700px" height="400px"/>
   </a>
 </p>
 
