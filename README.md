@@ -54,7 +54,7 @@
 
 <p align="center">
   <a href="https://github.com/GDGAlgiers/GDG-website-2020">
-    <img src="https://www.gdgalgiers.com/static/gdg_algiers-86a26a90b5a8da9cdd3127750215f051.png" width="300px"/>
+    <img src="images/home.png" width="300px"/>
   </a>
 </p>
 
