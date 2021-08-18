@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/GDGAlgiers/GDG-website-2020">
-    <img src="images/Logo.png" alt="Logo" width="140" height="140">
+    <img src="https://www.gdgalgiers.com/static/gdg_algiers-86a26a90b5a8da9cdd3127750215f051.png" width="300px"/>
   </a>
 
   <h3 align="center">GDG Algiers Website</h3>
