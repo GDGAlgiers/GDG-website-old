@@ -147,10 +147,7 @@
                   "logo": "devfest20/logo.webp",
                 "location": "Online Event",
                 "url": "/events/devfest20"
-            }
-        ],
-        "upcoming" : [
-           
+            },
             {
                 "title": "Community Heroes - A week with us !",
                 "date": {
@@ -164,18 +161,20 @@
                   "logo": "communityheroes/logo.webp",
                 "location": "Online Event",
                 "url": "/events/communityHeroes"
-            },
+            }
+        ],
+        "upcoming" : [
             {
-                "title": "DEVFEST 2020",
+                "title": "DEVFEST 2021",
                 "date": {
                   "days": "",
                   "month": "Fall",
-                  "year": "2020"
+                  "year": "2021"
                 },
                 "content":
-                  "GDG DevFests are large community-run developer events happening around the globe focused on community building and learning about Google’s technologies. \n We organize DevFest 2019 in its 7th edition to offer speaker sessions, cdelabs, workshops and a Hackathon.",
-                  "img": "devfest20/devfest.webp",
-                  "logo": "devfest20/logo.webp",
+                  "DevFest is a traditional festival of Google that takes place all over the world. It is a mix of conferences, workshops, and hackathons! Organized by local groups in collaboration with Google experts, representatives, and ambassadors, this large-scale community event is a unique opportunity for students, professionals and exchange between students, professionals, or simply those passionate about Google's modern technologies: Cloud, Android, Google Assistant, Flutter, Machine Learning.. and many more!",
+                  "img": "devfest21/devfest21.webp",
+                  "logo": "devfest21/logo.webp",
                 "location": "Online Event",
                 "url": "/events/devfest20"
             }
