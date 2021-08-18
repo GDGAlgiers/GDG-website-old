@@ -44,6 +44,7 @@ function EventShowcase({ event }) {
 const StyledWrapper = styled.div`
   background-image: url(${props => props.bg});
   background-repeat: no-repeat;
+  width: 60%;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -52,7 +53,7 @@ const StyledWrapper = styled.div`
   min-height: 60vh;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 16px;
-  margin: 20px;
+  margin: 20px auto;
   .content {
     flex: 1;
     border-radius: 16px;
