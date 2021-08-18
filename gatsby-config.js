@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: `.env`,
+})
 module.exports = {
   siteMetadata: {
     title: `GDG Algiers`,
@@ -26,6 +29,6 @@ module.exports = {
         precachePages: [`/`],
       },
     },
-    `gatsby-plugin-client-side-redirect`
+    `gatsby-plugin-client-side-redirect`,
   ],
 }
