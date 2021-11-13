@@ -27,7 +27,7 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
     const { createRedirect } = actions //actions is collection of many actions - https://www.gatsbyjs.org/docs/actions
     createRedirect({
       fromPath: "/discord",
-      toPath: "http://discord.gg/zeTe8Um2Ca",
+      toPath: "https://discord.gg/6HGMWNaf",
       isPermanent: true,
     })
   }
