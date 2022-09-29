@@ -165,18 +165,18 @@
         ],
         "upcoming" : [
             {
-                "title": "DEVFEST 2021",
+                "title": "DEVFEST 2022",
                 "date": {
                   "days": "",
-                  "month": "Fall",
-                  "year": "2021"
+                  "month": "December",
+                  "year": "2022"
                 },
                 "content":
                   "DevFest is a traditional festival of Google that takes place all over the world. It is a mix of conferences, workshops, and hackathons! Organized by local groups in collaboration with Google experts, representatives, and ambassadors, this large-scale community event is a unique opportunity for students, professionals and exchange between students, professionals, or simply those passionate about Google's modern technologies: Cloud, Android, Google Assistant, Flutter, Machine Learning.. and many more!",
-                  "img": "devfest21/devfest.webp",
-                  "logo": "devfest21/logo.webp",
+                  "img": "devfest22/devfest.png",
+                  "logo": "devfest22/logo.png",
                 "location": "Online Event",
-                "url": "/events/devfest20"
+                "url": "/events/devfest22"
             }
         ]
     },
