@@ -28,11 +28,13 @@ function EventShowcase({ event }) {
           </p>
         </div>
 
-        <Button
-          title="Go to event"
-          outlined={true}
-          onClick={()=> gotoEvent(event.url)}
-        ></Button>
+        <a href={event.url} target="_blank">
+          <Button
+            title="Go to event"
+            outlined={true}
+            // onClick={()=> gotoEvent(event.url)}
+          ></Button>
+        </a>
       </div>
     </StyledWrapper>
   )
