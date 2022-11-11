@@ -17,16 +17,17 @@ function EventMobileShowcase({ event }) {
       </EventDescription>
 
       <div style={{ display: "flex" }}>
-        <button
-          style={{
-            marginRight: 10,
-            backgroundColor: "var(--green)",
-            color: "white",
-          }}
-          onClick={() => gotoEvent(event.url)}
-        >
-          Go To Event
-        </button>
+        <a>
+          <button
+            style={{
+              marginRight: 10,
+              backgroundColor: "var(--green)",
+              color: "white",
+            }}
+          >
+            Go To Event
+          </button>
+        </a>
         <button onClick={toggleContent}>See details</button>
       </div>
     </StyledWrapper>

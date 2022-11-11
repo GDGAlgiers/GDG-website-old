@@ -45,7 +45,10 @@ export class GDGButon extends Component {
               : "rgba(13, 157, 88, 0.25)"
           }
         >
-          <GDGBtn outlined={this.props.outlined} onClick={this.props.onClick}>
+          {/* <GDGBtn outlined={this.props.outlined} onClick={this.props.onClick}>
+            {this.props.title.toUpperCase()}
+          </GDGBtn> */}
+          <GDGBtn outlined={this.props.outlined}>
             {this.props.title.toUpperCase()}
           </GDGBtn>
         </Ripples>
